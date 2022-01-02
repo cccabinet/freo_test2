@@ -54,7 +54,7 @@ function freo_main()
 		echo "<link rel=\"stylesheet\" href=\"" . FREO_HTTP_URL . FREO_CSS_DIR . "setup.css\" type=\"text/css\" media=\"all\" />\n";
 	}
 	if (file_exists(FREO_JS_DIR)) {
-		echo "<script type=\"text/javascript\" src=\"" . FREO_HTTP_URL . FREO_JS_DIR . "jquery.js\"></script>\n";
+		echo "<script type=\"text/javascript\" src=\"https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js\" integrity=\"sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=\" crossorigin=\"anonymous\"></script>\n";
 		echo "<script type=\"text/javascript\" src=\"" . FREO_HTTP_URL . FREO_JS_DIR . "common.js\"></script>\n";
 		echo "<script type=\"text/javascript\" src=\"" . FREO_HTTP_URL . FREO_JS_DIR . "setup.js\"></script>\n";
 	}
