@@ -47,6 +47,8 @@ body {
 	color: #222222;
 	font-size: 80%;
 	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
+	word-wrap: break-word;
+	word-break: break-word;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -124,6 +126,9 @@ blockquote div, blockquote p, blockquote li, blockquote dt, blockquote dd {
 
 table {
 	margin: 15px 0;
+	max-width: 100%;
+	table-layout: fixed;
+	word-break: break-all;
 }
 table tr th {
 	padding: 5px;
@@ -171,6 +176,8 @@ form p input {
 img {
 	vertical-align: middle;
 	margin: auto 1px;
+	max-width : 100%;
+	height: auto;
 }
 
 a:link, a:visited {
