@@ -1,6 +1,7 @@
 	<button type="button" class="toggle"></button>
 	<div id="utility">
 		<h2>ユーティリティ</h2>
+{* ページカレンダーの表示 *}
 		<div class="utility">
 			<h3>{$plugin_page_calender_year}年{$plugin_page_calender_month}月</h3>
 			<div class="content">
@@ -38,6 +39,8 @@
 				</ul>
 			</div>
 		</div>
+{* /ページカレンダーの表示 *}
+{* ページタグクラウドの表示 *}
 		<!--{if $plugin_page_tagclouds|smarty:nodefaults}-->
 		<div class="utility">
 			<h3>タグクラウド</h3>
@@ -50,7 +53,10 @@
 			</div>
 		</div>
 		<!--{/if}-->
+{* /ページタグクラウドの表示 *}
+{* 検索の表示 *}
 		<div class="utility">
+{* 検索プラグインを導入していたらキーワード検索フォームの表示 *}
 			<!--{if $freo.plugin.search}-->
 			<h3>キーワード検索</h3>
 			<div class="content">
@@ -67,6 +73,8 @@
 					</fieldset>
 				</form>
 			</div>
+{* /キーワード検索フォームの表示 *}
+{* 検索プラグインを導入していないならページ検索フォームの表示 *}
 			<!--{else}-->
 			<h3>検索</h3>
 			<div class="content">
@@ -82,7 +90,10 @@
 				</form>
 			</div>
 			<!--{/if}-->
+{* /ページ検索フォームの表示 *}
 		</div>
+{* /検索の表示 *}
+{* ページ一覧の表示 *}
 		<!--{if $freo.plugin.page_all}-->
 		<div class="utility">
 			<h3>ページ一覧</h3>
@@ -91,6 +102,8 @@
 			</div>
 		</div>
 		<!--{/if}-->
+{* /ページ一覧の表示 *}
+{* リンクの表示 *}
 		<div class="utility">
 			<h3>リンク</h3>
 			<div class="content">
@@ -111,6 +124,8 @@
 				</ul>
 			</div>
 		</div>
+{* /リンクの表示 *}
+{* メニュー登録プラグインの登録メニューの表示 *}
 		<!--{if $plugin_menus|smarty:nodefaults}-->
 		<div class="utility">
 			<h3>メニュー</h3>
@@ -123,6 +138,8 @@
 			</div>
 		</div>
 		<!--{/if}-->
+{* /登録メニューの表示 *}
+{* 登録ユーザーの表示 *}
 		<div class="utility">
 			<h3>ユーザー</h3>
 			<div class="content">
@@ -135,18 +152,22 @@
 				</ul>
 			</div>
 		</div>
+{* /登録ユーザーの表示 *}
+{* 新着ページイメージの表示 *}
 		<!--{if $plugin_page_images|smarty:nodefaults}-->
 		<div class="utility">
 			<h3>新着ページイメージ</h3>
 			<div class="content">
 				<ul class="gallery">
 					<!--{foreach from=$plugin_page_images|smarty:nodefaults item='plugin_page_image'}-->
-					<li><a href="{$freo.core.http_file}/page/{$plugin_page_image.id}"><!--{if $plugin_page_image.image}--><img src="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}page_images/{$plugin_page_image.id}/{$plugin_page_image.image}" alt="{$plugin_page_image.memo|default:$plugin_page_image.title}" title="{$plugin_page_image.memo|default:$plugin_page_image.title}" /><!--{else}-->{$plugin_page_image.memo|default:$plugin_page_image.title}<!--{/if}--></a></li>
+					<li><a href="{$freo.core.http_file}/page/{$plugin_page_image.id}"><!--{if $plugin_page_image.image}--><img src="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}page_images/{$plugin_page_image.id}/{$plugin_page_image.image}" alt="{$plugin_page_image.memo|default:$plugin_page_image.title}" title="{$plugin_page_image.memo|default:$plugin_page_image.title}" /><!--{else}--><img src="{$freo.core.http_url}images/forbidden.png" alt="{$plugin_page_image.memo|default:$plugin_page_image.title}" title="{$plugin_page_image.memo|default:$plugin_page_image.title}" /><!--{/if}--></a></li>
 					<!--{/foreach}-->
 				</ul>
 			</div>
 		</div>
 		<!--{/if}-->
+{* /新着ページイメージの表示 *}
+{* 新着ページの表示 *}
 		<!--{if $plugin_page_recentries|smarty:nodefaults}-->
 		<div class="utility">
 			<h3>新着ページ</h3>
@@ -154,12 +175,14 @@
 				<dl>
 					<!--{foreach from=$plugin_page_recentries|smarty:nodefaults item='plugin_page_recently'}-->
 					<dt><a href="{$freo.core.http_file}/page/{$plugin_page_recently.id}">{$plugin_page_recently.title}</a></dt>
-						<dd>{$plugin_page_recently.datetime|date_format:'%Y/%m/%d %H:%M'}</dd>
+						<dd>{$plugin_page_recently.datetime|date_format:'%Y/%m/%d %H:%M'}<!--{if $plugin_page_recently.datetime|recently:7:'day'}--> <span class="attention">New!</span><!--{/if}--></dd>
 					<!--{/foreach}-->
 				</dl>
 			</div>
 		</div>
 		<!--{/if}-->
+{* /新着ページの表示 *}
+{* 新着コメントの表示 *}
 		<!--{if $plugin_comment_recentries|smarty:nodefaults}-->
 		<div class="utility">
 			<h3>新着コメント</h3>
@@ -170,13 +193,15 @@
 						<dd>
 							{$plugin_comment_recently.created|date_format:'%Y/%m/%d'}
 							from
-							<!--{if $plugin_comment_recently.user_id}-->{$freo.refer.users[$plugin_comment_recently.user_id].name}<!--{else}-->{$plugin_comment_recently.name}<!--{/if}-->
+							<!--{if $plugin_comment_recently.user_id}-->{$freo.refer.users[$plugin_comment_recently.user_id].name}<!--{else}-->{$plugin_comment_recently.name}<!--{/if}--><!--{if $plugin_comment_recently.created|recently:7:'day'}--> <span class="attention">New!</span><!--{/if}-->
 						</dd>
 					<!--{/foreach}-->
 				</dl>
 			</div>
 		</div>
 		<!--{/if}-->
+{* /新着コメントの表示 *}
+{* 新着トラックバックの表示 *}
 		<!--{if $plugin_trackback_recentries|smarty:nodefaults}-->
 		<div class="utility">
 			<h3>新着トラックバック</h3>
@@ -187,13 +212,15 @@
 						<dd>
 							{$plugin_trackback_recently.created|date_format:'%Y/%m/%d'}
 							from
-							{$plugin_trackback_recently.name}
+							{$plugin_trackback_recently.name}<!--{if $plugin_trackback_recently.created|recently:7:'day'}--> <span class="attention">New!</span><!--{/if}-->
 						</dd>
 					<!--{/foreach}-->
 				</dl>
 			</div>
 		</div>
 		<!--{/if}-->
+{* /新着トラックバックの表示 *}
+{* ページ過去ログの表示 *}
 		<!--{if $plugin_page_archives|smarty:nodefaults}-->
 		<div class="utility">
 			<h3>過去ログ</h3>
@@ -206,4 +233,5 @@
 			</div>
 		</div>
 		<!--{/if}-->
+{* /ページ過去ログの表示 *}
 	</div>
