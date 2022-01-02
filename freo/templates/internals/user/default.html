@@ -15,8 +15,21 @@
 		<li><a href="{$freo.core.http_file}/profile/{$freo.user.id}">プロフィール</a></li>
 	</ul>
 	<ul>
+{* プロフィール編集の表示 *}
+{* プロフィール拡張プラグインを導入していたら *}
+		<!--{if $freo.plugin.profile}-->
+		<li><a href="{$freo.core.http_file}/profile/form">プロフィール編集</a></li>
+{* プロフィール拡張プラグインを導入していないなら *}
+		<!--{else}-->
 		<li><a href="{$freo.core.http_file}/user/profile_form">プロフィール編集</a></li>
+		<!--{/if}-->
+{* /プロフィール編集の表示 *}
 		<li><a href="{$freo.core.https_file}/user/password_form">パスワード変更</a></li>
+{* サークル管理プラグインの表示 *}
+		<!--{if $freo.plugin.circle}-->
+		<li><a href="{$freo.core.http_file}/circle/form">サークル情報編集</a></li>
+		<!--{/if}-->
+{* /サークル管理プラグインの表示 *}
 		<li><a href="{$freo.core.http_file}/login?freo%5Bsession%5D=logout">ログアウト</a></li>
 	</ul>
 {include file='footer.html'}

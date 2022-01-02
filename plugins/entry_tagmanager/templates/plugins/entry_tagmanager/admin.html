@@ -36,7 +36,7 @@
 				<!--{foreach from=$entry_tags|smarty:nodefaults item='entry_tag'}-->
 				<tr>
 					<td>{$entry_tag.tag}</td>
-					<td>{$entry_tag.count}</td>
+					<td>{$entry_tag.count|number_format}</td>
 					<td>
 						<a href="{$freo.core.http_file}/admin/entry?tag={$entry_tag.tag|smarty:nodefaults|escape:'url'}">検索</a>
 						<a href="{$freo.core.http_file}/entry_tagmanager/admin_form?tag={$entry_tag.tag}">編集</a>

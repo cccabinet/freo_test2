@@ -400,6 +400,95 @@ ul.tagcloud li a {
 	text-decoration: none;
 }
 
+/********* メディア一覧 ************************************************/
+
+div#media ul {
+	margin: 10px 0;
+}
+div#media ul li {
+	display: inline;
+	list-style: none;
+}
+div#media ul li img {
+	max-width: 80px;
+	max-height: 80px;
+	margin-bottom: 10px;
+}
+div#media ul li span.directory {
+	display: block;
+	margin: 10px 0;
+	font-size: 120%;
+	font-weight: bold;
+}
+div#media ul li ul {
+	margin: 0 0 0 20px;
+}
+
+div.directories {
+	overflow: hidden;
+}
+div.directories div.directory {
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 20px;
+}
+div.directories div.directory p {
+	margin: 0;
+	text-align: center;
+}
+div.directories div.directory p a {
+	display: block;
+	width: 140px;
+	height: 100px;
+	background-color: #444444;
+	text-decoration: none;
+}
+div.directories div.directory p a img {
+	max-width: 140px;
+	max-height: 100px;
+}
+
+/********* メディア文章一覧 *************************************************/
+
+div#document ul {
+	margin: 10px 0;
+}
+div#document ul li {
+	list-style: none;
+}
+div#document ul li span.directory {
+	display: block;
+	margin: 10px 0;
+	font-size: 120%;
+	font-weight: bold;
+}
+div#document ul li ul {
+	margin: 0 0 0 20px;
+}
+
+/********* オプション項目からの絞り込み検索 *************************************************/
+
+div#search_option {
+	padding: 10px 20px;
+	border: 1px solid #CCCCCC;
+	background-color: #EEEEEE;
+}
+div#search_option h3 {
+	font-size: 100%;
+}
+div#search_option dl dd ul {
+	margin: 0;
+	padding: 2px 0;
+}
+div#search_option dl dd ul li {
+	display: inline;
+	list-style: none;
+	margin-right: 10px;
+}
+div#search_option span.note {
+	color: #666666;
+}
+
 /********* 個別指定 *************************************************/
 
 div.content {

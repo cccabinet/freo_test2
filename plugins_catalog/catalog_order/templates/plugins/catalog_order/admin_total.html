@@ -26,8 +26,8 @@
 				<tr>
 					<td>{$plugin_catalog_order_set.catalog_id}</td>
 					<td>{$plugin_catalogs[$plugin_catalog_order_set.catalog_id].name}</td>
-					<td class="number">{$plugin_catalogs[$plugin_catalog_order_set.catalog_id].price}円</td>
-					<td class="number">{$plugin_catalog_order_set.count}</td>
+					<td class="number">{$plugin_catalogs[$plugin_catalog_order_set.catalog_id].price|number_format}円</td>
+					<td class="number">{$plugin_catalog_order_set.count|number_format}</td>
 				</tr>
 				<!--{/foreach}-->
 			</tbody>

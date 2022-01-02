@@ -1,5 +1,15 @@
 {include file='header.html' title='サークル一覧'}
 	<h2>サークル一覧</h2>
+{* サークルタグクラウドの表示 *}
+	<!--{if $plugin_circle_tagclouds|smarty:nodefaults}-->
+	<h3>タグクラウド</h3>
+	<ul class="tagcloud">
+		<!--{foreach from=$plugin_circle_tagclouds|smarty:nodefaults item='plugin_circle_tagcloud'}-->
+		<li><a href="{$freo.core.http_file}/circle?tag={$plugin_circle_tagcloud.tag|smarty:nodefaults|escape:'url'}" style="font-size:{$plugin_circle_tagcloud.size}%;">{$plugin_circle_tagcloud.tag}</a>{$plugin_circle_tagcloud.count}</li>
+		<!--{/foreach}-->
+	</ul>
+	<!--{/if}-->
+{* /サークルタグクラウドの表示 *}
 	<ul>
 		<!--{if $smarty.get.category}--><li>カテゴリー「{$plugin_circle_categories[$smarty.get.category].name}」の検索結果は以下のとおりです。</li>
 		<!--{elseif $smarty.get.tag}--><li>タグ「{$smarty.get.tag}」の検索結果は以下のとおりです。</li>

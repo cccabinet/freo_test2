@@ -47,7 +47,7 @@
 			</form>
 		</div>
 		<ul>
-			<li><em>{$trackback_count}</em>件のトラックバック。全<em>{$trackback_page}</em>ページ中<em>{$freo.query.page}</em>ページ目を表示しています。</li>
+			<li><em>{$trackback_count|number_format}</em>件のトラックバック。全<em>{$trackback_page|number_format}</em>ページ中<em>{$freo.query.page|number_format}</em>ページ目を表示しています。</li>
 		</ul>
 		<table summary="トラックバック">
 			<thead>
@@ -55,7 +55,7 @@
 					<th>No</th>
 					<th>日時</th>
 					<th>名前</th>
-					<th>IPアドレス</th>
+					<th>ホスト名（IPアドレス）</th>
 					<th>状態</th>
 					<th>作業</th>
 				</tr>
@@ -65,7 +65,7 @@
 					<th>No</th>
 					<th>日時</th>
 					<th>名前</th>
-					<th>IPアドレス</th>
+					<th>ホスト名（IPアドレス）</th>
 					<th>状態</th>
 					<th>作業</th>
 				</tr>
@@ -76,7 +76,7 @@
 					<td>{$trackback.id}</td>
 					<td><!--{if $trackback.created|date_format:'%Y%m%d' == $smarty.now|date_format:'%Y%m%d'}-->{$trackback.created|date_format:'%H:%M:%S'}<!--{else}-->{$trackback.created|date_format:'%Y/%m/%d'}<!--{/if}--></td>
 					<td>{$trackback.name}</td>
-					<td>{$trackback.ip}</td>
+					<td>{$trackback.ip|gethostbyaddr}</td>
 					<td><!--{if $trackback.approved == 'no'}-->未承認<!--{else}-->公開<!--{/if}--></td>
 					<td>
 						<a href="{$freo.core.http_file}/{if $trackback.entry_id}view/{$trackback.entry_id}{elseif $trackback.page_id}page/{$trackback.page_id}{/if}">確認</a>

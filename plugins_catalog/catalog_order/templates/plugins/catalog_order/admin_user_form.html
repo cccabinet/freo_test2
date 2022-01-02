@@ -35,7 +35,7 @@
 				</dl>
 				<h3>配送先住所</h3>
 				<dl>
-					<dt>郵便番号</dt>
+					<dt>郵便番号<!--{if !$input.plugin_catalog_order_user.user_id}-->（郵便番号を入力すると住所が自動入力されます）<!--{/if}--></dt>
 						<dd><input type="text" name="plugin_catalog_order_user[zipcode]" size="10" value="{$input.plugin_catalog_order_user.zipcode}" id="catalog_order_zipcode" /></dd>
 					<dt>都道府県</dt>
 						<dd>

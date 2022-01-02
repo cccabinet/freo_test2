@@ -5,9 +5,9 @@
 			<dt>登録日時</dt>
 				<dd>{$plugin_message.created|date_format:'%Y/%m/%d %H:%M:%S'}</dd>
 			<dt>メッセージ</dt>
-				<dd>{$plugin_message.text|nl2br}</dd>
-			<dt>IPアドレス</dt>
-				<dd>{$plugin_message.ip}</dd>
+				<dd>{$plugin_message.text|nl2br|autolink}</dd>
+			<dt>ホスト名（IPアドレス）</dt>
+				<dd>{$plugin_message.ip|gethostbyaddr}</dd>
 		</dl>
 	</div>
 {include file='internals/admin/footer.html'}

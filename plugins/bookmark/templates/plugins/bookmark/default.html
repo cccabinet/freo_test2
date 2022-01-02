@@ -18,6 +18,16 @@
 			</fieldset>
 		</form>
 	</div>
+{* ブックマークタグクラウドの表示 *}
+	<!--{if $plugin_bookmark_tagclouds|smarty:nodefaults}-->
+	<h3>タグクラウド</h3>
+	<ul class="tagcloud">
+		<!--{foreach from=$plugin_bookmark_tagclouds|smarty:nodefaults item='plugin_bookmark_tagcloud'}-->
+		<li><a href="{$freo.core.http_file}/bookmark?tag={$plugin_bookmark_tagcloud.tag|smarty:nodefaults|escape:'url'}" style="font-size:{$plugin_bookmark_tagcloud.size}%;">{$plugin_bookmark_tagcloud.tag}</a>{$plugin_bookmark_tagcloud.count}</li>
+		<!--{/foreach}-->
+	</ul>
+	<!--{/if}-->
+{* /ブックマークタグクラウドの表示 *}
 	<h3>ブックマーク一覧</h3>
 	<dl class="bookmark">
 		<!--{foreach from=$plugin_bookmarks|smarty:nodefaults item='plugin_bookmark'}-->
@@ -28,7 +38,7 @@
 				<!--{if $freo.user.authority == 'root' or $freo.user.authority == 'author'}-->
 				<a href="{$freo.core.http_file}/bookmark/admin_form?id={$plugin_bookmark.id}"><img src="{$freo.core.http_url}images/icons/edit.png" alt="編集" title="編集" width="16" height="16" /></a>
 				<!--{/if}-->
-				<!--{if $plugin_bookmark.text}--><br />{$plugin_bookmark.text}<!--{/if}-->
+				<!--{if $plugin_bookmark.text}--><br />{$plugin_bookmark.text|autolink}<!--{/if}-->
 			</dd>
 		<!--{/foreach}-->
 	</dl>

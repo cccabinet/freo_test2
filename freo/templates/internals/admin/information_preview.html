@@ -1,13 +1,15 @@
 {include file='header.html' title='インフォメーション確認'}
 	<h2>インフォメーション</h2>
 	<!--{if $information_text.excerpt}-->
-		{$information_text.excerpt|smarty:nodefaults}
+		{$information_text.excerpt|smarty:nodefaults|autolink}
 	<!--{/if}-->
 	<!--{if $information_text.more}-->
 		<div id="continue">
-			{$information_text.more|smarty:nodefaults}
+			{$information_text.more|smarty:nodefaults|autolink}
 		</div>
 	<!--{/if}-->
+	<hr />
+	<p>この内容で登録しますか？</p>
 	<div id="action">
 		<form action="{$freo.core.http_file}/admin/information_form" method="get">
 			<fieldset>
