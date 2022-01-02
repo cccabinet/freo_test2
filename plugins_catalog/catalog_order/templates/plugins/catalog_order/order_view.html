@@ -36,9 +36,9 @@
 			<!--{foreach from=$plugin_catalogs|smarty:nodefaults item='catalog'}-->
 			<tr>
 				<td>[{$catalog.id}]<br />{$catalog.name}</td>
-				<td class="number">{$plugin_catalog_order_sets[$catalog.id].price}円</td>
-				<td class="number">{$plugin_catalog_order_sets[$catalog.id].count}</td>
-				<td class="number">{$plugin_catalog_price_subtotals[$catalog.id]}円</td>
+				<td class="number">{$plugin_catalog_order_sets[$catalog.id].price|number_format}円</td>
+				<td class="number">{$plugin_catalog_order_sets[$catalog.id].count|number_format}</td>
+				<td class="number">{$plugin_catalog_price_subtotals[$catalog.id]|number_format}円</td>
 			</tr>
 			<!--{/foreach}-->
 		</tbody>
@@ -46,25 +46,25 @@
 	<table summary="合計">
 		<tr>
 			<th>商品合計（税込）</th>
-			<td class="number">{$plugin_catalog_price_total}円</td>
+			<td class="number">{$plugin_catalog_price_total|number_format}円</td>
 		</tr>
 		<tr>
 			<th>送料（税込）</th>
-			<td class="number">{$plugin_catalog_order.carriage}円</td>
+			<td class="number">{$plugin_catalog_order.carriage|number_format}円</td>
 		</tr>
 		<tr>
 			<th>手数料（税込）</th>
-			<td class="number">{$plugin_catalog_order.charge}円</td>
+			<td class="number">{$plugin_catalog_order.charge|number_format}円</td>
 		</tr>
 		<!--{if $plugin_catalog_order.discount}-->
 		<tr>
 			<th>値引き（税込）</th>
-			<td class="number">-{$plugin_catalog_order.discount}円</td>
+			<td class="number">-{$plugin_catalog_order.discount|number_format}円</td>
 		</tr>
 		<!--{/if}-->
 		<tr>
 			<th>お支払い額合計（税込）</th>
-			<td class="number"><em>{$plugin_catalog_price_total+$plugin_catalog_order.carriage+$plugin_catalog_order.charge-$plugin_catalog_order.discount}円</em></td>
+			<td class="number"><em>{$plugin_catalog_price_total+$plugin_catalog_order.carriage+$plugin_catalog_order.charge-$plugin_catalog_order.discount|number_format}円</em></td>
 		</tr>
 	</table>
 	<h3>配送方法・お支払い方法</h3>

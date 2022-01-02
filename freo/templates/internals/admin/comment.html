@@ -47,7 +47,7 @@
 			</form>
 		</div>
 		<ul>
-			<li><em>{$comment_count}</em>件のコメント。全<em>{$comment_page}</em>ページ中<em>{$freo.query.page}</em>ページ目を表示しています。</li>
+			<li><em>{$comment_count|number_format}</em>件のコメント。全<em>{$comment_page|number_format}</em>ページ中<em>{$freo.query.page|number_format}</em>ページ目を表示しています。</li>
 		</ul>
 		<table summary="コメント">
 			<thead>
@@ -55,7 +55,7 @@
 					<th>No</th>
 					<th>日時</th>
 					<th>名前</th>
-					<th>IPアドレス</th>
+					<th>ホスト名（IPアドレス）</th>
 					<th>状態</th>
 					<th>作業</th>
 				</tr>
@@ -65,7 +65,7 @@
 					<th>No</th>
 					<th>日時</th>
 					<th>名前</th>
-					<th>IPアドレス</th>
+					<th>ホスト名（IPアドレス）</th>
 					<th>状態</th>
 					<th>作業</th>
 				</tr>
@@ -76,7 +76,7 @@
 					<td>{$comment.id}</td>
 					<td><!--{if $comment.created|date_format:'%Y%m%d' == $smarty.now|date_format:'%Y%m%d'}-->{$comment.created|date_format:'%H:%M:%S'}<!--{else}-->{$comment.created|date_format:'%Y/%m/%d'}<!--{/if}--></td>
 					<td><!--{if $comment.user_id}-->{$freo.refer.users[$comment.user_id].name}<!--{else}-->{$comment.name}<!--{/if}--></td>
-					<td>{$comment.ip}</td>
+					<td>{$comment.ip|gethostbyaddr}</td>
 					<td><!--{if $comment.approved == 'no'}-->未承認<!--{elseif $comment.restriction == 'admin'}-->管理者に公開<!--{elseif $comment.restriction == 'user'}-->登録ユーザーに公開<!--{else}-->公開<!--{/if}--></td>
 					<td>
 						<a href="{$freo.core.http_file}/{if $comment.entry_id}view/{$comment.entry_id}{elseif $comment.page_id}page/{$comment.page_id}{/if}">確認</a>

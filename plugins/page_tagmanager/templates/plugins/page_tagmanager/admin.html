@@ -36,7 +36,7 @@
 				<!--{foreach from=$page_tags|smarty:nodefaults item='page_tag'}-->
 				<tr>
 					<td>{$page_tag.tag}</td>
-					<td>{$page_tag.count}</td>
+					<td>{$page_tag.count|number_format}</td>
 					<td>
 						<a href="{$freo.core.http_file}/admin/page?tag={$page_tag.tag|smarty:nodefaults|escape:'url'}">検索</a>
 						<a href="{$freo.core.http_file}/page_tagmanager/admin_form?tag={$page_tag.tag}">編集</a>

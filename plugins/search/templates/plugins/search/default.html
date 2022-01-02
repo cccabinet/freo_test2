@@ -17,6 +17,7 @@
 					</dd>
 				<!--{/if}-->
 			</dl>
+{* オプション項目で絞り込み *}
 			<!--{if $freo.refer.options|smarty:nodefaults}-->
 			<div id="search_option">
 				<h3>オプション項目で絞り込み</h3>
@@ -45,6 +46,7 @@
 				</dl>
 			</div>
 			<!--{/if}-->
+{* /オプション項目で絞り込み *}
 			<p><input type="submit" value="検索する" /></p>
 		</fieldset>
 	</form>
@@ -81,7 +83,7 @@
 		<!--{/foreach}-->
 	</ul>
 	<!--{/if}-->
-	<p><em>{$article_count}</em>件ヒットしました。全<em>{$article_page}</em>ページ中<em>{$freo.query.page}</em>ページ目を表示しています。</p>
+	<p><em>{$article_count|number_format}</em>件ヒットしました。全<em>{$article_page|number_format}</em>ページ中<em>{$freo.query.page|number_format}</em>ページ目を表示しています。</p>
 	<!--{if $articles|smarty:nodefaults}-->
 	<!--{foreach from=$articles|smarty:nodefaults item='article'}-->
 	<h3><a href="{$freo.core.http_file}/{if $article.type == 'entry'}view{else}page{/if}/{if $article.code}{$article.code}{else}{$article.id}{/if}">{$article.title}</a></h3>

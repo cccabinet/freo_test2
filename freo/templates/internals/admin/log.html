@@ -9,7 +9,7 @@
 				<tr>
 					<th>日時</th>
 					<th>ユーザーID</th>
-					<th>IPアドレス</th>
+					<th>ホスト名（IPアドレス）</th>
 					<th>本文</th>
 				</tr>
 			</thead>
@@ -17,7 +17,7 @@
 				<tr>
 					<th>日時</th>
 					<th>ユーザーID</th>
-					<th>IPアドレス</th>
+					<th>ホスト名（IPアドレス）</th>
 					<th>本文</th>
 				</tr>
 			</tfoot>
@@ -26,7 +26,7 @@
 				<tr>
 					<td><!--{if $log.created|date_format:'%Y%m%d' == $smarty.now|date_format:'%Y%m%d'}-->{$log.created|date_format:'%H:%M:%S'}<!--{else}-->{$log.created|date_format:'%Y/%m/%d'}<!--{/if}--></td>
 					<td>{$log.user_id}</td>
-					<td>{$log.ip}</td>
+					<td>{$log.ip|gethostbyaddr}</td>
 					<td>{$log.text}</td>
 				</tr>
 				<!--{/foreach}-->

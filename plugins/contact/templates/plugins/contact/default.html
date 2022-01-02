@@ -23,6 +23,21 @@
 					<dd><input type="text" name="plugin_contact[mail]" size="30" value="{$input.plugin_contact.mail}" /></dd>
 				<dt>本文</dt>
 					<dd><textarea name="plugin_contact[text]" cols="50" rows="10">{$input.plugin_contact.text}</textarea></dd>
+{* スパム対策 *}
+{* 投稿キープラグインを導入していたら *}
+				<!--{if $freo.plugin.postkey}-->
+				<!--{if !$smarty.session.plugin.postkey.approved}-->
+				<dt>投稿キー（スパム対策に、<img src="{$freo.core.http_file}/postkey" alt="投稿キー" title="投稿キー" width="50" height="20" /> を半角で入力してください。）</dt>
+					<dd><input type="text" name="plugin[postkey][key]" size="10" value="" /></dd>
+				<!--{/if}-->
+{* なぞなぞ認証プラグインを導入していたら *}
+				<!--{elseif $freo.plugin.riddle}-->
+				<!--{if !$smarty.session.plugin.riddle.approved}-->
+				<dt>{$plugin_riddle.question}（スパム対策）</dt>
+					<dd><input type="text" name="plugin[riddle][answer]" size="30" value="" /><input type="hidden" name="plugin[riddle][id]" value="{$plugin_riddle.id}" /></dd>
+				<!--{/if}-->
+				<!--{/if}-->
+{* /スパム対策 *}
 			</dl>
 			<ul>
 				<li><input type="checkbox" name="plugin_contact[copy]" id="label_copy" value="1"{if $input.plugin_contact.copy} checked="checked"{/if} /> <label for="label_copy">送信者にコピーを送る</label></li>

@@ -1,4 +1,25 @@
 {include file='header.html' title='ファイルのエラー'}
 	<h2>エラー</h2>
 	<p class="attention">{$message}</p>
+{* フィルター名の表示 *}
+	<!--{if $media_associate.filter}-->
+	<p>フィルター：<!--{foreach from=$media_associate.filter|smarty:nodefaults key='media_filter' item='media_filter' name='loop'}-->{$freo.refer.filters[$media_filter].name}<!--{if !$smarty.foreach.loop.last}-->&nbsp;<!--{/if}--><!--{/foreach}--></p>
+	<!--{if !$freo.plugin.filter_confirm or ($freo.plugin.filter_confirm and !$media_associate.filter.r18)}-->
+	<p><a href="{$freo.core.http_file}/filter">フィルター設定</a>で上記のフィルターを「表示する」に設定してからご覧ください。</p>
+{* フィルター認証確認プラグインを導入していたら *}
+	<!--{elseif $freo.plugin.filter_confirm}-->
+	{include file='plugins/filter_confirm/filter_confirm.html'}
+	<!--{/if}-->
+	<!--{/if}-->
+{* /フィルター名の表示 *}
+{* Twitterフォロワー限定公開プラグインの表示 *}
+	<!--{if $freo.plugin.twitter_followers}-->
+	{include file='plugins/twitter_followers/twitter_followers.html'}
+	<!--{/if}-->
+{* /Twitterフォロワー限定公開プラグインの表示 *}
+{* Twitterフレンド限定公開プラグインの表示 *}
+	<!--{if $freo.plugin.twitter_friends}-->
+	{include file='plugins/twitter_friends/twitter_friends.html'}
+	<!--{/if}-->
+{* /Twitterフレンド限定公開プラグインの表示 *}
 {include file='footer.html'}

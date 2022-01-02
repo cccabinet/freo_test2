@@ -1,12 +1,12 @@
 {include file='header.html' title='インフォメーション'}
 	<h2>インフォメーション</h2>
 	<!--{if $information_text.excerpt}-->
-		{$information_text.excerpt|smarty:nodefaults}
+		{$information_text.excerpt|smarty:nodefaults|autolink}
 	<!--{/if}-->
 	<!--{if $information_text.more}-->
 		<!--{if $freo.query.continue}-->
 		<div id="continue">
-			{$information_text.more|smarty:nodefaults}
+			{$information_text.more|smarty:nodefaults|autolink}
 		</div>
 		<!--{else}-->
 		<p><a href="{$freo.core.http_file}/information?continue=1#continue" title="インフォメーションの続き">続きを読む</a></p>

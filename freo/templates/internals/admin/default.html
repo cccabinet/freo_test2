@@ -27,32 +27,32 @@
 			<tbody>
 				<tr>
 					<td>エントリー</td>
-					<td class="number">{$entry_count}</td>
-					<td class="number">{$entry_count-$entry_approved}</td>
+					<td class="number">{$entry_count|number_format}</td>
+					<td class="number">{$entry_count-$entry_approved|number_format}</td>
 					<td><!--{if $entry_modified|date_format:'%Y%m%d' == $smarty.now|date_format:'%Y%m%d'}-->{$entry_modified|date_format:'%H:%M:%S'}<!--{else}-->{$entry_modified|date_format:'%Y/%m/%d'}<!--{/if}--></td>
 				</tr>
 				<tr>
 					<td>ページ</td>
-					<td class="number">{$page_count}</td>
-					<td class="number">{$page_count-$page_approved}</td>
+					<td class="number">{$page_count|number_format}</td>
+					<td class="number">{$page_count-$page_approved|number_format}</td>
 					<td><!--{if $page_modified|date_format:'%Y%m%d' == $smarty.now|date_format:'%Y%m%d'}-->{$page_modified|date_format:'%H:%M:%S'}<!--{else}-->{$page_modified|date_format:'%Y/%m/%d'}<!--{/if}--></td>
 				</tr>
 				<tr>
 					<td>コメント</td>
-					<td class="number">{$comment_count}</td>
-					<td class="number">{$comment_count-$comment_approved}</td>
+					<td class="number">{$comment_count|number_format}</td>
+					<td class="number">{$comment_count-$comment_approved|number_format}</td>
 					<td><!--{if $comment_modified|date_format:'%Y%m%d' == $smarty.now|date_format:'%Y%m%d'}-->{$comment_modified|date_format:'%H:%M:%S'}<!--{else}-->{$comment_modified|date_format:'%Y/%m/%d'}<!--{/if}--></td>
 				</tr>
 				<tr>
 					<td>トラックバック</td>
-					<td class="number">{$trackback_count}</td>
-					<td class="number">{$trackback_count-$trackback_approved}</td>
+					<td class="number">{$trackback_count|number_format}</td>
+					<td class="number">{$trackback_count-$trackback_approved|number_format}</td>
 					<td><!--{if $trackback_modified|date_format:'%Y%m%d' == $smarty.now|date_format:'%Y%m%d'}-->{$trackback_modified|date_format:'%H:%M:%S'}<!--{else}-->{$trackback_modified|date_format:'%Y/%m/%d'}<!--{/if}--></td>
 				</tr>
 				<tr>
 					<td>ユーザー</td>
-					<td class="number">{$user_count}</td>
-					<td class="number">{$user_count-$user_approved}</td>
+					<td class="number">{$user_count|number_format}</td>
+					<td class="number">{$user_count-$user_approved|number_format}</td>
 					<td><!--{if $user_modified|date_format:'%Y%m%d' == $smarty.now|date_format:'%Y%m%d'}-->{$user_modified|date_format:'%H:%M:%S'}<!--{else}-->{$user_modified|date_format:'%Y/%m/%d'}<!--{/if}--></td>
 				</tr>
 			</tbody>
@@ -74,31 +74,31 @@
 			<tbody>
 				<tr>
 					<td>エントリーファイル</td>
-					<td class="number">{$entry_file_size/1024|intval}KB</td>
+					<td class="number">{$entry_file_size/1024|intval|number_format}KB</td>
 				</tr>
 				<tr>
 					<td>エントリーイメージ</td>
-					<td class="number">{$entry_image_size/1024|intval}KB</td>
+					<td class="number">{$entry_image_size/1024|intval|number_format}KB</td>
 				</tr>
 				<tr>
 					<td>エントリーオプションファイル</td>
-					<td class="number">{$entry_option_size/1024|intval}KB</td>
+					<td class="number">{$entry_option_size/1024|intval|number_format}KB</td>
 				</tr>
 				<tr>
 					<td>ページファイル</td>
-					<td class="number">{$page_file_size/1024|intval}KB</td>
+					<td class="number">{$page_file_size/1024|intval|number_format}KB</td>
 				</tr>
 				<tr>
 					<td>ページイメージ</td>
-					<td class="number">{$page_image_size/1024|intval}KB</td>
+					<td class="number">{$page_image_size/1024|intval|number_format}KB</td>
 				</tr>
 				<tr>
 					<td>ページオプションファイル</td>
-					<td class="number">{$page_option_size/1024|intval}KB</td>
+					<td class="number">{$page_option_size/1024|intval|number_format}KB</td>
 				</tr>
 				<tr>
 					<td>メディアファイル</td>
-					<td class="number">{$media_size/1024|intval}KB</td>
+					<td class="number">{$media_size/1024|intval|number_format}KB</td>
 				</tr>
 			</tbody>
 		</table>

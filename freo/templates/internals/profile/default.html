@@ -4,14 +4,34 @@
 	<dl>
 		<dt>名前</dt>
 			<dd>{$user.name}</dd>
+{* プロフィール拡張プラグインの表示 *}
+		<!--{if $freo.plugin.profile}-->
+		<dt>フリガナ</dt>
+			<dd>{$plugin_profile.kana}</dd>
+		<!--{/if}-->
+{* /プロフィール拡張プラグインの表示 *}
 		<!--{if $user.url}-->
 		<dt>URL</dt>
 			<dd><a href="{$user.url}">{$user.url}</a></dd>
 		<!--{/if}-->
 		<!--{if $user.text}-->
 		<dt>紹介文</dt>
-			<dd>{$user.text|nl2p}</dd>
+			<dd>{$user.text|nl2p|autolink}</dd>
 		<!--{/if}-->
+{* プロフィール拡張プラグインの表示 *}
+		<!--{if $plugin_profile.file}-->
+		<dt>イメージ</dt>
+			<dd><img src="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/profile_files/{$plugin_profile.user_id}/{$plugin_profile.file}" /></dd>
+		<!--{/if}-->
+		<!--{if $plugin_profile.tag}-->
+		<dt>タグ</dt>
+			<dd><!--{foreach from=$plugin_profile_tags|smarty:nodefaults item='plugin_profile_tag' name='loop'}--><a href="{$freo.core.http_file}/profile?tag={$plugin_profile_tag|smarty:nodefaults|escape:'url'}">{$plugin_profile_tag}</a><!--{if !$smarty.foreach.loop.last}-->, <!--{/if}--><!--{/foreach}--></dd>
+		<!--{/if}-->
+		<!--{if $plugin_profile.category_id}-->
+		<dt>カテゴリー</dt>
+			<dd><a href="{$freo.core.http_file}/profile?category={$plugin_profile.category_id}">{$plugin_profile_categories[$plugin_profile.category_id].name}</a></dd>
+		<!--{/if}-->
+{* /プロフィール拡張プラグインの表示 *}
 		<dt>権限</dt>
 			<dd><!--{if $user.authority == 'root'}-->管理者<!--{elseif $user.authority == 'author'}-->投稿者<!--{elseif $user.authority == 'guest'}-->ゲスト<!--{/if}--></dd>
 		<!--{if $user_associate.group}-->
@@ -28,5 +48,87 @@
 		<dt>登録記事</dt>
 			<dd><a href="{$freo.core.http_file}/entry?user={$user.id}">{$freo.core.http_file}/entry?user={$user.id}</a></dd>
 		<!--{/if}-->
+{* プロフィール拡張プラグインの表示 *}
+		<!--{if $freo.config.plugin.profile.file01_name and $plugin_profile.file01}-->
+		<dt>{$freo.config.plugin.profile.file01_name}</dt>
+			<dd><a href="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/profile_files/{$plugin_profile.user_id}/{$plugin_profile.file01}">{$plugin_profile.file01}</a></dd>
+		<!--{/if}-->
+		<!--{if $freo.config.plugin.profile.file02_name and $plugin_profile.file02}-->
+		<dt>{$freo.config.plugin.profile.file02_name}</dt>
+			<dd><a href="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/profile_files/{$plugin_profile.user_id}/{$plugin_profile.file02}">{$plugin_profile.file02}</a></dd>
+		<!--{/if}-->
+		<!--{if $freo.config.plugin.profile.file03_name and $plugin_profile.file03}-->
+		<dt>{$freo.config.plugin.profile.file03_name}</dt>
+			<dd><a href="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/profile_files/{$plugin_profile.user_id}/{$plugin_profile.file03}">{$plugin_profile.file03}</a></dd>
+		<!--{/if}-->
+		<!--{if $freo.config.plugin.profile.file04_name and $plugin_profile.file04}-->
+		<dt>{$freo.config.plugin.profile.file04_name}</dt>
+			<dd><a href="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/profile_files/{$plugin_profile.user_id}/{$plugin_profile.file04}">{$plugin_profile.file04}</a></dd>
+		<!--{/if}-->
+		<!--{if $freo.config.plugin.profile.file05_name and $plugin_profile.file05}-->
+		<dt>{$freo.config.plugin.profile.file05_name}</dt>
+			<dd><a href="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/profile_files/{$plugin_profile.user_id}/{$plugin_profile.file05}">{$plugin_profile.file05}</a></dd>
+		<!--{/if}-->
+		<!--{if $freo.config.plugin.profile.file06_name and $plugin_profile.file06}-->
+		<dt>{$freo.config.plugin.profile.file06_name}</dt>
+			<dd><a href="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/profile_files/{$plugin_profile.user_id}/{$plugin_profile.file06}">{$plugin_profile.file06}</a></dd>
+		<!--{/if}-->
+		<!--{if $freo.config.plugin.profile.file07_name and $plugin_profile.file07}-->
+		<dt>{$freo.config.plugin.profile.file07_name}</dt>
+			<dd><a href="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/profile_files/{$plugin_profile.user_id}/{$plugin_profile.file07}">{$plugin_profile.file07}</a></dd>
+		<!--{/if}-->
+		<!--{if $freo.config.plugin.profile.file08_name and $plugin_profile.file08}-->
+		<dt>{$freo.config.plugin.profile.file08_name}</dt>
+			<dd><a href="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/profile_files/{$plugin_profile.user_id}/{$plugin_profile.file08}">{$plugin_profile.file08}</a></dd>
+		<!--{/if}-->
+		<!--{if $freo.config.plugin.profile.file09_name and $plugin_profile.file09}-->
+		<dt>{$freo.config.plugin.profile.file09_name}</dt>
+			<dd><a href="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/profile_files/{$plugin_profile.user_id}/{$plugin_profile.file09}">{$plugin_profile.file09}</a></dd>
+		<!--{/if}-->
+		<!--{if $freo.config.plugin.profile.file10_name and $plugin_profile.file10}-->
+		<dt>{$freo.config.plugin.profile.file10_name}</dt>
+			<dd><a href="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/profile_files/{$plugin_profile.user_id}/{$plugin_profile.file10}">{$plugin_profile.file10}</a></dd>
+		<!--{/if}-->
+		<!--{if $freo.config.plugin.profile.option01_name}-->
+		<dt>{$freo.config.plugin.profile.option01_name and $plugin_profile.option01}</dt>
+			<dd>{$plugin_profile.option01}</dd>
+		<!--{/if}-->
+		<!--{if $freo.config.plugin.profile.option02_name}-->
+		<dt>{$freo.config.plugin.profile.option02_name and $plugin_profile.option02}</dt>
+			<dd>{$plugin_profile.option02}</dd>
+		<!--{/if}-->
+		<!--{if $freo.config.plugin.profile.option03_name}-->
+		<dt>{$freo.config.plugin.profile.option03_name and $plugin_profile.option03}</dt>
+			<dd>{$plugin_profile.option03}</dd>
+		<!--{/if}-->
+		<!--{if $freo.config.plugin.profile.option04_name}-->
+		<dt>{$freo.config.plugin.profile.option04_name and $plugin_profile.option04}</dt>
+			<dd>{$plugin_profile.option04}</dd>
+		<!--{/if}-->
+		<!--{if $freo.config.plugin.profile.option05_name}-->
+		<dt>{$freo.config.plugin.profile.option05_name and $plugin_profile.option05}</dt>
+			<dd>{$plugin_profile.option05}</dd>
+		<!--{/if}-->
+		<!--{if $freo.config.plugin.profile.option06_name}-->
+		<dt>{$freo.config.plugin.profile.option06_name and $plugin_profile.option06}</dt>
+			<dd>{$plugin_profile.option06}</dd>
+		<!--{/if}-->
+		<!--{if $freo.config.plugin.profile.option07_name}-->
+		<dt>{$freo.config.plugin.profile.option07_name and $plugin_profile.option07}</dt>
+			<dd>{$plugin_profile.option07}</dd>
+		<!--{/if}-->
+		<!--{if $freo.config.plugin.profile.option08_name}-->
+		<dt>{$freo.config.plugin.profile.option08_name and $plugin_profile.option08}</dt>
+			<dd>{$plugin_profile.option08}</dd>
+		<!--{/if}-->
+		<!--{if $freo.config.plugin.profile.option09_name}-->
+		<dt>{$freo.config.plugin.profile.option09_name and $plugin_profile.option09}</dt>
+			<dd>{$plugin_profile.option09}</dd>
+		<!--{/if}-->
+		<!--{if $freo.config.plugin.profile.option10_name}-->
+		<dt>{$freo.config.plugin.profile.option10_name and $plugin_profile.option10}</dt>
+			<dd>{$plugin_profile.option10}</dd>
+		<!--{/if}-->
+{* /プロフィール拡張プラグインの表示 *}
 	</dl>
 {include file='footer.html'}

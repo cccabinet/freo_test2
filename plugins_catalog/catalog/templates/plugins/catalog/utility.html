@@ -12,6 +12,13 @@
 					<li>商品はありません</li>
 					<!--{/if}-->
 				</ul>
+{* 注文者情報登録機能の表示 *}
+				<!--{if $freo.config.user.regist and $freo.config.plugin.catalog_order.user and !$freo.user.id}-->
+				<ul>
+					<li><a href="{$freo.core.https_file}/regist">ユーザー登録</a>して<a href="{$freo.core.https_file}/login">ログイン</a>しておくと、次回からご注文者の情報が自動で入力されます。</li>
+				</ul>
+				<!--{/if}-->
+{* /注文者情報登録機能の表示 *}
 			</div>
 		</div>
 		<!--{else}-->
@@ -53,6 +60,20 @@
 			<!--{/section}-->
 		</div>
 {* /オプションの表示 *}
+{* ショッピングカートタグクラウドの表示 *}
+		<!--{if $plugin_catalog_tagclouds|smarty:nodefaults}-->
+		<div class="utility">
+			<h3>タグクラウド</h3>
+			<div class="content">
+				<ul class="tagcloud">
+					<!--{foreach from=$plugin_catalog_tagclouds|smarty:nodefaults item='plugin_catalog_tagcloud'}-->
+					<li><a href="{$freo.core.http_file}/catalog?tag={$plugin_catalog_tagcloud.tag|smarty:nodefaults|escape:'url'}" style="font-size:{$plugin_catalog_tagcloud.size}%;">{$plugin_catalog_tagcloud.tag}</a>{$plugin_catalog_tagcloud.count}</li>
+					<!--{/foreach}-->
+				</ul>
+			</div>
+		</div>
+		<!--{/if}-->
+{* /ショッピングカートタグクラウドの表示 *}
 		<div class="utility">
 			<h3>販売状況</h3>
 			<div class="content">

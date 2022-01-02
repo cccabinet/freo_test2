@@ -42,7 +42,7 @@
 				<!--{foreach from=$plugin_popularity_raws|smarty:nodefaults item='plugin_popularity_raw'}-->
 				<tr>
 					<td><a href="{$freo.core.http_file}{$plugin_popularity_raw.parameter}">{$plugin_popularity_raw.title|default:$plugin_popularity_raw.parameter}</a></td>
-					<td class="number">{$plugin_popularity_raw.count}</td>
+					<td class="number">{$plugin_popularity_raw.count|number_format}</td>
 					<td><a href="{$freo.core.http_file}/popularity/admin_form?parameter={$plugin_popularity_raw.parameter|escape:'url'}">編集</a></td>
 				</tr>
 				<!--{/foreach}-->
@@ -52,7 +52,7 @@
 				<!--{foreach from=$plugin_popularities|smarty:nodefaults item='plugin_popularity'}-->
 				<tr>
 					<td><a href="{$freo.core.http_file}{$plugin_popularity.parameter}">{$plugin_popularity.title|default:$plugin_popularity.parameter}</a></td>
-					<td class="number">{$plugin_popularity.count}</td>
+					<td class="number">{$plugin_popularity.count|number_format}</td>
 					<td><a href="{$freo.core.http_file}/popularity/admin_form?parameter={$plugin_popularity.parameter|escape:'url'}">編集</a></td>
 				</tr>
 				<!--{/foreach}-->

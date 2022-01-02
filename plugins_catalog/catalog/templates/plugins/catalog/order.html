@@ -10,7 +10,7 @@
 	<ul>
 		<li>カート内の商品を注文します。</li>
 		<!--{if $freo.config.plugin.catalog.free_shipping and $plugin_catalog_cart.catalog_price_total >= $freo.config.plugin.catalog.free_shipping}-->
-		<li>商品合計が<em>{$freo.config.plugin.catalog.free_shipping}円以上</em>なので送料が無料になります。</li>
+		<li>商品合計が<em>{$freo.config.plugin.catalog.free_shipping|number_format}円以上</em>なので送料が無料になります。</li>
 		<!--{/if}-->
 		<li><a href="{$freo.core.http_file}/catalog">商品一覧へ戻る</a>。</li>
 	</ul>
@@ -47,9 +47,9 @@
 					<img src="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/catalog_files/{$catalog.id}/{$plugin_catalog_cart.catalog_files[$catalog.id].file_thumbnail|default:$plugin_catalog_cart.catalog_files[$catalog.id].file}" alt="商品画像" width="50" />
 					<!--{/if}-->
 				</td>
-				<td class="number">{$catalog.price}円</td>
-				<td class="number">{$plugin_catalog_cart.catalog_counts[$catalog.id]}{$catalog.unit}</td>
-				<td class="number">{$plugin_catalog_cart.catalog_price_subtotals[$catalog.id]}円</td>
+				<td class="number">{$catalog.price|number_format}円</td>
+				<td class="number">{$plugin_catalog_cart.catalog_counts[$catalog.id]|number_format}{$catalog.unit}</td>
+				<td class="number">{$plugin_catalog_cart.catalog_price_subtotals[$catalog.id]|number_format}円</td>
 			</tr>
 			<!--{/foreach}-->
 		</tbody>
@@ -57,7 +57,7 @@
 	<table summary="合計">
 		<tr>
 			<th>商品合計（税込）</th>
-			<td>{$plugin_catalog_cart.catalog_price_total}円</td>
+			<td>{$plugin_catalog_cart.catalog_price_total|number_format}円</td>
 		</tr>
 	</table>
 	<div id="calculation">
@@ -95,35 +95,35 @@
 				<tr>
 					<td>{$catalog.name}</td>
 					<td><!--{if $catalog.size == 'data'}-->なし（データのみ）<!--{elseif $catalog.size == 'direct'}-->直接入力<!--{else}-->{$plugin_catalog_sizes[$catalog.size].name}<!--{/if}--></td>
-					<td class="number">{$plugin_catalog_cart.catalog_counts[$catalog.id]}{$catalog.unit}</td>
+					<td class="number">{$plugin_catalog_cart.catalog_counts[$catalog.id]|number_format}{$catalog.unit}</td>
 					<td class="number">
 						<!--{if $plugin_catalog_sizes[$catalog.size].short}-->
-							{$plugin_catalog_sizes[$catalog.size].short}<span style="color:#669966;">＋{$catalog.packing_short}</span>＝{$plugin_catalog_sizes[$catalog.size].short+$catalog.packing_short}
+							{$plugin_catalog_sizes[$catalog.size].short|number_format}<span style="color:#669966;">＋{$catalog.packing_short|number_format}</span>＝{$plugin_catalog_sizes[$catalog.size].short+$catalog.packing_short|number_format}
 						<!--{else}-->
-							{$catalog.size_short}<span style="color:#669966;">＋{$catalog.packing_short}</span>＝{$catalog.size_short+$catalog.packing_short}
+							{$catalog.size_short|number_format}<span style="color:#669966;">＋{$catalog.packing_short|number_format}</span>＝{$catalog.size_short+$catalog.packing_short|number_format}
 						<!--{/if}-->
 					</td>
 					<td class="number">
 						<!--{if $plugin_catalog_sizes[$catalog.size].long}-->
-							{$plugin_catalog_sizes[$catalog.size].long}<span style="color:#669966;">＋{$catalog.packing_long}</span>＝{$plugin_catalog_sizes[$catalog.size].long+$catalog.packing_long}
+							{$plugin_catalog_sizes[$catalog.size].long|number_format}<span style="color:#669966;">＋{$catalog.packing_long|number_format}</span>＝{$plugin_catalog_sizes[$catalog.size].long+$catalog.packing_long|number_format}
 						<!--{else}-->
-							{$catalog.size_long}<span style="color:#669966;">＋{$catalog.packing_long}</span>＝{$catalog.size_long+$catalog.packing_long}
+							{$catalog.size_long|number_format}<span style="color:#669966;">＋{$catalog.packing_long|number_format}</span>＝{$catalog.size_long+$catalog.packing_long|number_format}
 						<!--{/if}-->
 					</td>
 					<td class="number">
-						{$catalog.thickness}×{$plugin_catalog_cart.catalog_counts[$catalog.id]}<span style="color:#669966;">＋{$catalog.packing_thickness}×{$plugin_catalog_cart.catalog_counts[$catalog.id]}</span>＝{$catalog.thickness*$plugin_catalog_cart.catalog_counts[$catalog.id]+$catalog.packing_thickness*$plugin_catalog_cart.catalog_counts[$catalog.id]}
+						{$catalog.thickness|number_format}×{$plugin_catalog_cart.catalog_counts[$catalog.id]|number_format}<span style="color:#669966;">＋{$catalog.packing_thickness|number_format}×{$plugin_catalog_cart.catalog_counts[$catalog.id]|number_format}</span>＝{$catalog.thickness*$plugin_catalog_cart.catalog_counts[$catalog.id]+$catalog.packing_thickness*$plugin_catalog_cart.catalog_counts[$catalog.id]|number_format}
 					</td>
 					<td class="number">
-						{$catalog.weight}×{$plugin_catalog_cart.catalog_counts[$catalog.id]}<span style="color:#669966;">＋{$catalog.packing_weight}×{$plugin_catalog_cart.catalog_counts[$catalog.id]}</span>＝{$catalog.weight*$plugin_catalog_cart.catalog_counts[$catalog.id]+$catalog.packing_weight*$plugin_catalog_cart.catalog_counts[$catalog.id]}
+						{$catalog.weight|number_format}×{$plugin_catalog_cart.catalog_counts[$catalog.id]|number_format}<span style="color:#669966;">＋{$catalog.packing_weight|number_format}×{$plugin_catalog_cart.catalog_counts[$catalog.id]|number_format}</span>＝{$catalog.weight*$plugin_catalog_cart.catalog_counts[$catalog.id]+$catalog.packing_weight*$plugin_catalog_cart.catalog_counts[$catalog.id]|number_format}
 					</td>
 				</tr>
 				<!--{/foreach}-->
 				<tr>
 					<td colspan="3"></td>
-					<td class="number">最大<em>{$plugin_catalog_cart.catalog_short_max}</em></td>
-					<td class="number">最大<em>{$plugin_catalog_cart.catalog_long_max}</em></td>
-					<td class="number">合計<em>{$plugin_catalog_cart.catalog_thickness_total}</em></td>
-					<td class="number">合計<em>{$plugin_catalog_cart.catalog_weight_total}</em></td>
+					<td class="number">最大<em>{$plugin_catalog_cart.catalog_short_max|number_format}</em></td>
+					<td class="number">最大<em>{$plugin_catalog_cart.catalog_long_max|number_format}</em></td>
+					<td class="number">合計<em>{$plugin_catalog_cart.catalog_thickness_total|number_format}</em></td>
+					<td class="number">合計<em>{$plugin_catalog_cart.catalog_weight_total|number_format}</em></td>
 				</tr>
 			</tbody>
 		</table>
@@ -140,10 +140,10 @@
 		<p>並列梱包される商品は以下のとおりです。</p>
 		<ul>
 			<!--{foreach from=$plugin_catalog_parallels|smarty:nodefaults item='plugin_catalog_parallel'}-->
-			<li><em>{$plugin_catalog_cart.catalogs[$plugin_catalog_parallel.thin].name}</em>と<em>{$plugin_catalog_cart.catalogs[$plugin_catalog_parallel.thick].name}</em>を並列梱包することにより、厚さの合計から<em>{$plugin_catalog_parallel.thickness}</em>mm差し引かれます。</li>
+			<li><em>{$plugin_catalog_cart.catalogs[$plugin_catalog_parallel.thin].name}</em>と<em>{$plugin_catalog_cart.catalogs[$plugin_catalog_parallel.thick].name}</em>を並列梱包することにより、厚さの合計から<em>{$plugin_catalog_parallel.thickness|number_format}</em>mm差し引かれます。</li>
 			<!--{/foreach}-->
 		</ul>
-		<p>つまり厚さの合計から<em>{$plugin_catalog_parallel_total}</em>mm差し引かれ、商品全体の厚さは<em>{$plugin_catalog_cart.catalog_thickness_total-$plugin_catalog_parallel_total}</em>mmとなります。</p>
+		<p>つまり厚さの合計から<em>{$plugin_catalog_parallel_total|number_format}</em>mm差し引かれ、商品全体の厚さは<em>{$plugin_catalog_cart.catalog_thickness_total-$plugin_catalog_parallel_total|number_format}</em>mmとなります。</p>
 		<!--{/if}-->
 		<h4>配送方法</h4>
 		<ul>
@@ -238,7 +238,7 @@
 										<!--{if $freo.config.plugin.catalog.free_shipping and $plugin_catalog_cart.catalog_price_total >= $freo.config.plugin.catalog.free_shipping}-->
 											送料無料
 										<!--{else}-->
-											<!--{if $plugin_catalog_delivery_prefectures[$plugin_catalog_delivery.id]}--><a href="{$freo.core.http_file}/catalog/delivery_prefecture?id={$plugin_catalog_delivery.id}" class="colorbox delivery" title="地域別送料">地域によって異なります</a><!--{elseif $plugin_catalog_delivery.carriage != ''}-->{$plugin_catalog_delivery.carriage}円<!--{/if}-->
+											<!--{if $plugin_catalog_delivery_prefectures[$plugin_catalog_delivery.id]}--><a href="{$freo.core.http_file}/catalog/delivery_prefecture?id={$plugin_catalog_delivery.id}" class="colorbox delivery" title="地域別送料">地域によって異なります</a><!--{elseif $plugin_catalog_delivery.carriage != ''}-->{$plugin_catalog_delivery.carriage|number_format}円<!--{/if}-->
 										<!--{/if}-->
 									</td>
 									<td><!--{foreach from=$plugin_catalog_delivery_sets[$plugin_catalog_delivery.id]|smarty:nodefaults item='plugin_catalog_delivery_set' name='loop'}--><!--{if !$smarty.foreach.loop.first}-->、<!--{/if}-->{$plugin_catalog_payments[$plugin_catalog_delivery_set.payment_id].name}<!--{/foreach}--></td>
@@ -298,7 +298,7 @@
 									<td><input type="radio" name="plugin_catalog_order[payment_id]" value="{$plugin_catalog_payment.id}"{if $input.plugin_catalog_order.payment_id == $plugin_catalog_payment.id} checked="checked"{/if} /></td>
 									<td>{$plugin_catalog_payment.name}</td>
 									<td>{$plugin_catalog_payment.text|nl2br}</td>
-									<td class="number"><!--{if $plugin_catalog_payment.charge}-->{$plugin_catalog_payment.charge}円<!--{/if}--></td>
+									<td class="number"><!--{if $plugin_catalog_payment.charge}-->{$plugin_catalog_payment.charge|number_format}円<!--{/if}--></td>
 								</tr>
 								<!--{/if}-->
 								<!--{/foreach}-->
@@ -331,7 +331,7 @@
 			<!--{if $plugin_catalog_cart.catalog_short_max > 0 and $plugin_catalog_cart.catalog_long_max > 0}-->
 			<h3>配送先住所</h3>
 			<dl>
-				<dt>郵便番号 <abbr class="attention" title="入力必須">*</abbr></dt>
+				<dt>郵便番号 <abbr class="attention" title="入力必須">*</abbr>（郵便番号を入力すると住所が自動入力されます）</dt>
 					<dd><input type="text" name="plugin_catalog_order[zipcode]" size="10" value="{$input.plugin_catalog_order.zipcode}" id="catalog_order_zipcode" /></dd>
 				<dt>都道府県 <abbr class="attention" title="入力必須">*</abbr></dt>
 					<dd>

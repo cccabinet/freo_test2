@@ -27,7 +27,7 @@
 				<!--{foreach from=$plugin_catalog_order_status|smarty:nodefaults item='plugin_catalog_order_stat'}-->
 				<tr>
 					<td>{$plugin_catalog_order_stat.name}</td>
-					<td class="number"><!--{if $plugin_catalog_order_counts[$plugin_catalog_order_stat.id]}--><a href="{$freo.core.http_file}/catalog_order/admin_order?status={$plugin_catalog_order_stat.id}">{$plugin_catalog_order_counts[$plugin_catalog_order_stat.id]}件</a><!--{else}-->0件<!--{/if}--></td>
+					<td class="number"><!--{if $plugin_catalog_order_counts[$plugin_catalog_order_stat.id]}--><a href="{$freo.core.http_file}/catalog_order/admin_order?status={$plugin_catalog_order_stat.id}">{$plugin_catalog_order_counts[$plugin_catalog_order_stat.id]|number_format}件</a><!--{else}-->0件<!--{/if}--></td>
 				</tr>
 				<!--{/foreach}-->
 			</tbody>

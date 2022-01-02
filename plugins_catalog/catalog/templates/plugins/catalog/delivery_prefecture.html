@@ -17,7 +17,7 @@
 			<!--{foreach from=$plugin_catalog_prefectures|smarty:nodefaults item='plugin_catalog_prefecture'}-->
 			<tr>
 				<td>{$plugin_catalog_prefecture.name}</td>
-				<td class="number">{$plugin_catalog_delivery_prefectures[$plugin_catalog_prefecture.id].carriage+$plugin_catalog_delivery.carriage}円</td>
+				<td class="number">{$plugin_catalog_delivery_prefectures[$plugin_catalog_prefecture.id].carriage+$plugin_catalog_delivery.carriage|number_format}円</td>
 			</tr>
 			<!--{/foreach}-->
 		</tbody>

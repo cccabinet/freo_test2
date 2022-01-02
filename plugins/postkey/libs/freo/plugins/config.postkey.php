@@ -15,7 +15,7 @@ define('FREO_PLUGIN_POSTKEY_NAME', '投稿キー');
 define('FREO_PLUGIN_POSTKEY_VERSION', '1.0.0');
 
 //beginファイルの読み込み設定
-define('FREO_PLUGIN_POSTKEY_LOAD_BEGIN', 'page,regist,view');
+define('FREO_PLUGIN_POSTKEY_LOAD_BEGIN', 'page,regist,view,contact,message');
 
 //pageファイルの読み込み設定
 define('FREO_PLUGIN_POSTKEY_LOAD_PAGE', 'postkey');

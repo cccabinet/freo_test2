@@ -22,8 +22,8 @@
 			<dt>送信者</dt>
 				<dd>{$input.plugin_form_record.name}<!--{if $input.plugin_form_record.mail}--> &lt;{$input.plugin_form_record.mail}&gt;<!--{/if}--></dd>
 			<!--{/if}-->
-			<dt>IPアドレス</dt>
-				<dd>{$input.plugin_form_record.ip}</dd>
+			<dt>ホスト名（IPアドレス）</dt>
+				<dd>{$input.plugin_form_record.ip|gethostbyaddr}</dd>
 <!--
 			<dt>ヘッダ</dt>
 				<dd>{$input.plugin_form_record.header|nl2br}</dd>

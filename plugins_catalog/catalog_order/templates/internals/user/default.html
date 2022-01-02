@@ -30,6 +30,12 @@
 		<li><a href="{$freo.core.http_file}/circle/form">サークル情報編集</a></li>
 		<!--{/if}-->
 {* /サークル管理プラグインの表示 *}
+{* 注文管理プラグインの表示 *}
+		<!--{if $freo.config.plugin.catalog_order.user}-->
+		<li><a href="{$freo.core.http_file}/catalog_order/form">ご注文者情報編集</a></li>
+		<li><a href="{$freo.core.http_file}/catalog_order/order">ご注文履歴</a></li>
+		<!--{/if}-->
+{* /注文管理プラグインの表示 *}
 		<li><a href="{$freo.core.http_file}/login?freo%5Bsession%5D=logout">ログアウト</a></li>
 	</ul>
 {include file='footer.html'}
