@@ -10,6 +10,12 @@ $(document).ready(function() {
 	//markItUp!
 	$('#markitup').markItUp(mySettings);
 
+	//管理メニュー表示ボタン
+	$('.toggle').click(function(){
+		$('#menu').slideToggle();
+		$(this).toggleClass('open');
+	});
+
 	//メディア管理（tablesorter非公式フォーク版）
 	$('#media').tablesorter({
 		emptyTo: 'top',

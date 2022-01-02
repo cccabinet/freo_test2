@@ -7,6 +7,12 @@
 *********************************************************************/
 
 $(document).ready(function() {
+	//ユーティリティ表示ボタン
+	$('.toggle').click(function(){
+		$('#utility').slideToggle();
+		$(this).toggleClass('open');
+	});
+
 	//削除確認
 	$('a.delete').click(function() {
 		return confirm('本当に削除してもよろしいですか？');
