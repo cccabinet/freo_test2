@@ -5,6 +5,9 @@
 .markItUp .bold a {
 	background-image:url(images/bold.png);
 }
+.markItUp .underline a {
+	background-image:url(images/underline.png);
+}
 .markItUp .stroke a {
 	background-image:url(images/stroke.png);
 }
@@ -41,10 +44,116 @@
 .markItUp .pagebreak a {
 	background-image:url(images/pagebreak.png);
 }
+.markItUp .page_code a {
+	background-image:url(images/page_code.png);
+}
+.markItUp .code a {
+	background-image:url(images/code.png);
+}
+.markItUp .pre a {
+	background-image:url(images/pre.png);
+}
+.markItUp .blockquote a {
+	background-image:url(images/quotes.png);
+}
+.markItUp .precode a {
+	background-image:url(images/precode.png);
+}
 
+.markItUp .htmloff a {
+	background-image:url(images/html_delete.png);
+}
+.markItUp .htmlon a {
+	background-image:url(images/html_add.png);
+}
 .markItUp .clean a {
 	background-image:url(images/clean.png);
 }
 .markItUp .preview a {
 	background-image:url(images/preview.png);
 }
+
+.markItUp .colors a {
+	background-image:url(images/colors.png);
+}
+	.markItUp .colors ul {
+		width:81px;
+		padding:1px;	
+	}
+	.markItUp .colors  li {
+		border:1px solid white;
+		width:25px;	height:25px;
+		overflow:hidden;
+		padding:0px; margin:0px;
+		float:left;
+	}
+	.markItUp .colors ul a {
+		width:25px;	height:25px;
+	}
+	.markItUp .colors ul a:hover {
+		background-color:none;
+	}
+	
+	.markItUp .colors .col1-1 a {
+		background:#FFFFFF;
+	}
+	.markItUp .colors .col1-2 a {
+		background:#C0C0C0;
+	}
+	.markItUp .colors .col1-3 a {
+		background:#808080;
+	}
+	
+	.markItUp .colors .col2-1 a {
+		background:#000000;
+	}
+	.markItUp .colors .col2-2 a {
+		background:#FF0000;
+	}
+	.markItUp .colors .col2-3 a {
+		background:#800000;
+	}
+	
+	.markItUp .colors .col3-1 a {
+		background:#FFFF00;
+	}
+	.markItUp .colors .col3-2 a {
+		background:#808000;
+	}
+	.markItUp .colors .col3-3 a {
+		background:#00FF00;
+	}
+
+	.markItUp .colors .col4-1 a {
+		background:#008000;
+	}
+	.markItUp .colors .col4-2 a {
+		background:#00FFFF;
+	}
+	.markItUp .colors .col4-3 a {
+		background:#008080;
+	}
+
+	.markItUp .colors .col5-1 a {
+		background:#0000FF;
+	}
+	.markItUp .colors .col5-2 a {
+		background:#000080;
+	}
+	.markItUp .colors .col5-3 a {
+		background:#FF00FF;
+	}
+
+	.markItUp .colors .col6-1 a {
+		background:#800080;
+	}
+	.markItUp .colors .col6-2 a {
+		background:#FFA500;
+	}
+	.markItUp .colors .col6-3 a {
+		background:#222222;
+	}
+
+	.markItUp .tablegenerator a {
+		background-image:url(images/table.png);
+	}
