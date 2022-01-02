@@ -6,7 +6,8 @@ html {
 	padding: 10px;
 }
 body {
-	width: 550px;
+	width: 90%;
+	max-width: 550px;
 	padding: 10px 20px;
 	border: 1px solid #666666;
 }
@@ -23,4 +24,12 @@ h2, h3, h4, h5, h6 {
 address {
 	padding-top: 10px;
 	border-top: 1px solid #999999;
+}
+
+/********* レスポンシブ *********************************************/
+
+@media (max-width: 480px) {
+	body {
+		padding: 5px 10px;
+	}
 }

@@ -6,6 +6,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta http-equiv="Content-Style-Type" content="text/css" />
 	<meta http-equiv="Content-Script-Type" content="text/javascript" />
+	<meta name="viewport" content="width=device-width" />
 	<title>{$plugin_media_comic_memo|default:'comic'} | {$freo.config.basis.title}</title>
 	<link rel="stylesheet" href="{$freo.core.http_url}{$smarty.const.FREO_CSS_DIR}common.css" type="text/css" media="all" />
 	<link rel="stylesheet" href="{$freo.core.http_url}{$smarty.const.FREO_CSS_DIR}plugins/media_comic.css" type="text/css" media="all" />
@@ -44,6 +45,10 @@
 			min-height: {$media_comic_height}px;
 		{rdelim}
 	{/if}
+		div#media_comic div.media_comic p a img {ldelim}
+			width:auto;
+			max-height: calc(100vh - 45px);
+		{rdelim}
 
 	{if $freo.query.end == 'off'}
 		div#menu ul li.end {ldelim}
@@ -51,6 +56,13 @@
 		{rdelim}
 		div#media_comic div.end {ldelim}
 			display: none;
+		{rdelim}
+	{else}
+		/* レスポンシブ表示 */
+		@media (max-width: 540px) {ldelim}
+			div#media_comic div.media_comic div.end {ldelim}
+				width: calc(100% - 40px);
+			{rdelim}
 		{rdelim}
 	{/if}
 

@@ -34,6 +34,7 @@ echo "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3
 echo "<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"ja\" lang=\"ja\" dir=\"ltr\">\n";
 echo "<head>\n";
 echo "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n";
+echo "<meta name=\"viewport\" content=\"width=device-width\" />\n";
 echo "<title>PHP Checker</title>\n";
 
 if (file_exists(FREO_CSS_DIR . 'common.css')) {
