@@ -10,8 +10,9 @@ $(document).ready(function() {
 	//markItUp!
 	$('#markitup').markItUp(mySettings);
 
-	//メディア管理
-	$("#media").tablesorter({
+	//メディア管理（tablesorter非公式フォーク版）
+	$('#media').tablesorter({
+		emptyTo: 'top',
 		headers: {
 			2: { sorter: 'digit' },
 			3: { sorter: false },

@@ -7,8 +7,10 @@
 *********************************************************************/
 
 $(document).ready(function() {
-	//メディア管理
-	$("#media").tablesorter({
+	//メディア管理（tablesorter非公式フォーク版）
+	$('#media').tablesorter({
+		sortList :[[1,1]],
+		emptyTo: 'top',
 		headers: {
 			2: { sorter: 'digit' },
 			3: { sorter: false },
