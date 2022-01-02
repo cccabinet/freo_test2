@@ -27,7 +27,8 @@
 	padding:5px;
 	width:530px;
 	height:300px;
-	clear:both; display:block;
+	clear:both;
+	display:block;
 	line-height:18px;
 	overflow:auto;
 }
@@ -82,7 +83,7 @@
 	background:#FFF url(images/submenu.png) no-repeat 100% 50%;
 }
 .markItUpHeader ul .markItUpSeparator {
-	margin:0 10px;
+	margin:0 8px 0 3px;
 	width:1px;
 	height:16px;
 	overflow:hidden;
