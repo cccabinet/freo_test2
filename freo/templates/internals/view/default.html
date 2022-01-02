@@ -1,17 +1,27 @@
 {include file='header.html'}
 	<div id="content">
+{* エントリー記事の表示 *}
 		<div id="entry">
 			<h2>エントリー</h2>
 			<div class="entry">
 				<h3><a href="{$freo.core.http_file}/view/{if $entry.code}{$entry.code}{else}{$entry.id}{/if}">{$entry.title}</a></h3>
 				<ul class="information">
+{* 投稿日時の表示 *}
 					<li>{$entry.datetime|date_format:'%Y/%m/%d %H:%M'}</li>
+					<!--{if $entry.datetime|recently:7:'day'}-->
+					<li><span class="attention">New!</span></li>
+					<!--{/if}-->
+{* /投稿日時の表示 *}
+{* カテゴリーの表示 *}
 					<!--{if $entry_associate.category}-->
 					<li>カテゴリー：<!--{foreach from=$entry_associate.category|smarty:nodefaults key='entry_category' item='entry_category' name='loop'}--><a href="{$freo.core.http_file}/category/{$entry_category}">{$freo.refer.categories[$entry_category].name}</a><!--{if !$smarty.foreach.loop.last}-->,&nbsp;<!--{/if}--><!--{/foreach}--></li>
 					<!--{/if}-->
+{* /カテゴリーの表示 *}
+{* タグの表示 *}
 					<!--{if $entry_tags}-->
 					<li>タグ：<!--{foreach from=$entry_tags|smarty:nodefaults item='entry_tag' name='loop'}--><a href="{$freo.core.http_file}/entry?tag={$entry_tag|smarty:nodefaults|escape:'url'}">{$entry_tag}</a><!--{if !$smarty.foreach.loop.last}-->,&nbsp;<!--{/if}--><!--{/foreach}--></li>
 					<!--{/if}-->
+{* /タグの表示 *}
 				</ul>
 				<div class="content">
 					<!--{if $entry.restriction == 'user' and !$entry_security}-->
@@ -21,6 +31,7 @@
 					<!--{elseif $entry.restriction == 'password' and !$entry_security}-->
 						<p class="attention">このエントリーは、パスワードで認証した人のみに公開されています。</p>
 					<!--{/if}-->
+{* 添付ファイルとイメージの表示 *}
 					<!--{if $entry.file and $entry.image}-->
 						<p><a href="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}entry_files/{$entry.id}/{$entry.file}"><img src="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}entry_images/{$entry.id}/{$entry.image}" alt="{$entry.memo|default:$entry.file}" title="{$entry.memo|default:$entry.file}" width="{$entry_image.width}" height="{$entry_image.height}" /></a></p>
 					<!--{elseif $entry_thumbnail}-->
@@ -30,18 +41,22 @@
 					<!--{elseif $entry.file}-->
 						<p><a href="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}entry_files/{$entry.id}/{$entry.file}">{$entry.memo|default:$entry.file}</a></p>
 					<!--{/if}-->
+{* /添付ファイルとイメージの表示 *}
+{* エントリー本文の表示 *}
 					<!--{if $entry_text.excerpt}-->
-						{$entry_text.excerpt|smarty:nodefaults}
+						{$entry_text.excerpt|smarty:nodefaults|autolink}
 					<!--{/if}-->
 					<!--{if $entry_text.more}-->
 						<!--{if $freo.query.continue}-->
 						<div id="continue">
-							{$entry_text.more|smarty:nodefaults}
+							{$entry_text.more|smarty:nodefaults|autolink}
 						</div>
 						<!--{else}-->
 						<p><a href="{$freo.core.http_file}/view/{if $entry.code}{$entry.code}{else}{$entry.id}{/if}?continue=1#continue" title="No.{$entry.id}の続き">続きを読む</a></p>
 						<!--{/if}-->
 					<!--{/if}-->
+{* /エントリー本文の表示 *}
+{* パスワード認証フォームの表示 *}
 					<!--{if $entry.restriction == 'password' and !$smarty.session.security.entry[$entry.id] and $freo.user.authority != 'root' and $freo.user.authority != 'author'}-->
 						<form action="{$freo.core.http_file}/view/{if $entry.code}{$entry.code}{else}{$entry.id}{/if}" method="post">
 							<fieldset>
@@ -54,6 +69,8 @@
 							</fieldset>
 						</form>
 					<!--{/if}-->
+{* /パスワード認証フォームの表示 *}
+{* オプションの表示 *}
 					<!--{if $entry_associate.option}-->
 					<dl>
 						<!--{foreach from=$freo.refer.options|smarty:nodefaults item='option'}-->
@@ -64,7 +81,35 @@
 						<!--{/foreach}-->
 					</dl>
 					<!--{/if}-->
+{* /オプションの表示 *}
+{* フィルター名の表示 *}
+					<!--{if $entry_associate.filter and $entry_filter}-->
+					<p>フィルター：<!--{foreach from=$entry_associate.filter|smarty:nodefaults key='entry_filter' item='entry_filter' name='loop'}-->{$freo.refer.filters[$entry_filter].name}<!--{if !$smarty.foreach.loop.last}-->&nbsp;<!--{/if}--><!--{/foreach}--></p>
+					<!--{if !$freo.plugin.filter_confirm or ($freo.plugin.filter_confirm and !$entry_associate.filter.r18)}-->
+					<p><a href="{$freo.core.http_file}/filter">フィルター設定</a>で上記のフィルターを「表示する」に設定してからご覧ください。</p>
+{* フィルター認証確認プラグインを導入していたら *}
+					<!--{elseif $freo.plugin.filter_confirm}-->
+					{include file='plugins/filter_confirm/filter_confirm.html'}
+					<!--{/if}-->
+					<!--{/if}-->
+{* /フィルター名の表示 *}
+{* Twitterフォロワー限定公開プラグインの表示 *}
+					<!--{if $freo.plugin.twitter_followers and $entry_security}-->
+					{include file='plugins/twitter_followers/twitter_followers.html'}
+					<!--{/if}-->
+{* /Twitterフォロワー限定公開プラグインの表示 *}
+{* Twitterフレンド限定公開プラグインの表示 *}
+					<!--{if $freo.plugin.twitter_friends and $entry_security}-->
+					{include file='plugins/twitter_friends/twitter_friends.html'}
+					<!--{/if}-->
+{* /Twitterフレンド限定公開プラグインの表示 *}
+{* 拍手送信プラグインの表示 *}
+					<!--{if $freo.plugin.clap and !$entry_security and !$entry_filter and (!$entry_text.more or $freo.query.continue)}-->
+					<p><a href="{$freo.core.http_file}/clap?plugin_clap%5Btitle%5D={$entry.title}">拍手を送る</a></p>
+					<!--{/if}-->
+{* /拍手送信プラグインの表示 *}
 				</div>
+{* 記事の情報の表示 *}
 				<ul class="link">
 					<li><a href="{$freo.core.http_file}/view/{if $entry.code}{$entry.code}{else}{$entry.id}{/if}" title="No.{$entry.id}の固定URL">この記事のURL</a></li>
 					<!--{if $entry.comment != 'closed'}-->
@@ -73,11 +118,15 @@
 					<!--{if $entry.trackback != 'closed'}-->
 					<li><a href="{$freo.core.http_file}/view/{if $entry.code}{$entry.code}{else}{$entry.id}{/if}#trackback" title="No.{$entry.id}のトラックバック">トラックバック({$trackbacks|smarty:nodefaults|@count})</a></li>
 					<!--{/if}-->
+{* 編集ボタンの表示 *}
 					<!--{if $freo.user.authority == 'root' or $freo.user.id == $entry.user_id}-->
 					<li><a href="{$freo.core.http_file}/admin/entry_form?id={$entry.id}"><img src="{$freo.core.http_url}images/icons/edit.png" alt="編集" title="編集" width="16" height="16" /></a></li>
 					<!--{/if}-->
+{* /編集ボタンの表示 *}
 				</ul>
+{* /記事の情報の表示 *}
 			</div>
+{* ページ移動の表示 *}
 			<div id="entry_link">
 				<h3>ページ移動</h3>
 				<ul class="entry_link">
@@ -86,8 +135,24 @@
 					<!--{if $plugin_entry_link_next}--><li class="next"><a href="{$freo.core.http_file}/view/{if $plugin_entry_link_next.code}{$plugin_entry_link_next.code}{else}{$plugin_entry_link_next.id}{/if}">{$plugin_entry_link_next.title}</a></li><!--{/if}-->
 				</ul>
 			</div>
+{* /ページ移動の表示 *}
+{* 関連エントリー表示プラグインの表示 *}
+			<!--{if $plugin_entry_relates|smarty:nodefaults}-->
+			<h3>関連エントリー</h3>
+			<ul>
+				<!--{foreach from=$plugin_entry_relates|smarty:nodefaults item='plugin_entry_relate'}-->
+				<li>{$plugin_entry_relate.datetime|date_format:'%Y/%m/%d'} <a href="{$freo.core.http_file}/view/{if $plugin_entry_relate.code}{$plugin_entry_relate.code}{else}{$plugin_entry_relate.id}{/if}">{$plugin_entry_relate.title}</a><!--{if $plugin_entry_relate.datetime|recently:7:'day'}--> <span class="attention">New!</span><!--{/if}--></li>
+				<!--{foreachelse}-->
+				<li>関連エントリーはありません。</li>
+				<!--{/foreach}-->
+			</ul>
+			<!--{/if}-->
+{* /関連エントリー表示プラグインの表示 *}
 		</div>
+{* /エントリー記事の表示 *}
+{* トラックバック関連 *}
 		<!--{if $entry.trackback != 'closed'}-->
+{* トラックバックの表示 *}
 		<div id="trackback">
 			<h2>トラックバック</h2>
 			<!--{foreach from=$trackbacks|smarty:nodefaults item='trackback'}-->
@@ -98,7 +163,7 @@
 				<!--{/if}-->
 				{$trackback.text|nl2p|autolink}
 				<ul class="information">
-					<li>{$trackback.created|date_format:'%Y/%m/%d %H:%M:%S'}</li>
+					<li>{$trackback.created|date_format:'%Y/%m/%d %H:%M:%S'}<!--{if $trackback.created|recently:7:'day'}--> <span class="attention">New!</span><!--{/if}--></li>
 					<!--{if $freo.user.authority == 'root' or $freo.user.authority == 'author'}-->
 					<li><a href="{$freo.core.http_file}/admin/trackback_form?id={$trackback.id}"><img src="{$freo.core.http_url}images/icons/edit.png" alt="編集" title="編集" width="16" height="16" /></a></li>
 					<!--{/if}-->
@@ -110,14 +175,20 @@
 			</ul>
 			<!--{/foreach}-->
 		</div>
+{* /トラックバックの表示 *}
+{* トラックバックURLの表示 *}
 		<!--{if $entry.trackback != 'view'}-->
 		<div id="trackback_url">
 			<h2>トラックバックURL</h2>
 			<p><code>{$freo.core.http_file}/trackback/{$entry.id}</code></p>
 		</div>
 		<!--{/if}-->
+{* /トラックバックURLの表示 *}
 		<!--{/if}-->
+{* /トラックバック関連 *}
+{* コメント関連 *}
 		<!--{if $entry.comment != 'closed'}-->
+{* コメントの表示 *}
 		<div id="comment">
 			<h2>コメント</h2>
 			<!--{foreach from=$comments|smarty:nodefaults item='comment'}-->
@@ -132,9 +203,9 @@
 				<!--{/if}-->
 				{$comment.text|nl2p|autolink}
 				<ul class="information">
-					<!--{if $comment.mail}--><li><a href="mailto:{$comment.mail}">メールアドレス</a></li><!--{/if}-->
+					<!--{if $comment.mail}--><li><a href="mailto:{$comment.mail|escape:'hex'}">メールアドレス</a></li><!--{/if}-->
 					<!--{if $comment.url}--><li><a href="{$comment.url}">URL</a></li><!--{/if}-->
-					<li>{$comment.created|date_format:'%Y/%m/%d %H:%M:%S'}</li>
+					<li>{$comment.created|date_format:'%Y/%m/%d %H:%M:%S'}<!--{if $comment.created|recently:7:'day'}--> <span class="attention">New!</span><!--{/if}--></li>
 					<!--{if $freo.user.authority == 'root' or ($freo.user.authority == 'author' and ($freo.user.id == $comment.user_id or $freo.refer.users[$comment.user_id].authority == '' or $freo.refer.users[$comment.user_id].authority == 'guest'))}-->
 					<li><a href="{$freo.core.http_file}/admin/comment_form?id={$comment.id}"><img src="{$freo.core.http_url}images/icons/edit.png" alt="編集" title="編集" width="16" height="16" /></a></li>
 					<!--{elseif $freo.user.authority == 'guest' and $freo.user.id == $comment.user_id}-->
@@ -148,6 +219,8 @@
 			</ul>
 			<!--{/foreach}-->
 		</div>
+{* /コメントの表示 *}
+{* コメント登録フォームの表示 *}
 		<!--{if $entry.comment != 'view'}-->
 		<div id="comment_form">
 			<h2>コメント登録</h2>
@@ -195,6 +268,21 @@
 									<option value="admin"{if $input.comment.restriction == 'admin'} selected="selected"{/if}>管理者に公開</option>
 								</select>
 							</dd>
+{* スパム対策 *}
+{* 投稿キープラグインを導入していたら *}
+						<!--{if $freo.plugin.postkey}-->
+						<!--{if !$freo.user.id and !$smarty.session.plugin.postkey.approved}-->
+						<dt>投稿キー（スパム対策に、<img src="{$freo.core.http_file}/postkey" alt="投稿キー" title="投稿キー" width="50" height="20" /> を半角で入力してください。）</dt>
+							<dd><input type="text" name="plugin[postkey][key]" size="10" value="" /></dd>
+						<!--{/if}-->
+{* なぞなぞ認証プラグインを導入していたら *}
+						<!--{elseif $freo.plugin.riddle}-->
+						<!--{if !$freo.user.id and !$smarty.session.plugin.riddle.approved}-->
+						<dt>{$plugin_riddle.question}（スパム対策）</dt>
+							<dd><input type="text" name="plugin[riddle][answer]" size="30" value="" /><input type="hidden" name="plugin[riddle][id]" value="{$plugin_riddle.id}" /></dd>
+						<!--{/if}-->
+						<!--{/if}-->
+{* /スパム対策 *}
 					</dl>
 					<!--{if !$freo.user.id}-->
 					<ul>
@@ -214,7 +302,9 @@
 			<!--{/if}-->
 		</div>
 		<!--{/if}-->
+{* /コメント登録フォームの表示 *}
 		<!--{/if}-->
+{* /コメント関連 *}
 	</div>
 {include file='utility.html'}
 {include file='footer.html'}

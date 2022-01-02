@@ -1,17 +1,27 @@
 {include file='header.html' title='エントリー確認'}
 	<div id="content">
+{* エントリー記事の表示 *}
 		<div id="entry">
 			<h2>エントリー</h2>
 			<div class="entry">
 				<h3><a href="#">{$entry.title}</a></h3>
 				<ul class="information">
+{* 投稿日時の表示 *}
 					<li>{$entry.datetime|date_format:'%Y/%m/%d %H:%M'}</li>
+					<!--{if $entry.datetime|recently:7:'day'}-->
+					<li><span class="attention">New!</span></li>
+					<!--{/if}-->
+{* /投稿日時の表示 *}
+{* カテゴリーの表示 *}
 					<!--{if $entry_associate.category}-->
 					<li>カテゴリー：<!--{foreach from=$entry_associate.category|smarty:nodefaults key='entry_category' item='entry_category' name='loop'}--><a href="#">{$freo.refer.categories[$entry_category].name}</a><!--{if !$smarty.foreach.loop.last}-->,&nbsp;<!--{/if}--><!--{/foreach}--></li>
 					<!--{/if}-->
+{* /カテゴリーの表示 *}
+{* タグの表示 *}
 					<!--{if $entry_tags}-->
 					<li>タグ：<!--{foreach from=$entry_tags|smarty:nodefaults item='entry_tag' name='loop'}--><a href="#">{$entry_tag}</a><!--{if !$smarty.foreach.loop.last}-->,&nbsp;<!--{/if}--><!--{/foreach}--></li>
 					<!--{/if}-->
+{* /タグの表示 *}
 				</ul>
 				<div class="content">
 					<!--{if $entry.restriction == 'user'}-->
@@ -21,6 +31,7 @@
 					<!--{elseif $entry.restriction == 'password'}-->
 						<p class="attention">このエントリーは、パスワードで認証した人のみに公開されています。</p>
 					<!--{/if}-->
+{* 添付ファイルとイメージの表示 *}
 					<!--{if $entry_path.file and $entry_path.image}-->
 						<p><a href="#"><img src="{$entry_path.image}" alt="" width="{$entry_image.width}" height="{$entry_image.height}" /></a></p>
 					<!--{elseif $entry_path.thumbnail}-->
@@ -30,14 +41,18 @@
 					<!--{elseif $entry_path.file}-->
 						<p><a href="#">{$entry.memo|default:$entry.file}</a></p>
 					<!--{/if}-->
+{* /添付ファイルとイメージの表示 *}
+{* エントリー本文の表示 *}
 					<!--{if $entry_text.excerpt}-->
-						{$entry_text.excerpt|smarty:nodefaults}
+						{$entry_text.excerpt|smarty:nodefaults|autolink}
 					<!--{/if}-->
 					<!--{if $entry_text.more}-->
 						<div id="continue">
-							{$entry_text.more|smarty:nodefaults}
+							{$entry_text.more|smarty:nodefaults|autolink}
 						</div>
 					<!--{/if}-->
+{* /エントリー本文の表示 *}
+{* オプションの表示 *}
 					<!--{if $entry_associate.option}-->
 					<dl>
 						<!--{foreach from=$freo.refer.options|smarty:nodefaults item='option'}-->
@@ -48,16 +63,47 @@
 						<!--{/foreach}-->
 					</dl>
 					<!--{/if}-->
+{* /オプションの表示 *}
+{* フィルター名の表示 *}
+					<!--{if $entry_associate.filter and $entry_filter}-->
+					<p>フィルター：<!--{foreach from=$entry_associate.filter|smarty:nodefaults key='entry_filter' item='entry_filter' name='loop'}-->{$freo.refer.filters[$entry_filter].name}<!--{if !$smarty.foreach.loop.last}-->&nbsp;<!--{/if}--><!--{/foreach}--></p>
+					<!--{if !$freo.plugin.filter_confirm or ($freo.plugin.filter_confirm and !$entry_associate.filter.r18)}-->
+					<p><a href="#">フィルター設定</a>で上記のフィルターを「表示する」に設定してからご覧ください。</p>
+{* フィルター認証確認プラグインを導入していたら *}
+					<!--{elseif $freo.plugin.filter_confirm}-->
+					{include file='plugins/filter_confirm/filter_confirm.html'}
+					<!--{/if}-->
+					<!--{/if}-->
+{* /フィルター名の表示 *}
+{* Twitterフォロワー限定公開プラグインの表示 *}
+					<!--{if $freo.plugin.twitter_followers}-->
+					{include file='plugins/twitter_followers/twitter_followers.html'}
+					<!--{/if}-->
+{* /Twitterフォロワー限定公開プラグインの表示 *}
+{* Twitterフレンド限定公開プラグインの表示 *}
+					<!--{if $freo.plugin.twitter_friends}-->
+					{include file='plugins/twitter_friends/twitter_friends.html'}
+					<!--{/if}-->
+{* /Twitterフレンド限定公開プラグインの表示 *}
+{* 拍手送信プラグインの表示 *}
+					<!--{if $freo.plugin.clap and !$entry_filter and !$entry_text.more}-->
+					<p><a href="#">拍手を送る</a></p>
+					<!--{/if}-->
+{* /拍手送信プラグインの表示 *}
 				</div>
+{* 記事の情報の表示 *}
 				<ul class="link">
 					<li><a href="#">この記事のURL</a></li>
 				</ul>
+{* /記事の情報の表示 *}
 			</div>
 		</div>
+{* /エントリー記事の表示 *}
 	</div>
 	<button type="button" class="toggle"></button>
 	<div id="utility">
 		<h2>ユーティリティ</h2>
+{* エントリー登録フォームの表示 *}
 		<div class="utility">
 			<h3>プレビュー</h3>
 			<div class="content">
@@ -81,5 +127,6 @@
 				</div>
 			</div>
 		</div>
+{* /エントリー登録フォームの表示 *}
 	</div>
 {include file='footer.html'}
