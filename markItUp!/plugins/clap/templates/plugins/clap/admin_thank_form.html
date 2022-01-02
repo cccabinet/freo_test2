@@ -1,4 +1,4 @@
-{include file='internals/admin/header.html'}
+{include file='internals/admin/header.html' title='拍手お礼登録/編集'}
 	<div id="content">
 		<h2><!--{if $freo.query.id}-->ID.{$freo.query.id}のお礼を編集<!--{else}-->新規登録<!--{/if}--></h2>
 		<!--{if $errors}-->
@@ -25,7 +25,7 @@
 						<dd><input type="text" name="plugin_clap_thank[id]" size="30" value="{$input.plugin_clap_thank.id}" /></dd>
 					<!--{/if}-->
 					<dt>本文 <abbr class="attention" title="入力必須">*</abbr> <a href="{$freo.core.http_file}/admin/media?type=iframe" class="colorbox" title="メディア"><img src="{$freo.core.http_url}images/icons/media.png" alt="メディア管理" title="メディア管理" width="16" height="16" /></a> <a href="{$freo.core.http_file}/admin/media_form?type=iframe" class="colorbox" title="メディア"><img src="{$freo.core.http_url}images/icons/media_add.png" alt="メディア登録" title="メディア登録" width="16" height="16" /></a></dt>
-						<dd><textarea name="plugin_clap_thank[text]" cols="50" rows="5" id="tiny_mce">{$input.plugin_clap_thank.text}</textarea></dd>
+						<dd><textarea name="plugin_clap_thank[text]" cols="50" rows="5" id="markitup">{$input.plugin_clap_thank.text}</textarea></dd>
 					<dt>説明</dt>
 						<dd><textarea name="plugin_clap_thank[memo]" cols="50" rows="5">{$input.plugin_clap_thank.memo}</textarea></dd>
 					<dt>利用対象 <abbr class="attention" title="入力必須">*</abbr></dt>
