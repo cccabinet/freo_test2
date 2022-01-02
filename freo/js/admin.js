@@ -117,14 +117,73 @@ $(document).ready(function() {
 //TinyMCE
 tinymce.init({
 	language: 'ja',
+	language_url : freo_path + 'js/tinymce/langs/ja.js',
 	selector:'#tiny_mce',
+	entity_encoding : 'raw',
+	extended_valid_elements: 'iframe[*]',
 	height: 500,
 	plugins: [
-		'advlist autolink lists link image charmap print preview anchor',
-		'searchreplace visualblocks code fullscreen',
-		'insertdatetime media table contextmenu paste code pagebreak'
+		'advlist lists link image charmap preview anchor hr nonbreaking searchreplace visualblocks code fullscreen insertdatetime media table textcolor pagebreak quickbars help'
 	],
-	toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image pagebreak',
+	external_plugins:{
+		'freomedia': freo_path + 'js/tinymce/plugins/freomedia/plugin.min.js',
+		'freomediaform': freo_path + 'js/tinymce/plugins/freomediaform/plugin.min.js',
+	},
+	toolbar: 'bold underline strikethrough | styleselect | bullist numlist outdent indent | code fullscreen | forecolor backcolor removeformat | link unlink image media charmap pagebreak | freomedia freomediaform | searchreplace | undo redo help',
+	toolbar_mode: 'sliding',
+	menu: {
+		tools: { title: 'Tools', items: 'code | freomedia freomediaform' }
+	},
+	mobile: {
+		menubar: true,
+		plugins: [ 'image link unlink media table charmap hr pagebreak nonbreaking anchor insertdatetime advlist lists checklist help quickbars advtable' ],
+		toolbar: [ 'bullist numlist styleselect' ]
+	},
+	quickbars_insert_toolbar: 'freomedia image media quicktable | hr charmap nonbreaking pagebreak',
+	quickbars_selection_toolbar: 'bold underline strikethrough styleselect | quicklink removeformat',
+	color_map: [
+		'#FFFFFF', 'ホワイト',
+		'#C0C0C0', 'シルバー',
+		'#808080', 'グレー',
+		'#000000', 'ブラック',
+		'#FF0000', 'レッド',
+
+		'#800000', 'マルーン',
+		'#FFFF00', 'イエロー',
+		'#808000', 'オリーブ',
+		'#00FF00', 'ライム',
+		'#008000', 'グリーン',
+
+		'#00FFFF', 'アクア',
+		'#008080', 'ティール',
+		'#0000FF', 'ブルー',
+		'#000080', 'ネイビー',
+		'#FF00FF', 'フクシャ',
+
+		'#800080', 'パープル',
+		'#FFA500', 'オレンジ',
+		'#222222', '文字色',
+	],
+	style_formats: [
+		{title: '見出し', items: [
+			{title: '見出し4', format: 'h4'},
+			{title: '見出し5', format: 'h5'},
+			{title: '見出し6', format: 'h6'}
+		]},
+		{title: 'ブロック', items: [
+			{title: '段落', format: 'p'},
+			{title: '引用', format: 'blockquote'},
+			{title: '整形済み', format: 'pre'},
+			{title: 'コード', format: 'code'},
+		]},
+		{title: '配置', items: [
+			{title: '左揃え', icon: 'align-left', format: 'alignleft'},
+			{title: '中央揃え', icon: 'align-center', format: 'aligncenter'},
+			{title: '右揃え', icon: 'align-right', format: 'alignright'},
+			{title: '均等揃え', icon: 'align-justify', format: 'alignjustify'}
+		]},
+	],
+	insertdatetime_formats: ['%Y/%m/%d', '%H:%M:%S'],
 	content_css: [
 		freo_path + 'css/common.css',
 	],
