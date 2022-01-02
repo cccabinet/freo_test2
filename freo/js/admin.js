@@ -7,9 +7,6 @@
 *********************************************************************/
 
 $(document).ready(function() {
-	//markItUp!
-	$('#markitup').markItUp(mySettings);
-
 	//メディア管理
 	$("#media").tablesorter({
 		headers: {
@@ -24,6 +21,14 @@ $(document).ready(function() {
 		$('#media_file').append($('#media_template').html());
 	});
 	$('#media_template').hide();
+
+	//メディア挿入準備
+	$('a.colorbox').click(function() {
+		if (tinymce.isIE) {
+			tinyMCE.get('tiny_mce').focus();
+			tinyMCE.activeEditor.windowManager.bookmark = tinyMCE.activeEditor.selection.getBookmark();
+		}
+	});
 
 	//公開終了
 	if ($('#article_close_set').val() == '0') {
@@ -106,4 +111,21 @@ $(document).ready(function() {
 	$(target).colorbox({ maxWidth:'95%', maxHeight:'95%' });
 
 	$('a.colorbox').colorbox({ width:'80%', height:'80%', iframe:true });
+});
+
+//TinyMCE
+tinymce.init({
+	language: 'ja',
+	selector:'#tiny_mce',
+	height: 500,
+	plugins: [
+		'advlist autolink lists link image charmap print preview anchor',
+		'searchreplace visualblocks code fullscreen',
+		'insertdatetime media table contextmenu paste code pagebreak'
+	],
+	toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image pagebreak',
+	content_css: [
+		freo_path + 'css/common.css',
+	],
+	convert_urls: false
 });
