@@ -31,6 +31,7 @@ $(document).ready(function() {
 			parent.tinyMCE.activeEditor.selection.moveToBookmark(parent.tinymce.EditorManager.activeEditor.windowManager.bookmark);
 		}
 		parent.tinyMCE.activeEditor.execCommand('mceInsertContent', false, $(this).attr('title'));
+		parent.tinyMCE.activeEditor.windowManager.close();
 		parent.$.fn.colorbox.close();
 	});
 

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+  <symbol id="media" viewBox="0 0 24 24">
+    <path d="M20 2H8c-1.103 0-2 .897-2 2v12c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zM8 16V4h12l.002 12H8z"  fill-rule="nonzero"/><path d="M4 8H2v12c0 1.103.897 2 2 2h12v-2H4V8z"  fill-rule="nonzero"/><path d="M12 12l-1-1l-2 3h10l-4-6z"  fill-rule="nonzero"/>
+  </symbol>
+</svg>
