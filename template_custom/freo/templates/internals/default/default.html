@@ -1,6 +1,8 @@
 {include file='header.html'}
+{* インフォメーションの表示 *}
 	<!--{if $freo.config.view.information and !$smarty.get.category}-->
 	<div id="information">
+{* エントリーによるインフォメーションの表示 *}
 		<!--{if $information_entry}-->
 		<div class="entry">
 			<h2>{$information_entry.title}</h2>
@@ -26,6 +28,8 @@
 			</ul>
 		</div>
 		<!--{/if}-->
+{* /エントリーによるインフォメーションの表示 *}
+{* ページによるインフォメーションの表示 *}
 		<!--{if $information_page}-->
 		<div class="page">
 			<h2>{$information_page.title}</h2>
@@ -51,11 +55,13 @@
 			</ul>
 		</div>
 		<!--{/if}-->
+{* /ページによるインフォメーションの表示 *}
+{* インフォメーション管理によるインフォメーションの表示 *}
 		<!--{if $information.text}-->
 		<div class="text">
 			<h2>インフォメーション</h2>
 			<!--{if $information_text.excerpt}-->
-				{$information_text.excerpt|smarty:nodefaults}
+				{$information_text.excerpt|smarty:nodefaults|autolink}
 			<!--{/if}-->
 			<!--{if $information_text.more}-->
 			<ul class="continue">
@@ -64,15 +70,19 @@
 			<!--{/if}-->
 		</div>
 		<!--{/if}-->
+{* /インフォメーション管理によるインフォメーションの表示 *}
 	</div>
 	<!--{/if}-->
+{* /インフォメーションの表示 *}
+{* 最近のブログ記事一覧の表示 *}
 	<h2>最近のブログ記事</h2>
 	<ul>
 		<!--{foreach from=$entries|smarty:nodefaults item='entry'}-->
-		<li>{$entry.datetime|date_format:'%Y/%m/%d %H:%M'} ... <a href="{$freo.core.http_file}/view/{if $entry.code}{$entry.code}{else}{$entry.id}{/if}">{$entry.title}</a></li>
+		<li>{$entry.datetime|date_format:'%Y/%m/%d %H:%M'} ... <a href="{$freo.core.http_file}/view/{if $entry.code}{$entry.code}{else}{$entry.id}{/if}">{$entry.title}</a><!--{if $entry.datetime|recently:7:'day'}--> <span class="attention">New!</span><!--{/if}--></li>
 		<!--{/foreach}-->
 	</ul>
 	<ul>
 		<li><a href="{$freo.core.http_file}/entry">ブログ記事一覧</a></li>
 	</ul>
+{* /最近のブログ記事一覧の表示 *}
 {include file='footer.html'}

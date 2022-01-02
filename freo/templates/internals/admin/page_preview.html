@@ -1,5 +1,18 @@
 {include file='header.html' title='ページ確認'}
-	<h2>{$page.title}</h2>
+{* ページの表示 *}
+{* パンくずリスト表示プラグインの表示 *}
+	<!--{if $plugin_page_topicpaths|smarty:nodefaults}-->
+	<p>
+		<a href="#">トップページ</a>
+		<!--{foreach from=$plugin_page_topicpaths|smarty:nodefaults item='plugin_page_topicpath'}-->
+		&gt; <a href="#">{$plugin_page_topicpath.title}</a>
+		<!--{/foreach}-->
+		&gt; {$page.title}
+	</p>
+	<!--{/if}-->
+{* /パンくずリスト表示プラグインの表示 *}
+	<h2>{$page.title}<!--{if $page.datetime|recently:7:'day'}--> <small class="attention">New!</small><!--{/if}--></h2>
+	<div class="content">
 	<!--{if $page.restriction == 'user'}-->
 		<p class="attention">このページは、登録ユーザーのみに公開されています。</p>
 	<!--{elseif $page.restriction == 'group'}-->
@@ -7,6 +20,7 @@
 	<!--{elseif $page.restriction == 'password'}-->
 		<p class="attention">このページは、パスワードで認証した人のみに公開されています。</p>
 	<!--{/if}-->
+{* 添付ファイルとイメージの表示 *}
 	<!--{if $page_path.file and $page_path.image}-->
 		<p><a href="#"><img src="{$page_path.image}" alt="" width="{$page_image.width}" height="{$page_image.height}" /></a></p>
 	<!--{elseif $page_path.thumbnail}-->
@@ -16,17 +30,23 @@
 	<!--{elseif $page_path.file}-->
 		<p><a href="#">{$page.memo|default:$page.file}</a></p>
 	<!--{/if}-->
+{* /添付ファイルとイメージの表示 *}
+{* ページ本文の表示 *}
 	<!--{if $page_text.excerpt}-->
-		{$page_text.excerpt|smarty:nodefaults}
+		{$page_text.excerpt|smarty:nodefaults|autolink}
 	<!--{/if}-->
 	<!--{if $page_text.more}-->
 		<div id="continue">
-			{$page_text.more|smarty:nodefaults}
+			{$page_text.more|smarty:nodefaults|autolink}
 		</div>
 	<!--{/if}-->
+{* /ページ本文の表示 *}
+{* タグの表示 *}
 	<!--{if $page_tags}-->
 	<p>タグ：<!--{foreach from=$page_tags|smarty:nodefaults item='page_tag' name='loop'}--><a href="#">{$page_tag}</a><!--{if !$smarty.foreach.loop.last}-->,&nbsp;<!--{/if}--><!--{/foreach}--></p>
 	<!--{/if}-->
+{* /タグの表示 *}
+{* オプションの表示 *}
 	<!--{if $page_associate.option}-->
 	<dl>
 		<!--{foreach from=$freo.refer.options|smarty:nodefaults item='option'}-->
@@ -37,6 +57,40 @@
 		<!--{/foreach}-->
 	</dl>
 	<!--{/if}-->
+{* /オプションの表示 *}
+{* フィルター名の表示 *}
+	<!--{if $page_associate.filter and $page_filter}-->
+	<p>フィルター：<!--{foreach from=$page_associate.filter|smarty:nodefaults key='page_filter' item='page_filter' name='loop'}-->{$freo.refer.filters[$page_filter].name}<!--{if !$smarty.foreach.loop.last}-->&nbsp;<!--{/if}--><!--{/foreach}--></p>
+	<!--{if !$freo.plugin.filter_confirm or ($freo.plugin.filter_confirm and !$page_associate.filter.r18)}-->
+	<p><a href="#">フィルター設定</a>で上記のフィルターを「表示する」に設定してからご覧ください。</p>
+{* フィルター認証確認プラグインを導入していたら *}
+	<!--{elseif $freo.plugin.filter_confirm}-->
+	{include file='plugins/filter_confirm/filter_confirm.html'}
+	<!--{/if}-->
+	<!--{/if}-->
+{* /フィルター名の表示 *}
+{* Twitterフォロワー限定公開プラグインの表示 *}
+	<!--{if $freo.plugin.twitter_followers}-->
+	{include file='plugins/twitter_followers/twitter_followers.html'}
+	<!--{/if}-->
+{* /Twitterフォロワー限定公開プラグインの表示 *}
+{* Twitterフレンド限定公開プラグインの表示 *}
+	<!--{if $freo.plugin.twitter_friends}-->
+	{include file='plugins/twitter_friends/twitter_friends.html'}
+	<!--{/if}-->
+{* /Twitterフレンド限定公開プラグインの表示 *}
+{* 拍手送信プラグインの表示 *}
+	<!--{if $freo.plugin.clap and !$page_filter and !$page_text.more}-->
+	<!--{if !$plugin_page_childs|smarty:nodefaults}-->
+	<p><a href="#">拍手を送る</a></p>
+	<!--{/if}-->
+	<!--{/if}-->
+{* /拍手送信プラグインの表示 *}
+	</div>
+{* /ページの表示 *}
+	<hr />
+	<p>この内容で登録しますか？</p>
+{* ページ編集フォームの表示 *}
 	<div id="action">
 		<form action="{$freo.core.http_file}/admin/page_form" method="get">
 			<fieldset>
@@ -54,4 +108,5 @@
 			</fieldset>
 		</form>
 	</div>
+{* /ページ編集フォームの表示 *}
 {include file='footer.html'}
