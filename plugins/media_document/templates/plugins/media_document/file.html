@@ -1,4 +1,4 @@
-{include file='header.html'}
+{include file='header.html' title=$media_document_information.title}
 	<div id="document">
 		<h2>{$media_document_information.title|default:$media_document_memo|default:$media_document_name}</h2>
 		{$media_document_text|smarty:nodefaults}
