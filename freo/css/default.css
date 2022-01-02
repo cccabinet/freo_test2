@@ -362,18 +362,6 @@ div#gallery ul li img {
 	margin: 0 2px 10px 0;
 }
 
-/********* 画像による目次 ***********************************************/
-
-div#page_gallery ul {
-	margin: 10px 0 20px 0;
-}
-div#page_gallery ul li {
-	display: inline;
-}
-div#page_gallery ul li img {
-	margin: 0 2px 10px 0;
-}
-
 /********* 個別指定 *************************************************/
 
 div.content {

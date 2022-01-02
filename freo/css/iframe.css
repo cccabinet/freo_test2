@@ -12,6 +12,18 @@ h2, h3, h4, h5, h6 {
 	font-size: 120%;
 }
 
+/********* レスポンシブ *********************************************/
+
+form textarea {
+	width: calc(100% - 10px);
+}
+
+@media (max-width: 570px) {
+	form input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="button"]):not([type="reset"]):not([size="5"]) {
+		width: calc(100% - 10px);
+	}
+}
+
 /********* 個別指定 *************************************************/
 
 /** jquery tablesorter（非公式フォーク版） **/
