@@ -238,7 +238,7 @@
 										<!--{if $freo.config.plugin.catalog.free_shipping and $plugin_catalog_cart.catalog_price_total >= $freo.config.plugin.catalog.free_shipping}-->
 											送料無料
 										<!--{else}-->
-											<!--{if $plugin_catalog_delivery_prefectures[$plugin_catalog_delivery.id]}--><a href="{$freo.core.http_file}/catalog/delivery_prefecture?id={$plugin_catalog_delivery.id}" class="colorbox" title="地域別送料">地域によって異なります</a><!--{elseif $plugin_catalog_delivery.carriage != ''}-->{$plugin_catalog_delivery.carriage}円<!--{/if}-->
+											<!--{if $plugin_catalog_delivery_prefectures[$plugin_catalog_delivery.id]}--><a href="{$freo.core.http_file}/catalog/delivery_prefecture?id={$plugin_catalog_delivery.id}" class="colorbox delivery" title="地域別送料">地域によって異なります</a><!--{elseif $plugin_catalog_delivery.carriage != ''}-->{$plugin_catalog_delivery.carriage}円<!--{/if}-->
 										<!--{/if}-->
 									</td>
 									<td><!--{foreach from=$plugin_catalog_delivery_sets[$plugin_catalog_delivery.id]|smarty:nodefaults item='plugin_catalog_delivery_set' name='loop'}--><!--{if !$smarty.foreach.loop.first}-->、<!--{/if}-->{$plugin_catalog_payments[$plugin_catalog_delivery_set.payment_id].name}<!--{/foreach}--></td>
@@ -358,7 +358,7 @@
 			<p><input type="submit" value="確認画面へ進む" /></p>
 		</fieldset>
 	</form>
-	<script src="https://ajaxzip3.github.io/ajaxzip3.js" integrity="sha384-3DKUTzf0l6zqPJStduaTXxj6K840FoVzw1zIbuE4jpuwoSSJGY67uiaJhYZVTt8b" crossorigin="anonymous" charset="UTF-8"></script>
+	<script type="text/javascript" src="https://ajaxzip3.github.io/ajaxzip3.js" integrity="sha384-3DKUTzf0l6zqPJStduaTXxj6K840FoVzw1zIbuE4jpuwoSSJGY67uiaJhYZVTt8b" crossorigin="anonymous" charset="UTF-8"></script>
 	<script type="text/javascript">
 	//初期値の設定
 	var delivery_selected = {$freo.config.plugin.catalog.delivery_selected|default:0};

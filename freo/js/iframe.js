@@ -24,7 +24,11 @@ $(document).ready(function() {
 
 	//メディア挿入
 	$('a.insert').click(function() {
-		parent.$.markItUp( { placeHolder: $(this).attr('title') } );
+		if (parent.tinymce.isIE) {
+			parent.tinyMCE.activeEditor.focus();
+			parent.tinyMCE.activeEditor.selection.moveToBookmark(parent.tinymce.EditorManager.activeEditor.windowManager.bookmark);
+		}
+		parent.tinyMCE.activeEditor.execCommand('mceInsertContent', false, $(this).attr('title'));
 		parent.$.fn.colorbox.close();
 	});
 
