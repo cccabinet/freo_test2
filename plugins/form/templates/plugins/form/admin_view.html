@@ -4,6 +4,8 @@
 		<ul>
 			<li><a href="{if $plugin_form.secure == 'yes'}{$freo.core.https_file}{else}{$freo.core.http_file}{/if}/form/{$plugin_form.id}"><!--{if $plugin_form.secure == 'yes'}-->{$freo.core.https_file}<!--{else}-->{$freo.core.http_file}<!--{/if}-->/form/{$plugin_form.id}</a> にアクセスするとフォームが表示されます。</li>
 			<li>もしくは、以下のコードを任意のページに貼り付けてください。</li>
+			<li><a href="{$freo.core.http_file}/form/admin_form?id={$freo.query.id}">フォームを編集する</a>。</li>
+			<li><a href="{$freo.core.http_file}/form/admin">フォーム管理に戻る</a>。</li>
 		</ul>
 		<h3><code>&lt;/head&gt;</code> の手前に追加</h3>
 		<pre><code>&lt;link rel="stylesheet" href="{$freo.core.http_url}{$smarty.const.FREO_CSS_DIR}jquery.subwindow.css" type="text/css" media="all" /&gt;

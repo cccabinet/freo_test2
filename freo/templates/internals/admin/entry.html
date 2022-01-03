@@ -17,6 +17,16 @@
 			<li>No.{$freo.query.id}のエントリーを削除しました。</li>
 			<!--{/if}-->
 		</ul>
+		<ul class="check">
+			<!--{if $freo.query.exec == 'approve'}-->
+			<li><a href="{$freo.core.http_file}/view/{$freo.query.id}">承認したエントリーを確認する</a>。</li>
+			<!--{elseif $freo.query.exec == 'update'}-->
+			<!--{if $entries[$freo.query.id].approved == 'yes' and ($entries[$freo.query.id].status == 'publish' or ($entries[$freo.query.id].status == 'future' and $entries[$freo.query.id].datetime|date_format:'%Y%m%d%H%M%S' <= $smarty.now|date_format:'%Y%m%d%H%M%S')) and (!$entries[$freo.query.id].close or ($entries[$freo.query.id].close|date_format:'%Y%m%d%H%M%S' >= $smarty.now|date_format:'%Y%m%d%H%M%S'))}-->
+			<li><a href="{$freo.core.http_file}/view/{$freo.query.id}">編集したエントリーを確認する</a>。</li>
+			<!--{/if}-->
+			<!--{/if}-->
+			<li><a href="{$freo.core.http_file}/entry">エントリー一覧を確認する</a>。</li>
+		</ul>
 		<!--{/if}-->
 		<ul>
 			<!--{if $smarty.get.word or $smarty.get.user or $smarty.get.approved or $smarty.get.status or $smarty.get.tag or $smarty.get.date or $smarty.get.category}-->
@@ -33,6 +43,12 @@
 			<li>登録されたエントリーは以下のとおりです。</li>
 			<!--{/if}-->
 			<li><a href="{$freo.core.http_file}/admin/entry_form">エントリーを登録する</a>。</li>
+			<!--{if $freo.plugin.entry_tagmanager && $smarty.get.tag}-->
+			<li><a href="{$freo.core.http_file}/entry_tagmanager/admin">エントリータグ管理に戻る</a>。</li>
+			<!--{/if}-->
+			<!--{if $smarty.get.word or $smarty.get.user or $smarty.get.approved or $smarty.get.status or $smarty.get.tag or $smarty.get.date or $smarty.get.category}-->
+			<li><a href="{$freo.core.http_file}/admin/entry">エントリー管理に戻る</a>。</li>
+			<!--{/if}-->
 		</ul>
 		<div id="search">
 			<form action="{$freo.core.http_file}/admin/entry" method="get">

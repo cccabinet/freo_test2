@@ -2,6 +2,7 @@
 	<h2>サークル表示</h2>
 	<ul>
 		<li>サークル「{$plugin_circle.name}」の詳細は以下のとおりです。</li>
+		<li><a href="{$freo.core.http_file}/circle">サークル一覧に戻る</a></li>
 	</ul>
 	<dl>
 		<!--{if $plugin_circle.category_id}-->
@@ -69,4 +70,15 @@
 			<dd>{$plugin_circle.plan_text|nl2br}</dd>
 		<!--{/if}-->
 	</dl>
+{* 編集ボタンの表示 *}
+	<!--{if $freo.user.authority == 'root' or $freo.user.id == $plugin_circle.user_id}-->
+	<ul class="link">
+		<!--{if $freo.user.authority == 'guest'}-->
+		<li><a href="{$freo.core.http_file}/circle/form"><img src="{$freo.core.http_url}images/icons/edit.png" alt="編集" title="編集" width="16" height="16" /></a></li>
+		<!--{else}-->
+		<li><a href="{$freo.core.http_file}/circle/admin_form?id={$plugin_circle.user_id}"><img src="{$freo.core.http_url}images/icons/edit.png" alt="編集" title="編集" width="16" height="16" /></a></li>
+		<!--{/if}-->
+	</ul>
+	<!--{/if}-->
+{* /編集ボタンの表示 *}
 {include file='footer.html'}

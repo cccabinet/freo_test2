@@ -34,6 +34,23 @@
 			<li><!--{if $smarty.get.path}--><code>{$smarty.get.path}</code> に<!--{/if}-->登録されたファイルは以下のとおりです。</li>
 			<li><a href="{$freo.core.http_file}/filemanager/admin_form{if $smarty.get.path}?path={$smarty.get.path|escape:'url'}{/if}"><!--{if $smarty.get.path}-->この階層に<!--{/if}-->ファイルを登録する</a>。</li>
 			<li><a href="{$freo.core.http_file}/filemanager/admin_form?directory=1{if $smarty.get.path}&amp;path={$smarty.get.path|escape:'url'}{/if}"><!--{if $smarty.get.path}-->この階層に<!--{/if}-->ディレクトリを作成する</a>。</li>
+			<!--{if $smarty.get.path}-->
+			<li><a href="{$freo.core.http_file}/filemanager/admin">最上階に戻る</a>。</li>
+			<!--{if $parent}-->
+			<li><a href="{$freo.core.http_file}/filemanager/admin?path={$parent|escape:'url'}"><code>{$parent}</code> に戻る</a>。</li>
+			<!--{/if}-->
+			<!--{/if}-->
+		</ul>
+		<ul>
+			<!--{if $smarty.get.path|mb_strpos:'css/' === false}-->
+			<li><a href="{$freo.core.http_file}/filemanager/admin?path=css%2F"><code>css/</code> を開く</a></li>
+			<!--{/if}-->
+			<!--{if $smarty.get.path|mb_strpos:'js/' === false}-->
+			<li><a href="{$freo.core.http_file}/filemanager/admin?path=js%2F"><code>js/</code> を開く</a></li>
+			<!--{/if}-->
+			<!--{if $smarty.get.path != 'templates/'}-->
+			<li><a href="{$freo.core.http_file}/filemanager/admin?path=templates%2F"><code>templates/</code> を開く</a></li>
+			<!--{/if}-->
 		</ul>
 		<table summary="ファイル" id="media" class="tablesorter">
 			<thead>

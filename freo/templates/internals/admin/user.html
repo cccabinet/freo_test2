@@ -11,8 +11,14 @@
 			<li>ユーザーを新規に登録しました。</li>
 			<!--{elseif $freo.query.exec == 'approve'}-->
 			<li>ID.{$freo.query.id}のユーザーを承認しました。</li>
+		</ul>
+		<ul class="check">
+			<li><a href="{$freo.core.http_file}/profile/{$freo.query.id}">承認したユーザーのプロフィールを確認する</a>。</li>
 			<!--{elseif $freo.query.exec == 'update'}-->
 			<li>ID.{$freo.query.id}のユーザーを編集しました。</li>
+		</ul>
+		<ul class="check">
+			<li><a href="{$freo.core.http_file}/profile/{$freo.query.id}">編集したユーザーのプロフィールを確認する</a>。</li>
 			<!--{elseif $freo.query.exec == 'delete'}-->
 			<li>ID.{$freo.query.id}のユーザーを削除しました。</li>
 			<!--{/if}-->

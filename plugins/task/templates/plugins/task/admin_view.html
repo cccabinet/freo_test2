@@ -11,5 +11,9 @@
 			<dt>状態</dt>
 				<dd><!--{if $plugin_task.status == 'publish'}-->未完了<!--{elseif $plugin_task.status == 'complete'}-->完了<!--{/if}--></dd>
 		</dl>
+		<ul>
+			<li><a href="{$freo.core.http_file}/task/admin_form?id={$freo.query.id}">タスクを編集する</a>。</li>
+			<li><a href="{$freo.core.http_file}/task/admin">タスク管理に戻る</a>。</li>
+		</ul>
 	</div>
 {include file='internals/admin/footer.html'}

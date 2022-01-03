@@ -12,6 +12,7 @@
 		<!--{if $freo.config.plugin.catalog.free_shipping and $plugin_catalog_cart.catalog_price_total >= $freo.config.plugin.catalog.free_shipping}-->
 		<li>商品合計が<em>{$freo.config.plugin.catalog.free_shipping|number_format}円以上</em>なので送料が無料になります。</li>
 		<!--{/if}-->
+		<li><a href="{$freo.core.http_file}/catalog/cart">カートへ戻る</a>。</li>
 		<li><a href="{$freo.core.http_file}/catalog">商品一覧へ戻る</a>。</li>
 	</ul>
 	<ul>

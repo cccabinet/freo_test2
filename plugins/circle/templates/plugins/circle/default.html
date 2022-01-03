@@ -11,8 +11,12 @@
 	<!--{/if}-->
 {* /サークルタグクラウドの表示 *}
 	<ul>
-		<!--{if $smarty.get.category}--><li>カテゴリー「{$plugin_circle_categories[$smarty.get.category].name}」の検索結果は以下のとおりです。</li>
-		<!--{elseif $smarty.get.tag}--><li>タグ「{$smarty.get.tag}」の検索結果は以下のとおりです。</li>
+		<!--{if $smarty.get.category}-->
+			<li>カテゴリー「{$plugin_circle_categories[$smarty.get.category].name}」の検索結果は以下のとおりです。</li>
+			<li><a href="{$freo.core.http_file}/circle">サークル一覧に戻る</a>。</li>
+		<!--{elseif $smarty.get.tag}-->
+			<li>タグ「{$smarty.get.tag}」の検索結果は以下のとおりです。</li>
+			<li><a href="{$freo.core.http_file}/circle">サークル一覧に戻る</a>。</li>
 		<!--{else}-->
 			<li>登録されたサークルは以下のとおりです。</li>
 			<li>サークル名をクリックすると、詳細が表示されます。</li>
