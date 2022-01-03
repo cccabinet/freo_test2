@@ -40,6 +40,8 @@
 					<dd>
 						<input type="file" name="plugin_circle[image]" size="30" />
 						<!--{if $input.plugin_circle.image}-->
+							<div>現在のサークルカット</div>
+							<a href="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/circle_images/{$freo.user.id}/{$input.plugin_circle.image}"><img src="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/circle_images/{$freo.user.id}/{$input.plugin_circle.image}" alt="現在のファイル" width="100" /></a>
 							<input type="checkbox" name="plugin_circle[image_remove]" id="label_image" value="{$input.plugin_circle.image}"{if $input.plugin_circle.image_remove} checked="checked"{/if} /> <label for="label_image">{$input.plugin_circle.image}を削除</label>
 							<input type="hidden" name="plugin_circle[image]" value="{$input.plugin_circle.image}" />
 						<!--{/if}-->
@@ -48,6 +50,8 @@
 					<dd>
 						<input type="file" name="plugin_circle[file]" size="30" />
 						<!--{if $input.plugin_circle.file}-->
+							<div>現在の添付ファイル</div>
+							<a href="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/circle_files/{$freo.user.id}/{$input.plugin_circle.file}"><img src="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/circle_files/{$freo.user.id}/{$input.plugin_circle.file}" alt="現在のファイル" width="100" /></a>
 							<input type="checkbox" name="plugin_circle[file_remove]" id="label_file" value="{$input.plugin_circle.file}"{if $input.plugin_circle.file_remove} checked="checked"{/if} /> <label for="label_file">{$input.plugin_circle.file}を削除</label>
 							<input type="hidden" name="plugin_circle[file]" value="{$input.plugin_circle.file}" />
 						<!--{/if}-->
