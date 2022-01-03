@@ -48,6 +48,14 @@ $(document).ready(function() {
 		}
 	});
 
+	//ユーザー管理
+	$('#user').tablesorter({
+		sortList: [[3,1], [4,1]],
+		headers: {
+			5: { sorter: false }
+		}
+	});
+
 	//メディアアップロード欄追加
 	$('#media_add').click(function() {
 		$('#media_file').append($('#media_template').html());
