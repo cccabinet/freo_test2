@@ -11,6 +11,19 @@
 		<ul>
 			<li>エントリーを入力してください。</li>
 			<li><abbr class="attention" title="入力必須">*</abbr> の付いた項目は入力必須項目です。</li>
+{* 現在のエントリーの状態 *}
+			<!--{if !$freo.query.id and $input.entry.status == 'publish'}-->
+			<li>現在、このエントリーの状態は「<em>公開</em>」です。下書き保存するには状態を「<em>非公開</em>」に変更してから登録してください。</li>
+			<!--{elseif $input.entry.status == 'private'}-->
+			<li>現在、このエントリーの状態は「<em>非公開</em>」です。公開するには状態を「<em>公開</em>」に変更してから登録してください。</li>
+			<!--{elseif $input.entry.status == 'future'}-->
+			<!--{if $input.entry.datetime|date_format:'%Y%m%d%H%M%S' >= $smarty.now|date_format:'%Y%m%d%H%M%S'}-->
+			<li>現在、このエントリーは「<em>予約公開待ち</em>」です。今すぐ公開するには日時を「<em>現在日時</em>」に変更してから登録してください。</li>
+			<!--{else}-->
+			<li>現在、このエントリーは「<em>予約公開済み</em>」です。</li>
+			<!--{/if}-->
+			<!--{/if}-->
+{* /現在のエントリーの状態 *}
 			<li><a href="{$freo.core.http_file}/admin/entry">エントリー管理に戻る</a>。</li>
 		</ul>
 		<form action="{$freo.core.http_file}/admin/entry_form{if $freo.query.id}?id={$freo.query.id}{/if}" method="post" enctype="multipart/form-data">
