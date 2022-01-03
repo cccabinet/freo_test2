@@ -2,9 +2,10 @@
 
 /*********************************************************************
 
- エントリーギャラリー表示プラグイン (2013/01/02)
+ エントリーギャラリー表示プラグイン (2021/07/22)
 
- Copyright(C) 2009-2013 freo.jp
+ Copyright(C) 2009-2021 freo.jp
+ customized：cccabinet（https://cccabinet.jpn.org/)
 
 *********************************************************************/
 
@@ -43,7 +44,7 @@ function freo_display_entry_gallery()
 	}
 
 	//エントリー取得
-	$stmt = $freo->pdo->prepare('SELECT * FROM ' . FREO_DATABASE_PREFIX . 'entries WHERE approved = \'yes\' AND (status = \'publish\' OR (status = \'future\' AND datetime <= :now1)) AND (close IS NULL OR close >= :now2) AND (file LIKE \'%.gif\' OR file LIKE \'%.jpeg\' OR file LIKE \'%.jpg\' OR file LIKE \'%.jpe\' OR file LIKE \'%.png\' OR image IS NOT NULL OR text LIKE \'%<img %\') AND display = \'publish\' ' . $condition . ' ORDER BY datetime DESC LIMIT :limit');
+	$stmt = $freo->pdo->prepare('SELECT * FROM ' . FREO_DATABASE_PREFIX . 'entries WHERE approved = \'yes\' AND (status = \'publish\' OR (status = \'future\' AND datetime <= :now1)) AND (close IS NULL OR close >= :now2) AND (file LIKE \'%.gif\' OR file LIKE \'%.jpeg\' OR file LIKE \'%.jpg\' OR file LIKE \'%.jpe\' OR file LIKE \'%.png\' OR image IS NOT NULL OR (text LIKE \'%<img %\' AND text LIKE \'%/files/%\')) AND display = \'publish\' ' . $condition . ' ORDER BY datetime DESC LIMIT :limit');
 	$stmt->bindValue(':now1',  date('Y-m-d H:i:s'));
 	$stmt->bindValue(':now2',  date('Y-m-d H:i:s'));
 	$stmt->bindValue(':limit', intval($freo->config['plugin']['entry_gallery']['display_limit']), PDO::PARAM_INT);
@@ -191,7 +192,7 @@ function freo_display_entry_gallery()
 			continue;
 		}
 
-		if (preg_match('/<img[^>]+src="([^"]+)"[^>]+\/>/', $entries[$entry]['text'], $matches)) {
+		if (preg_match('/<img[^>]+src="([^"]+\/files\/[^"]+)"[^>]+\/>/', $entries[$entry]['text'], $matches)) {
 			$file = $matches[1];
 		} else {
 			continue;

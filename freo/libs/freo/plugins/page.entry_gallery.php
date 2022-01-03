@@ -2,9 +2,10 @@
 
 /*********************************************************************
 
- エントリーギャラリー表示プラグイン (2013/01/02)
+ エントリーギャラリー表示プラグイン (2021/07/22)
 
- Copyright(C) 2009-2013 freo.jp
+ Copyright(C) 2009-2021 freo.jp
+ customized：cccabinet（https://cccabinet.jpn.org/)
 
 *********************************************************************/
 
@@ -113,12 +114,12 @@ function freo_page_entry_gallery()
 
 	//エントリー取得
 	if (isset($_GET['category'])) {
-		$stmt = $freo->pdo->prepare('SELECT id, user_id, created, modified, approved, restriction, password, status, display, comment, trackback, code, title, tag, datetime, close, file, image, memo, text, category_id, entry_id FROM ' . FREO_DATABASE_PREFIX . 'entries LEFT JOIN ' . FREO_DATABASE_PREFIX . 'category_sets ON id = entry_id WHERE approved = \'yes\' AND (status = \'publish\' OR (status = \'future\' AND datetime <= :now1)) AND (close IS NULL OR close >= :now2) AND (file LIKE \'%.gif\' OR file LIKE \'%.jpeg\' OR file LIKE \'%.jpg\' OR file LIKE \'%.jpe\' OR file LIKE \'%.png\' OR image IS NOT NULL OR text LIKE \'%<img %\') AND category_id = :category ' . $condition . ' ' . $order . ' ' . $limit);
+		$stmt = $freo->pdo->prepare('SELECT id, user_id, created, modified, approved, restriction, password, status, display, comment, trackback, code, title, tag, datetime, close, file, image, memo, text, category_id, entry_id FROM ' . FREO_DATABASE_PREFIX . 'entries LEFT JOIN ' . FREO_DATABASE_PREFIX . 'category_sets ON id = entry_id WHERE approved = \'yes\' AND (status = \'publish\' OR (status = \'future\' AND datetime <= :now1)) AND (close IS NULL OR close >= :now2) AND (file LIKE \'%.gif\' OR file LIKE \'%.jpeg\' OR file LIKE \'%.jpg\' OR file LIKE \'%.jpe\' OR file LIKE \'%.png\' OR image IS NOT NULL OR (text LIKE \'%<img %\' AND text LIKE \'%/files/%\')) AND category_id = :category ' . $condition . ' ' . $order . ' ' . $limit);
 		$stmt->bindValue(':now1',     date('Y-m-d H:i:s'));
 		$stmt->bindValue(':now2',     date('Y-m-d H:i:s'));
 		$stmt->bindValue(':category', $_GET['category']);
 	} else {
-		$stmt = $freo->pdo->prepare('SELECT * FROM ' . FREO_DATABASE_PREFIX . 'entries WHERE approved = \'yes\' AND (status = \'publish\' OR (status = \'future\' AND datetime <= :now1)) AND (close IS NULL OR close >= :now2) AND (file LIKE \'%.gif\' OR file LIKE \'%.jpeg\' OR file LIKE \'%.jpg\' OR file LIKE \'%.jpe\' OR file LIKE \'%.png\' OR image IS NOT NULL OR text LIKE \'%<img %\') ' . $condition . ' ' . $order . ' ' . $limit);
+		$stmt = $freo->pdo->prepare('SELECT * FROM ' . FREO_DATABASE_PREFIX . 'entries WHERE approved = \'yes\' AND (status = \'publish\' OR (status = \'future\' AND datetime <= :now1)) AND (close IS NULL OR close >= :now2) AND (file LIKE \'%.gif\' OR file LIKE \'%.jpeg\' OR file LIKE \'%.jpg\' OR file LIKE \'%.jpe\' OR file LIKE \'%.png\' OR image IS NOT NULL OR (text LIKE \'%<img %\' AND text LIKE \'%/files/%\')) ' . $condition . ' ' . $order . ' ' . $limit);
 		$stmt->bindValue(':now1', date('Y-m-d H:i:s'));
 		$stmt->bindValue(':now2', date('Y-m-d H:i:s'));
 	}
@@ -266,7 +267,7 @@ function freo_page_entry_gallery()
 			continue;
 		}
 
-		if (preg_match('/<img[^>]+src="([^"]+)"[^>]+\/>/', $entries[$entry]['text'], $matches)) {
+		if (preg_match('/<img[^>]+src="([^"]+\/files\/[^"]+)"[^>]+\/>/', $entries[$entry]['text'], $matches)) {
 			$file = $matches[1];
 		} else {
 			continue;
@@ -291,12 +292,12 @@ function freo_page_entry_gallery()
 
 	//エントリー数・ページ数取得
 	if (isset($_GET['category'])) {
-		$stmt = $freo->pdo->prepare('SELECT COUNT(*) FROM ' . FREO_DATABASE_PREFIX . 'entries LEFT JOIN ' . FREO_DATABASE_PREFIX . 'category_sets ON id = entry_id WHERE approved = \'yes\' AND (status = \'publish\' OR (status = \'future\' AND datetime <= :now1)) AND (close IS NULL OR close >= :now2) AND (file LIKE \'%.gif\' OR file LIKE \'%.jpeg\' OR file LIKE \'%.jpg\' OR file LIKE \'%.jpe\' OR file LIKE \'%.png\' OR image IS NOT NULL OR text LIKE \'%<img %\') AND category_id = :category ' . $condition);
+		$stmt = $freo->pdo->prepare('SELECT COUNT(*) FROM ' . FREO_DATABASE_PREFIX . 'entries LEFT JOIN ' . FREO_DATABASE_PREFIX . 'category_sets ON id = entry_id WHERE approved = \'yes\' AND (status = \'publish\' OR (status = \'future\' AND datetime <= :now1)) AND (close IS NULL OR close >= :now2) AND (file LIKE \'%.gif\' OR file LIKE \'%.jpeg\' OR file LIKE \'%.jpg\' OR file LIKE \'%.jpe\' OR file LIKE \'%.png\' OR image IS NOT NULL OR (text LIKE \'%<img %\' AND text LIKE \'%/files/%\')) AND category_id = :category ' . $condition);
 		$stmt->bindValue(':now1',     date('Y-m-d H:i:s'));
 		$stmt->bindValue(':now2',     date('Y-m-d H:i:s'));
 		$stmt->bindValue(':category', $_GET['category']);
 	} else {
-		$stmt = $freo->pdo->prepare('SELECT COUNT(*) FROM ' . FREO_DATABASE_PREFIX . 'entries WHERE approved = \'yes\' AND (status = \'publish\' OR (status = \'future\' AND datetime <= :now1)) AND (close IS NULL OR close >= :now2) AND (file LIKE \'%.gif\' OR file LIKE \'%.jpeg\' OR file LIKE \'%.jpg\' OR file LIKE \'%.jpe\' OR file LIKE \'%.png\' OR image IS NOT NULL OR text LIKE \'%<img %\') ' . $condition);
+		$stmt = $freo->pdo->prepare('SELECT COUNT(*) FROM ' . FREO_DATABASE_PREFIX . 'entries WHERE approved = \'yes\' AND (status = \'publish\' OR (status = \'future\' AND datetime <= :now1)) AND (close IS NULL OR close >= :now2) AND (file LIKE \'%.gif\' OR file LIKE \'%.jpeg\' OR file LIKE \'%.jpg\' OR file LIKE \'%.jpe\' OR file LIKE \'%.png\' OR image IS NOT NULL OR (text LIKE \'%<img %\' AND text LIKE \'%/files/%\')) ' . $condition);
 		$stmt->bindValue(':now1', date('Y-m-d H:i:s'));
 		$stmt->bindValue(':now2', date('Y-m-d H:i:s'));
 	}
