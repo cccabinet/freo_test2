@@ -1,6 +1,49 @@
 {include file='internals/admin/header.html' title='管理画面トップ'}
 	<div id="content">
 		<h2>ステータス</h2>
+{* 未承認情報の表示 *}
+		<!--{if $freo.user.authority == 'root'}-->
+		<!--{if !$entry_count-$entry_approved == 0 or !$page_count-$page_approved == 0 or !$comment_count-$comment_approved == 0 or !$trackback_count-$trackback_approved == 0 or !$user_count-$user_approved	== 0}-->
+		<ul class="attention">
+			<!--{if !$entry_count-$entry_approved == 0}-->
+			<li>未承認のエントリーが{$entry_count-$entry_approved}件あります。
+				<ul class="check">
+					<li><a href="{$freo.core.http_file}/admin/entry?word=&amp;approved=no">エントリー管理へ</a></li>
+				</ul>
+			</li>
+			<!--{/if}-->
+			<!--{if !$page_count-$page_approved == 0}-->
+			<li>未承認のページが{$page_count-$page_approved}件あります。
+				<ul class="check">
+					<li><a href="{$freo.core.http_file}/admin/page?word=&amp;approved=no">ページ管理へ</a></li>
+				</ul>
+			</li>
+			<!--{/if}-->
+			<!--{if !$comment_count-$comment_approved == 0}-->
+			<li>未承認のコメントが{$comment_count-$comment_approved}件あります。
+				<ul class="check">
+					<li><a href="{$freo.core.http_file}/admin/comment?word=&amp;approved=no">コメント管理へ</a></li>
+				</ul>
+			</li>
+			<!--{/if}-->
+			<!--{if !$trackback_count-$trackback_approved == 0}-->
+			<li>未承認のトラックバックが{$trackback_count-$trackback_approved}件あります。
+				<ul class="check">
+					<li><a href="{$freo.core.http_file}/admin/trackback?word=&amp;approved=no">トラックバック管理へ</a></li>
+				</ul>
+			</li>
+			<!--{/if}-->
+			<!--{if !$user_count-$user_approved	== 0}-->
+			<li>未承認のユーザーが{$user_count-$user_approved}人います。
+				<ul class="check">
+					<li><a href="{$freo.core.http_file}/admin/user">ユーザー管理へ</a></li>
+				</ul>
+			</li>
+			<!--{/if}-->
+		</ul>
+		<!--{/if}-->
+		<!--{/if}-->
+{* /未承認情報の表示 *}
 		<ul>
 			<li>現在 <em>{$freo.user.id}</em> としてログインしています。権限は <em><!--{if $freo.user.authority == 'root'}-->管理者<!--{elseif $freo.user.authority == 'author'}-->投稿者<!--{elseif $freo.user.authority == 'guest'}-->ゲスト<!--{/if}--></em> です。</li>
 			<li>本体のバージョンは <em>{$freo.core.version}</em> です。</li>
