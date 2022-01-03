@@ -43,6 +43,8 @@
 					<dd>
 						<input type="file" name="plugin_profile[file]" size="30" />
 						<!--{if $input.plugin_profile.file}-->
+							<div>現在のイメージ</div>
+							<a href="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/profile_files/{$freo.user.id}/{$input.plugin_profile.file}"><img src="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/profile_files/{$freo.user.id}/{$input.plugin_profile.file}" alt="現在のイメージ" width="100" /></a>
 							<input type="checkbox" name="plugin_profile[file_remove]" id="label_file" value="{$input.plugin_profile.file}"{if $input.plugin_profile.file_remove} checked="checked"{/if} /> <label for="label_file">{$input.plugin_profile.file}を削除</label>
 							<input type="hidden" name="plugin_profile[file]" value="{$input.plugin_profile.file}" />
 						<!--{/if}-->
@@ -66,6 +68,8 @@
 					<dd>
 						<input type="file" name="plugin_profile[file01]" size="30" />
 						<!--{if $input.plugin_profile.file01}-->
+							<div>現在の{$freo.config.plugin.profile.file01_name}</div>
+							<a href="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/profile_files/{$freo.user.id}/{$input.plugin_profile.file01}"><!--{if $input.plugin_profile.file01|regex_match:'/\.(jpe?g|png|gif)$/i'}--><img src="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/profile_files/{$freo.user.id}/{$input.plugin_profile.file01}" alt="現在のファイル" width="100" /><!--{else}-->{$input.plugin_profile.file01}<!--{/if}--></a>
 							<input type="checkbox" name="plugin_profile[file01_remove]" id="label_file01" value="{$input.plugin_profile.file01}"{if $input.plugin_profile.file01_remove} checked="checked"{/if} /> <label for="label_file01">{$input.plugin_profile.file01}を削除</label>
 							<input type="hidden" name="plugin_profile[file01]" value="{$input.plugin_profile.file01}" />
 						<!--{/if}-->
@@ -76,6 +80,8 @@
 					<dd>
 						<input type="file" name="plugin_profile[file02]" size="30" />
 						<!--{if $input.plugin_profile.file02}-->
+							<div>現在の{$freo.config.plugin.profile.file02_name}</div>
+							<a href="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/profile_files/{$freo.user.id}/{$input.plugin_profile.file02}"><!--{if $input.plugin_profile.file02|regex_match:'/\.(jpe?g|png|gif)$/i'}--><img src="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/profile_files/{$freo.user.id}/{$input.plugin_profile.file02}" alt="現在のファイル" width="100" /><!--{else}-->{$input.plugin_profile.file02}<!--{/if}--></a>
 							<input type="checkbox" name="plugin_profile[file02_remove]" id="label_file02" value="{$input.plugin_profile.file02}"{if $input.plugin_profile.file02_remove} checked="checked"{/if} /> <label for="label_file02">{$input.plugin_profile.file02}を削除</label>
 							<input type="hidden" name="plugin_profile[file02]" value="{$input.plugin_profile.file02}" />
 						<!--{/if}-->
@@ -86,6 +92,8 @@
 					<dd>
 						<input type="file" name="plugin_profile[file03]" size="30" />
 						<!--{if $input.plugin_profile.file03}-->
+							<div>現在の{$freo.config.plugin.profile.file03_name}</div>
+							<a href="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/profile_files/{$freo.user.id}/{$input.plugin_profile.file03}"><!--{if $input.plugin_profile.file03|regex_match:'/\.(jpe?g|png|gif)$/i'}--><img src="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/profile_files/{$freo.user.id}/{$input.plugin_profile.file03}" alt="現在のファイル" width="100" /><!--{else}-->{$input.plugin_profile.file03}<!--{/if}--></a>
 							<input type="checkbox" name="plugin_profile[file03_remove]" id="label_file03" value="{$input.plugin_profile.file03}"{if $input.plugin_profile.file03_remove} checked="checked"{/if} /> <label for="label_file03">{$input.plugin_profile.file03}を削除</label>
 							<input type="hidden" name="plugin_profile[file03]" value="{$input.plugin_profile.file03}" />
 						<!--{/if}-->
@@ -96,6 +104,8 @@
 					<dd>
 						<input type="file" name="plugin_profile[file04]" size="30" />
 						<!--{if $input.plugin_profile.file04}-->
+							<div>現在の{$freo.config.plugin.profile.file04_name}</div>
+							<a href="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/profile_files/{$freo.user.id}/{$input.plugin_profile.file04}"><!--{if $input.plugin_profile.file04|regex_match:'/\.(jpe?g|png|gif)$/i'}--><img src="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/profile_files/{$freo.user.id}/{$input.plugin_profile.file04}" alt="現在のファイル" width="100" /><!--{else}-->{$input.plugin_profile.file04}<!--{/if}--></a>
 							<input type="checkbox" name="plugin_profile[file04_remove]" id="label_file04" value="{$input.plugin_profile.file04}"{if $input.plugin_profile.file04_remove} checked="checked"{/if} /> <label for="label_file04">{$input.plugin_profile.file04}を削除</label>
 							<input type="hidden" name="plugin_profile[file04]" value="{$input.plugin_profile.file04}" />
 						<!--{/if}-->
@@ -106,6 +116,8 @@
 					<dd>
 						<input type="file" name="plugin_profile[file05]" size="30" />
 						<!--{if $input.plugin_profile.file05}-->
+							<div>現在の{$freo.config.plugin.profile.file05_name}</div>
+							<a href="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/profile_files/{$freo.user.id}/{$input.plugin_profile.file05}"><!--{if $input.plugin_profile.file05|regex_match:'/\.(jpe?g|png|gif)$/i'}--><img src="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/profile_files/{$freo.user.id}/{$input.plugin_profile.file05}" alt="現在のファイル" width="100" /><!--{else}-->{$input.plugin_profile.file05}<!--{/if}--></a>
 							<input type="checkbox" name="plugin_profile[file05_remove]" id="label_file05" value="{$input.plugin_profile.file05}"{if $input.plugin_profile.file05_remove} checked="checked"{/if} /> <label for="label_file05">{$input.plugin_profile.file05}を削除</label>
 							<input type="hidden" name="plugin_profile[file05]" value="{$input.plugin_profile.file05}" />
 						<!--{/if}-->
@@ -116,6 +128,8 @@
 					<dd>
 						<input type="file" name="plugin_profile[file06]" size="30" />
 						<!--{if $input.plugin_profile.file06}-->
+							<div>現在の{$freo.config.plugin.profile.file06_name}</div>
+							<a href="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/profile_files/{$freo.user.id}/{$input.plugin_profile.file06}"><!--{if $input.plugin_profile.file06|regex_match:'/\.(jpe?g|png|gif)$/i'}--><img src="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/profile_files/{$freo.user.id}/{$input.plugin_profile.file06}" alt="現在のファイル" width="100" /><!--{else}-->{$input.plugin_profile.file06}<!--{/if}--></a>
 							<input type="checkbox" name="plugin_profile[file06_remove]" id="label_file06" value="{$input.plugin_profile.file06}"{if $input.plugin_profile.file06_remove} checked="checked"{/if} /> <label for="label_file06">{$input.plugin_profile.file06}を削除</label>
 							<input type="hidden" name="plugin_profile[file06]" value="{$input.plugin_profile.file06}" />
 						<!--{/if}-->
@@ -126,6 +140,8 @@
 					<dd>
 						<input type="file" name="plugin_profile[file07]" size="30" />
 						<!--{if $input.plugin_profile.file07}-->
+							<div>現在の{$freo.config.plugin.profile.file07_name}</div>
+							<a href="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/profile_files/{$freo.user.id}/{$input.plugin_profile.file07}"><!--{if $input.plugin_profile.file07|regex_match:'/\.(jpe?g|png|gif)$/i'}--><img src="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/profile_files/{$freo.user.id}/{$input.plugin_profile.file07}" alt="現在のファイル" width="100" /><!--{else}-->{$input.plugin_profile.file07}<!--{/if}--></a>
 							<input type="checkbox" name="plugin_profile[file07_remove]" id="label_file07" value="{$input.plugin_profile.file07}"{if $input.plugin_profile.file07_remove} checked="checked"{/if} /> <label for="label_file07">{$input.plugin_profile.file07}を削除</label>
 							<input type="hidden" name="plugin_profile[file07]" value="{$input.plugin_profile.file07}" />
 						<!--{/if}-->
@@ -136,6 +152,8 @@
 					<dd>
 						<input type="file" name="plugin_profile[file08]" size="30" />
 						<!--{if $input.plugin_profile.file08}-->
+							<div>現在の{$freo.config.plugin.profile.file08_name}</div>
+							<a href="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/profile_files/{$freo.user.id}/{$input.plugin_profile.file08}"><!--{if $input.plugin_profile.file08|regex_match:'/\.(jpe?g|png|gif)$/i'}--><img src="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/profile_files/{$freo.user.id}/{$input.plugin_profile.file08}" alt="現在のファイル" width="100" /><!--{else}-->{$input.plugin_profile.file08}<!--{/if}--></a>
 							<input type="checkbox" name="plugin_profile[file08_remove]" id="label_file08" value="{$input.plugin_profile.file08}"{if $input.plugin_profile.file08_remove} checked="checked"{/if} /> <label for="label_file08">{$input.plugin_profile.file08}を削除</label>
 							<input type="hidden" name="plugin_profile[file08]" value="{$input.plugin_profile.file08}" />
 						<!--{/if}-->
@@ -146,6 +164,8 @@
 					<dd>
 						<input type="file" name="plugin_profile[file09]" size="30" />
 						<!--{if $input.plugin_profile.file09}-->
+							<div>現在の{$freo.config.plugin.profile.file09_name}</div>
+							<a href="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/profile_files/{$freo.user.id}/{$input.plugin_profile.file09}"><!--{if $input.plugin_profile.file09|regex_match:'/\.(jpe?g|png|gif)$/i'}--><img src="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/profile_files/{$freo.user.id}/{$input.plugin_profile.file09}" alt="現在のファイル" width="100" /><!--{else}-->{$input.plugin_profile.file09}<!--{/if}--></a>
 							<input type="checkbox" name="plugin_profile[file09_remove]" id="label_file09" value="{$input.plugin_profile.file09}"{if $input.plugin_profile.file09_remove} checked="checked"{/if} /> <label for="label_file09">{$input.plugin_profile.file09}を削除</label>
 							<input type="hidden" name="plugin_profile[file09]" value="{$input.plugin_profile.file09}" />
 						<!--{/if}-->
@@ -156,6 +176,8 @@
 					<dd>
 						<input type="file" name="plugin_profile[file10]" size="30" />
 						<!--{if $input.plugin_profile.file10}-->
+							<div>現在の{$freo.config.plugin.profile.file10_name}</div>
+							<a href="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/profile_files/{$freo.user.id}/{$input.plugin_profile.file10}"><!--{if $input.plugin_profile.file10|regex_match:'/\.(jpe?g|png|gif)$/i'}--><img src="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/profile_files/{$freo.user.id}/{$input.plugin_profile.file10}" alt="現在のファイル" width="100" /><!--{else}-->{$input.plugin_profile.file10}<!--{/if}--></a>
 							<input type="checkbox" name="plugin_profile[file10_remove]" id="label_file10" value="{$input.plugin_profile.file10}"{if $input.plugin_profile.file10_remove} checked="checked"{/if} /> <label for="label_file10">{$input.plugin_profile.file10}を削除</label>
 							<input type="hidden" name="plugin_profile[file10]" value="{$input.plugin_profile.file10}" />
 						<!--{/if}-->

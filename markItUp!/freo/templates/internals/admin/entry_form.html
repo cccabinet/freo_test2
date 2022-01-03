@@ -82,6 +82,8 @@
 						<dd>
 							<input type="file" name="entry_associate[option][{$option.id}]" size="30" />
 							<!--{if $input.entry_associate.option[$option.id]}-->
+								<div>現在の{$option.name}</div>
+								<a href="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}entry_options/{$freo.query.id}/{$option.id}/{$input.entry_associate.option[$option.id]}"><!--{if $input.entry_associate.option[$option.id]|regex_match:'/\.(jpe?g|png|gif)$/i'}--><img src="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}entry_options/{$freo.query.id}/{$option.id}/{$input.entry_associate.option[$option.id]}" alt="現在の{$option.name}" width="100" /><!--{else}-->{$input.entry_associate.option[$option.id]}<!--{/if}--></a>
 								<input type="checkbox" name="entry_associate[option_remove][{$option.id}]" id="label_option_{$option.id}" value="{$input.entry_associate.option[$option.id]}"{if $input.entry_associate.option_remove[$option.id]} checked="checked"{/if} /> <label for="label_option_{$option.id}">{$input.entry_associate.option[$option.id]}を削除</label>
 								<input type="hidden" name="entry_associate[option][{$option.id}]" value="{$input.entry_associate.option[$option.id]}" />
 							<!--{/if}-->
@@ -105,6 +107,8 @@
 						<dd>
 							<input type="file" name="entry[file]" size="30" />
 							<!--{if $input.entry.file}-->
+								<div>現在のファイル</div>
+								<a href="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}entry_files/{$freo.query.id}/{$input.entry.file}"><!--{if $input.entry.file|regex_match:'/\.(jpe?g|png|gif)$/i'}--><img src="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}entry_files/{$freo.query.id}/{$input.entry.file}" alt="現在のファイル" width="100" /><!--{else}-->{$input.entry.file}<!--{/if}--></a>
 								<input type="checkbox" name="entry[file_remove]" id="label_file" value="{$input.entry.file}"{if $input.entry.file_remove} checked="checked"{/if} /> <label for="label_file">{$input.entry.file}を削除</label>
 								<input type="hidden" name="entry[file]" value="{$input.entry.file}" />
 							<!--{/if}-->
@@ -115,6 +119,8 @@
 						<dd>
 							<input type="file" name="entry[image]" size="30" />
 							<!--{if $input.entry.image}-->
+								<div>現在のイメージ</div>
+								<a href="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}entry_images/{$freo.query.id}/{$input.entry.image}"><img src="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}entry_images/{$freo.query.id}/{$input.entry.image}" alt="現在のイメージ" width="100" /></a>
 								<input type="checkbox" name="entry[image_remove]" id="label_image" value="{$input.entry.image}"{if $input.entry.image_remove} checked="checked"{/if} /> <label for="label_image">{$input.entry.image}を削除</label>
 								<input type="hidden" name="entry[image]" value="{$input.entry.image}" />
 							<!--{/if}-->
