@@ -1,6 +1,7 @@
 {include file='internals/admin/header.html' title='サークル編集'}
 	<div id="content">
 		<h2>ID.{$freo.query.id}のサークルを編集</h2>
+		<!--{if $freo.user.authority == 'root' or $freo.user.id == $freo.query.id}-->
 		<!--{if $errors}-->
 		<ul class="attention">
 			<!--{foreach from=$errors|smarty:nodefaults item='error'}-->
@@ -86,5 +87,10 @@
 				<p><input type="submit" value="登録する" /></p>
 			</fieldset>
 		</form>
+		<!--{else}-->
+		<ul class="attention">
+			<li>権限がありません。</li>
+		</ul>
+		<!--{/if}-->
 	</div>
 {include file='internals/admin/footer.html'}

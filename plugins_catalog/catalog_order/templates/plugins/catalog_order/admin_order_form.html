@@ -38,7 +38,7 @@
 				<dl>
 					<dt>対応状況 <abbr class="attention" title="入力必須">*</abbr></dt>
 						<dd>
-							<select name="plugin_catalog_order[status]">
+							<select name="plugin_catalog_order[status]"{if $freo.user.authority == 'author'} disabled="disabled"{/if}>
 								<!--{foreach from=$plugin_catalog_order_status|smarty:nodefaults item='plugin_catalog_order_stat'}-->
 								<option value="{$plugin_catalog_order_stat.id}"{if $plugin_catalog_order_stat.id == $input.plugin_catalog_order.status} selected="selected"{/if}>{$plugin_catalog_order_stat.name}</option>
 								<!--{/foreach}-->
@@ -68,11 +68,13 @@
 							<input type="button" value="現在日時" id="setDatetime" />
 							<!--{/if}-->
 						</dd>
+					<!--{if $freo.user.authority == 'root'}-->
 					<dt>メモ（注文者には公開されません）</dt>
 						<dd><textarea name="plugin_catalog_order[admin_text]" cols="50" rows="5">{$input.plugin_catalog_order.admin_text}</textarea></dd>
+					<!--{/if}-->
 					<!--{if $freo.config.user.regist and $freo.config.plugin.catalog_order.user and $input.plugin_catalog_order.user_id}-->
 					<dt>注文者向け連絡事項（注文者がユーザー用ページで閲覧できます）</dt>
-						<dd><textarea name="plugin_catalog_order[user_text]" cols="50" rows="5">{$input.plugin_catalog_order.user_text}</textarea></dd>
+						<dd><textarea name="plugin_catalog_order[user_text]" cols="50" rows="5"{if $freo.user.authority == 'author'} readonly="readonly"{/if}>{$input.plugin_catalog_order.user_text}</textarea></dd>
 					<!--{else}-->
 					<input type="hidden" name="plugin_catalog_order[user_text]" value="{$input.plugin_catalog_order.user_text}" />
 					<!--{/if}-->
@@ -86,7 +88,9 @@
 							<th>価格（税込）</th>
 							<th>数量</th>
 							<th>小計（税込）</th>
+							<!--{if $freo.user.authority == 'root'}-->
 							<th>削除</th>
+							<!--{/if}-->
 						</tr>
 					</thead>
 					<tfoot>
@@ -105,9 +109,11 @@
 							<td class="number"><input type="text" name="plugin_catalog_order[price][{$catalog.id}]" size="5" value="{$input.plugin_catalog_order_sets[$catalog.id].price}" /> 円</td>
 							<td class="number"><input type="text" name="plugin_catalog_order[count][{$catalog.id}]" size="5" value="{$input.plugin_catalog_order_sets[$catalog.id].count}" /></td>
 							<td class="number">{$plugin_catalog_price_subtotals[$catalog.id]|number_format}円</td>
+							<!--{if $freo.user.authority == 'root'}-->
 							<td>
 								<a href="{$freo.core.https_file}/catalog_order/admin_order_cart_delete?freo%5Btoken%5D={$token}&amp;id={$freo.query.id}&amp;catalog_id={$catalog.id}" class="delete">削除</a>
 							</td>
+							<!--{/if}-->
 						</tr>
 						<!--{/foreach}-->
 					</tbody>
@@ -220,12 +226,12 @@
 				<h3>連絡事項</h3>
 				<dl>
 					<dt>注文者からの連絡事項</dt>
-						<dd><textarea name="plugin_catalog_order[text]" cols="50" rows="5">{$input.plugin_catalog_order.text}</textarea></dd>
+						<dd><textarea name="plugin_catalog_order[text]" cols="50" rows="5"{if $freo.user.authority == 'root'} readonly="readonly"{/if}>{$input.plugin_catalog_order.text}</textarea></dd>
 				</dl>
 				<p><input type="submit" value="登録する" /></p>
 			</fieldset>
 		</form>
-		<!--{if $freo.query.id}-->
+		<!--{if $freo.query.id and $freo.user.authority == 'root'}-->
 		<h2>ID.{$freo.config.plugin.catalog.order_prefix}{$freo.query.id}の注文を削除</h2>
 		<ul>
 			<li>この注文を削除するには、<em>削除ボタン</em>を押してください。</li>
@@ -237,6 +243,25 @@
 				<input type="hidden" name="freo[token]" value="{$token}" />
 				<input type="hidden" name="id" value="{$freo.query.id}" />
 				<p><input type="submit" value="削除する" /></p>
+			</fieldset>
+		</form>
+		<!--{elseif $freo.query.id and $freo.user.authority == 'author'}-->
+		<h2>ID.{$freo.config.plugin.catalog.order_prefix}{$freo.query.id}の注文をキャンセル</h2>
+		<ul>
+			<li>キャンセル依頼のメールを送信します。</li>
+			<li>キャンセルしても、ご注文履歴には直ちに反映されません。</li>
+			<li>一部をキャンセルする場合、以下に詳細をご記入ください。</li>
+		</ul>
+		<form action="{$freo.core.https_file}/catalog_order/cancel{if $freo.query.id}?id={$freo.query.id}{/if}" method="post">
+			<fieldset>
+				<legend>注文キャンセルフォーム</legend>
+				<input type="hidden" name="freo[token]" value="{$token}" />
+				<input type="hidden" name="plugin_catalog_order_cencel[id]" value="{$freo.query.id}" />
+				<dl>
+					<dt>連絡事項など</dt>
+						<dd><textarea name="plugin_catalog_order_cencel[text]" cols="50" rows="5">{$input.plugin_catalog_order_cencel.text}</textarea></dd>
+				</dl>
+				<p><input type="submit" value="キャンセルする" /></p>
 			</fieldset>
 		</form>
 		<!--{/if}-->
