@@ -46,18 +46,27 @@
 						</dd>
 					<dt>注文日時 <abbr class="attention" title="入力必須">*</abbr></dt>
 						<dd>
-							<input type="text" name="plugin_catalog_order[datetime][year]" size="4" value="{$input.plugin_catalog_order.datetime|date_format:'%Y'}" />
-							年
-							<input type="text" name="plugin_catalog_order[datetime][month]" size="2" value="{$input.plugin_catalog_order.datetime|date_format:'%m'}" />
-							月
-							<input type="text" name="plugin_catalog_order[datetime][day]" size="2" value="{$input.plugin_catalog_order.datetime|date_format:'%d'}" />
-							日
-							<input type="text" name="plugin_catalog_order[datetime][hour]" size="2" value="{$input.plugin_catalog_order.datetime|date_format:'%H'}" />
-							時
-							<input type="text" name="plugin_catalog_order[datetime][minute]" size="2" value="{$input.plugin_catalog_order.datetime|date_format:'%M'}" />
-							分
-							<input type="text" name="plugin_catalog_order[datetime][second]" size="2" value="{$input.plugin_catalog_order.datetime|date_format:'%S'}" />
-							秒
+							<select name="plugin_catalog_order[datetime][year]" id="datetime_year">
+								{$input.plugin_catalog_order.datetime|date_format:'%Y'|date_select:'year':'':'年'}
+							</select>
+							<select name="plugin_catalog_order[datetime][month]" id="datetime_month">
+								{$input.plugin_catalog_order.datetime|date_format:'%m'|date_select:'month':'':'月'}
+							</select>
+							<select name="plugin_catalog_order[datetime][day]" id="datetime_day">
+								{$input.plugin_catalog_order.datetime|date_format:'%d'|date_select:'day':'':'日'}
+							</select>
+							<select name="plugin_catalog_order[datetime][hour]" id="datetime_hour">
+								{$input.plugin_catalog_order.datetime|date_format:'%H'|date_select:'hour':'':'時'}"
+							</select>
+							<select name="plugin_catalog_order[datetime][minute]" id="datetime_minute">
+								{$input.plugin_catalog_order.datetime|date_format:'%M'|date_select:'minute':'':'分'}
+							</select>
+							<select name="plugin_catalog_order[datetime][second]" id="datetime_second">
+								{$input.plugin_catalog_order.datetime|date_format:'%S'|date_select:'second':'':'秒'}
+							</select>
+							<!--{if !$freo.query.id}-->
+							<input type="button" value="現在日時" id="setDatetime" />
+							<!--{/if}-->
 						</dd>
 					<dt>メモ（注文者には公開されません）</dt>
 						<dd><textarea name="plugin_catalog_order[admin_text]" cols="50" rows="5">{$input.plugin_catalog_order.admin_text}</textarea></dd>
