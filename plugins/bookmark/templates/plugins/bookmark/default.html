@@ -47,6 +47,7 @@
 			</dd>
 		<!--{/foreach}-->
 	</dl>
+	<!--{if $plugin_bookmark_page > 1}-->
 	<div id="page">
 		<h2>ページ移動</h2>
 		<ul class="order">
@@ -56,10 +57,24 @@
 		<!--{if $smarty.get.word or $smarty.get.tag}-->
 		<ul class="direct">
 			<li>ページ</li>
+			<!--{assign var="range" value="1"}-->
+			<!--{if $freo.query.page > 0 && $plugin_bookmark_page > 0}-->
+			<!--{if $plugin_bookmark_page > $range*2+1 && $freo.query.page > $range+1}-->
+			<li><a href="{$freo.core.http_file}/bookmark/admin?page=1{if $smarty.get.word}&amp;word={$smarty.get.word|smarty:nodefaults|escape:'url'}{/if}{if $smarty.get.tag}&amp;tag={$smarty.get.tag|smarty:nodefaults|escape:'url'}{/if}{if $smarty.get.date}&amp;date={$smarty.get.date}{/if}">1</a></li>
+			<li>...</li>
+			<!--{/if}-->
 			<!--{section name='loop' loop=$plugin_bookmark_page}-->
+			<!--{if (! ($freo.query.page <= $range+1 && $freo.query.page >= $plugin_bookmark_page-$range) && ($smarty.section.loop.iteration <= $freo.query.page+$range && $smarty.section.loop.iteration >= $freo.query.page-$range)) || ($freo.query.page <= $range+1 && $smarty.section.loop.iteration <= $range*2+1) || ($freo.query.page >= $plugin_bookmark_page-$range && $smarty.section.loop.iteration >= $plugin_bookmark_page-$range*2) }-->
 			<li><!--{if $smarty.section.loop.iteration != $freo.query.page}--><a href="{$freo.core.http_file}/bookmark?page={$smarty.section.loop.iteration}{if $smarty.get.word}&amp;word={$smarty.get.word|smarty:nodefaults|escape:'url'}{/if}{if $smarty.get.tag}&amp;tag={$smarty.get.tag|smarty:nodefaults|escape:'url'}{/if}{if $smarty.get.date}&amp;date={$smarty.get.date}{/if}">{$smarty.section.loop.iteration}</a><!--{else}-->{$smarty.section.loop.iteration}<!--{/if}--></li>
+			<!--{/if}-->
 			<!--{/section}-->
+			<!--{if $plugin_bookmark_page > $range*2+1 && $freo.query.page < $plugin_bookmark_page-$range}-->
+			<li>...</li>
+			<li><a href="{$freo.core.http_file}/bookmark/admin?page={$plugin_bookmark_page}{if $smarty.get.word}&amp;word={$smarty.get.word|smarty:nodefaults|escape:'url'}{/if}{if $smarty.get.tag}&amp;tag={$smarty.get.tag|smarty:nodefaults|escape:'url'}{/if}{if $smarty.get.date}&amp;date={$smarty.get.date}{/if}">{$plugin_bookmark_page}</a></li>
+			<!--{/if}-->
+			<!--{/if}-->
 		</ul>
 		<!--{/if}-->
 	</div>
+	<!--{/if}-->
 {include file='footer.html'}

@@ -205,6 +205,7 @@
 		</table>
 		<!--{/foreach}-->
 
+		<!--{if $plugin_catalog_page > 1}-->
 		<div id="page">
 			<h2>ページ移動</h2>
 			<ul class="order">
@@ -214,12 +215,26 @@
 			<!--{if $smarty.get.word or $smarty.get.category_id or $smarty.get.tag or $smarty.get.date or $smarty.get.option01 or $smarty.get.option02 or $smarty.get.option03 or $smarty.get.option04 or $smarty.get.option05 or $smarty.get.option06 or $smarty.get.option07 or $smarty.get.option08 or $smarty.get.option09 or $smarty.get.option10 or $smarty.get.condition}-->
 			<ul class="direct">
 				<li>ページ</li>
+				<!--{assign var="range" value="1"}-->
+				<!--{if $freo.query.page > 0 && $plugin_catalog_page > 0}-->
+				<!--{if $plugin_catalog_page > $range*2+1 && $freo.query.page > $range+1}-->
+				<li><a href="{$freo.core.http_file}/catalog?page=1{if $smarty.get.category_id}&amp;category_id={$smarty.get.category_id}{/if}{if $smarty.get.word}&amp;word={$smarty.get.word|smarty:nodefaults|escape:'url'}{/if}{if $smarty.get.tag}&amp;tag={$smarty.get.tag|smarty:nodefaults|escape:'url'}{/if}{if $smarty.get.date}&amp;date={$smarty.get.date}{/if}{if $smarty.get.option01}&amp;option01={$smarty.get.option01|escape:'url'}{/if}{if $smarty.get.option02}&amp;option02={$smarty.get.option02|escape:'url'}{/if}{if $smarty.get.option03}&amp;option03={$smarty.get.option03|escape:'url'}{/if}{if $smarty.get.option04}&amp;option04={$smarty.get.option04|escape:'url'}{/if}{if $smarty.get.option05}&amp;option05={$smarty.get.option05|escape:'url'}{/if}{if $smarty.get.option06}&amp;option06={$smarty.get.option06|escape:'url'}{/if}{if $smarty.get.option07}&amp;option07={$smarty.get.option07|escape:'url'}{/if}{if $smarty.get.option08}&amp;option08={$smarty.get.option08|escape:'url'}{/if}{if $smarty.get.option09}&amp;option09={$smarty.get.option09|escape:'url'}{/if}{if $smarty.get.option10}&amp;option10={$smarty.get.option10|escape:'url'}{/if}{if $smarty.get.condition}&amp;condition={$smarty.get.condition}{/if}{if $smarty.get.sort}&amp;sort={$smarty.get.sort}{/if}">1</a></li>
+				<li>...</li>
+				<!--{/if}-->
 				<!--{section name='loop' loop=$plugin_catalog_page}-->
+				<!--{if (! ($freo.query.page <= $range+1 && $freo.query.page >= $plugin_catalog_page-$range) && ($smarty.section.loop.iteration <= $freo.query.page+$range && $smarty.section.loop.iteration >= $freo.query.page-$range)) || ($freo.query.page <= $range+1 && $smarty.section.loop.iteration <= $range*2+1) || ($freo.query.page >= $plugin_catalog_page-$range && $smarty.section.loop.iteration >= $plugin_catalog_page-$range*2) }-->
 				<li><!--{if $smarty.section.loop.iteration != $freo.query.page}--><a href="{$freo.core.http_file}/catalog?page={$smarty.section.loop.iteration}{if $smarty.get.category_id}&amp;category_id={$smarty.get.category_id}{/if}{if $smarty.get.word}&amp;word={$smarty.get.word|smarty:nodefaults|escape:'url'}{/if}{if $smarty.get.tag}&amp;tag={$smarty.get.tag|smarty:nodefaults|escape:'url'}{/if}{if $smarty.get.date}&amp;date={$smarty.get.date}{/if}{if $smarty.get.option01}&amp;option01={$smarty.get.option01|escape:'url'}{/if}{if $smarty.get.option02}&amp;option02={$smarty.get.option02|escape:'url'}{/if}{if $smarty.get.option03}&amp;option03={$smarty.get.option03|escape:'url'}{/if}{if $smarty.get.option04}&amp;option04={$smarty.get.option04|escape:'url'}{/if}{if $smarty.get.option05}&amp;option05={$smarty.get.option05|escape:'url'}{/if}{if $smarty.get.option06}&amp;option06={$smarty.get.option06|escape:'url'}{/if}{if $smarty.get.option07}&amp;option07={$smarty.get.option07|escape:'url'}{/if}{if $smarty.get.option08}&amp;option08={$smarty.get.option08|escape:'url'}{/if}{if $smarty.get.option09}&amp;option09={$smarty.get.option09|escape:'url'}{/if}{if $smarty.get.option10}&amp;option10={$smarty.get.option10|escape:'url'}{/if}{if $smarty.get.condition}&amp;condition={$smarty.get.condition}{/if}{if $smarty.get.sort}&amp;sort={$smarty.get.sort}{/if}">{$smarty.section.loop.iteration}</a><!--{else}-->{$smarty.section.loop.iteration}<!--{/if}--></li>
+				<!--{/if}-->
 				<!--{/section}-->
+				<!--{if $plugin_catalog_page > $range*2+1 && $freo.query.page < $plugin_catalog_page-$range}-->
+				<li>...</li>
+				<li><a href="{$freo.core.http_file}/catalog?page={$plugin_catalog_page}{if $smarty.get.category_id}&amp;category_id={$smarty.get.category_id}{/if}{if $smarty.get.word}&amp;word={$smarty.get.word|smarty:nodefaults|escape:'url'}{/if}{if $smarty.get.tag}&amp;tag={$smarty.get.tag|smarty:nodefaults|escape:'url'}{/if}{if $smarty.get.date}&amp;date={$smarty.get.date}{/if}{if $smarty.get.option01}&amp;option01={$smarty.get.option01|escape:'url'}{/if}{if $smarty.get.option02}&amp;option02={$smarty.get.option02|escape:'url'}{/if}{if $smarty.get.option03}&amp;option03={$smarty.get.option03|escape:'url'}{/if}{if $smarty.get.option04}&amp;option04={$smarty.get.option04|escape:'url'}{/if}{if $smarty.get.option05}&amp;option05={$smarty.get.option05|escape:'url'}{/if}{if $smarty.get.option06}&amp;option06={$smarty.get.option06|escape:'url'}{/if}{if $smarty.get.option07}&amp;option07={$smarty.get.option07|escape:'url'}{/if}{if $smarty.get.option08}&amp;option08={$smarty.get.option08|escape:'url'}{/if}{if $smarty.get.option09}&amp;option09={$smarty.get.option09|escape:'url'}{/if}{if $smarty.get.option10}&amp;option10={$smarty.get.option10|escape:'url'}{/if}{if $smarty.get.condition}&amp;condition={$smarty.get.condition}{/if}{if $smarty.get.sort}&amp;sort={$smarty.get.sort}{/if}">{$plugin_catalog_page}</a></li>
+				<!--{/if}-->
+				<!--{/if}-->
 			</ul>
 			<!--{/if}-->
 		</div>
+		<!--{/if}-->
 		<!--{else}-->
 		<p><strong>条件に一致する商品はありません。</strong></p>
 		<ul>

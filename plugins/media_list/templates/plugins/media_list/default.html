@@ -40,6 +40,7 @@
 
 	</div>
 	<!--{if ($smarty.get.target == 'directory' and $freo.config.plugin.media_list.directory_limit) or ($smarty.get.target == 'file' and $freo.config.plugin.media_list.media_limit)}-->
+	<!--{if $media_list_page > 1}-->
 	<div id="page">
 		<h2>ページ移動</h2>
 		<ul class="order">
@@ -48,10 +49,24 @@
 		</ul>
 		<ul class="direct">
 			<li>ページ</li>
+			<!--{assign var="range" value="1"}-->
+			<!--{if $freo.query.page > 0 && $media_list_page > 0}-->
+			<!--{if $media_list_page > $range*2+1 && $freo.query.page > $range+1}-->
+			<li><a href="{$freo.core.http_file}/media_list?{if $smarty.get.directory}directory={$smarty.get.directory}&amp;{/if}{if $smarty.get.target}target={$smarty.get.target}&amp;{/if}page=1">1</a></li>
+			<li>...</li>
+			<!--{/if}-->
 			<!--{section name='loop' loop=$media_list_page}-->
+			<!--{if (! ($freo.query.page <= $range+1 && $freo.query.page >= $media_list_page-$range) && ($smarty.section.loop.iteration <= $freo.query.page+$range && $smarty.section.loop.iteration >= $freo.query.page-$range)) || ($freo.query.page <= $range+1 && $smarty.section.loop.iteration <= $range*2+1) || ($freo.query.page >= $media_list_page-$range && $smarty.section.loop.iteration >= $media_list_page-$range*2) }-->
 			<li><!--{if $smarty.section.loop.iteration != $freo.query.page}--><a href="{$freo.core.http_file}/media_list?{if $smarty.get.directory}directory={$smarty.get.directory}&amp;{/if}{if $smarty.get.target}target={$smarty.get.target}&amp;{/if}page={$smarty.section.loop.iteration}">{$smarty.section.loop.iteration}</a><!--{else}-->{$smarty.section.loop.iteration}<!--{/if}--></li>
+			<!--{/if}-->
 			<!--{/section}-->
+			<!--{if $media_list_page > $range*2+1 && $freo.query.page < $media_list_page-$range}-->
+			<li>...</li>
+			<li><a href="{$freo.core.http_file}/media_list?{if $smarty.get.directory}directory={$smarty.get.directory}&amp;{/if}{if $smarty.get.target}target={$smarty.get.target}&amp;{/if}page={$media_list_page}">{$media_list_page}</a></li>
+			<!--{/if}-->
+			<!--{/if}-->
 		</ul>
 	</div>
+	<!--{/if}-->
 	<!--{/if}-->
 {include file='footer.html'}

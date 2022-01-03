@@ -92,6 +92,7 @@
 				<!--{/foreach}-->
 			</tbody>
 		</table>
+		<!--{if $plugin_form_record_page > 1}-->
 		<div id="page">
 			<h2>ページ移動</h2>
 			<ul class="order">
@@ -100,10 +101,24 @@
 			</ul>
 			<ul class="direct">
 				<li>ページ</li>
+				<!--{assign var="range" value="1"}-->
+				<!--{if $freo.query.page > 0 && $plugin_form_record_page > 0}-->
+				<!--{if $plugin_form_record_page > $range*2+1 && $freo.query.page > $range+1}-->
+				<li><a href="{$freo.core.http_file}/form/admin_record?page=1&amp;form_id={$freo.query.form_id}{if $smarty.get.word}&amp;word={$smarty.get.word|smarty:nodefaults|escape:'url'}{/if}{if $smarty.get.date}&amp;date={$smarty.get.date}{/if}">1</a></li>
+				<li>...</li>
+				<!--{/if}-->
 				<!--{section name='loop' loop=$plugin_form_record_page}-->
+				<!--{if (! ($freo.query.page <= $range+1 && $freo.query.page >= $plugin_form_record_page-$range) && ($smarty.section.loop.iteration <= $freo.query.page+$range && $smarty.section.loop.iteration >= $freo.query.page-$range)) || ($freo.query.page <= $range+1 && $smarty.section.loop.iteration <= $range*2+1) || ($freo.query.page >= $plugin_form_record_page-$range && $smarty.section.loop.iteration >= $plugin_form_record_page-$range*2) }-->
 				<li><!--{if $smarty.section.loop.iteration != $freo.query.page}--><a href="{$freo.core.http_file}/form/admin_record?page={$smarty.section.loop.iteration}&amp;form_id={$freo.query.form_id}{if $smarty.get.word}&amp;word={$smarty.get.word|smarty:nodefaults|escape:'url'}{/if}{if $smarty.get.date}&amp;date={$smarty.get.date}{/if}">{$smarty.section.loop.iteration}</a><!--{else}-->{$smarty.section.loop.iteration}<!--{/if}--></li>
+				<!--{/if}-->
 				<!--{/section}-->
+				<!--{if $plugin_form_record_page > $range*2+1 && $freo.query.page < $plugin_form_record_page-$range}-->
+				<li>...</li>
+				<li><a href="{$freo.core.http_file}/form/admin_record?page={$plugin_form_record_page}&amp;form_id={$freo.query.form_id}{if $smarty.get.word}&amp;word={$smarty.get.word|smarty:nodefaults|escape:'url'}{/if}{if $smarty.get.date}&amp;date={$smarty.get.date}{/if}">{$plugin_form_record_page}</a></li>
+				<!--{/if}-->
+				<!--{/if}-->
 			</ul>
 		</div>
+		<!--{/if}-->
 	</div>
 {include file='internals/admin/footer.html'}
