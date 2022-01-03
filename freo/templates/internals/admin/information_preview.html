@@ -1,0 +1,27 @@
+{include file='header.html'}
+	<h2>インフォメーション</h2>
+	<!--{if $information_text.excerpt}-->
+		{$information_text.excerpt|smarty:nodefaults}
+	<!--{/if}-->
+	<!--{if $information_text.more}-->
+		<div id="continue">
+			{$information_text.more|smarty:nodefaults}
+		</div>
+	<!--{/if}-->
+	<div id="action">
+		<form action="{$freo.core.http_file}/admin/information_form" method="get">
+			<fieldset>
+				<legend>インフォメーション編集フォーム</legend>
+				<input type="hidden" name="session" value="1" />
+				<p><input type="submit" value="戻る" /></p>
+			</fieldset>
+		</form>
+		<form action="{$freo.core.http_file}/admin/information_preview" method="post">
+			<fieldset>
+				<legend>インフォメーション登録フォーム</legend>
+				<input type="hidden" name="freo[token]" value="{$token}" />
+				<p><input type="submit" value="登録する" /></p>
+			</fieldset>
+		</form>
+	</div>
+{include file='footer.html'}
