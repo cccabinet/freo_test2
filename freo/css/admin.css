@@ -197,6 +197,15 @@ form dl dd.list ul li ul {
 	margin-left: 20px;
 }
 
+/** 管理ステータス画面に未承認データの表示 **/
+ul.attention ul.check {
+	margin: -2px 0 5px;
+}
+ul.attention ul.check li {
+	list-style: none;
+	font-weight: normal;
+}
+
 /** jquery tablesorter（非公式フォーク版） **/
 table.tablesorter {
 	width: 100%;
