@@ -18,6 +18,6 @@ define('FREO_PLUGIN_BOOKMARK_TAGCLOUD_VERSION', '1.0.0');
 define('FREO_PLUGIN_BOOKMARK_TAGCLOUD_LOAD_END', 'bookmark/admin_post,bookmark/admin_delete');
 
 //displayファイルの読み込み設定
-define('FREO_PLUGIN_BOOKMARK_TAGCLOUD_LOAD_DISPLAY', 'bookmark/default');
+define('FREO_PLUGIN_BOOKMARK_TAGCLOUD_LOAD_DISPLAY', 'bookmark/default,bookmark/admin_form');
 
 ?>

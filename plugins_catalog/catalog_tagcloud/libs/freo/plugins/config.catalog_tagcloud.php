@@ -18,6 +18,6 @@ define('FREO_PLUGIN_CATALOG_TAGCLOUD_VERSION', '1.0.0');
 define('FREO_PLUGIN_CATALOG_TAGCLOUD_LOAD_END', 'catalog/admin_post,catalog/admin_delete');
 
 //displayファイルの読み込み設定
-define('FREO_PLUGIN_CATALOG_TAGCLOUD_LOAD_DISPLAY', 'catalog/default,catalog/view');
+define('FREO_PLUGIN_CATALOG_TAGCLOUD_LOAD_DISPLAY', 'catalog/default,catalog/view,catalog/admin_form');
 
 ?>

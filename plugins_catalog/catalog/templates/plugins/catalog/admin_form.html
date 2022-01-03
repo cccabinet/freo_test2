@@ -145,7 +145,18 @@
 							</select>
 						</dd>
 					<dt>タグ</dt>
-						<dd><input type="text" name="plugin_catalog[tag]" size="50" value="{$input.plugin_catalog.tag}" /></dd>
+						<dd>
+							<input type="text" name="plugin_catalog[tag]" id="tag" size="50" value="{$input.plugin_catalog.tag}" />
+{* タグの候補をタグクラウド一覧で表示（要ショッピングカートタグクラウド表示プラグイン） *}
+							<!--{if $freo.plugin.catalog_tagcloud}-->
+							<div id="taglist">
+							<!--{foreach from=$plugin_catalog_tagclouds|smarty:nodefaults item='plugin_catalog_tagcloud'}-->
+								<a href="#" onclick="return false;">{$plugin_catalog_tagcloud.tag}</a>&nbsp;&nbsp;
+							<!--{/foreach}-->
+							</div>
+							<!--{/if}-->
+{* /タグの候補をタグクラウド一覧で表示 *}
+						</dd>
 				</dl>
 				<h3>送料計算用</h3>
 				<dl>

@@ -18,6 +18,6 @@ define('FREO_PLUGIN_CIRCLE_TAGCLOUD_VERSION', '1.0.0');
 define('FREO_PLUGIN_CIRCLE_TAGCLOUD_LOAD_END', 'circle/post,circle/admin_post');
 
 //displayファイルの読み込み設定
-define('FREO_PLUGIN_CIRCLE_TAGCLOUD_LOAD_DISPLAY', 'circle/default');
+define('FREO_PLUGIN_CIRCLE_TAGCLOUD_LOAD_DISPLAY', 'circle/default,circle/admin_form');
 
 ?>

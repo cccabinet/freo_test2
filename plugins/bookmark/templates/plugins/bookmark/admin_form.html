@@ -26,7 +26,18 @@
 					<dt>本文</dt>
 						<dd><textarea name="plugin_bookmark[text]" cols="50" rows="5">{$input.plugin_bookmark.text}</textarea></dd>
 					<dt>タグ</dt>
-						<dd><input type="text" name="plugin_bookmark[tag]" size="50" value="{$input.plugin_bookmark.tag}" /></dd>
+						<dd>
+							<input type="text" name="plugin_bookmark[tag]" id="tag" size="50" value="{$input.plugin_bookmark.tag}" />
+{* タグの候補をタグクラウド一覧で表示（要ブックマークタグクラウド表示プラグイン） *}
+							<!--{if $freo.plugin.bookmark_tagcloud}-->
+							<div id="taglist">
+							<!--{foreach from=$plugin_bookmark_tagclouds|smarty:nodefaults item='plugin_bookmark_tagcloud'}-->
+								<a href="#" onclick="return false;">{$plugin_bookmark_tagcloud.tag}</a>&nbsp;&nbsp;
+							<!--{/foreach}-->
+							</div>
+							<!--{/if}-->
+{* /タグの候補をタグクラウド一覧で表示 *}
+						</dd>
 				</dl>
 				<p><input type="submit" value="登録する" /></p>
 			</fieldset>

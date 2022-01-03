@@ -18,6 +18,6 @@ define('FREO_PLUGIN_PAGE_TAGCLOUD_VERSION', '1.1.0');
 define('FREO_PLUGIN_PAGE_TAGCLOUD_LOAD_END', 'admin/page_post,admin/page_delete');
 
 //displayファイルの読み込み設定
-define('FREO_PLUGIN_PAGE_TAGCLOUD_LOAD_DISPLAY', 'default,entry,category,view,page');
+define('FREO_PLUGIN_PAGE_TAGCLOUD_LOAD_DISPLAY', 'default,entry,category,view,page,admin/page_form');
 
 ?>
