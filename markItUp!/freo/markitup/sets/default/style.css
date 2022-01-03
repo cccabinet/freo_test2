@@ -44,6 +44,9 @@
 .markItUp .pagebreak a {
 	background-image:url(images/pagebreak.png);
 }
+.markItUp .netabare a {
+	background-image:url(images/netabare.png);
+}
 .markItUp .page_code a {
 	background-image:url(images/page_code.png);
 }

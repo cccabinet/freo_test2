@@ -13,6 +13,14 @@ $(document).ready(function() {
 		$(this).toggleClass('open');
 	});
 
+	//ネタバレボタン
+	$('.hidearea').hidearea({
+		view: '表示する',
+		color: '#000000',
+		speed: 'normal',
+		close: true
+	});
+
 	//削除確認
 	$('a.delete').click(function() {
 		return confirm('本当に削除してもよろしいですか？');
