@@ -325,6 +325,7 @@
 		<p>{$page_texts[$page.id].excerpt|smarty:nodefaults|strip_tags|mb_truncate:200:'...'|escape}</p>
 	<!--{/if}-->
 	<!--{/foreach}-->
+	<!--{if $page_page > 1}-->
 	<div id="page">
 		<h2>ページ移動</h2>
 		<ul class="order">
@@ -333,11 +334,25 @@
 		</ul>
 		<ul class="direct">
 			<li>ページ</li>
+			<!--{assign var="range" value="1"}-->
+			<!--{if $freo.query.page > 0 && $page_page > 0}-->
+			<!--{if $page_page > $range*2+1 && $freo.query.page > $range+1}-->
+			<li><a href="{$freo.core.http_file}/page?page=1{if $smarty.get.word}&amp;word={$smarty.get.word|smarty:nodefaults|escape:'url'}{/if}{if $smarty.get.user}&amp;user={$smarty.get.user}{/if}{if $smarty.get.tag}&amp;tag={$smarty.get.tag|smarty:nodefaults|escape:'url'}{/if}{if $smarty.get.date}&amp;date={$smarty.get.date}{/if}">1</a></li>
+			<li>...</li>
+			<!--{/if}-->
 			<!--{section name='loop' loop=$page_page}-->
+			<!--{if (! ($freo.query.page <= $range+1 && $freo.query.page >= $page_page-$range) && ($smarty.section.loop.iteration <= $freo.query.page+$range && $smarty.section.loop.iteration >= $freo.query.page-$range)) || ($freo.query.page <= $range+1 && $smarty.section.loop.iteration <= $range*2+1) || ($freo.query.page >= $page_page-$range && $smarty.section.loop.iteration >= $page_page-$range*2) }-->
 			<li><!--{if $smarty.section.loop.iteration != $freo.query.page}--><a href="{$freo.core.http_file}/page?page={$smarty.section.loop.iteration}{if $smarty.get.word}&amp;word={$smarty.get.word|smarty:nodefaults|escape:'url'}{/if}{if $smarty.get.user}&amp;user={$smarty.get.user}{/if}{if $smarty.get.tag}&amp;tag={$smarty.get.tag|smarty:nodefaults|escape:'url'}{/if}{if $smarty.get.date}&amp;date={$smarty.get.date}{/if}">{$smarty.section.loop.iteration}</a><!--{else}-->{$smarty.section.loop.iteration}<!--{/if}--></li>
+			<!--{/if}-->
 			<!--{/section}-->
+			<!--{if $page_page > $range*2+1 && $freo.query.page < $page_page-$range}-->
+			<li>...</li>
+			<li><a href="{$freo.core.http_file}/page?page={$page_page}{if $smarty.get.word}&amp;word={$smarty.get.word|smarty:nodefaults|escape:'url'}{/if}{if $smarty.get.user}&amp;user={$smarty.get.user}{/if}{if $smarty.get.tag}&amp;tag={$smarty.get.tag|smarty:nodefaults|escape:'url'}{/if}{if $smarty.get.date}&amp;date={$smarty.get.date}{/if}">{$page_page}</a></li>
+			<!--{/if}-->
+			<!--{/if}-->
 		</ul>
 	</div>
+	<!--{/if}-->
 	<h3>ページ検索</h3>
 	<form action="{$freo.core.http_file}/page" method="get">
 		<fieldset>
