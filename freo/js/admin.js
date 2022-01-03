@@ -38,6 +38,9 @@ $(document).ready(function() {
 		$('#datetime_second').val(second);
 	});
 
+	//タグ入力
+	$('#entry_tag,#page_tag,#tag').jTagging($('#taglist'), ',');
+
 	//メディア管理（tablesorter非公式フォーク版）
 	$('#media').tablesorter({
 		emptyTo: 'top',

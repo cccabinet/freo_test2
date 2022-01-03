@@ -211,7 +211,18 @@
 {* タグの入力 *}
 					<!--{if $freo.config.entry.tag}-->
 					<dt>タグ</dt>
-						<dd><input type="text" name="entry[tag]" size="50" value="{$input.entry.tag}" /></dd>
+						<dd>
+							<input type="text" name="entry[tag]" id="entry_tag" size="50" value="{$input.entry.tag}" />
+{* タグの候補をタグクラウド一覧で表示（要エントリータグクラウド表示プラグイン） *}
+							<!--{if $freo.plugin.entry_tagcloud}-->
+							<div id="taglist">
+							<!--{foreach from=$plugin_entry_tagclouds|smarty:nodefaults item='plugin_entry_tagcloud'}-->
+								<a href="#" onclick="return false;">{$plugin_entry_tagcloud.tag}</a>&nbsp;&nbsp;
+							<!--{/foreach}-->
+							</div>
+							<!--{/if}-->
+{* /タグの候補をタグクラウド一覧で表示 *}
+						</dd>
 					<!--{else}-->
 					<input type="hidden" name="entry[tag]" value="" />
 					<!--{/if}-->
