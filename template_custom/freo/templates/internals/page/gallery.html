@@ -153,7 +153,7 @@
 	<h3>ページ直接移動</h3>
 	<ul>
 		<!--{foreach from=$plugin_page_siblings|smarty:nodefaults item='plugin_page_sibling'}-->
-		<li><a href="{$freo.core.http_file}/page/{$plugin_page_sibling.id}">{$plugin_page_sibling.title}</a></li>
+		<li><!--{if $page.id != $plugin_page_sibling.id}--><a href="{$freo.core.http_file}/page/{$plugin_page_sibling.id}"><!--{/if}-->{$plugin_page_sibling.title}<!--{if $page.id != $plugin_page_sibling.id}--></a><!--{/if}--></li>
 		<!--{/foreach}-->
 	</ul>
 	<!--{/if}-->
