@@ -210,3 +210,7 @@ a:active, a:hover {
 .number {
 	text-align: right;
 }
+
+.check {
+	margin-top: -10px;
+}

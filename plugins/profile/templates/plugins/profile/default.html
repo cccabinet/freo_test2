@@ -1,8 +1,12 @@
 {include file='header.html' title='プロフィール一覧'}
 	<h2>プロフィール一覧</h2>
 	<ul>
-		<!--{if $smarty.get.category}--><li>カテゴリー「{$plugin_profile_categories[$smarty.get.category].name}」の検索結果は以下のとおりです。</li>
-		<!--{elseif $smarty.get.tag}--><li>タグ「{$smarty.get.tag}」の検索結果は以下のとおりです。</li>
+		<!--{if $smarty.get.category}-->
+			<li>カテゴリー「{$plugin_profile_categories[$smarty.get.category].name}」の検索結果は以下のとおりです。</li>
+			<li><a href="{$freo.core.http_file}/profile">プロフィール一覧に戻る</a>。</li>
+		<!--{elseif $smarty.get.tag}-->
+			<li>タグ「{$smarty.get.tag}」の検索結果は以下のとおりです。</li>
+			<li><a href="{$freo.core.http_file}/profile">プロフィール一覧に戻る</a>。</li>
 		<!--{else}-->
 			<li>登録されたプロフィールは以下のとおりです。</li>
 			<li>IDをクリックすると、詳細が表示されます。</li>

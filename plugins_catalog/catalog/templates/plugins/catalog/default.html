@@ -65,6 +65,11 @@
 
 		<!--{if $plugin_catalog_count}-->
 		<p><em>{$plugin_catalog_count|number_format}</em>件の商品があります。全<em>{$plugin_catalog_page|number_format}</em>ページ中<em>{$freo.query.page|number_format}</em>ページ目を表示しています。</p>
+		<!--{if $smarty.get.word or $smarty.get.category_id or $smarty.get.tag or $smarty.get.date or $smarty.get.option01 or $smarty.get.option02 or $smarty.get.option03 or $smarty.get.option04 or $smarty.get.option05 or $smarty.get.option06 or $smarty.get.option07 or $smarty.get.option08 or $smarty.get.option09 or $smarty.get.option10 or $smarty.get.condition}-->
+		<ul>
+			<li><a href="{$freo.core.http_file}/catalog">商品一覧へ戻る</a>。</li>
+		</ul>
+		<!--{/if}-->
 
 		<!--{foreach from=$plugin_catalogs|smarty:nodefaults item='plugin_catalog'}-->
 		<h3><a href="{$freo.core.http_file}/catalog/view/{$plugin_catalog.id}">{$plugin_catalog.name}</a><!--{if $plugin_catalog.datetime|recently:7:'day'}--> <small class="attention">New!</small><!--{/if}--></h3>
@@ -217,6 +222,9 @@
 		</div>
 		<!--{else}-->
 		<p><strong>条件に一致する商品はありません。</strong></p>
+		<ul>
+			<li><a href="{$freo.core.http_file}/catalog">商品一覧へ戻る</a>。</li>
+		</ul>
 		<!--{/if}-->
 	</div>
 {include file='plugins/catalog/utility.html'}

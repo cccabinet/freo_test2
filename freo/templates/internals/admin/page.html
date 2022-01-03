@@ -11,8 +11,16 @@
 			<li>ページを新規に登録しました。</li>
 			<!--{elseif $freo.query.exec == 'approve'}-->
 			<li>ID.{$freo.query.id}のページを承認しました。</li>
+		</ul>
+		<ul class="check">
+			<li><a href="{$freo.core.http_file}/page/{$freo.query.id}">承認したページを確認する</a>。</li>
 			<!--{elseif $freo.query.exec == 'update'}-->
 			<li>ID.{$freo.query.id}のページを編集しました。</li>
+		</ul>
+		<ul class="check">
+			<!--{if $pages[$freo.query.id].approved == 'yes' and ($pages[$freo.query.id].status == 'publish' or ($pages[$freo.query.id].status == 'future' and $pages[$freo.query.id].datetime|date_format:'%Y%m%d%H%M%S' <= $smarty.now|date_format:'%Y%m%d%H%M%S')) and (!$pages[$freo.query.id].close or ($pages[$freo.query.id].close|date_format:'%Y%m%d%H%M%S' >= $smarty.now|date_format:'%Y%m%d%H%M%S'))}-->
+			<li><a href="{$freo.core.http_file}/page/{$freo.query.id}">編集したページを確認する</a>。</li>
+			<!--{/if}-->
 			<!--{elseif $freo.query.exec == 'delete'}-->
 			<li>ID.{$freo.query.id}のページを削除しました。</li>
 			<!--{elseif $freo.query.exec == 'sort'}-->
@@ -35,6 +43,15 @@
 			<!--{/if}-->
 			<li>IDをクリックすると、そのページに属するページを表示できます。</li>
 			<li><a href="{$freo.core.http_file}/admin/page_form?pid={$freo.query.pid}">この階層にページを登録する</a>。</li>
+			<!--{if $freo.plugin.page_tagmanager && $smarty.get.tag}-->
+			<li><a href="{$freo.core.http_file}/page_tagmanager/admin">ページタグ管理に戻る</a>。</li>
+			<!--{/if}-->
+			<!--{if $freo.query.pid or $smarty.get.word or $smarty.get.user or $smarty.get.approved or $smarty.get.status or $smarty.get.tag or $smarty.get.date}-->
+			<li><a href="{$freo.core.http_file}/admin/page">最上階に戻る</a>。</li>
+			<!--{if $parent.pid}-->
+			<li><a href="{$freo.core.http_file}/admin/page?pid={$parent.pid}"><code>{$parent.pid}</code> に戻る</a>。</li>
+			<!--{/if}-->
+			<!--{/if}-->
 		</ul>
 		<div id="search">
 			<form action="{$freo.core.http_file}/admin/page" method="get">

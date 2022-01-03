@@ -15,6 +15,14 @@
 		<ul class="complete">
 			<li>プロフィールを編集しました。</li>
 		</ul>
+		<ul class="check">
+			<li><a href="{$freo.core.http_file}/profile/{$freo.user.id}">編集したプロフィールを確認する</a>。</li>
+{* プロフィール拡張プラグインの表示 *}
+			<!--{if $freo.plugin.profile}-->
+			<li><a href="{$freo.core.http_file}/profile">プロフィール一覧を確認する</a>。</li>
+			<!--{/if}-->
+{* /プロフィール拡張プラグインの表示 *}
+		</ul>
 		<!--{/if}-->
 		<ul>
 			<li>プロフィールを入力してください。</li>

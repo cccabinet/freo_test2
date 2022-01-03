@@ -15,10 +15,15 @@
 	<ul class="complete">
 		<li>サークル情報を編集しました。</li>
 	</ul>
+	<ul class="check">
+		<li><a href="{$freo.core.http_file}/circle/view/{$freo.user.id}">編集したサークル情報を確認する</a>。</li>
+		<li><a href="{$freo.core.http_file}/circle">サークル一覧を確認する</a>。</li>
+	</ul>
 	<!--{/if}-->
 	<ul>
 		<li>サークル情報を入力してください。</li>
 		<li><abbr class="attention" title="入力必須">*</abbr> の付いた項目は入力必須項目です。</li>
+		<li><a href="{$freo.core.http_file}/user">ユーザー用ページトップに戻る</a>。</li>
 	</ul>
 	<form action="{$freo.core.http_file}/circle/form" method="post" enctype="multipart/form-data">
 		<fieldset>

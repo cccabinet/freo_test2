@@ -131,4 +131,30 @@
 		<!--{/if}-->
 {* /プロフィール拡張プラグインの表示 *}
 	</dl>
+{* プロフィール拡張プラグインの表示 *}
+	<!--{if $freo.plugin.profile}-->
+	<ul>
+		<li><a href="{$freo.core.http_file}/profile">プロフィール一覧</a></li>
+	</ul>
+	<!--{/if}-->
+{* /プロフィール拡張プラグインの表示 *}
+{* 編集ボタンの表示 *}
+	<!--{if $freo.user.authority == 'root' or $freo.user.id == $user.id}-->
+	<ul class="link">
+		<!--{if $freo.user.authority == 'guest'}-->
+		<!--{if $freo.plugin.profile}-->
+		<li><a href="{$freo.core.http_file}/profile/form"><img src="{$freo.core.http_url}images/icons/edit.png" alt="編集" title="編集" width="16" height="16" /></a></li>
+		<!--{else}-->
+		<li><a href="{$freo.core.http_file}/user/profile_form"><img src="{$freo.core.http_url}images/icons/edit.png" alt="編集" title="編集" width="16" height="16" /></a></li>
+		<!--{/if}-->
+		<!--{else}-->
+		<!--{if $freo.plugin.profile}-->
+		<li><a href="{$freo.core.http_file}/profile/admin_form?id={$user.id}"><img src="{$freo.core.http_url}images/icons/edit.png" alt="編集" title="編集" width="16" height="16" /></a></li>
+		<!--{else}-->
+		<li><a href="{$freo.core.http_file}/admin/user_form?id={$user.id}"><img src="{$freo.core.http_url}images/icons/edit.png" alt="編集" title="編集" width="16" height="16" /></a></li>
+		<!--{/if}-->
+		<!--{/if}-->
+	</ul>
+	<!--{/if}-->
+{* /編集ボタンの表示 *}
 {include file='footer.html'}

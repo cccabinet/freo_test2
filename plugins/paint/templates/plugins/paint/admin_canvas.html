@@ -1,6 +1,9 @@
 {include file='internals/admin/header.html' title='イラスト登録'}
 	<div id="content">
 		<h2>イラスト登録</h2>
+		<ul>
+			<li><a href="{$freo.core.http_file}/paint/admin_ready">イラスト投稿に戻る</a>。</li>
+		</ul>
 		<applet mayscript code="{$plugin_paint_applet.code}" archive="{$plugin_paint_applet.archive}" name="paintbbs" width="550" height="450">
 			<param name="url_save" value="{$freo.core.http_file}/paint/save" />
 			<param name="url_exit" value="{$freo.core.http_file}/paint/admin?{if $smarty.get.id}exec=update&amp;id={$smarty.get.id}{else}exec=insert&amp;now={$smarty.now}{/if}" />

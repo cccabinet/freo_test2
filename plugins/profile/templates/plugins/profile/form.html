@@ -15,10 +15,14 @@
 	<ul class="complete">
 		<li>プロフィールを編集しました。</li>
 	</ul>
+	<ul class="check">
+		<li><a href="{$freo.core.http_file}/profile/{$freo.user.id}">編集したプロフィールを確認する</a>。</li>
+	</ul>
 	<!--{/if}-->
 	<ul>
 		<li>プロフィールを入力してください。</li>
 		<li><abbr class="attention" title="入力必須">*</abbr> の付いた項目は入力必須項目です。</li>
+		<li><a href="{$freo.core.http_file}/user">ユーザー用ページトップに戻る</a>。</li>
 	</ul>
 	<form action="{$freo.core.http_file}/profile/form" method="post" enctype="multipart/form-data">
 		<fieldset>

@@ -22,6 +22,12 @@
 			<li><!--{if $freo.query.pid}--><code>{$freo.query.pid}</code> に<!--{/if}-->登録されたカテゴリーは以下のとおりです。</li>
 			<li>IDをクリックすると、そのカテゴリーに属するカテゴリーを表示できます。</li>
 			<li><a href="{$freo.core.http_file}/admin/category_form?pid={$freo.query.pid}">この階層にカテゴリーを登録する</a>。</li>
+			<!--{if $freo.query.pid}-->
+			<li><a href="{$freo.core.http_file}/admin/category">最上階に戻る</a>。</li>
+			<!--{if $parent.pid}-->
+			<li><a href="{$freo.core.http_file}/admin/category?pid={$parent.pid}"><code>{$parent.pid}</code> に戻る</a>。</li>
+			<!--{/if}-->
+			<!--{/if}-->
 		</ul>
 		<form action="{$freo.core.http_file}/admin/category_update" method="post">
 			<fieldset>

@@ -9,5 +9,9 @@
 			<dt>ホスト名（IPアドレス）</dt>
 				<dd>{$plugin_message.ip|gethostbyaddr}</dd>
 		</dl>
+		<ul>
+			<li><a href="{$freo.core.http_file}/message/admin_form?id={$freo.query.id}">メッセージを編集する</a>。</li>
+			<li><a href="{$freo.core.http_file}/message/admin">メッセージ管理に戻る</a>。</li>
+		</ul>
 	</div>
 {include file='internals/admin/footer.html'}

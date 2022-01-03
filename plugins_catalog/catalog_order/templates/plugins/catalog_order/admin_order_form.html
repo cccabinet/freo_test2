@@ -23,6 +23,10 @@
 			<li>配送方法やお支払い方法を変更した場合、<strong>必要に応じて送料・手数料を調整してください。</strong>（自動では反映されません。）</li>
 			<!--{/if}-->
 			<li><abbr class="attention" title="入力必須">*</abbr> の付いた項目は入力必須項目です。</li>
+			<!--{if $freo.query.id}-->
+			<li><a href="{$freo.core.http_file}/catalog_order/admin_order">注文履歴に戻る</a>。</li>
+			<!--{/if}-->
+			<li><a href="{$freo.core.http_file}/catalog_order/admin">注文管理に戻る</a>。</li>
 		</ul>
 		<form action="{$freo.core.https_file}/catalog_order/admin_order_form{if $freo.query.id}?id={$freo.query.id}{/if}" method="post">
 			<fieldset>
