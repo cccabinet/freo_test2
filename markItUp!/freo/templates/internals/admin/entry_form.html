@@ -122,18 +122,25 @@
 {* 登録日時の入力 *}
 					<dt>日時 <abbr class="attention" title="入力必須">*</abbr></dt>
 						<dd>
-							<input type="text" name="entry[datetime][year]" size="4" value="{$input.entry.datetime|date_format:'%Y'}" />
-							年
-							<input type="text" name="entry[datetime][month]" size="2" value="{$input.entry.datetime|date_format:'%m'}" />
-							月
-							<input type="text" name="entry[datetime][day]" size="2" value="{$input.entry.datetime|date_format:'%d'}" />
-							日
-							<input type="text" name="entry[datetime][hour]" size="2" value="{$input.entry.datetime|date_format:'%H'}" />
-							時
-							<input type="text" name="entry[datetime][minute]" size="2" value="{$input.entry.datetime|date_format:'%M'}" />
-							分
-							<input type="text" name="entry[datetime][second]" size="2" value="{$input.entry.datetime|date_format:'%S'}" />
-							秒
+							<select name="entry[datetime][year]" id="datetime_year">
+								{$input.entry.datetime|date_format:'%Y'|date_select:'year':'':'年'}
+							</select>
+							<select name="entry[datetime][month]" id="datetime_month">
+								{$input.entry.datetime|date_format:'%m'|date_select:'month':'':'月'}
+							</select>
+							<select name="entry[datetime][day]" id="datetime_day">
+								{$input.entry.datetime|date_format:'%d'|date_select:'day':'':'日'}
+							</select>
+							<select name="entry[datetime][hour]" id="datetime_hour">
+								{$input.entry.datetime|date_format:'%H'|date_select:'hour':'':'時'}
+							</select>
+							<select name="entry[datetime][minute]" id="datetime_minute">
+								{$input.entry.datetime|date_format:'%M'|date_select:'minute':'':'分'}
+							</select>
+							<select name="entry[datetime][second]" id="datetime_second">
+								{$input.entry.datetime|date_format:'%S'|date_select:'second':'':'秒'}
+							</select>
+							<input type="button" value="現在日時" id="setDatetime" />
 						</dd>
 {* /登録日時の入力 *}
 {* エントリーの状態の選択 *}
@@ -223,18 +230,22 @@
 				<dl id="article_close">
 					<dt>公開終了日時</dt>
 						<dd>
-							<input type="text" name="entry[close][year]" size="4" value="{$input.entry.close|default:$input.entry.datetime|date_format:'%Y'}" />
-							年
-							<input type="text" name="entry[close][month]" size="2" value="{$input.entry.close|default:$input.entry.datetime|date_format:'%m'}" />
-							月
-							<input type="text" name="entry[close][day]" size="2" value="{$input.entry.close|default:$input.entry.datetime|date_format:'%d'}" />
-							日
-							<input type="text" name="entry[close][hour]" size="2" value="{$input.entry.close|default:$input.entry.datetime|date_format:'%H'}" />
-							時
-							<input type="text" name="entry[close][minute]" size="2" value="{$input.entry.close|default:$input.entry.datetime|date_format:'%M'}" />
-							分
-							<input type="text" name="entry[close][second]" size="2" value="{$input.entry.close|default:$input.entry.datetime|date_format:'%S'}" />
-							秒
+							<select name="entry[close][year]">
+								{$input.entry.close|default:$input.entry.datetime|date_format:'%Y'|date_select:'year':'':'年'}
+							</select>
+							<select name="entry[close][month]">
+								{$input.entry.close|default:$input.entry.datetime|date_format:'%m'|date_select:'month':'':'月'}
+							</select>
+							<select name="entry[close][day]">
+								{$input.entry.close|default:$input.entry.datetime|date_format:'%d'|date_select:'day':'':'日'}
+							</select>
+							<select name="entry[close][hour]">
+								{$input.entry.close|default:$input.entry.datetime|date_format:'%H'|date_select:'hour':'':'時'}
+							</select>
+							<select name="entry[close][minute]">
+								{$input.entry.close|default:$input.entry.datetime|date_format:'%M'|date_select:'minute':'':'分'}
+							</select>
+							<input type="hidden" name="entry[close][second]" value="{$input.entry.close|date_format:'%S'}" />
 						</dd>
 				</dl>
 				<!--{else}-->

@@ -44,15 +44,19 @@
 					<!--{/if}-->
 					<dt>発行日 <abbr class="attention" title="入力必須">*</abbr></dt>
 						<dd>
-							<input type="text" name="plugin_catalog[datetime][year]" size="4" value="{$input.plugin_catalog.datetime|date_format:'%Y'}" />
-							年
-							<input type="text" name="plugin_catalog[datetime][month]" size="2" value="{$input.plugin_catalog.datetime|date_format:'%m'}" />
-							月
-							<input type="text" name="plugin_catalog[datetime][day]" size="2" value="{$input.plugin_catalog.datetime|date_format:'%d'}" />
-							日
-							<input type="hidden" name="plugin_catalog[datetime][hour]" value="{$input.plugin_catalog.datetime|date_format:'%H'}" />
-							<input type="hidden" name="plugin_catalog[datetime][minute]" value="{$input.plugin_catalog.datetime|date_format:'%M'}" />
-							<input type="hidden" name="plugin_catalog[datetime][second]" value="{$input.plugin_catalog.datetime|date_format:'%S'}" />
+							<select name="plugin_catalog[datetime][year]" id="datetime_year">
+								{$input.plugin_catalog.datetime|date_format:'%Y'|date_select:'year':'':'年'}
+							</select>
+							<select name="plugin_catalog[datetime][month]" id="datetime_month">
+								{$input.plugin_catalog.datetime|date_format:'%m'|date_select:'month':'':'月'}
+							</select>
+							<select name="plugin_catalog[datetime][day]" id="datetime_day">
+								{$input.plugin_catalog.datetime|date_format:'%d'|date_select:'day':'':'日'}
+							</select>
+							<input type="hidden" name="plugin_catalog[datetime][hour]" value="{$input.plugin_catalog.datetime|date_format:'%H'}" id="datetime_hour" />
+							<input type="hidden" name="plugin_catalog[datetime][minute]" value="{$input.plugin_catalog.datetime|date_format:'%M'}" id="datetime_minute" />
+							<input type="hidden" name="plugin_catalog[datetime][second]" value="{$input.plugin_catalog.datetime|date_format:'%S'}" id="datetime_second" />
+							<input type="button" value="現在日時" id="setDatetime" />
 						</dd>
 					<dt>在庫数（空欄にすると無制限）</dt>
 						<dd><input type="text" name="plugin_catalog[stock]" size="5" value="{$input.plugin_catalog.stock}" /></dd>
@@ -103,16 +107,21 @@
 				<dl id="catalog_close">
 					<dt>販売終了日時</dt>
 						<dd>
-							<input type="text" name="plugin_catalog[close][year]" size="4" value="{$input.plugin_catalog.close|default:$input.plugin_catalog.datetime|date_format:'%Y'}" />
-							年
-							<input type="text" name="plugin_catalog[close][month]" size="2" value="{$input.plugin_catalog.close|default:$input.plugin_catalog.datetime|date_format:'%m'}" />
-							月
-							<input type="text" name="plugin_catalog[close][day]" size="2" value="{$input.plugin_catalog.close|default:$input.plugin_catalog.datetime|date_format:'%d'}" />
-							日
-							<input type="text" name="plugin_catalog[close][hour]" size="2" value="{$input.plugin_catalog.close|default:$input.plugin_catalog.datetime|date_format:'%H'}" />
-							時
-							<input type="text" name="plugin_catalog[close][minute]" size="2" value="{$input.plugin_catalog.close|default:$input.plugin_catalog.datetime|date_format:'%M'}" />
-							分
+							<select name="plugin_catalog[close][year]">
+								{$input.plugin_catalog.close|default:$input.plugin_catalog.datetime|date_format:'%Y'|date_select:'year':'':'年'}
+							</select>
+							<select name="plugin_catalog[close][month]">
+								{$input.plugin_catalog.close|default:$input.plugin_catalog.datetime|date_format:'%m'|date_select:'month':'':'月'}
+							</select>
+							<select name="plugin_catalog[close][day]">
+								{$input.plugin_catalog.close|default:$input.plugin_catalog.datetime|date_format:'%d'|date_select:'day':'':'日'}
+							</select>
+							<select name="plugin_catalog[close][hour]">
+								{$input.plugin_catalog.close|default:$input.plugin_catalog.datetime|date_format:'%H'|date_select:'hour':'':'時'}
+							</select>
+							<select name="plugin_catalog[close][minute]">
+								{$input.plugin_catalog.close|default:$input.plugin_catalog.datetime|date_format:'%M'|date_select:'minute':'':'分'}
+							</select>
 							<input type="hidden" name="plugin_catalog[close][second]" value="{$input.plugin_catalog.close|date_format:'%S'}" />
 						</dd>
 				</dl>
