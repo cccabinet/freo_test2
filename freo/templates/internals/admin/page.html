@@ -85,6 +85,9 @@
 							<th>日時</th>
 							<th>タイトル</th>
 							<th>状態</th>
+							<!--{if $freo.config.page.restriction or $freo.config.page.filter}-->
+							<th>閲覧制限</th>
+							<!--{/if}-->
 							<th>並び順</th>
 							<th>作業</th>
 						</tr>
@@ -95,6 +98,9 @@
 							<th>日時</th>
 							<th>タイトル</th>
 							<th>状態</th>
+							<!--{if $freo.config.page.restriction or $freo.config.page.filter}-->
+							<th>閲覧制限</th>
+							<!--{/if}-->
 							<th>並び順</th>
 							<th>作業</th>
 						</tr>
@@ -106,6 +112,9 @@
 							<td></td>
 							<td></td>
 							<td></td>
+							<!--{if $freo.config.page.restriction or $freo.config.page.filter}-->
+							<td></td>
+							<!--{/if}-->
 							<td></td>
 							<td><a href="{$freo.core.http_file}/admin/page?pid={$parent.pid}">上の階層へ</a></td>
 						</tr>
@@ -115,8 +124,11 @@
 							<td><a href="{$freo.core.http_file}/admin/page?pid={$page.id}">{$page.id}</a></td>
 							<td><!--{if $page.datetime|date_format:'%Y%m%d' == $smarty.now|date_format:'%Y%m%d'}-->{$page.datetime|date_format:'%H:%M:%S'}<!--{else}-->{$page.datetime|date_format:'%Y/%m/%d'}<!--{/if}--></td>
 							<td>{$page.title}</td>
-							<td><!--{if $page.approved == 'no'}-->未承認<!--{elseif $page.status == 'publish'}-->公開<!--{elseif $page.status == 'private'}-->未公開<!--{elseif $page.status == 'future'}-->予約公開<!--{/if}--></td>
-							<td class="number"><!--{if $freo.user.authority == 'root' and !$smarty.get.word and !$smarty.get.user and !$smarty.get.approved and !$smarty.get.status and !$smarty.get.tag and !$smarty.get.date}--><input type="text" name="sort[{$page.id}]" size="3" value="{$page.sort}" /><!--{else}-->{$page.sort}<!--{/if}--></td>
+							<td><!--{if $page.approved == 'no'}-->未承認<!--{elseif $page.status == 'private'}-->未公開<!--{elseif $page.status == 'publish'}--><!--{if $page.close}--><!--{if $page.close|date_format:'%Y%m%d%H%M%S' <= $smarty.now|date_format:'%Y%m%d%H%M%S'}-->公開終了<!--{else}--><!--{if $page.close|date_format:'%Y%m%d' == $smarty.now|date_format:'%Y%m%d'}-->{$page.close|date_format:'%H:%M:%S'}<br><!--{else}-->{$page.close|date_format:'%Y/%m/%d'}<br><!--{/if}-->公開終了予定<!--{/if}--><!--{else}-->公開<!--{/if}--><!--{elseif $page.status == 'future'}--><!--{if $page.datetime|date_format:'%Y%m%d%H%M%S' <= $smarty.now|date_format:'%Y%m%d%H%M%S'}--><!--{if $page.close}--><!--{if $page.close|date_format:'%Y%m%d%H%M%S' <= $smarty.now|date_format:'%Y%m%d%H%M%S'}-->公開終了<!--{else}--><!--{if $page.close|date_format:'%Y%m%d' == $smarty.now|date_format:'%Y%m%d'}-->{$page.close|date_format:'%H:%M:%S'}<br><!--{else}-->{$page.close|date_format:'%Y/%m/%d'}<br><!--{/if}-->公開終了予定<!--{/if}--><!--{else}-->公開中<!--{/if}--><!--{else}-->予約公開<!--{/if}--><!--{/if}--></td>
+							<!--{if $freo.config.page.restriction or $freo.config.page.filter}-->
+							<td><!--{if $page.restriction == 'user'}-->ユーザー<!--{elseif $page.restriction == 'group'}--><!--{foreach from=$page_associates[$page.id].group|smarty:nodefaults key='page_group' item='page_group' name='loop'}--><strong>[G]</strong>{$freo.refer.groups[$page_group].name}<!--{if !$smarty.foreach.loop.last}--><br /><!--{/if}--><!--{/foreach}--><!--{elseif $page.restriction == 'password'}-->パスワード<!--{elseif $page_associates[$page.id].filter}--><!--{foreach from=$page_associates[$page.id].filter|smarty:nodefaults key='page_filter' item='page_filter' name='loop'}--><strong>[F]</strong>{$freo.refer.filters[$page_filter].name}<!--{if !$smarty.foreach.loop.last}--><br /><!--{/if}--><!--{/foreach}--><!--{/if}--></td>
+							<!--{/if}-->
+							<td class="number"><!--{if $freo.user.authority == 'root' and !$smarty.get.word and !$smarty.get.user and !$smarty.get.approved and !$smarty.get.status and !$smarty.get.tag and !$smarty.get.date}--><input type="number" name="sort[{$page.id}]" size="3" value="{$page.sort}" /><!--{else}-->{$page.sort}<!--{/if}--></td>
 							<td>
 								<!--{if $page.approved == 'yes' and ($page.status == 'publish' or ($page.status == 'future' and $page.datetime|date_format:'%Y%m%d%H%M%S' <= $smarty.now|date_format:'%Y%m%d%H%M%S')) and (!$page.close or $page.close|date_format:'%Y%m%d%H%M%S' >= $smarty.now|date_format:'%Y%m%d%H%M%S')}-->
 								<a href="{$freo.core.http_file}/page/{$page.id}">確認</a>
