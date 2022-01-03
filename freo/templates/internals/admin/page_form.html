@@ -218,7 +218,18 @@
 {* タグの入力 *}
 					<!--{if $freo.config.page.tag}-->
 					<dt>タグ</dt>
-						<dd><input type="text" name="page[tag]" size="50" value="{$input.page.tag}" /></dd>
+						<dd>
+							<input type="text" name="page[tag]" id="page_tag" size="50" value="{$input.page.tag}" />
+{* タグの候補をタグクラウド一覧で表示（要ページタグクラウド表示プラグイン） *}
+							<!--{if $freo.plugin.page_tagcloud}-->
+							<div id="taglist">
+							<!--{foreach from=$plugin_page_tagclouds|smarty:nodefaults item='plugin_page_tagcloud'}-->
+								<a href="#" onclick="return false;">{$plugin_page_tagcloud.tag}</a>&nbsp;&nbsp;
+							<!--{/foreach}-->
+							</div>
+							<!--{/if}-->
+{* /タグの候補をタグクラウド一覧で表示 *}
+						</dd>
 					<!--{else}-->
 					<input type="hidden" name="page[tag]" value="" />
 					<!--{/if}-->

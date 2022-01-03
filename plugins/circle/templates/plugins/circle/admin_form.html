@@ -46,7 +46,18 @@
 					<dt>カップリング</dt>
 						<dd><input type="text" name="plugin_circle[coupling]" size="50" value="{$input.plugin_circle.coupling}" /></dd>
 					<dt>タグ</dt>
-						<dd><input type="text" name="plugin_circle[tag]" size="50" value="{$input.plugin_circle.tag}" /></dd>
+						<dd>
+							<input type="text" name="plugin_circle[tag]" id="tag" size="50" value="{$input.plugin_circle.tag}" />
+{* タグの候補をタグクラウド一覧で表示（要サークルタグクラウド表示プラグイン） *}
+							<!--{if $freo.plugin.circle_tagcloud}-->
+							<div id="taglist">
+							<!--{foreach from=$plugin_circle_tagclouds|smarty:nodefaults item='plugin_circle_tagcloud'}-->
+								<a href="#" onclick="return false;">{$plugin_circle_tagcloud.tag}</a>&nbsp;&nbsp;
+							<!--{/foreach}-->
+							</div>
+							<!--{/if}-->
+{* /タグの候補をタグクラウド一覧で表示 *}
+						</dd>
 					<dt>紹介文</dt>
 						<dd><textarea name="plugin_circle[text]" cols="50" rows="5">{$input.plugin_circle.text}</textarea></dd>
 					<dt>カテゴリー 
