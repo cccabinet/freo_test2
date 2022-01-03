@@ -15,8 +15,12 @@
 		</ul>
 		<!--{/if}-->
 		<ul>
+			<!--{if $freo.user.authority == 'root'}-->
 			<li>登録された注文者は以下のとおりです。</li>
 			<li>注文者情報が登録されていないユーザーは、名前が空欄で表示されます。</li>
+			<!--{elseif $freo.user.authority == 'author'}-->
+			<li>自身の注文者情報は以下のとおりです。</li>
+			<!--{/if}-->
 			<li><a href="{$freo.core.http_file}/catalog_order/admin">注文管理に戻る</a>。</li>
 		</ul>
 		<table summary="注文者">
@@ -40,6 +44,8 @@
 			</tfoot>
 			<tbody>
 				<!--{foreach from=$users|smarty:nodefaults item='user'}-->
+				<!--{if $freo.user.authority == 'root' or $freo.user.id == $user.id}-->
+				<!--{if $user.approved == 'yes'}-->
 				<tr>
 					<td>{$user.id}</td>
 					<td><!--{if $user.created|date_format:'%Y%m%d' == $smarty.now|date_format:'%Y%m%d'}-->{$user.created|date_format:'%H:%M:%S'}<!--{else}-->{$user.created|date_format:'%Y/%m/%d'}<!--{/if}--></td>
@@ -52,6 +58,8 @@
 						<!--{/if}-->
 					</td>
 				</tr>
+				<!--{/if}-->
+				<!--{/if}-->
 				<!--{/foreach}-->
 			</tbody>
 		</table>

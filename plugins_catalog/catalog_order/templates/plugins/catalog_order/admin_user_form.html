@@ -19,10 +19,12 @@
 				<legend>注文者登録フォーム</legend>
 				<input type="hidden" name="freo[token]" value="{$token}" />
 				<input type="hidden" name="plugin_catalog_order_user[user_id]" value="{$freo.query.id}" />
+				<!--{if $freo.user.authority == 'root'}-->
 				<dl>
 					<dt>管理者用メモ</dt>
 						<dd><textarea name="plugin_catalog_order_user[admin_text]" cols="50" rows="5">{$input.plugin_catalog_order_user.admin_text}</textarea></dd>
 				</dl>
+				<!--{/if}-->
 				<h3>ご注文者</h3>
 				<dl>
 					<dt>名前 <abbr class="attention" title="入力必須">*</abbr></dt>
