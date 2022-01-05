@@ -103,7 +103,7 @@ $(document).ready(function() {
 		}
 		target += 'a[href$=\'.' + this + '\']';
 	});
-	$(target).colorbox();
+	$(target).colorbox({ maxWidth:'95%', maxHeight:'95%' });
 
 	$('a.colorbox').colorbox({ width:'80%', height:'80%', iframe:true });
 });
