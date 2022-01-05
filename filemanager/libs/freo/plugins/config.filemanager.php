@@ -24,7 +24,7 @@ define('FREO_PLUGIN_FILEMANAGER_LOAD_PAGE', 'filemanager');
 define('FREO_PLUGIN_FILEMANAGER_DIR', './');
 
 //管理対象除外ディレクトリ
-define('FREO_PLUGIN_FILEMANAGER_EXCEPTED_DIR', 'database/,libs/PEAR/,libs/smarty/,tiny_mce/');
+define('FREO_PLUGIN_FILEMANAGER_EXCEPTED_DIR', 'database/,libs/PEAR/,libs/smarty/,tinymce/');
 
 //パスとして使用を許可する文字
 define('FREO_PLUGIN_FILEMANAGER_PATH_CHARACTER', '^[\w\!\#\$\%\&\'\(\)\-\^\@\[\;\]\,\.\=\~\`\{\+\}\_\/]+$');
