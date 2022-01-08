@@ -189,6 +189,25 @@ a:active, a:hover {
 	text-decoration: underline;
 }
 
+/********* ネタバレ *************************************************/
+
+span.hidearea {
+	line-height: 2.0;
+	cursor: pointer;
+	padding: 3px 10px;
+	border: 2px solid #AAAAAA;
+	background-color: #EEEEEE;
+}
+span.hidearea:active, span.hidearea:hover {
+	background-color: #AAAAAA;
+	color: #EEEEEE;
+}
+div.hidearea {
+	padding: 5px 10px;
+	border: 2px solid #AAAAAA;
+	background-color: #EEEEEE;
+}
+
 /********* 個別指定 *************************************************/
 
 #action {

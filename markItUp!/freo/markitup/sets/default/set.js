@@ -60,6 +60,7 @@ var mySettings = {
 		{name:'リンク', className:'link', key:'L', openWith:'<a href="[![リンク:!:http://]!]"(!( title="[![Title]!]")!) target="_blank">', closeWith:'</a>', placeHolder:'リンクするテキスト...' },
 		{name:'画像', className:'picture', key:'P', replaceWith:'<img src="[![ソース:!:http://]!]" alt="[![代替テキスト]!]" />' },
 		{name:'続きを読む', className:'pagebreak', replaceWith:'<!-- pagebreak -->\n' },
+		{name:'ネタバレ', className:'netabare', openWith:'<p>', closeWith:'</p>', multiline:true, openBlockWith:'<div class="hidearea"(!( title="[![ボタンのタイトル]!]")!)>\n', closeBlockWith:'\n</div>\n', placeHolder:'ここにネタバレ文...'},
 		{name:'コードスタイル', className:'page_code', dropMenu: [
 			{name:'コード(code)', className:'code', openWith:'<code(!( class="[![クラス名]!]")!)>', closeWith:'</code>'},
 			{name:'整形(pre)', className:'pre', openWith:'<pre(!( class="[![クラス名]!]")!)>', closeWith:'</pre>'},
