@@ -1,6 +1,7 @@
 {include file='internals/admin/header.html' title='エクスポート'}
 	<div id="content">
 		<h2>エクスポート</h2>
+		<!--{if $freo.user.authority == 'root'}-->
 		<ul>
 			<li>データベースの内容をSQLファイルに出力します。</li>
 		</ul>
@@ -21,5 +22,10 @@
 				<p><input type="submit" value="出力する" /></p>
 			</fieldset>
 		</form>
+		<!--{else}-->
+		<ul class="attention">
+			<li>権限がありません。</li>
+		</ul>
+		<!--{/if}-->
 	</div>
 {include file='internals/admin/footer.html'}

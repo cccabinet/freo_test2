@@ -2,14 +2,19 @@
 	<div id="content">
 		<h2>注文管理</h2>
 		<ul>
+			<!--{if $freo.user.authority == 'root'}-->
 			<li><a href="{$freo.core.http_file}/catalog_order/admin_order">すべての注文履歴を表示する</a>。</li>
 			<li><a href="{$freo.core.https_file}/catalog_order/admin_order_form">注文を新規に追加する</a>。</li>
 			<li><a href="{$freo.core.http_file}/catalog_order/admin_total">発送済み商品の集計を表示する</a>。</li>
+			<!--{else}-->
+			<li><a href="{$freo.core.http_file}/catalog_order/admin_order?user_id={$freo.user.id}">自身の注文履歴を表示する</a>。</li>
+			<!--{/if}-->
 			<!--{if $freo.config.user.regist and $freo.config.plugin.catalog_order.user}-->
-			<li><a href="{$freo.core.http_file}/catalog_order/admin_user">登録された注文者を表示する</a>。</li>
+			<li><a href="{$freo.core.http_file}/catalog_order/admin_user"><!--{if $freo.user.authority == 'root'}-->登録された注文者を表示する<!--{else}-->自身の注文者情報を表示する<!--{/if}--></a>。</li>
 			<!--{/if}-->
 		</ul>
 		<h3>対応状況</h3>
+		<!--{if $freo.user.authority == 'root'}-->
 		<table summary="対応状況">
 			<thead>
 				<tr>
@@ -32,5 +37,10 @@
 				<!--{/foreach}-->
 			</tbody>
 		</table>
+		<!--{else}-->
+		<ul class="attention">
+			<li>閲覧できません。</li>
+		</ul>
+		<!--{/if}-->
 	</div>
 {include file='internals/admin/footer.html'}

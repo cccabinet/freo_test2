@@ -39,7 +39,9 @@
 							<th>名前</th>
 							<th>フリガナ</th>
 							<th>権限</th>
+							<!--{if $freo.user.authority == 'root'}-->
 							<th>並び順</th>
+							<!--{/if}-->
 							<th>作業</th>
 						</tr>
 					</thead>
@@ -56,19 +58,27 @@
 					</tfoot>
 					<tbody>
 						<!--{foreach from=$users|smarty:nodefaults item='user'}-->
+						<!--{if $freo.user.authority == 'root' or $freo.user.id == $user.id}-->
+						<!--{if $user.approved == 'yes'}-->
 						<tr>
 							<td>{$user.id}</td>
 							<td><!--{if $user.created|date_format:'%Y%m%d' == $smarty.now|date_format:'%Y%m%d'}-->{$user.created|date_format:'%H:%M:%S'}<!--{else}-->{$user.created|date_format:'%Y/%m/%d'}<!--{/if}--></td>
 							<td>{$user.name}</td>
 							<td>{$plugin_profiles[$user.id].kana}</td>
 							<td><!--{if $user.authority == 'root'}-->管理者<!--{elseif $user.authority == 'author'}-->投稿者<!--{elseif $user.authority == 'guest'}-->ゲスト<!--{/if}--></td>
+							<!--{if $freo.user.authority == 'root'}-->
 							<td class="number"><!--{if $plugin_profiles[$user.id].sort != ''}--><input type="text" name="sort[{$user.id}]" size="3" value="{$plugin_profiles[$user.id].sort}" /><!--{/if}--></td>
+							<!--{/if}-->
 							<td><a href="{$freo.core.http_file}/profile/admin_form?id={$user.id}">編集</a></td>
 						</tr>
+						<!--{/if}-->
+						<!--{/if}-->
 						<!--{/foreach}-->
 					</tbody>
 				</table>
+				<!--{if $freo.user.authority == 'root'}-->
 				<p><input type="submit" value="並び順を編集する" /></p>
+				<!--{/if}-->
 			</fieldset>
 		</form>
 	</div>
