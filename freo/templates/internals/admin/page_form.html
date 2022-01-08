@@ -21,16 +21,24 @@
 				<input type="hidden" name="page[id]" value="{$input.page.id}" />
 				<!--{/if}-->
 				<dl>
+{* タイトルの入力 *}
 					<dt>タイトル <abbr class="attention" title="入力必須">*</abbr></dt>
 						<dd><input type="text" name="page[title]" size="50" value="{$input.page.title}" /></dd>
+{* /タイトルの入力 *}
+{* 本文の入力 *}
 					<dt>本文</dt>
 						<dd><textarea name="page[text]" cols="65" rows="30" id="tiny_mce">{$input.page.text}</textarea></dd>
+{* /本文の入力 *}
+{* オプションの入力 *}
 					<!--{foreach from=$options|smarty:nodefaults item='option'}-->
 					<dt>{$option.name}<!--{if $option.required == 'yes'}--> <abbr class="attention" title="入力必須">*</abbr><!--{/if}--></dt>
+{* 種類が一行入力の場合 *}
 						<!--{if $option.type == 'text'}-->
 						<dd><input type="text" name="page_associate[option][{$option.id}]" size="50" value="{if $freo.query.id or $freo.query.session or $smarty.server.REQUEST_METHOD == 'POST'}{$input.page_associate.option[$option.id]}{else}{$option.text}{/if}" /></dd>
+{* 種類が複数行入力の場合 *}
 						<!--{elseif $option.type == 'textarea'}-->
 						<dd><textarea name="page_associate[option][{$option.id}]" cols="50" rows="5">{if $freo.query.id or $freo.query.session or $smarty.server.REQUEST_METHOD == 'POST'}{$input.page_associate.option[$option.id]}{else}{$option.text}{/if}</textarea></dd>
+{* 種類がセレクトボックスの場合 *}
 						<!--{elseif $option.type == 'select'}-->
 						<dd>
 							<select name="page_associate[option][{$option.id}]">
@@ -40,6 +48,7 @@
 								<!--{/foreach}-->
 							</select>
 						</dd>
+{* 種類がラジオボタンの場合 *}
 						<!--{elseif $option.type == 'radio'}-->
 						<dd>
 							<!--{if $option.required == 'no'}-->
@@ -49,6 +58,7 @@
 							<input type="radio" name="page_associate[option][{$option.id}]" id="label_option_{$option.id}_{$smarty.foreach.loop.index}" value="{$option_text}"{if $input.page_associate.option[$option.id] == $option_text} checked="checked"{/if} /> <label for="label_option_{$option.id}_{$smarty.foreach.loop.index}">{$option_text}</label>
 							<!--{/foreach}-->
 						</dd>
+{* 種類がチェックボックスの場合 *}
 						<!--{elseif $option.type == 'checkbox'}-->
 						<dd>
 							<!--{assign var='options' value=$input.page_associate.option[$option.id]|explode:"\n"}-->
@@ -56,6 +66,7 @@
 							<input type="checkbox" name="page_associate[option][{$option.id}][]" id="label_option_{$option.id}_{$smarty.foreach.loop.index}" value="{$option_text}"{if $option_text|in_array:$options} checked="checked"{/if} /> <label for="label_option_{$option.id}_{$smarty.foreach.loop.index}">{$option_text}</label>
 							<!--{/foreach}-->
 						</dd>
+{* 種類がアップロードの場合 *}
 						<!--{elseif $option.type == 'file'}-->
 						<dd>
 							<input type="file" name="page_associate[option][{$option.id}]" size="30" />
@@ -66,14 +77,19 @@
 						</dd>
 						<!--{/if}-->
 					<!--{/foreach}-->
+{* /オプションの入力 *}
 				</dl>
+{* 確認/登録ボタンの表示 *}
 				<p>
 					<input type="submit" name="preview" value="確認する" />
 					<input type="submit" value="登録する" />
 				</p>
+{* /確認/登録ボタンの表示 *}
+{* 添付ファイルの表示 *}
 				<!--{if $freo.config.page.file}-->
 				<h3>添付ファイル</h3>
 				<dl>
+{* ファイルの登録 *}
 					<dt>ファイル</dt>
 						<dd>
 							<input type="file" name="page[file]" size="30" />
@@ -82,6 +98,8 @@
 								<input type="hidden" name="page[file]" value="{$input.page.file}" />
 							<!--{/if}-->
 						</dd>
+{* /ファイルの登録 *}
+{* イメージの登録 *}
 					<dt>ファイルのイメージ</dt>
 						<dd>
 							<input type="file" name="page[image]" size="30" />
@@ -90,18 +108,26 @@
 								<input type="hidden" name="page[image]" value="{$input.page.image}" />
 							<!--{/if}-->
 						</dd>
+{* /イメージの登録 *}
+{* ファイルの説明の入力 *}
 					<dt>ファイルの説明</dt>
 						<dd><input type="text" name="page[memo]" size="50" value="{$input.page.memo}" /></dd>
+{* /ファイルの説明の入力 *}
 				</dl>
 				<!--{else}-->
 				<input type="hidden" name="page[memo]" value="" />
 				<!--{/if}-->
+{* /添付ファイルの表示 *}
+{* ページ情報の表示 *}
 				<h3>ページ情報</h3>
 				<dl>
+{* ページIDの登録 *}
 					<!--{if !$freo.query.id}-->
 					<dt>ページID <abbr class="attention" title="入力必須">*</abbr></dt>
 						<dd><input type="text" name="page[id]" size="30" value="{$input.page.id}" /></dd>
 					<!--{/if}-->
+{* /ページIDの登録 *}
+{* 親IDの登録 *}
 					<dt>親ID</dt>
 						<dd>
 							<select name="page[pid]">
@@ -111,6 +137,8 @@
 								<!--{/foreach}-->
 							</select>
 						</dd>
+{* /親IDの登録 *}
+{* 登録日時の入力 *}
 					<dt>日時 <abbr class="attention" title="入力必須">*</abbr></dt>
 						<dd>
 							<input type="text" name="page[datetime][year]" size="4" value="{$input.page.datetime|date_format:'%Y'}" />
@@ -126,6 +154,8 @@
 							<input type="text" name="page[datetime][second]" size="2" value="{$input.page.datetime|date_format:'%S'}" />
 							秒
 						</dd>
+{* /登録日時の入力 *}
+{* ページの状態の選択 *}
 					<dt>ページの状態 <abbr class="attention" title="入力必須">*</abbr></dt>
 						<dd>
 							<select name="page[status]">
@@ -134,6 +164,8 @@
 								<option value="future"{if $input.page.status == 'future'} selected="selected"{/if}>予約公開</option>
 							</select>
 						</dd>
+{* /ページの状態の選択 *}
+{* ページの表示の選択 *}
 					<dt>ページの表示 <abbr class="attention" title="入力必須">*</abbr></dt>
 						<dd>
 							<select name="page[display]">
@@ -141,6 +173,8 @@
 								<option value="private"{if $input.page.display == 'private'} selected="selected"{/if}>初期画面に表示しない</option>
 							</select>
 						</dd>
+{* /ページの表示の選択 *}
+{* コメントの受付の選択 *}
 					<dt>コメントの受付 <abbr class="attention" title="入力必須">*</abbr></dt>
 						<dd>
 							<select name="page[comment]">
@@ -150,6 +184,8 @@
 								<option value="user"{if $input.page.comment == 'user'} selected="selected"{/if}>登録ユーザーから受け付ける</option>
 							</select>
 						</dd>
+{* /コメントの受付の選択 *}
+{* トラックバックの受付の選択 *}
 					<dt>トラックバックの受付 <abbr class="attention" title="入力必須">*</abbr></dt>
 						<dd>
 							<select name="page[trackback]">
@@ -158,14 +194,20 @@
 								<option value="view"{if $input.page.trackback == 'view'} selected="selected"{/if}>表示のみ</option>
 							</select>
 						</dd>
+{* /トラックバックの受付の選択 *}
+{* タグの入力 *}
 					<!--{if $freo.config.page.tag}-->
 					<dt>タグ</dt>
 						<dd><input type="text" name="page[tag]" size="50" value="{$input.page.tag}" /></dd>
 					<!--{else}-->
 					<input type="hidden" name="page[tag]" value="" />
 					<!--{/if}-->
+{* /タグの入力 *}
+{* 並び順の登録 *}
 					<dt>並び順 <abbr class="attention" title="入力必須">*</abbr></dt>
 						<dd><input type="text" name="page[sort]" size="5" value="{$input.page.sort}" /></dd>
+{* /並び順の登録 *}
+{* ページの公開終了の選択 *}
 					<!--{if $freo.config.page.close}-->
 					<dt>ページの公開終了 <abbr class="attention" title="入力必須">*</abbr></dt>
 						<dd>
@@ -177,7 +219,9 @@
 					<!--{else}-->
 					<input type="hidden" name="page[close_set]" value="" />
 					<!--{/if}-->
+{* /ページの公開終了の選択 *}
 				</dl>
+{* ページの公開終了日時の入力 *}
 				<!--{if $freo.config.page.close}-->
 				<dl id="article_close">
 					<dt>公開終了日時</dt>
@@ -199,6 +243,9 @@
 				<!--{else}-->
 				<input type="hidden" name="page[close]" value="" />
 				<!--{/if}-->
+{* /ページの公開終了日時の入力 *}
+{* /ページ情報の表示 *}
+{* 通知の表示 *}
 				<!--{if $freo.config.page.trackback}-->
 				<h3>通知</h3>
 				<dl>
@@ -208,8 +255,11 @@
 				<!--{else}-->
 				<input type="hidden" name="page[trackback_url]" value="" />
 				<!--{/if}-->
+{* /通知の表示 *}
+{* 閲覧制限の表示 *}
 				<!--{if $freo.config.page.restriction}-->
 				<h3>閲覧制限</h3>
+{* 閲覧制限の種類の選択 *}
 				<dl>
 					<dt>制限 <abbr class="attention" title="入力必須">*</abbr></dt>
 						<dd>
@@ -221,6 +271,8 @@
 							</select>
 						</dd>
 				</dl>
+{* /閲覧制限の種類の選択 *}
+{* 制限グループの選択 *}
 				<dl id="article_group">
 					<dt>グループで制限</dt>
 						<dd class="list">
@@ -233,14 +285,19 @@
 							</ul>
 						</dd>
 				</dl>
+{* /制限グループの選択 *}
+{* 制限パスワードの入力 *}
 				<dl id="article_password">
 					<dt>パスワードで制限</dt>
 						<dd><input type="text" name="page[password]" size="30" value="{$input.page.password}" /></dd>
 				</dl>
+{* /制限パスワードの入力 *}
 				<!--{else}-->
 				<input type="hidden" name="page[restriction]" value="" />
 				<input type="hidden" name="page[password]" value="" />
 				<!--{/if}-->
+{* /閲覧制限の表示 *}
+{* フィルターの表示 *}
 				<!--{if $freo.config.page.filter}-->
 				<h3>フィルター</h3>
 				<dl>
@@ -256,10 +313,12 @@
 						</dd>
 				</dl>
 				<!--{/if}-->
+{* /フィルターの表示 *}
 			</fieldset>
 		</form>
 		<!--{if $freo.query.id}-->
 		<!--{if $freo.user.authority == 'root'}-->
+{* ページの詳細の表示 *}
 		<h2>ID.{$freo.query.id}のページの詳細</h2>
 		<table summary="ページの詳細">
 			<tr>
@@ -272,6 +331,8 @@
 				<th>最終編集日時</th><td>{$input.page.modified|date_format:'%Y/%m/%d %H:%M'}</td>
 			</tr>
 		</table>
+{* /ページの詳細の表示 *}
+{* ページ承認の表示 *}
 		<!--{if $input.page.approved == 'no'}-->
 		<h2>ID.{$freo.query.id}のページを承認</h2>
 		<ul>
@@ -287,7 +348,29 @@
 			</fieldset>
 		</form>
 		<!--{/if}-->
+{* /ページ承認の表示 *}
 		<!--{/if}-->
+{* ページID変更プラグインの表示 *}
+		<!--{if $freo.plugin.page_id_update}-->
+		<h2>ID.{$freo.query.id}のIDを変更</h2>
+		<ul>
+			<li>新しいIDを入力して <em>変更ボタン</em>を押してください。</li>
+			<li>IDを変更すると、<strong>ページのURLやアップロードファイルのURLが変更されます。</strong>リンク切れが発生する可能性があるので注意してください。</li>
+		</ul>
+		<form action="{$freo.core.http_file}/page_id_update?id={$freo.query.id}" method="post">
+			<fieldset>
+				<legend>ID変更フォーム</legend>
+				<input type="hidden" name="freo[token]" value="{$token}" />
+				<dl>
+					<dt>ページID</dt>
+						<dd><input type="text" name="plugin_page_id_update[id]" size="30" value="{$freo.query.id}" /></dd>
+				</dl>
+				<p><input type="submit" value="変更する" /></p>
+			</fieldset>
+		</form>
+		<!--{/if}-->
+{* /ページID変更プラグインの表示 *}
+{* ページ削除の表示 *}
 		<h2>ID.{$freo.query.id}のページを削除</h2>
 		<ul>
 			<li>このページを削除するには、<em>削除ボタン</em>を押してください。</li>
@@ -300,6 +383,7 @@
 				<p><input type="submit" value="削除する" /></p>
 			</fieldset>
 		</form>
+{* /ページ削除の表示 *}
 		<!--{/if}-->
 	</div>
 {include file='internals/admin/footer.html'}
