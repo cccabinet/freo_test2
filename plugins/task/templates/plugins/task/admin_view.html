@@ -5,7 +5,7 @@
 			<dt>内容</dt>
 				<dd>{$plugin_task.title}</dd>
 			<dt>詳細</dt>
-				<dd>{$plugin_task.text|nl2br}</dd>
+				<dd>{$plugin_task.text|nl2br|autolink}</dd>
 			<dt>カテゴリー</dt>
 				<dd>{$plugin_task_categories[$plugin_task.category_id].name}</dd>
 			<dt>状態</dt>

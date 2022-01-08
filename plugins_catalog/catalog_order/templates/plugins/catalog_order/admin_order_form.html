@@ -91,7 +91,7 @@
 							<td>[{$catalog.id}]<br />{$catalog.name}</td>
 							<td class="number"><input type="text" name="plugin_catalog_order[price][{$catalog.id}]" size="5" value="{$input.plugin_catalog_order_sets[$catalog.id].price}" /> 円</td>
 							<td class="number"><input type="text" name="plugin_catalog_order[count][{$catalog.id}]" size="5" value="{$input.plugin_catalog_order_sets[$catalog.id].count}" /></td>
-							<td class="number">{$plugin_catalog_price_subtotals[$catalog.id]}円</td>
+							<td class="number">{$plugin_catalog_price_subtotals[$catalog.id]|number_format}円</td>
 							<td>
 								<a href="{$freo.core.https_file}/catalog_order/admin_order_cart_delete?freo%5Btoken%5D={$token}&amp;id={$freo.query.id}&amp;catalog_id={$catalog.id}" class="delete">削除</a>
 							</td>
@@ -105,7 +105,7 @@
 				<table summary="合計">
 					<tr>
 						<th>商品合計（税込）</th>
-						<td class="number">{$plugin_catalog_price_total}円</td>
+						<td class="number">{$plugin_catalog_price_total|number_format}円</td>
 					</tr>
 					<tr>
 						<th>送料（税込）</th>
@@ -121,7 +121,7 @@
 					</tr>
 					<tr>
 						<th>お支払い額合計（税込）</th>
-						<td class="number"><em>{$plugin_catalog_price_total+$input.plugin_catalog_order.carriage+$input.plugin_catalog_order.charge-$input.plugin_catalog_order.discount}円</em></td>
+						<td class="number"><em>{$plugin_catalog_price_total+$input.plugin_catalog_order.carriage+$input.plugin_catalog_order.charge-$input.plugin_catalog_order.discount|number_format}円</em></td>
 					</tr>
 				</table>
 				<!--{else}-->
@@ -190,7 +190,7 @@
 				</dl>
 				<h3>配送先住所</h3>
 				<dl>
-					<dt>郵便番号</dt>
+					<dt>郵便番号<!--{if !$freo.query.id}-->（郵便番号を入力すると住所が自動入力されます）<!--{/if}--></dt>
 						<dd><input type="text" name="plugin_catalog_order[zipcode]" size="10" value="{$input.plugin_catalog_order.zipcode}" id="catalog_order_zipcode" /></dd>
 					<dt>都道府県</dt>
 						<dd>

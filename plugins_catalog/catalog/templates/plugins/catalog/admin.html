@@ -47,7 +47,7 @@
 			</form>
 		</div>
 		<ul>
-			<li><em>{$plugin_catalog_count}</em>件の商品。全<em>{$plugin_catalog_page}</em>ページ中<em>{$freo.query.page}</em>ページ目を表示しています。</li>
+			<li><em>{$plugin_catalog_count|number_format}</em>件の商品。全<em>{$plugin_catalog_page|number_format}</em>ページ中<em>{$freo.query.page|number_format}</em>ページ目を表示しています。</li>
 		</ul>
 		<form action="{$freo.core.http_file}/catalog/admin_update" method="post">
 			<fieldset>
@@ -79,8 +79,8 @@
 						<tr>
 							<td>{$plugin_catalog.id}</td>
 							<td>{$plugin_catalog.name}</td>
-							<td class="number"><!--{if $plugin_catalog.stock == ''}-->無制限<!--{else}-->{$plugin_catalog.stock}{$plugin_catalog.unit}<!--{/if}--></td>
-							<td><!--{if $plugin_catalog.status == 'publish'}--><!--{if $plugin_catalog.datetime|date_format:'%Y%m%d' > $smarty.now|date_format:'%Y%m%d'}-->予約<!--{elseif $plugin_catalog.close != null and $plugin_catalog.close|date_format:'%Y%m%d%H%M%S' <= $smarty.now|date_format:'%Y%m%d%H%M%S'}-->販売終了<!--{elseif $plugin_catalog.stock != null and $plugin_catalog.stock == 0}--><span class="attention">売り切れ</span><!--{elseif $plugin_catalog.stock != null and $plugin_catalog.stock <= $freo.config.plugin.catalog.small_stock}-->残り{$plugin_catalog.stock}{$plugin_catalog.unit}<!--{else}-->販売中<!--{/if}--><!--{elseif $plugin_catalog.status == 'private'}-->未公開<!--{/if}--></td>
+							<td class="number"><!--{if $plugin_catalog.stock == ''}-->無制限<!--{else}-->{$plugin_catalog.stock|number_format}{$plugin_catalog.unit}<!--{/if}--></td>
+							<td><!--{if $plugin_catalog.status == 'publish'}--><!--{if $plugin_catalog.datetime|date_format:'%Y%m%d' > $smarty.now|date_format:'%Y%m%d'}-->予約<!--{elseif $plugin_catalog.close != null and $plugin_catalog.close|date_format:'%Y%m%d%H%M%S' <= $smarty.now|date_format:'%Y%m%d%H%M%S'}-->販売終了<!--{elseif $plugin_catalog.stock != null and $plugin_catalog.stock == 0}--><span class="attention">売り切れ</span><!--{elseif $plugin_catalog.stock != null and $plugin_catalog.stock <= $freo.config.plugin.catalog.small_stock}-->残り{$plugin_catalog.stock|number_format}{$plugin_catalog.unit}<!--{else}-->販売中<!--{/if}--><!--{elseif $plugin_catalog.status == 'private'}-->未公開<!--{/if}--></td>
 							<td class="number"><input type="text" name="sort[{$plugin_catalog.id}]" size="3" value="{$plugin_catalog.sort}" /></td>
 							<td>
 								<a href="{$freo.core.http_file}/catalog/admin_form?id={$plugin_catalog.id}">編集</a>

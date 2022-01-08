@@ -23,7 +23,7 @@
 			<!--{/if}-->
 			<!--{if $user.text}-->
 			<dt>紹介文</dt>
-				<dd>{$user.text|nl2p}</dd>
+				<dd>{$user.text|nl2p|autolink}</dd>
 			<!--{/if}-->
 			<!--{if $user_associate.group}-->
 			<dt>グループ</dt>
