@@ -7,7 +7,7 @@
 	<meta http-equiv="Content-Style-Type" content="text/css" />
 	<meta http-equiv="Content-Script-Type" content="text/javascript" />
 	<meta name="viewport" content="width=device-width" />
-	<title>{if $title}{$title}{else}管理者用{/if} | {$freo.config.basis.title}</title>
+	<title>{if $plugin_title}{$plugin_title}{elseif $title}{$title}{else}管理者用{/if} | {$freo.config.basis.title}</title>
 	<link rel="stylesheet" href="{$freo.core.http_url}{$smarty.const.FREO_CSS_DIR}common.css" type="text/css" media="all" />
 	<link rel="stylesheet" href="{$freo.core.http_url}{$smarty.const.FREO_CSS_DIR}admin.css" type="text/css" media="all" />
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-colorbox@1.6.4/example2/colorbox.css" integrity="sha256-62u5vQN/7KulWWARFuJ4hYyyNP5d8Clqg8LL9BfAuNw=" crossorigin="anonymous" type="text/css" media="all" />
@@ -24,6 +24,7 @@
 	<div id="header">
 		<h1><a href="{$freo.core.http_file}/admin">{$freo.config.basis.title}</a></h1>
 	</div>
+{* 管理メニューの表示 *}
 	<button type="button" class="toggle"></button>
 	<div id="menu">
 		<h2>管理メニュー</h2>
@@ -41,19 +42,23 @@
 		<ul>
 			<li>
 				<a href="{$freo.core.http_file}/admin/page">ページ管理</a>
+{* ショートカットページの表示 *}
 				<ul>
 					<!--{foreach from=$plugin_page_shortcuts|smarty:nodefaults item='plugin_page_shortcut'}-->
 					<li><a href="{$freo.core.http_file}/admin/page?pid={$plugin_page_shortcut.id}">{$plugin_page_shortcut.text}</a></li>
 					<!--{/foreach}-->
 				</ul>
+{* /ショートカットページの表示 *}
 			</li>
 			<li>
 				<a href="{$freo.core.http_file}/admin/page_form">ページ登録</a>
+{* ショートカットページの表示 *}
 				<ul>
 					<!--{foreach from=$plugin_page_shortcuts|smarty:nodefaults item='plugin_page_shortcut'}-->
 					<li><a href="{$freo.core.http_file}/admin/page_form?pid={$plugin_page_shortcut.id}">{$plugin_page_shortcut.text}</a></li>
 					<!--{/foreach}-->
 				</ul>
+{* /ショートカットページの表示 *}
 			</li>
 		</ul>
 		<h3>コミュニティ</h3>
@@ -68,7 +73,15 @@
 		</ul>
 		<!--{/if}-->
 		<ul>
+{* プロフィール編集の表示 *}
+{* プロフィール拡張プラグインを導入していたら *}
+			<!--{if $freo.plugin.profile}-->
+			<li><a href="{$freo.core.http_file}/profile/admin_form?id={$freo.user.id}">プロフィール編集</a></li>
+{* プロフィール拡張プラグインを導入していないなら *}
+			<!--{else}-->
 			<li><a href="{$freo.core.http_file}/admin/profile_form">プロフィール編集</a></li>
+			<!--{/if}-->
+{* /プロフィール編集の表示 *}
 			<li><a href="{$freo.core.https_file}/admin/password_form">パスワード変更</a></li>
 		</ul>
 		<h3>プラグイン</h3>
@@ -110,3 +123,4 @@
 			<li><a href="{$freo.core.https_file}/login?freo%5Bsession%5D=logout">ログアウト</a></li>
 		</ul>
 	</div>
+{* /管理メニューの表示 *}
