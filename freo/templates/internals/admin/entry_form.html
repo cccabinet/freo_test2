@@ -11,6 +11,7 @@
 		<ul>
 			<li>エントリーを入力してください。</li>
 			<li><abbr class="attention" title="入力必須">*</abbr> の付いた項目は入力必須項目です。</li>
+			<li><a href="{$freo.core.http_file}/admin/entry">エントリー管理に戻る</a>。</li>
 		</ul>
 		<form action="{$freo.core.http_file}/admin/entry_form{if $freo.query.id}?id={$freo.query.id}{/if}" method="post" enctype="multipart/form-data">
 			<fieldset>
@@ -177,7 +178,11 @@
 {* /トラックバックの受付の選択 *}
 {* カテゴリーの選択 *}
 					<!--{if $freo.config.entry.category}-->
-					<dt>カテゴリー</dt>
+					<dt>カテゴリー
+						<!--{if $freo.user.authority == 'root' and $freo.config.entry.category}-->
+						<a href="{$freo.core.http_file}/admin/category_form" target="_blank" rel="noopener">カテゴリー登録</a>
+						<!--{/if}-->
+					</dt>
 						<dd class="list">
 							{include file='internals/admin/entry_form_category.html'}
 						</dd>

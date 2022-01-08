@@ -45,6 +45,12 @@
 			<li><!--{if $freo.query.path}--><code>{$freo.query.path}</code> に<!--{/if}-->登録されたメディアは以下のとおりです。</li>
 			<li><a href="{$freo.core.http_file}/admin/media_form{if $freo.query.path}?path={$freo.query.path}{/if}"><!--{if $freo.query.path}-->この階層に<!--{/if}-->メディアを登録する</a>。</li>
 			<li><a href="{$freo.core.http_file}/admin/media_form?directory=1{if $freo.query.path}&amp;path={$freo.query.path}{/if}"><!--{if $freo.query.path}-->この階層に<!--{/if}-->ディレクトリを作成する</a>。</li>
+			<!--{if $freo.query.path}-->
+			<li><a href="{$freo.core.http_file}/admin/media">最上階に戻る</a>。</li>
+			<!--{if $parent}-->
+			<li><a href="{$freo.core.http_file}/admin/media?path={$parent}"><code>{$parent}</code> に戻る</a>。</li>
+			<!--{/if}-->
+			<!--{/if}-->
 		</ul>
 		<table summary="メディア" id="media" class="tablesorter">
 			<thead>

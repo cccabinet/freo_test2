@@ -13,6 +13,12 @@
 			<li>ID.{$freo.query.id}のサークルを削除しました。</li>
 			<!--{/if}-->
 		</ul>
+		<ul class="check">
+			<!--{if $freo.query.exec == 'update'}-->
+			<li><a href="{$freo.core.http_file}/circle/view/{$freo.query.id}">編集したサークル情報を確認する</a>。</li>
+			<!--{/if}-->
+			<li><a href="{$freo.core.http_file}/circle">サークル一覧を確認する</a>。</li>
+		</ul>
 		<!--{/if}-->
 		<ul>
 			<li>登録されたサークルは以下のとおりです。</li>

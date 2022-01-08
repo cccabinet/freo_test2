@@ -16,6 +16,9 @@
 			<li>送信された拍手は以下のとおりです。</li>
 			<li><a href="{$freo.core.http_file}/clap/admin_text">メッセージを管理する</a>。</li>
 			<li><a href="{$freo.core.http_file}/clap/admin_thank">お礼を管理する</a>。</li>
+			<!--{if $smarty.server.REQUEST_URI|regex_match:'/day=[0-9]/'}-->
+			<li><a href="{$freo.core.http_file}/clap/admin">拍手管理に戻る</a>。</li>
+			<!--{/if}-->
 		</ul>
 		<div id="search">
 			<form action="{$freo.core.http_file}/clap/admin" method="get">

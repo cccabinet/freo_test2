@@ -11,6 +11,7 @@
 		<ul>
 			<li>サークル情報を入力してください。</li>
 			<li><abbr class="attention" title="入力必須">*</abbr> の付いた項目は入力必須項目です。</li>
+			<li><a href="{$freo.core.http_file}/circle/admin">サークル管理に戻る</a>。</li>
 		</ul>
 		<form action="{$freo.core.http_file}/circle/admin_form?id={$freo.query.id}" method="post" enctype="multipart/form-data">
 			<fieldset>
@@ -47,7 +48,11 @@
 						<dd><input type="text" name="plugin_circle[tag]" size="50" value="{$input.plugin_circle.tag}" /></dd>
 					<dt>紹介文</dt>
 						<dd><textarea name="plugin_circle[text]" cols="50" rows="5">{$input.plugin_circle.text}</textarea></dd>
-					<dt>カテゴリー</dt>
+					<dt>カテゴリー 
+						<!--{if $freo.user.authority == 'root'}-->
+						<a href="{$freo.core.http_file}/circle/admin_category_form" target="_blank" rel="noopener">カテゴリー登録</a>
+						<!--{/if}-->
+					</dt>
 						<dd>
 							<select name="plugin_circle[category_id]">
 								<option value="">選択してください</option>
