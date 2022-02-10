@@ -290,7 +290,7 @@ function freo_page_catalog_setup_execute()
 		$queries[] = "plugin_catalog_delivery_sets VALUES('yumail_250','bank');";
 		$queries[] = "plugin_catalog_delivery_sets VALUES('yumail_500','bank');";
 		$queries[] = "plugin_catalog_delivery_sets VALUES('yumail_1000','bank');";
-I		$queries[] = "plugin_catalog_delivery_sets VALUES('letterpack_light','bank');";
+		$queries[] = "plugin_catalog_delivery_sets VALUES('letterpack_light','bank');";
 		$queries[] = "plugin_catalog_delivery_sets VALUES('letterpack_plus','bank');";
 		$queries[] = "plugin_catalog_delivery_sets VALUES('smartletter','bank');";
 		$queries[] = "plugin_catalog_delivery_sets VALUES('yupack_60','bank');";
