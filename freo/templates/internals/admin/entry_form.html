@@ -13,9 +13,9 @@
 			<li><abbr class="attention" title="入力必須">*</abbr> の付いた項目は入力必須項目です。</li>
 {* 現在のエントリーの状態 *}
 			<!--{if !$freo.query.id and $input.entry.status == 'publish'}-->
-			<li>現在、このエントリーの状態は「<em>公開</em>」です。下書き保存するには状態を「<em>非公開</em>」に変更してから登録してください。</li>
+			<li>現在、このエントリーの状態は「<em>公開</em>」です。下書き保存するには状態を「<em>未公開</em>」に変更してから登録してください。</li>
 			<!--{elseif $input.entry.status == 'private'}-->
-			<li>現在、このエントリーの状態は「<em>非公開</em>」です。公開するには状態を「<em>公開</em>」に変更してから登録してください。</li>
+			<li>現在、このエントリーの状態は「<em>未公開</em>」です。公開するには状態を「<em>公開</em>」に変更してから登録してください。</li>
 			<!--{elseif $input.entry.status == 'future'}-->
 			<!--{if $input.entry.datetime|date_format:'%Y%m%d%H%M%S' >= $smarty.now|date_format:'%Y%m%d%H%M%S'}-->
 			<li>現在、このエントリーは「<em>予約公開待ち</em>」です。今すぐ公開するには日時を「<em>現在日時</em>」に変更してから登録してください。</li>
