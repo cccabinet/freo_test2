@@ -2,6 +2,27 @@
 
 詳しくは、各リリースファイルのREADME.mdを参照してください。
 
+## [1.0.2] - 2022-08-07
+
+### カスタマイズの内容
+
+- エントリー登録/ページ登録の状態の表示部分の「非公開」を「未公開」に修正（markItUp!のファイルも含む）
+- TinyMCE関連ファイルの更新と修正
+  - admin.jsのTinyMCEの設定部分を修正（文字列の区切りをスペース区切りに統一、textcolorプラグインは標準搭載されたので削除）
+  - TinyMCE 日本語翻訳ファイルが更新されたので差替（"ページ区切り"を"「続きを読む」を挿入"に修正済み）
+
+バージョンアップは、以下のファイルを最新版付属のものに差し替えてください。<br>
+（★：管理画面用バージョンも該当、■：レスポンシブバージョン（差分版も同様）も該当）
+- freo/templates/internals/admin/entry_form.html ★
+- freo/templates/internals/admin/page_form.html ★
+- markItUp!/freo/templates/internals/admin/entry_form.html ★
+- markItUp!/freo/templates/internals/admin/page_form.html ★
+- freo/js/admin.js ★
+- freo/js/tinymce/langs/ja.js ★
+- freo/libs/freo/version.php ★
+
+
+
 ## [1.0.1] - 2022-02-10
 
 ### カスタマイズの内容
@@ -13,6 +34,7 @@
 （★：管理画面用バージョンも該当、■：レスポンシブバージョン（差分版も同様）も該当）
 - freo/templates/internals/admin/page.html ★
 - plugins_catalog/catalog/libs/freo/plugins/page.catalog.php ★■
+- freo/libs/freo/version.php ★■
 
 
 
