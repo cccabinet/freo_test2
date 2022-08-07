@@ -1,6 +1,6 @@
 /*********************************************************************
 
- freo | 管理画面 (2022/01/10)
+ freo | 管理画面 (2022/08/07)
 
  Copyright(C) 2009-2022 freo.jp
  customized：cccabinet（https://cccabinet.jpn.org/)
@@ -165,9 +165,7 @@ tinymce.init({
 	entity_encoding : 'raw',
 	extended_valid_elements: 'iframe[*]',
 	height: 500,
-	plugins: [
-		'advlist lists link image charmap preview anchor hr nonbreaking searchreplace visualblocks code fullscreen insertdatetime media table textcolor pagebreak quickbars help'
-	],
+	plugins: 'advlist lists link image charmap preview anchor hr nonbreaking searchreplace visualblocks code fullscreen insertdatetime media table pagebreak quickbars help',
 	external_plugins:{
 		'freomedia': freo_path + 'js/tinymce/plugins/freomedia/plugin.min.js',
 		'freomediaform': freo_path + 'js/tinymce/plugins/freomediaform/plugin.min.js',
@@ -180,8 +178,8 @@ tinymce.init({
 	},
 	mobile: {
 		menubar: true,
-		plugins: [ 'image link unlink media table charmap hr pagebreak nonbreaking anchor insertdatetime advlist lists checklist help quickbars advtable' ],
-		toolbar: [ 'bullist numlist styleselect' ]
+		plugins: 'image link unlink media table charmap hr pagebreak nonbreaking anchor insertdatetime advlist lists checklist help quickbars advtable',
+		toolbar: 'bullist numlist styleselect'
 	},
 	quickbars_insert_toolbar: 'freomedia image media quicktable | hr charmap nonbreaking pagebreak',
 	quickbars_selection_toolbar: 'bold underline strikethrough styleselect | quicklink removeformat',
