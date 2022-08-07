@@ -17,9 +17,9 @@
 - freo/templates/internals/admin/page_form.html ★
 - markItUp!/freo/templates/internals/admin/entry_form.html ★
 - markItUp!/freo/templates/internals/admin/page_form.html ★
-- freo/js/admin.js ★
-- freo/js/tinymce/langs/ja.js ★
-- freo/libs/freo/version.php ★
+- freo/js/admin.js ★■
+- freo/js/tinymce/langs/ja.js ★■
+- freo/libs/freo/version.php ★■
 
 
 
