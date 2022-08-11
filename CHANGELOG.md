@@ -7,14 +7,15 @@
 ### カスタマイズの内容
 
 - 制限パスワードのインプットタイプの修正（input type="text" ⇒ input type="password"）
-バージョンアップは、以下のファイルを最新版付属のものに差し替えてください。<br>
-（★：管理画面用バージョンも該当）
-- freo/templates/internals/admin/entry_form.html ★
-- freo/templates/internals/admin/iframe_media_form.html ★
-- freo/templates/internals/admin/media_form.html ★
-- freo/templates/internals/admin/page_form.html ★
-- markItUp!/freo/templates/internals/admin/entry_form.html ★
-- markItUp!/freo/templates/internals/admin/page_form.html ★
+
+バージョンアップは、以下のファイルを最新版付属のものに差し替えてください。<br>（★：管理画面用バージョンも該当、■：レスポンシブバージョン（差分版も同様）も該当））
+
+- freo/templates/internals/admin/entry_form.html ★■
+- freo/templates/internals/admin/iframe_media_form.html ★■
+- freo/templates/internals/admin/media_form.html ★■
+- freo/templates/internals/admin/page_form.html ★■
+- markItUp!/freo/templates/internals/admin/entry_form.html ★■
+- markItUp!/freo/templates/internals/admin/page_form.html ★■
 
 
 
