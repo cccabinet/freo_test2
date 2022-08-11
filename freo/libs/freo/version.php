@@ -2,7 +2,7 @@
 
 /*********************************************************************
 
- freo | バージョン情報 (2022/08/07)
+ freo | バージョン情報 (2022/08/11)
 
  Copyright(C) 2009-2022 freo.jp
  customized：cccabinet（https://cccabinet.jpn.org/)
