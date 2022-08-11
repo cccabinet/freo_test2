@@ -58,8 +58,10 @@
 │       │   │   ├── footer.html（管理画面フッタテンプレート）
 │       │   │   ├── header.html（管理画面ヘッダテンプレート）
 │       │   │   ├── iframe_header.html（インラインフレームヘッダテンプレート）
+│       │   │   ├── iframe_madia_form.html（インラインフレームメディア登録/編集テンプレート）
 │       │   │   ├── information_form.html（インフォメーション管理画面テンプレート）
 │       │   │   ├── information_preview.html（インフォメーションプレビュー表示用テンプレート差替）
+│       │   │   ├── madia_form.html（メディア登録/編集テンプレート）
 │       │   │   ├── page_form.html（ページ管理画面テンプレート）
 │       │   │   └── page_preview.html（ページプレビュー表示用テンプレート差替）
 │       │   ├── default/default.html（トップ表示用テンプレート）
