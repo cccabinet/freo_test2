@@ -22,7 +22,7 @@
 					<dt><label for="title">タイトル <abbr class="attention" title="入力必須">*</abbr></label></dt>
 						<dd><input type="text" name="plugin_bookmark[title]" id="title" size="50" value="{$input.plugin_bookmark.title}{$smarty.get.title}"></dd>
 					<dt><label for="url">URL <abbr class="attention" title="入力必須">*</abbr></label></dt>
-						<dd><input type="text" name="plugin_bookmark[url]" id="url" size="50" value="{$input.plugin_bookmark.url}{$smarty.get.url}"></dd>
+						<dd><input type="url" name="plugin_bookmark[url]" id="url" size="50" value="{$input.plugin_bookmark.url}{$smarty.get.url}"></dd>
 					<dt><label for="text">本文</label></dt>
 						<dd><textarea name="plugin_bookmark[text]" id="text" cols="50" rows="5">{$input.plugin_bookmark.text}</textarea></dd>
 					<dt><label for="tag">タグ</label></dt>
