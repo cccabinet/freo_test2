@@ -14,34 +14,4 @@
 			</fieldset>
 		</form>
 	</div>
-	<script>
-	//エラーメッセージを削除
-	window.parent.$('.plugin_form_error').html('');
-
-	//エラーメッセージを表示
-	var errors = '';
-	{foreach from=$errors|smarty:nodefaults item='error'}
-	if (window.parent.$('#plugin_form_error_{$error.id}').size()) {ldelim}
-		window.parent.$('#plugin_form_error_{$error.id}').html('<span class="plugin_form_error">{$error.message}</span>');
-	{rdelim} else {ldelim}
-		errors += '<li>{$error.message}</li>';
-	{rdelim}
-	{/foreach}
-	if (errors) {ldelim}
-		window.parent.$('#plugin_form_error').html('<ul class="plugin_form_error">' + errors + '</ul>');
-	{rdelim}
-
-	{literal}
-	//入力画面へ戻る
-	$('form#plugin_form').submit(function() {
-		if (window == window.parent) {
-			history.back();
-		} else {
-			window.parent.$.fn.subwindow.close();
-		}
-
-		return false;
-	});
-	{/literal}
-	</script>
 {include file='plugins/form/iframe_footer.html'}

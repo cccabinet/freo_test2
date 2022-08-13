@@ -24,21 +24,4 @@
 			</fieldset>
 		</form>
 	</div>
-	<script>
-	{literal}
-	//エラーメッセージを削除
-	window.parent.$('.plugin_form_error').html('');
-
-	//入力画面へ戻る
-	$('form#plugin_form').submit(function() {
-		if (window == window.parent) {
-			history.back();
-		} else {
-			window.parent.$.fn.subwindow.close();
-		}
-
-		return false;
-	});
-	{/literal}
-	</script>
 {include file='plugins/form/iframe_footer.html'}

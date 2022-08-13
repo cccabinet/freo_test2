@@ -7,28 +7,6 @@
 	<title>ID.{$freo.config.plugin.catalog.order_prefix}{$freo.query.id}の注文を印刷</title>
 	<link rel="stylesheet" href="{$freo.core.http_url}{$smarty.const.FREO_CSS_DIR}common.css">
 	<link rel="stylesheet" href="{$freo.core.http_url}{$smarty.const.FREO_CSS_DIR}plugins/catalog_order_print.css">
-	<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-	<script>
-	{literal}
-	$(document).ready(function() {
-		document.designMode = 'off';
-
-		$('div#menu a').click(function() {
-			if (document.designMode == 'on') {
-				document.designMode = 'off';
-
-				$(this).text('このページを直接編集する');
-			} else {
-				document.designMode = 'on';
-
-				$(this).text('編集を終了する');
-			}
-
-			return false;
-		});
-	});
-	{/literal}
-	</script>
 </head>
 
 <body>
@@ -110,6 +88,29 @@
 		<div class="note"><p>なし。</p></div>
 	</div>
 </div>
+
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script>
+	{literal}
+	$(document).ready(function() {
+		document.designMode = 'off';
+
+		$('div#menu a').click(function() {
+			if (document.designMode == 'on') {
+				document.designMode = 'off';
+
+				$(this).text('このページを直接編集する');
+			} else {
+				document.designMode = 'on';
+
+				$(this).text('編集を終了する');
+			}
+
+			return false;
+		});
+	});
+	{/literal}
+	</script>
 </body>
 
 </html>

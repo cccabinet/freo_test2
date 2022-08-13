@@ -70,23 +70,6 @@
 	{/if}
 
 	</style>
-	<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-	<script src="{$freo.core.http_url}{$smarty.const.FREO_JS_DIR}common.js"></script>
-
-	{if $freo.query.devide == 'off'}
-	<script>
-
-		var media_comic_columns = {$freo.query.columns};
-		var media_comic_end     = '{$freo.query.end}';
-		var media_comic_from    = {$plugin_media_comic_from};
-		var media_comic_to      = {$plugin_media_comic_to};
-		var media_comic_cover   = {if $plugin_media_comic_cover}true{else}false{/if};
-		var media_comic_all     = {$plugin_media_comic_all};
-
-	</script>
-	<script src="{$freo.core.http_url}{$smarty.const.FREO_JS_DIR}plugins/media_comic.js"></script>
-	{/if}
-
 </head>
 
 <body>
@@ -169,6 +152,23 @@
 	<div id="footer">
 		<address>Created by <a href="https://freo.jp/">freo</a>.</address>
 	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script src="{$freo.core.http_url}{$smarty.const.FREO_JS_DIR}common.js"></script>
+
+	{if $freo.query.devide == 'off'}
+	<script>
+
+		var media_comic_columns = {$freo.query.columns};
+		var media_comic_end		 = '{$freo.query.end}';
+		var media_comic_from		= {$plugin_media_comic_from};
+		var media_comic_to			= {$plugin_media_comic_to};
+		var media_comic_cover	 = {if $plugin_media_comic_cover}true{else}false{/if};
+		var media_comic_all		 = {$plugin_media_comic_all};
+
+	</script>
+	<script src="{$freo.core.http_url}{$smarty.const.FREO_JS_DIR}plugins/media_comic.js"></script>
+	{/if}
 </body>
 
 </html>
