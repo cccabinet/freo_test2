@@ -61,11 +61,9 @@ h2 {
 
 #footer {
   clear: both;
-}
-
-#footer address {
   padding-top: 10px;
   border-top: 1px solid #999;
+  font-size: 120%;
 }
 
 /********* メニュー *************************************************/

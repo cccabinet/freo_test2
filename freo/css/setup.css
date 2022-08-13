@@ -29,9 +29,10 @@ h6 {
   font-size: 120%;
 }
 
-address {
+#footer {
   padding-top: 10px;
   border-top: 1px solid #999;
+  font-size: 120%;
 }
 
 /********* レスポンシブ *********************************************/
