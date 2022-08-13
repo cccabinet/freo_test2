@@ -5,229 +5,229 @@
 /********* HTML再定義 ***********************************************/
 
 body {
-	padding: 10px;
-	background-color: #999999;
+  padding: 10px;
+  background-color: #999999;
 }
 
 h2, h3, h4, h5, h6 {
-	font-size: 120%;
+  font-size: 120%;
 }
 h2 {
-	margin: 15px 0;
-	padding: 5px 0;
-	border-top: 1px solid #AAAAAA;
-	border-bottom: 1px solid #AAAAAA;
-	font-weight: bold;
+  margin: 15px 0;
+  padding: 5px 0;
+  border-top: 1px solid #AAAAAA;
+  border-bottom: 1px solid #AAAAAA;
+  font-weight: bold;
 }
 
 form h3 {
-	margin-top: 30px;
+  margin-top: 30px;
 }
 
 /********* 全体 *****************************************************/
 
 div#container {
-	width: 90%;
-	margin: 0 auto;
-	padding: 20px;
-	border-bottom: 5px solid #666666;
-	background-color: #FFFFFF;
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+  border-bottom: 5px solid #666666;
+  background-color: #FFFFFF;
 }
 
 /********* ヘッダー *************************************************/
 
 div#header {
-	clear: both;
+  clear: both;
 }
 div#header h1 {
-	line-height: 1.0;
-	margin: 0;
+  line-height: 1.0;
+  margin: 0;
 }
 div#header h1 a:link, div#header h1 a:visited {
-	color: #222222;
-	text-decoration: none;
+  color: #222222;
+  text-decoration: none;
 }
 div#header h1 a:active, div#header h1 a:hover {
-	color: #777777;
-	text-decoration: none;
+  color: #777777;
+  text-decoration: none;
 }
 
 /********* フッター *************************************************/
 
 div#footer {
-	clear: both;
+  clear: both;
 }
 div#footer address {
-	padding-top: 10px;
-	border-top: 1px solid #999999;
+  padding-top: 10px;
+  border-top: 1px solid #999999;
 }
 
 /********* メニュー *************************************************/
 
 div#menu {
-	float: left;
-	width: 200px;
-	margin-right: 10px;
-	margin-bottom: 20px;
+  float: left;
+  width: 200px;
+  margin-right: 10px;
+  margin-bottom: 20px;
 }
 div#menu ul li ul {
-	margin-top: 0;
-	margin-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 /********* 内容 *****************************************************/
 
 div#content {
-	float: left;
-	width: calc(100% - 210px);
+  float: left;
+  width: calc(100% - 210px);
 }
 
 /********* 検索 *****************************************************/
 
 div#search form {
-	margin-top: 20px;
+  margin-top: 20px;
 }
 div#search form dl {
-	margin: 0;
+  margin: 0;
 }
 div#search form dl dt {
-	margin: 0;
+  margin: 0;
 }
 div#search form dl dd {
-	margin: 0 0 5px 0;
+  margin: 0 0 5px 0;
 }
 div#search form p {
-	margin: 0;
+  margin: 0;
 }
 
 /********* ページ移動 ***********************************************/
 
 div#page h2 {
-	display: none;
+  display: none;
 }
 div#page ul.order {
-	margin: 10px 0;
+  margin: 10px 0;
 }
 div#page ul.order li {
-	display: inline;
-	list-style: none;
-	margin-right: 10px;
+  display: inline;
+  list-style: none;
+  margin-right: 10px;
 }
 div#page ul.direct {
-	margin: 10px 0;
-	text-align: right;
+  margin: 10px 0;
+  text-align: right;
 }
 div#page ul.direct li {
-	display: inline;
-	list-style: none;
-	margin-left: 10px;
+  display: inline;
+  list-style: none;
+  margin-left: 10px;
 }
 
 /********* 設定編集 *************************************************/
 
 div#config form h3 {
-	margin: 10px 0;
-	padding: 5px;
-	background-color: #EEEEEE;
+  margin: 10px 0;
+  padding: 5px;
+  background-color: #EEEEEE;
 }
 div#config form dl {
-	margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 /********* レスポンシブ *********************************************/
 
 form textarea {
-	width: calc(100% - 10px);
+  width: calc(100% - 10px);
 }
 
 .toggle {
-	display: none;
+  display: none;
 }
 
 @media (max-width: 767.98px) {
-	body {
-		padding: 0;
-	}
-	div#container {
-		padding: 15px;
-		width: calc(100% - 30px);
-	}
+  body {
+    padding: 0;
+  }
+  div#container {
+    padding: 15px;
+    width: calc(100% - 30px);
+  }
 }
 @media (max-width: 480px) {
-	div#menu,div#content {
-		float: none;
-		width: 100%;
-	}
-	div#menu {
-		display: none;
-	}
+  div#menu,div#content {
+    float: none;
+    width: 100%;
+  }
+  div#menu {
+    display: none;
+  }
 
-	/* 管理メニュー表示ボタン */
-	.toggle {
-		display: block;
-		margin-top: 15px;
-	}
-	.toggle::before {
-		content: '管理メニューを表示';
-	}
-	.toggle.open::before {
-		content: '管理メニューを閉じる';
-	}
+  /* 管理メニュー表示ボタン */
+  .toggle {
+    display: block;
+    margin-top: 15px;
+  }
+  .toggle::before {
+    content: '管理メニューを表示';
+  }
+  .toggle.open::before {
+    content: '管理メニューを閉じる';
+  }
 }
 
 @media (max-width: 570px) {
-	form input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="button"]):not([type="reset"]):not([size="5"]) {
-		width: calc(100% - 10px);
-	}
+  form input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="button"]):not([type="reset"]):not([size="5"]) {
+    width: calc(100% - 10px);
+  }
 }
 
 /********* 個別指定 *************************************************/
 
 dl dd.list ul {
-	margin-top: 0;
-	margin-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 form dl dd.list {
-	padding: 5px;
-	border: 1px solid #CCCCCC;
+  padding: 5px;
+  border: 1px solid #CCCCCC;
 }
 form dl dd.list ul {
-	margin: 0;
+  margin: 0;
 }
 form dl dd.list ul li ul {
-	margin-left: 20px;
+  margin-left: 20px;
 }
 
 /** 管理ステータス画面に未承認データの表示 **/
 ul.attention ul.check {
-	margin: -2px 0 5px;
+  margin: -2px 0 5px;
 }
 ul.attention ul.check li {
-	list-style: none;
-	font-weight: normal;
+  list-style: none;
+  font-weight: normal;
 }
 
 /** jquery tablesorter（非公式フォーク版） **/
 table.tablesorter {
-	width: 100%;
+  width: 100%;
 }
 table.tablesorter thead tr .tablesorter-header {
-	background-image: url(../images/tablesorter/bg.gif);
-	background-repeat: no-repeat;
-	background-position: center right;
-	cursor: pointer;
-	white-space: normal;
-	padding: 4px 20px 4px 4px;
+  background-image: url(../images/tablesorter/bg.gif);
+  background-repeat: no-repeat;
+  background-position: center right;
+  cursor: pointer;
+  white-space: normal;
+  padding: 4px 20px 4px 4px;
 }
 table.tablesorter thead tr .tablesorter-headerAsc {
-	background-image: url(../images/tablesorter/asc.gif);
+  background-image: url(../images/tablesorter/asc.gif);
 }
 table.tablesorter thead tr .tablesorter-headerDesc {
-	background-image: url(../images/tablesorter/desc.gif);
+  background-image: url(../images/tablesorter/desc.gif);
 }
 table.tablesorter thead tr .sorter-false {
-	background-image: none;
-	cursor: default;
-	padding: 4px;
+  background-image: none;
+  cursor: default;
+  padding: 4px;
 }

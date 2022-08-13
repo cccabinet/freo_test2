@@ -5,49 +5,49 @@
 /********* HTML再定義 ***********************************************/
 
 body {
-	padding: 0 10px;
+  padding: 0 10px;
 }
 h1 {
-	display: none;
+  display: none;
 }
 h2, h3, h4, h5, h6 {
-	font-size: 120%;
+  font-size: 120%;
 }
 
 /********* レスポンシブ *********************************************/
 
 form textarea {
-	width: calc(100% - 10px);
+  width: calc(100% - 10px);
 }
 
 @media (max-width: 570px) {
-	form input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="button"]):not([type="reset"]):not([size="5"]) {
-		width: calc(100% - 10px);
-	}
+  form input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="button"]):not([type="reset"]):not([size="5"]) {
+    width: calc(100% - 10px);
+  }
 }
 
 /********* 個別指定 *************************************************/
 
 /** jquery tablesorter（非公式フォーク版） **/
 table.tablesorter {
-	width: 100%;
+  width: 100%;
 }
 table.tablesorter thead tr .tablesorter-header {
-	background-image: url(../images/tablesorter/bg.gif);
-	background-repeat: no-repeat;
-	background-position: center right;
-	cursor: pointer;
-	white-space: normal;
-	padding: 4px 20px 4px 4px;
+  background-image: url(../images/tablesorter/bg.gif);
+  background-repeat: no-repeat;
+  background-position: center right;
+  cursor: pointer;
+  white-space: normal;
+  padding: 4px 20px 4px 4px;
 }
 table.tablesorter thead tr .tablesorter-headerAsc {
-	background-image: url(../images/tablesorter/asc.gif);
+  background-image: url(../images/tablesorter/asc.gif);
 }
 table.tablesorter thead tr .tablesorter-headerDesc {
-	background-image: url(../images/tablesorter/desc.gif);
+  background-image: url(../images/tablesorter/desc.gif);
 }
 table.tablesorter thead tr .sorter-false {
-	background-image: none;
-	cursor: default;
-	padding: 4px;
+  background-image: none;
+  cursor: default;
+  padding: 4px;
 }
