@@ -25,12 +25,6 @@
 							<th>送料</th>
 						</tr>
 					</thead>
-					<tfoot>
-						<tr>
-							<th>配送方法名</th>
-							<th>送料</th>
-						</tr>
-					</tfoot>
 					<tbody>
 						<!--{foreach from=$plugin_catalog_prefectures|smarty:nodefaults item='plugin_catalog_prefecture'}-->
 						<tr>
@@ -39,6 +33,12 @@
 						</tr>
 						<!--{/foreach}-->
 					</tbody>
+					<tfoot>
+						<tr>
+							<th>配送方法名</th>
+							<th>送料</th>
+						</tr>
+					</tfoot>
 				</table>
 				<p><input type="submit" value="地域別送料を編集する"></p>
 			</fieldset>

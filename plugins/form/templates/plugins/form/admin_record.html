@@ -52,23 +52,6 @@
 					<th>作業</th>
 				</tr>
 			</thead>
-			<tfoot>
-				<tr>
-					<th>No</th>
-					<th>送信日時</th>
-					<!--{if $plugin_form_record_show_subject}-->
-					<th>件名</th>
-					<!--{/if}-->
-					<!--{if $plugin_form_record_show_name}-->
-					<th>名前</th>
-					<!--{/if}-->
-					<th>送信内容</th>
-					<!--{if $plugin_form_record_show_memo}-->
-					<th>メモ</th>
-					<!--{/if}-->
-					<th>作業</th>
-				</tr>
-			</tfoot>
 			<tbody>
 				<!--{foreach from=$plugin_form_records|smarty:nodefaults item='plugin_form_record'}-->
 				<tr>
@@ -91,6 +74,23 @@
 				</tr>
 				<!--{/foreach}-->
 			</tbody>
+			<tfoot>
+				<tr>
+					<th>No</th>
+					<th>送信日時</th>
+					<!--{if $plugin_form_record_show_subject}-->
+					<th>件名</th>
+					<!--{/if}-->
+					<!--{if $plugin_form_record_show_name}-->
+					<th>名前</th>
+					<!--{/if}-->
+					<th>送信内容</th>
+					<!--{if $plugin_form_record_show_memo}-->
+					<th>メモ</th>
+					<!--{/if}-->
+					<th>作業</th>
+				</tr>
+			</tfoot>
 		</table>
 		<!--{if $plugin_form_record_page > 1}-->
 		<div id="page">

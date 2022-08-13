@@ -64,16 +64,6 @@
 					<th>作業</th>
 				</tr>
 			</thead>
-			<tfoot>
-				<tr>
-					<th>送信時間</th>
-					<th>メッセージ</th>
-					<!--{if $plugin_clap_titles|smarty:nodefaults}-->
-					<th>タイトル</th>
-					<!--{/if}-->
-					<th>作業</th>
-				</tr>
-			</tfoot>
 			<tbody>
 				<!--{foreach from=$plugin_claps|smarty:nodefaults item='plugin_clap'}-->
 				<tr>
@@ -86,6 +76,16 @@
 				</tr>
 				<!--{/foreach}-->
 			</tbody>
+			<tfoot>
+				<tr>
+					<th>送信時間</th>
+					<th>メッセージ</th>
+					<!--{if $plugin_clap_titles|smarty:nodefaults}-->
+					<th>タイトル</th>
+					<!--{/if}-->
+					<th>作業</th>
+				</tr>
+			</tfoot>
 		</table>
 		<!--{else}-->
 		<h3>拍手数</h3>
@@ -98,13 +98,6 @@
 					<th>送信人数</th>
 				</tr>
 			</thead>
-			<tfoot>
-				<tr>
-					<th>送信時間</th>
-					<th>送信回数</th>
-					<th>送信人数</th>
-				</tr>
-			</tfoot>
 			<tbody>
 				<!--{foreach from=$plugin_clap_hours|smarty:nodefaults item='plugin_clap_hour'}-->
 				<tr>
@@ -114,6 +107,13 @@
 				</tr>
 				<!--{/foreach}-->
 			</tbody>
+			<tfoot>
+				<tr>
+					<th>送信時間</th>
+					<th>送信回数</th>
+					<th>送信人数</th>
+				</tr>
+			</tfoot>
 		</table>
 		<!--{if $plugin_clap_texts|smarty:nodefaults}-->
 		<h3>拍手メッセージ</h3>
@@ -129,16 +129,6 @@
 					<th>作業</th>
 				</tr>
 			</thead>
-			<tfoot>
-				<tr>
-					<th>送信時間</th>
-					<th>メッセージ</th>
-					<!--{if $plugin_clap_titles|smarty:nodefaults}-->
-					<th>タイトル</th>
-					<!--{/if}-->
-					<th>作業</th>
-				</tr>
-			</tfoot>
 			<tbody>
 				<!--{foreach from=$plugin_clap_texts|smarty:nodefaults item='plugin_clap_text'}-->
 				<tr>
@@ -151,6 +141,16 @@
 				</tr>
 				<!--{/foreach}-->
 			</tbody>
+			<tfoot>
+				<tr>
+					<th>送信時間</th>
+					<th>メッセージ</th>
+					<!--{if $plugin_clap_titles|smarty:nodefaults}-->
+					<th>タイトル</th>
+					<!--{/if}-->
+					<th>作業</th>
+				</tr>
+			</tfoot>
 		</table>
 		<!--{/if}-->
 		<!--{/if}-->

@@ -93,15 +93,6 @@
 							<!--{/if}-->
 						</tr>
 					</thead>
-					<tfoot>
-						<tr>
-							<th>商品</th>
-							<th>価格（税込）</th>
-							<th>数量</th>
-							<th>小計（税込）</th>
-							<th>削除</th>
-						</tr>
-					</tfoot>
 					<tbody>
 						<!--{foreach from=$plugin_catalogs|smarty:nodefaults item='catalog'}-->
 						<tr>
@@ -117,6 +108,17 @@
 						</tr>
 						<!--{/foreach}-->
 					</tbody>
+					<tfoot>
+						<tr>
+							<th>商品</th>
+							<th>価格（税込）</th>
+							<th>数量</th>
+							<th>小計（税込）</th>
+							<!--{if $freo.user.authority == 'root'}-->
+							<th>削除</th>
+							<!--{/if}-->
+						</tr>
+					</tfoot>
 				</table>
 				<ul>
 					<li><a href="{$freo.core.https_file}/catalog_order/admin_order_cart_form?id={$freo.query.id}">注文商品を追加する</a>。</li>
