@@ -28,9 +28,9 @@
 			<li>カートの内容は以下のとおりです。</li>
 			<!--{if $freo.config.plugin.catalog.free_shipping}-->
 			<!--{if $plugin_catalog_cart.catalog_price_total >= $freo.config.plugin.catalog.free_shipping}-->
-			<li>商品合計が<em>{$freo.config.plugin.catalog.free_shipping|number_format}円以上</em>なので送料が無料になります。</li>
+			<li>商品合計が<strong>{$freo.config.plugin.catalog.free_shipping|number_format}円以上</strong>なので送料が無料になります。</li>
 			<!--{else}-->
-			<li>商品合計が<em>{$freo.config.plugin.catalog.free_shipping|number_format}円以上</em>で送料が無料になります。</li>
+			<li>商品合計が<strong>{$freo.config.plugin.catalog.free_shipping|number_format}円以上</strong>で送料が無料になります。</li>
 			<!--{/if}-->
 			<!--{/if}-->
 			<li><a href="{$freo.core.http_file}/catalog">商品一覧へ戻る</a>。</li>

@@ -2,7 +2,7 @@
 	<h2>漫画挿入</h2>
 	<ul>
 		<li><code>{$freo.query.path}</code> 内に登録された画像ファイルを、まとめて漫画として挿入します。</li>
-		<li>オプションを選択して<em>挿入ボタン</em>を押してください。</li>
+		<li>オプションを選択して<strong>挿入ボタン</strong>を押してください。</li>
 		<li><a href="{$freo.core.http_file}/admin/media{if $freo.query.path}?path={$freo.query.path}&amp;{else}?{/if}type=iframe">この階層のメディアを一欄表示する</a>。</li>
 	</ul>
 	<form action="{$freo.core.http_file}/media_comic/admin?path={$freo.query.path}&amp;type=iframe" method="post" id="media_comic_insert">

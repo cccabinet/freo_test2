@@ -37,8 +37,8 @@
 		<!--{if $input.trackback.approved == 'no'}-->
 		<h2>No.{$freo.query.id}のトラックバックを承認</h2>
 		<ul>
-			<li>このトラックバックは<em>未承認</em>です。</li>
-			<li>このトラックバックを承認するには、<em>承認ボタン</em>を押してください。</li>
+			<li>このトラックバックは<strong>未承認</strong>です。</li>
+			<li>このトラックバックを承認するには、<strong>承認ボタン</strong>を押してください。</li>
 		</ul>
 		<form action="{$freo.core.http_file}/admin/trackback_approve" method="get" class="approve">
 			<fieldset>
@@ -51,7 +51,7 @@
 		<!--{/if}-->
 		<h2>No.{$freo.query.id}のトラックバックを削除</h2>
 		<ul>
-			<li>このトラックバックを削除するには、<em>削除ボタン</em>を押してください。</li>
+			<li>このトラックバックを削除するには、<strong>削除ボタン</strong>を押してください。</li>
 		</ul>
 		<form action="{$freo.core.http_file}/admin/trackback_delete" method="get" class="delete">
 			<fieldset>

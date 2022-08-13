@@ -285,7 +285,7 @@ function freo_page_entry_receive()
 
 			if (!empty($entry)) {
 				//本文作成
-				$entry['text'] .= "\n<p><em>" . date('H:i', strtotime($headers['date'])) . "</em></p>\n" . $text;
+				$entry['text'] .= "\n<p><strong>" . date('H:i', strtotime($headers['date'])) . "</strong></p>\n" . $text;
 
 				//データ登録
 				$stmt = $freo->pdo->prepare('UPDATE ' . FREO_DATABASE_PREFIX . 'entries SET modified = :now, text = :text WHERE id = :id');

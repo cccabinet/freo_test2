@@ -45,8 +45,8 @@
 		<!--{/if}-->
 {* /未承認情報の表示 *}
 		<ul>
-			<li>現在 <em>{$freo.user.id}</em> としてログインしています。権限は <em><!--{if $freo.user.authority == 'root'}-->管理者<!--{elseif $freo.user.authority == 'author'}-->投稿者<!--{elseif $freo.user.authority == 'guest'}-->ゲスト<!--{/if}--></em> です。</li>
-			<li>本体のバージョンは <em>{$freo.core.version}</em> です。</li>
+			<li>現在 <strong>{$freo.user.id}</strong> としてログインしています。権限は <strong><!--{if $freo.user.authority == 'root'}-->管理者<!--{elseif $freo.user.authority == 'author'}-->投稿者<!--{elseif $freo.user.authority == 'guest'}-->ゲスト<!--{/if}--></strong> です。</li>
+			<li>本体のバージョンは <strong>{$freo.core.version}</strong> です。</li>
 			<li><a href="{$freo.core.http_file}/admin/entry_form">エントリーを登録する</a>。</li>
 			<li><a href="{$freo.core.http_file}">サイトを確認する</a>。</li>
 			<!--{if $freo.user.authority == 'root'}-->

@@ -70,18 +70,18 @@
 			</tr>
 			<tr>
 				<th>価格（税込）</th>
-				<td><em>{$plugin_catalog.price|number_format}</em>円</td>
+				<td><strong>{$plugin_catalog.price|number_format}</strong>円</td>
 			</tr>
 			<!--{if !$freo.config.plugin.catalog.closed}-->
 			<tr>
 				<th>販売状況</th>
-				<td><em><!--{if $plugin_catalog.datetime|date_format:'%Y%m%d' > $smarty.now|date_format:'%Y%m%d'}-->予約<!--{elseif $plugin_catalog.close != null and $plugin_catalog.close|date_format:'%Y%m%d%H%M%S' <= $smarty.now|date_format:'%Y%m%d%H%M%S'}-->販売終了<!--{elseif $plugin_catalog.stock != null and $plugin_catalog.stock == 0}-->売り切れ<!--{elseif $plugin_catalog.stock != null and $plugin_catalog.stock <= $freo.config.plugin.catalog.small_stock}-->残り{$plugin_catalog.stock|number_format}{$plugin_catalog.unit}<!--{else}-->販売中<!--{/if}--></em><!--{if $plugin_catalog.size == 'data'}-->（データのみ）<!--{/if}--><!--{if $plugin_catalog.maximum != ''}-->（1人{$plugin_catalog.maximum|number_format}{$plugin_catalog.unit}まで）<!--{/if}--></td>
+				<td><strong><!--{if $plugin_catalog.datetime|date_format:'%Y%m%d' > $smarty.now|date_format:'%Y%m%d'}-->予約<!--{elseif $plugin_catalog.close != null and $plugin_catalog.close|date_format:'%Y%m%d%H%M%S' <= $smarty.now|date_format:'%Y%m%d%H%M%S'}-->販売終了<!--{elseif $plugin_catalog.stock != null and $plugin_catalog.stock == 0}-->売り切れ<!--{elseif $plugin_catalog.stock != null and $plugin_catalog.stock <= $freo.config.plugin.catalog.small_stock}-->残り{$plugin_catalog.stock|number_format}{$plugin_catalog.unit}<!--{else}-->販売中<!--{/if}--></strong><!--{if $plugin_catalog.size == 'data'}-->（データのみ）<!--{/if}--><!--{if $plugin_catalog.maximum != ''}-->（1人{$plugin_catalog.maximum|number_format}{$plugin_catalog.unit}まで）<!--{/if}--></td>
 			</tr>
 			<!--{/if}-->
 			<!--{if $plugin_catalog.target}-->
 			<tr>
 				<th>対象</th>
-				<td><em>{$plugin_catalog_targets[$plugin_catalog.target].name}</em></td>
+				<td><strong>{$plugin_catalog_targets[$plugin_catalog.target].name}</strong></td>
 			</tr>
 			<!--{/if}-->
 			<tr>

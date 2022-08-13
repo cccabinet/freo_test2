@@ -31,7 +31,7 @@
 			<!--{/if}-->
 		<!--{/foreach}-->
 	</ul>
-	<p><em>{$article_count|number_format}</em>件ヒットしました。全<em>{$article_page|number_format}</em>ページ中<em>{$freo.query.page|number_format}</em>ページ目を表示しています。</p>
+	<p><strong>{$article_count|number_format}</strong>件ヒットしました。全<strong>{$article_page|number_format}</strong>ページ中<strong>{$freo.query.page|number_format}</strong>ページ目を表示しています。</p>
 	<!--{if $articles|smarty:nodefaults}-->
 	<!--{foreach from=$articles|smarty:nodefaults item='article'}-->
 	<h3><a href="{$freo.core.http_file}/{if $article.type == 'entry'}view{else}page{/if}/{if $article.code}{$article.code}{else}{$article.id}{/if}">{$article.title}</a></h3>

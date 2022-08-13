@@ -13,14 +13,14 @@
 			<li><abbr class="attention" title="入力必須">*</abbr> の付いた項目は入力必須項目です。</li>
 {* 現在のエントリーの状態 *}
 			<!--{if !$freo.query.id and $input.entry.status == 'publish'}-->
-			<li>現在、このエントリーの状態は「<em>公開</em>」です。下書き保存するには状態を「<em>未公開</em>」に変更してから登録してください。</li>
+			<li>現在、このエントリーの状態は「<strong>公開</strong>」です。下書き保存するには状態を「<strong>未公開</strong>」に変更してから登録してください。</li>
 			<!--{elseif $input.entry.status == 'private'}-->
-			<li>現在、このエントリーの状態は「<em>未公開</em>」です。公開するには状態を「<em>公開</em>」に変更してから登録してください。</li>
+			<li>現在、このエントリーの状態は「<strong>未公開</strong>」です。公開するには状態を「<strong>公開</strong>」に変更してから登録してください。</li>
 			<!--{elseif $input.entry.status == 'future'}-->
 			<!--{if $input.entry.datetime|date_format:'%Y%m%d%H%M%S' >= $smarty.now|date_format:'%Y%m%d%H%M%S'}-->
-			<li>現在、このエントリーは「<em>予約公開待ち</em>」です。今すぐ公開するには日時を「<em>現在日時</em>」に変更してから登録してください。</li>
+			<li>現在、このエントリーは「<strong>予約公開待ち</strong>」です。今すぐ公開するには日時を「<strong>現在日時</strong>」に変更してから登録してください。</li>
 			<!--{else}-->
-			<li>現在、このエントリーは「<em>予約公開済み</em>」です。</li>
+			<li>現在、このエントリーは「<strong>予約公開済み</strong>」です。</li>
 			<!--{/if}-->
 			<!--{/if}-->
 {* /現在のエントリーの状態 *}
@@ -374,8 +374,8 @@
 		<!--{if $input.entry.approved == 'no'}-->
 		<h2>No.{$freo.query.id}のエントリーを承認</h2>
 		<ul>
-			<li>このエントリーは<em>未承認</em>です。</li>
-			<li>このエントリーを承認するには、<em>承認ボタン</em>を押してください。</li>
+			<li>このエントリーは<strong>未承認</strong>です。</li>
+			<li>このエントリーを承認するには、<strong>承認ボタン</strong>を押してください。</li>
 		</ul>
 		<form action="{$freo.core.http_file}/admin/entry_approve" method="get" class="approve">
 			<fieldset>
@@ -391,7 +391,7 @@
 {* エントリー削除の表示 *}
 		<h2>No.{$freo.query.id}のエントリーを削除</h2>
 		<ul>
-			<li>このエントリーを削除するには、<em>削除ボタン</em>を押してください。</li>
+			<li>このエントリーを削除するには、<strong>削除ボタン</strong>を押してください。</li>
 		</ul>
 		<form action="{$freo.core.http_file}/admin/entry_delete" method="get" class="delete">
 			<fieldset>

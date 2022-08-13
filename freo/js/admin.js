@@ -172,7 +172,7 @@ tinymce.init({
 		'freomediaform': freo_path + 'js/tinymce/plugins/freomediaform/plugin.min.js',
 		'netabare': freo_path + 'js/tinymce/plugins/netabare/plugin.min.js',
 	},
-	toolbar: 'bold underline strikethrough | styleselect | bullist numlist outdent indent | code fullscreen | forecolor backcolor removeformat | link unlink image media charmap pagebreak | freomedia freomediaform netabare | searchreplace | undo redo help',
+	toolbar: 'bold italic underline strikethrough | styleselect | bullist numlist outdent indent | code fullscreen | forecolor backcolor removeformat | link unlink image media charmap pagebreak | freomedia freomediaform netabare | searchreplace | undo redo help',
 	toolbar_mode: 'sliding',
 	menu: {
 		tools: { title: 'Tools', items: 'code | freomedia freomediaform netabare' }
