@@ -7,7 +7,7 @@
 
 *********************************************************************/
 
-$(document).ready(function() {
+$(function() {
 	//管理メニュー表示ボタン
 	$('.toggle').click(function(){
 		$('#menu').slideToggle();

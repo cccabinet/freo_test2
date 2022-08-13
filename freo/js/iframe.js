@@ -7,7 +7,7 @@
 
 *********************************************************************/
 
-$(document).ready(function() {
+$(function() {
 	//メディア管理（tablesorter非公式フォーク版）
 	$('#media').tablesorter({
 		sortList :[[1,1]],
