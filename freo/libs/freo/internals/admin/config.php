@@ -246,7 +246,7 @@ function freo_main()
 										$checked = '';
 									}
 
-									$data .= '<input type="checkbox" name="config[data][' . $name . '][]" id="label_' . $name . '_' . $option_key . '" value="' . $option_key . '"' . $checked . ' /> <label for="label_' . $name . '_' . $option_key . '"">' . $option_value . '</label><br />';
+									$data .= '<input type="checkbox" name="config[data][' . $name . '][]" id="label_' . $name . '_' . $option_key . '" value="' . $option_key . '"' . $checked . '> <label for="label_' . $name . '_' . $option_key . '"">' . $option_value . '</label><br>';
 								}
 
 								break;
@@ -269,7 +269,7 @@ function freo_main()
 										$checked = '';
 									}
 
-									$data .= '<input type="radio" name="config[data][' . $name . ']" id="label_' . $name . '_' . $option_key . '" value="' . $option_key . '"' . $checked . ' /> <label for="label_' . $name . '_' . $option_key . '"">' . $option_value . '</label><br />';
+									$data .= '<input type="radio" name="config[data][' . $name . ']" id="label_' . $name . '_' . $option_key . '" value="' . $option_key . '"' . $checked . '> <label for="label_' . $name . '_' . $option_key . '"">' . $option_value . '</label><br>';
 								}
 
 								break;
@@ -329,11 +329,11 @@ function freo_main()
 								}
 
 								if ($freo->agent['type'] == 'mobile') {
-									$data .= '<input type="text" name="config[data][' . $name . ']" size="20" value="' . $value . '" />';
+									$data .= '<input type="text" name="config[data][' . $name . ']" size="20" value="' . $value . '">';
 								} elseif ($freo->agent['type'] == 'iphone') {
-									$data .= '<input type="text" name="config[data][' . $name . ']" size="30" value="' . $value . '" />';
+									$data .= '<input type="text" name="config[data][' . $name . ']" size="30" value="' . $value . '">';
 								} else {
-									$data .= '<input type="text" name="config[data][' . $name . ']" size="' . (empty($sizes[$name]) ? 80 : $sizes[$name]) . '" value="' . $value . '" />';
+									$data .= '<input type="text" name="config[data][' . $name . ']" size="' . (empty($sizes[$name]) ? 80 : $sizes[$name]) . '" value="' . $value . '">';
 								}
 
 								if (!empty($exts[$name])) {
@@ -353,11 +353,11 @@ function freo_main()
 									} else {
 										$data .= ' istyle="4" format="*N" mode="numeric"';
 									}
-									$data .= ' />';
+									$data .= '>';
 								} elseif ($freo->agent['type'] == 'iphone') {
-									$data .= '<input type="text" name="config[data][' . $name . ']" size="5" value="' . $value . '" />';
+									$data .= '<input type="text" name="config[data][' . $name . ']" size="5" value="' . $value . '">';
 								} else {
-									$data .= '<input type="text" name="config[data][' . $name . ']" size="' . (empty($sizes[$name]) ? 10 : $sizes[$name]) . '" value="' . $value . '" />';
+									$data .= '<input type="text" name="config[data][' . $name . ']" size="' . (empty($sizes[$name]) ? 10 : $sizes[$name]) . '" value="' . $value . '">';
 								}
 
 								if (!empty($exts[$name])) {

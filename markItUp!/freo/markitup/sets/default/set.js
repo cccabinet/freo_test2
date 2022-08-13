@@ -10,7 +10,7 @@
 // Basic set. Feel free to add more tags
 // ----------------------------------------------------------------------------
 var mySettings = {
-	onShiftEnter:  	{keepDefault:false, replaceWith:'<br />\n'},
+	onShiftEnter:  	{keepDefault:false, replaceWith:'<br>\n'},
 	onCtrlEnter:  	{keepDefault:false, openWith:'\n<p>', closeWith:'</p>'},
 	onTab:    		{keepDefault:false, replaceWith:'    '},
 	markupSet:  [ 	
@@ -58,7 +58,7 @@ var mySettings = {
 		{name:'段落', className:'paragraph', openWith:'<p(!( class="[![クラス名]!]")!)>', closeWith:'</p>\n' },
 		{separator:'---------------' },
 		{name:'リンク', className:'link', key:'L', openWith:'<a href="[![リンク:!:http://]!]"(!( title="[![Title]!]")!) target="_blank">', closeWith:'</a>', placeHolder:'リンクするテキスト...' },
-		{name:'画像', className:'picture', key:'P', replaceWith:'<img src="[![ソース:!:http://]!]" alt="[![代替テキスト]!]" />' },
+		{name:'画像', className:'picture', key:'P', replaceWith:'<img src="[![ソース:!:http://]!]" alt="[![代替テキスト]!]">' },
 		{name:'続きを読む', className:'pagebreak', replaceWith:'<!-- pagebreak -->\n' },
 		{name:'ネタバレ', className:'netabare', openWith:'<p>', closeWith:'</p>', multiline:true, openBlockWith:'<div class="hidearea"(!( title="[![ボタンのタイトル]!]")!)>\n', closeBlockWith:'\n</div>\n', placeHolder:'ここにネタバレ文...'},
 		{name:'コードスタイル', className:'page_code', dropMenu: [

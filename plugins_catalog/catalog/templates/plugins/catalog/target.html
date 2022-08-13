@@ -16,10 +16,10 @@
 		<form action="{$freo.core.https_file}/catalog/target/{$freo.query.id}" method="post">
 			<fieldset>
 				<legend>フィルター設定フォーム</legend>
-				<input type="hidden" name="freo[token]" value="{$token}" />
-				<input type="hidden" name="plugin_catalog_target" value="{$freo.query.id}" />
-				<input type="hidden" name="plugin_catalog" value="{$freo.query.catalog_id}" />
-				<p><input type="submit" value="{$plugin_catalog_targets[$freo.query.id].name}なので表示する" /></p>
+				<input type="hidden" name="freo[token]" value="{$token}">
+				<input type="hidden" name="plugin_catalog_target" value="{$freo.query.id}">
+				<input type="hidden" name="plugin_catalog" value="{$freo.query.catalog_id}">
+				<p><input type="submit" value="{$plugin_catalog_targets[$freo.query.id].name}なので表示する"></p>
 			</fieldset>
 		</form>
 	</div>

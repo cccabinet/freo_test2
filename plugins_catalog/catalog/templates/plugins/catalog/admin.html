@@ -37,7 +37,7 @@
 					<legend>商品検索フォーム</legend>
 					<dl>
 						<dt>キーワード</dt>
-							<dd><input type="text" name="word" size="50" value="{$smarty.get.word}" /></dd>
+							<dd><input type="text" name="word" size="50" value="{$smarty.get.word}"></dd>
 						<dt>カテゴリー</dt>
 							<dd>
 								<select name="category_id">
@@ -48,7 +48,7 @@
 								</select>
 							</dd>
 					</dl>
-					<p><input type="submit" value="検索する" /></p>
+					<p><input type="submit" value="検索する"></p>
 				</fieldset>
 			</form>
 		</div>
@@ -58,7 +58,7 @@
 		<form action="{$freo.core.http_file}/catalog/admin_update" method="post">
 			<fieldset>
 				<legend>商品並び替えフォーム</legend>
-				<input type="hidden" name="freo[token]" value="{$token}" />
+				<input type="hidden" name="freo[token]" value="{$token}">
 				<table summary="商品">
 					<thead>
 						<tr>
@@ -87,7 +87,7 @@
 							<td>{$plugin_catalog.name}</td>
 							<td class="number"><!--{if $plugin_catalog.stock == ''}-->無制限<!--{else}-->{$plugin_catalog.stock|number_format}{$plugin_catalog.unit}<!--{/if}--></td>
 							<td><!--{if $plugin_catalog.status == 'publish'}--><!--{if $plugin_catalog.datetime|date_format:'%Y%m%d' > $smarty.now|date_format:'%Y%m%d'}-->予約<!--{elseif $plugin_catalog.close != null and $plugin_catalog.close|date_format:'%Y%m%d%H%M%S' <= $smarty.now|date_format:'%Y%m%d%H%M%S'}-->販売終了<!--{elseif $plugin_catalog.stock != null and $plugin_catalog.stock == 0}--><span class="attention">売り切れ</span><!--{elseif $plugin_catalog.stock != null and $plugin_catalog.stock <= $freo.config.plugin.catalog.small_stock}-->残り{$plugin_catalog.stock|number_format}{$plugin_catalog.unit}<!--{else}-->販売中<!--{/if}--><!--{elseif $plugin_catalog.status == 'private'}-->未公開<!--{/if}--></td>
-							<td class="number"><input type="text" name="sort[{$plugin_catalog.id}]" size="3" value="{$plugin_catalog.sort}" /></td>
+							<td class="number"><input type="text" name="sort[{$plugin_catalog.id}]" size="3" value="{$plugin_catalog.sort}"></td>
 							<td>
 								<a href="{$freo.core.http_file}/catalog/admin_form?id={$plugin_catalog.id}">編集</a>
 								<a href="{$freo.core.http_file}/catalog/admin_delete?freo%5Btoken%5D={$token}&amp;id={$plugin_catalog.id}" class="delete">削除</a>
@@ -96,7 +96,7 @@
 						<!--{/foreach}-->
 					</tbody>
 				</table>
-				<p><input type="submit" value="並び順を編集する" /></p>
+				<p><input type="submit" value="並び順を編集する"></p>
 			</fieldset>
 		</form>
 		<!--{if $plugin_catalog_page > 1}-->

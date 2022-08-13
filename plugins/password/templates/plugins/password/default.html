@@ -2,11 +2,11 @@
 <html lang="ja">
 
 <head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>パスワード認証 | {$freo.config.basis.title}</title>
-	<link rel="stylesheet" href="{$freo.core.http_url}{$smarty.const.FREO_CSS_DIR}common.css" />
-	<link rel="stylesheet" href="{$freo.core.http_url}{$smarty.const.FREO_CSS_DIR}setup.css" />
+	<link rel="stylesheet" href="{$freo.core.http_url}{$smarty.const.FREO_CSS_DIR}common.css">
+	<link rel="stylesheet" href="{$freo.core.http_url}{$smarty.const.FREO_CSS_DIR}setup.css">
 	<script src="{$freo.core.http_url}{$smarty.const.FREO_JS_DIR}common.js"></script>
 </head>
 
@@ -32,12 +32,12 @@
 			<legend>認証フォーム</legend>
 			<dl>
 				<dt>パスワード</dt>
-					<dd><input type="password" name="plugin[password][password]" size="30" value="{$smarty.post.plugin.password.password}" /></dd>
+					<dd><input type="password" name="plugin[password][password]" size="30" value="{$smarty.post.plugin.password.password}"></dd>
 			</dl>
 			<ul>
-				<li><input type="checkbox" name="plugin[password][session]" id="label_session" value="keep" /> <label for="label_session">ログイン状態を記憶する</label></li>
+				<li><input type="checkbox" name="plugin[password][session]" id="label_session" value="keep"> <label for="label_session">ログイン状態を記憶する</label></li>
 			</ul>
-			<p><input type="submit" value="認証する" /></p>
+			<p><input type="submit" value="認証する"></p>
 		</fieldset>
 	</form>
 	</div>

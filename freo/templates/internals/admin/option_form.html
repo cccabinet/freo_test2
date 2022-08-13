@@ -16,17 +16,17 @@
 		<form action="{$freo.core.http_file}/admin/option_form{if $freo.query.id}?id={$freo.query.id}{/if}" method="post">
 			<fieldset>
 				<legend>オプション登録フォーム</legend>
-				<input type="hidden" name="freo[token]" value="{$token}" />
+				<input type="hidden" name="freo[token]" value="{$token}">
 				<!--{if $freo.query.id}-->
-				<input type="hidden" name="option[id]" value="{$input.option.id}" />
+				<input type="hidden" name="option[id]" value="{$input.option.id}">
 				<!--{/if}-->
 				<dl>
 					<!--{if !$freo.query.id}-->
 					<dt>オプションID <abbr class="attention" title="入力必須">*</abbr></dt>
-						<dd><input type="text" name="option[id]" size="30" value="{$input.option.id}" /></dd>
+						<dd><input type="text" name="option[id]" size="30" value="{$input.option.id}"></dd>
 					<!--{/if}-->
 					<dt>オプション名 <abbr class="attention" title="入力必須">*</abbr></dt>
-						<dd><input type="text" name="option[name]" size="50" value="{$input.option.name}" /></dd>
+						<dd><input type="text" name="option[name]" size="50" value="{$input.option.name}"></dd>
 					<dt>利用対象 <abbr class="attention" title="入力必須">*</abbr></dt>
 						<dd>
 							<select name="option[target]">
@@ -58,7 +58,7 @@
 					<dt>初期値</dt>
 						<dd><textarea name="option[text]" cols="50" rows="5">{$input.option.text}</textarea></dd>
 					<dt>並び順 <abbr class="attention" title="入力必須">*</abbr></dt>
-						<dd><input type="text" name="option[sort]" size="5" value="{$input.option.sort}" /></dd>
+						<dd><input type="text" name="option[sort]" size="5" value="{$input.option.sort}"></dd>
 				</dl>
 				<dl id="option_validate">
 					<dt>検証</dt>
@@ -70,7 +70,7 @@
 							</select>
 						</dd>
 				</dl>
-				<p><input type="submit" value="登録する" /></p>
+				<p><input type="submit" value="登録する"></p>
 			</fieldset>
 		</form>
 		<!--{if $freo.query.id}-->
@@ -81,9 +81,9 @@
 		<form action="{$freo.core.http_file}/admin/option_delete" method="get" class="delete">
 			<fieldset>
 				<legend>オプション削除フォーム</legend>
-				<input type="hidden" name="freo[token]" value="{$token}" />
-				<input type="hidden" name="id" value="{$freo.query.id}" />
-				<p><input type="submit" value="削除する" /></p>
+				<input type="hidden" name="freo[token]" value="{$token}">
+				<input type="hidden" name="id" value="{$freo.query.id}">
+				<p><input type="submit" value="削除する"></p>
 			</fieldset>
 		</form>
 		<!--{/if}-->

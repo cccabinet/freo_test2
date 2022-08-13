@@ -16,23 +16,23 @@
 		<form action="{$freo.core.http_file}/catalog/admin_payment_form{if $freo.query.id}?id={$freo.query.id}{/if}" method="post">
 			<fieldset>
 				<legend>支払い方法登録フォーム</legend>
-				<input type="hidden" name="freo[token]" value="{$token}" />
+				<input type="hidden" name="freo[token]" value="{$token}">
 				<!--{if $freo.query.id}-->
-				<input type="hidden" name="plugin_catalog_payment[id]" value="{$input.plugin_catalog_payment.id}" />
+				<input type="hidden" name="plugin_catalog_payment[id]" value="{$input.plugin_catalog_payment.id}">
 				<!--{/if}-->
 				<dl>
 					<!--{if !$freo.query.id}-->
 					<dt>支払い方法ID <abbr class="attention" title="入力必須">*</abbr></dt>
-						<dd><input type="text" name="plugin_catalog_payment[id]" size="30" value="{$input.plugin_catalog_payment.id}" /></dd>
+						<dd><input type="text" name="plugin_catalog_payment[id]" size="30" value="{$input.plugin_catalog_payment.id}"></dd>
 					<!--{/if}-->
 					<dt>支払い方法 <abbr class="attention" title="入力必須">*</abbr></dt>
-						<dd><input type="text" name="plugin_catalog_payment[name]" size="50" value="{$input.plugin_catalog_payment.name}" /></dd>
+						<dd><input type="text" name="plugin_catalog_payment[name]" size="50" value="{$input.plugin_catalog_payment.name}"></dd>
 					<dt>説明</dt>
 						<dd><textarea name="plugin_catalog_payment[text]" cols="50" rows="5">{$input.plugin_catalog_payment.text}</textarea></dd>
 					<dt>手数料</dt>
-						<dd><input type="text" name="plugin_catalog_payment[charge]" size="5" value="{$input.plugin_catalog_payment.charge}" /> 円</dd>
+						<dd><input type="text" name="plugin_catalog_payment[charge]" size="5" value="{$input.plugin_catalog_payment.charge}"> 円</dd>
 					<dt>並び順 <abbr class="attention" title="入力必須">*</abbr></dt>
-						<dd><input type="text" name="plugin_catalog_payment[sort]" size="5" value="{$input.plugin_catalog_payment.sort}" /></dd>
+						<dd><input type="text" name="plugin_catalog_payment[sort]" size="5" value="{$input.plugin_catalog_payment.sort}"></dd>
 					<dt>状態 <abbr class="attention" title="入力必須">*</abbr></dt>
 						<dd>
 							<select name="plugin_catalog_payment[status]">
@@ -41,7 +41,7 @@
 							</select>
 						</dd>
 				</dl>
-				<p><input type="submit" value="登録する" /></p>
+				<p><input type="submit" value="登録する"></p>
 			</fieldset>
 		</form>
 		<!--{if $freo.query.id}-->
@@ -52,9 +52,9 @@
 		<form action="{$freo.core.http_file}/catalog/admin_payment_delete" method="get" class="delete">
 			<fieldset>
 				<legend>支払い方法削除フォーム</legend>
-				<input type="hidden" name="freo[token]" value="{$token}" />
-				<input type="hidden" name="id" value="{$freo.query.id}" />
-				<p><input type="submit" value="削除する" /></p>
+				<input type="hidden" name="freo[token]" value="{$token}">
+				<input type="hidden" name="id" value="{$freo.query.id}">
+				<p><input type="submit" value="削除する"></p>
 			</fieldset>
 		</form>
 		<!--{/if}-->

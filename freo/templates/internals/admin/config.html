@@ -44,9 +44,9 @@
 			<form action="{$freo.core.http_file}/admin/config?type={$freo.query.type}&amp;file={$freo.query.file}" method="post" class="config">
 				<fieldset>
 					<legend>設定フォーム</legend>
-					<input type="hidden" name="freo[token]" value="{$token}" />
-					<input type="hidden" name="config[type]" value="{$freo.query.type}" />
-					<input type="hidden" name="config[file]" value="{$freo.query.file}" />
+					<input type="hidden" name="freo[token]" value="{$token}">
+					<input type="hidden" name="config[type]" value="{$freo.query.type}">
+					<input type="hidden" name="config[file]" value="{$freo.query.file}">
 					<!--{foreach name='loop' from=$configs|smarty:nodefaults item='config'}-->
 					<!--{if $config.type == 'section'}-->
 					<!--{if !$smarty.foreach.loop.first}-->
@@ -62,8 +62,8 @@
 					<!--{/foreach}-->
 					</dl>
 					<p>
-						<input type="submit" value="設定する" />
-						<input type="reset" value="リセット" />
+						<input type="submit" value="設定する">
+						<input type="reset" value="リセット">
 					</p>
 				</fieldset>
 			</form>

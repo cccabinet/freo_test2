@@ -187,15 +187,15 @@ if (isset($_POST['token']) and $_POST['token'] == session_id()) {
 	echo "<!DOCTYPE html>\n";
 	echo "<html lang=\"ja\">\n";
 	echo "<head>\n";
-	echo "<meta charset=\"utf-8\" />\n";
-	echo "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n";
+	echo "<meta charset=\"utf-8\">\n";
+	echo "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n";
 	echo "<title>設定編集</title>\n";
 
 	if (file_exists(FREO_CSS_DIR . 'common.css')) {
-		echo "<link rel=\"stylesheet\" href=\"" . FREO_CSS_DIR . "common.css\" />\n";
+		echo "<link rel=\"stylesheet\" href=\"" . FREO_CSS_DIR . "common.css\">\n";
 	}
 	if (file_exists(FREO_CSS_DIR . 'setup.css')) {
-		echo "<link rel=\"stylesheet\" href=\"" . FREO_CSS_DIR . "setup.css\" />\n";
+		echo "<link rel=\"stylesheet\" href=\"" . FREO_CSS_DIR . "setup.css\">\n";
 	}
 
 	echo "</head>\n";
@@ -289,15 +289,15 @@ if (preg_match('/^(.+)index.php$/', $url, $matches)) {
 echo "<!DOCTYPE html>\n";
 echo "<html lang=\"ja\">\n";
 echo "<head>\n";
-echo "<meta charset=\"utf-8\" />\n";
-echo "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n";
+echo "<meta charset=\"utf-8\">\n";
+echo "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n";
 echo "<title>設定編集</title>\n";
 
 if (file_exists(FREO_CSS_DIR . 'common.css')) {
-	echo "<link rel=\"stylesheet\" href=\"" . FREO_CSS_DIR . "common.css\" />\n";
+	echo "<link rel=\"stylesheet\" href=\"" . FREO_CSS_DIR . "common.css\">\n";
 }
 if (file_exists(FREO_CSS_DIR . 'setup.css')) {
-	echo "<link rel=\"stylesheet\" href=\"" . FREO_CSS_DIR . "setup.css\" />\n";
+	echo "<link rel=\"stylesheet\" href=\"" . FREO_CSS_DIR . "setup.css\">\n";
 }
 if (file_exists(FREO_JS_DIR . 'jquery.js')) {
 	echo "<script src=\"https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js\" integrity=\"sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=\" crossorigin=\"anonymous\"></script>\n";
@@ -332,11 +332,11 @@ echo "</ul>\n";
 echo "<form action=\"index.php\" method=\"post\">\n";
 echo "<fieldset>\n";
 echo "<legend>設定ファイル編集実行フォーム</legend>\n";
-echo "<input type=\"hidden\" name=\"token\" value=\"" . session_id() . "\" />\n";
+echo "<input type=\"hidden\" name=\"token\" value=\"" . session_id() . "\">\n";
 
 echo "<dl>\n";
 echo "<dt>設置URL</dt>\n";
-echo "<dd><input type=\"text\" name=\"url\" size=\"30\" value=\"" . $url . "\" /></dd>\n";
+echo "<dd><input type=\"text\" name=\"url\" size=\"30\" value=\"" . $url . "\"></dd>\n";
 echo "<dt>使用データベース</dt>\n";
 echo "<dd>\n";
 echo "<select name=\"database_type\" id=\"database_type\">\n";
@@ -355,25 +355,25 @@ echo "</dl>\n";
 
 echo "<dl id=\"database_mysql\">\n";
 echo "<dt>接続先</dt>\n";
-echo "<dd><input type=\"text\" name=\"database_host\" size=\"30\" value=\"\" /></dd>\n";
+echo "<dd><input type=\"text\" name=\"database_host\" size=\"30\" value=\"\"></dd>\n";
 echo "<dt>ポート</dt>\n";
-echo "<dd><input type=\"text\" name=\"database_port\" size=\"30\" value=\"\" /></dd>\n";
+echo "<dd><input type=\"text\" name=\"database_port\" size=\"30\" value=\"\"></dd>\n";
 echo "<dt>ユーザー名</dt>\n";
-echo "<dd><input type=\"text\" name=\"database_user\" size=\"30\" value=\"\" /></dd>\n";
+echo "<dd><input type=\"text\" name=\"database_user\" size=\"30\" value=\"\"></dd>\n";
 echo "<dt>パスワード</dt>\n";
-echo "<dd><input type=\"text\" name=\"database_password\" size=\"30\" value=\"\" /></dd>\n";
+echo "<dd><input type=\"text\" name=\"database_password\" size=\"30\" value=\"\"></dd>\n";
 echo "<dt>文字コード</dt>\n";
-echo "<dd><input type=\"text\" name=\"database_charset\" size=\"30\" value=\"\" /></dd>\n";
+echo "<dd><input type=\"text\" name=\"database_charset\" size=\"30\" value=\"\"></dd>\n";
 echo "</dl>\n";
 
 echo "<dl>\n";
 echo "<dt>データベース名</dt>\n";
-echo "<dd><input type=\"text\" name=\"database_name\" size=\"30\" value=\"freo.db\" /></dd>\n";
+echo "<dd><input type=\"text\" name=\"database_name\" size=\"30\" value=\"freo.db\"></dd>\n";
 echo "<dt>テーブル名のプレフィックス</dt>\n";
-echo "<dd><input type=\"text\" name=\"database_prefix\" size=\"30\" value=\"freo_\" /></dd>\n";
+echo "<dd><input type=\"text\" name=\"database_prefix\" size=\"30\" value=\"freo_\"></dd>\n";
 echo "</dl>\n";
 
-echo "<p><input type=\"submit\" value=\"設定編集\" /></p>\n";
+echo "<p><input type=\"submit\" value=\"設定編集\"></p>\n";
 echo "</fieldset>\n";
 echo "</form>\n";
 
@@ -394,12 +394,12 @@ function freo_setup_error($message)
 	echo "<!DOCTYPE html>\n";
 	echo "<html lang=\"ja\">\n";
 	echo "<head>\n";
-	echo "<meta charset=\"utf-8\" />\n";
-	echo "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n";
+	echo "<meta charset=\"utf-8\">\n";
+	echo "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n";
 	echo "<title>エラーが発生しました</title>\n";
 
 	if (file_exists(FREO_CSS_DIR . 'common.css')) {
-		echo "<link rel=\"stylesheet\" href=\"" . FREO_CSS_DIR . "common.css\" />\n";
+		echo "<link rel=\"stylesheet\" href=\"" . FREO_CSS_DIR . "common.css\">\n";
 	}
 
 	echo "</head>\n";

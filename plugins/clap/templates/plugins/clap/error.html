@@ -10,13 +10,13 @@
 	<form action="{$freo.core.http_file}/clap" method="post">
 		<fieldset>
 			<legend>再送信フォーム</legend>
-			<input type="hidden" name="freo[token]" value="{$token}" />
-			<input type="hidden" name="plugin_clap[page]" value="{$input.plugin_clap.page}" />
+			<input type="hidden" name="freo[token]" value="{$token}">
+			<input type="hidden" name="plugin_clap[page]" value="{$input.plugin_clap.page}">
 			<dl>
 				<dt>メッセージ</dt>
 					<dd><textarea name="plugin_clap[text]" cols="50" rows="5">{$smarty.post.plugin_clap.text}</textarea></dd>
 			</dl>
-			<p><input type="submit" value="送信する" /></p>
+			<p><input type="submit" value="送信する"></p>
 		</fieldset>
 	</form>
 	<ul>

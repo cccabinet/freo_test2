@@ -50,14 +50,14 @@
 		<form action="{$freo.core.http_file}/form/admin_record_form?id={$freo.query.id}&amp;form_id={$freo.query.form_id}" method="post">
 			<fieldset>
 				<legend>送信内容編集フォーム</legend>
-				<input type="hidden" name="freo[token]" value="{$token}" />
-				<input type="hidden" name="plugin_form_record[id]" value="{$input.plugin_form_record.id}" />
-				<input type="hidden" name="plugin_form_record[form_id]" value="{$input.plugin_form_record.form_id}" />
+				<input type="hidden" name="freo[token]" value="{$token}">
+				<input type="hidden" name="plugin_form_record[id]" value="{$input.plugin_form_record.id}">
+				<input type="hidden" name="plugin_form_record[form_id]" value="{$input.plugin_form_record.form_id}">
 				<dl>
 					<dt>メモ</dt>
 						<dd><textarea name="plugin_form_record[memo]" cols="50" rows="5">{$input.plugin_form_record.memo}</textarea></dd>
 				</dl>
-				<p><input type="submit" value="編集する" /></p>
+				<p><input type="submit" value="編集する"></p>
 			</fieldset>
 		</form>
 		<h2>No.{$input.plugin_form_record.count}の送信内容を削除</h2>
@@ -67,10 +67,10 @@
 		<form action="{$freo.core.http_file}/form/admin_record_delete" method="get" class="delete">
 			<fieldset>
 				<legend>送信内容削除フォーム</legend>
-				<input type="hidden" name="freo[token]" value="{$token}" />
-				<input type="hidden" name="id" value="{$freo.query.id}" />
-				<input type="hidden" name="form_id" value="{$freo.query.form_id}" />
-				<p><input type="submit" value="削除する" /></p>
+				<input type="hidden" name="freo[token]" value="{$token}">
+				<input type="hidden" name="id" value="{$freo.query.id}">
+				<input type="hidden" name="form_id" value="{$freo.query.form_id}">
+				<p><input type="submit" value="削除する"></p>
 			</fieldset>
 		</form>
 	</div>

@@ -74,7 +74,7 @@ function freo_transfer_form($data)
 	global $freo;
 
 	if (preg_match('/action="(' . preg_quote(FREO_HTTP_URL, '/') . ')[^\"]*"/', $data) or (FREO_HTTPS_URL and preg_match('/action="(' . preg_quote(FREO_HTTPS_URL, '/') . ')[^\"]*"/', $data))) {
-		$data .= '<input type="hidden" name="' . $freo->core['session_name'] . '" value="' . $freo->core['session_id'] . '" />';
+		$data .= '<input type="hidden" name="' . $freo->core['session_name'] . '" value="' . $freo->core['session_id'] . '">';
 	}
 
 	return $data;

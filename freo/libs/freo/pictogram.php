@@ -104,7 +104,7 @@ function freo_pictogram_escape($data)
 function freo_pictogram_unescape($data, $type = 'html')
 {
 	if ($type == 'html') {
-		return preg_replace('/\[E:([^\]]+)\]/', '<img class="emoji" src="' . FREO_PICTOGRAM_IMAGE_URL . '$1.gif" alt="" width="12" height="12" />', $data);
+		return preg_replace('/\[E:([^\]]+)\]/', '<img class="emoji" src="' . FREO_PICTOGRAM_IMAGE_URL . '$1.gif" alt="" width="12" height="12">', $data);
 	} else {
 		return preg_replace_callback('/\[E:([^\]]+)\]/',
 			function ($m) {

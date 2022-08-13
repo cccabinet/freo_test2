@@ -21,7 +21,7 @@
 	<form action="{$freo.core.https_file}/filter" method="post">
 		<fieldset>
 			<legend>フィルター設定フォーム</legend>
-			<input type="hidden" name="freo[token]" value="{$token}" />
+			<input type="hidden" name="freo[token]" value="{$token}">
 			<table summary="フィルター">
 				<thead>
 					<tr>
@@ -40,15 +40,15 @@
 					<tr>
 						<td>{$refer_filter.name}</td>
 						<td>
-							<input type="radio" name="filter[{$refer_filter.id}]" id="label_filter_{$refer_filter.id}_yes" value="1"{if $input.filter[$refer_filter.id]} checked="checked"{/if} /> <label for="label_filter_{$refer_filter.id}_yes">表示する</label>
+							<input type="radio" name="filter[{$refer_filter.id}]" id="label_filter_{$refer_filter.id}_yes" value="1"{if $input.filter[$refer_filter.id]} checked="checked"{/if}> <label for="label_filter_{$refer_filter.id}_yes">表示する</label>
 							&nbsp;
-							<input type="radio" name="filter[{$refer_filter.id}]" id="label_filter_{$refer_filter.id}_no" value=""{if !$input.filter[$refer_filter.id]} checked="checked"{/if} /> <label for="label_filter_{$refer_filter.id}_no">表示しない</label>
+							<input type="radio" name="filter[{$refer_filter.id}]" id="label_filter_{$refer_filter.id}_no" value=""{if !$input.filter[$refer_filter.id]} checked="checked"{/if}> <label for="label_filter_{$refer_filter.id}_no">表示しない</label>
 						</td>
 					</tr>
 					<!--{/foreach}-->
 				</tbody>
 			</table>
-			<p><input type="submit" value="設定する" /></p>
+			<p><input type="submit" value="設定する"></p>
 		</fieldset>
 	</form>
 {include file='footer.html'}

@@ -25,15 +25,15 @@
 		<form action="{$freo.core.http_file}{if $freo.query.entry_id}/view/{$freo.query.entry_id}{elseif $freo.query.page_id}/page/{$freo.query.page_id}{/if}#comment_form" method="get">
 			<fieldset>
 				<legend>コメント編集フォーム</legend>
-				<input type="hidden" name="session" value="1" />
-				<p><input type="submit" value="戻る" /></p>
+				<input type="hidden" name="session" value="1">
+				<p><input type="submit" value="戻る"></p>
 			</fieldset>
 		</form>
 		<form action="{$freo.core.http_file}/comment/preview{if $freo.query.entry_id}?entry_id={$freo.query.entry_id}{elseif $freo.query.page_id}?page_id={$freo.query.page_id}{/if}" method="post">
 			<fieldset>
 				<legend>コメント登録フォーム</legend>
-				<input type="hidden" name="freo[token]" value="{$token}" />
-				<p><input type="submit" value="登録する" /></p>
+				<input type="hidden" name="freo[token]" value="{$token}">
+				<p><input type="submit" value="登録する"></p>
 			</fieldset>
 		</form>
 	</div>

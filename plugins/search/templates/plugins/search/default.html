@@ -87,7 +87,7 @@
 			<legend>キーワード検索フォーム</legend>
 			<dl>
 				<dt>キーワード</dt>
-					<dd><input type="text" name="word" size="50" value="{$smarty.get.word}" /></dd>
+					<dd><input type="text" name="word" size="50" value="{$smarty.get.word}"></dd>
 				<!--{if !$smarty.get.page_name}-->
 				<dt>検索対象</dt>
 					<dd>
@@ -108,18 +108,18 @@
 					<!--{if $option.type == 'text' and $option.validate == 'numeric'}-->
 					<dt>{$option.name}<span class="note">（指定した範囲の数値を含むデータを抽出。一方のみの指定も可能。）</span></dt>
 						<dd>
-							<input type="text" name="option[{$option.id}][from]" size="10" value="{$smarty.get.option[$option.id].from}" /> 以上、<input type="text" name="option[{$option.id}][to]" size="10" value="{$smarty.get.option[$option.id].to}" /> 以下
+							<input type="text" name="option[{$option.id}][from]" size="10" value="{$smarty.get.option[$option.id].from}"> 以上、<input type="text" name="option[{$option.id}][to]" size="10" value="{$smarty.get.option[$option.id].to}"> 以下
 						</dd>
 					<!--{elseif $option.type == 'text' or $option.type == 'textarea'}-->
 					<dt>{$option.name}<span class="note">（入力した文字列を含むデータを抽出。）</span></dt>
-						<dd><input type="text" name="option[{$option.id}]" size="50" value="{$smarty.get.option[$option.id]}" /></dd>
+						<dd><input type="text" name="option[{$option.id}]" size="50" value="{$smarty.get.option[$option.id]}"></dd>
 					<!--{elseif $option.type == 'select' or $option.type == 'radio' or $option.type == 'checkbox'}-->
 					<dt>{$option.name}<span class="note">（選択した項目をどれか一つでも含むデータを抽出。）</span></dt>
 						<dd>
 							<ul>
 								<!--{assign var='option_texts' value=$option.text|explode:"\n"}-->
 								<!--{foreach from=$option_texts|smarty:nodefaults item='option_text' name='loop'}-->
-								<li><input type="checkbox" name="option[{$option.id}][{$option_text}]" id="label_option_{$option.id}_{$smarty.foreach.loop.index}" value="{$option_text}"{if $smarty.get.option[$option.id][$option_text] == $option_text} checked="checked"{/if} /> <label for="label_option_{$option.id}_{$smarty.foreach.loop.index}">{$option_text}</label></li>
+								<li><input type="checkbox" name="option[{$option.id}][{$option_text}]" id="label_option_{$option.id}_{$smarty.foreach.loop.index}" value="{$option_text}"{if $smarty.get.option[$option.id][$option_text] == $option_text} checked="checked"{/if}> <label for="label_option_{$option.id}_{$smarty.foreach.loop.index}">{$option_text}</label></li>
 								<!--{/foreach}-->
 							</ul>
 						</dd>
@@ -129,7 +129,7 @@
 			</div>
 			<!--{/if}-->
 {* /オプション項目で絞り込み *}
-			<p><input type="submit" value="検索する" /></p>
+			<p><input type="submit" value="検索する"></p>
 		</fieldset>
 	</form>
 {include file='footer.html'}

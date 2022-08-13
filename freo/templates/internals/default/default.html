@@ -15,11 +15,11 @@
 					<p class="attention">このエントリーは、パスワードで認証した人のみに公開されています。</p>
 				<!--{/if}-->
 				<!--{if $information_entry.file and $information_entry.image}-->
-					<p><a href="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}entry_files/{$information_entry.id}/{$information_entry.file}"><img src="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}entry_images/{$information_entry.id}/{$information_entry.image}" alt="{$information_entry.memo|default:$information_entry.file}" title="{$information_entry.memo|default:$information_entry.file}" width="{$information_entry_image.width}" height="{$information_entry_image.height}" /></a></p>
+					<p><a href="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}entry_files/{$information_entry.id}/{$information_entry.file}"><img src="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}entry_images/{$information_entry.id}/{$information_entry.image}" alt="{$information_entry.memo|default:$information_entry.file}" title="{$information_entry.memo|default:$information_entry.file}" width="{$information_entry_image.width}" height="{$information_entry_image.height}"></a></p>
 				<!--{elseif $information_entry_thumbnail}-->
-					<p><a href="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}entry_files/{$information_entry.id}/{$information_entry.file}"><img src="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}entry_thumbnails/{$information_entry.id}/{$information_entry.file}" alt="{$information_entry.memo|default:$information_entry.file}" title="{$information_entry.memo|default:$information_entry.file}" width="{$information_entry_thumbnail.width}" height="{$information_entry_thumbnail.height}" /></a></p>
+					<p><a href="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}entry_files/{$information_entry.id}/{$information_entry.file}"><img src="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}entry_thumbnails/{$information_entry.id}/{$information_entry.file}" alt="{$information_entry.memo|default:$information_entry.file}" title="{$information_entry.memo|default:$information_entry.file}" width="{$information_entry_thumbnail.width}" height="{$information_entry_thumbnail.height}"></a></p>
 				<!--{elseif $information_entry.file and $information_entry_file.width and $information_entry_file.height}-->
-					<p><img src="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}entry_files/{$information_entry.id}/{$information_entry.file}" alt="{$information_entry.memo|default:$information_entry.file}" title="{$information_entry.memo|default:$information_entry.file}" width="{$information_entry_file.width}" height="{$information_entry_file.height}" /></p>
+					<p><img src="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}entry_files/{$information_entry.id}/{$information_entry.file}" alt="{$information_entry.memo|default:$information_entry.file}" title="{$information_entry.memo|default:$information_entry.file}" width="{$information_entry_file.width}" height="{$information_entry_file.height}"></p>
 				<!--{elseif $information_entry.file}-->
 					<p><a href="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}entry_files/{$information_entry.id}/{$information_entry.file}">{$information_entry.memo|default:$information_entry.file}</a></p>
 				<!--{/if}-->
@@ -42,11 +42,11 @@
 					<p class="attention">このページは、パスワードで認証した人のみに公開されています。</p>
 				<!--{/if}-->
 				<!--{if $information_page.file and $information_page.image}-->
-					<p><a href="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}page_files/{$information_page.id}/{$information_page.file}"><img src="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}page_images/{$information_page.id}/{$information_page.image}" alt="{$information_page.memo|default:$information_page.file}" title="{$information_page.memo|default:$information_page.file}" width="{$information_page_image.width}" height="{$information_page_image.height}" /></a></p>
+					<p><a href="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}page_files/{$information_page.id}/{$information_page.file}"><img src="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}page_images/{$information_page.id}/{$information_page.image}" alt="{$information_page.memo|default:$information_page.file}" title="{$information_page.memo|default:$information_page.file}" width="{$information_page_image.width}" height="{$information_page_image.height}"></a></p>
 				<!--{elseif $information_page_thumbnail}-->
-					<p><a href="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}page_files/{$information_page.id}/{$information_page.file}"><img src="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}page_thumbnails/{$information_page.id}/{$information_page.file}" alt="{$information_page.memo|default:$information_page.file}" title="{$information_page.memo|default:$information_page.file}" width="{$information_page_thumbnail.width}" height="{$information_page_thumbnail.height}" /></a></p>
+					<p><a href="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}page_files/{$information_page.id}/{$information_page.file}"><img src="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}page_thumbnails/{$information_page.id}/{$information_page.file}" alt="{$information_page.memo|default:$information_page.file}" title="{$information_page.memo|default:$information_page.file}" width="{$information_page_thumbnail.width}" height="{$information_page_thumbnail.height}"></a></p>
 				<!--{elseif $information_page.file and $information_page_file.width and $information_page_file.height}-->
-					<p><img src="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}page_files/{$information_page.id}/{$information_page.file}" alt="{$information_page.memo|default:$information_page.file}" title="{$information_page.memo|default:$information_page.file}" width="{$information_page_file.width}" height="{$information_page_file.height}" /></p>
+					<p><img src="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}page_files/{$information_page.id}/{$information_page.file}" alt="{$information_page.memo|default:$information_page.file}" title="{$information_page.memo|default:$information_page.file}" width="{$information_page_file.width}" height="{$information_page_file.height}"></p>
 				<!--{elseif $information_page.file}-->
 					<p><a href="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}page_files/{$information_page.id}/{$information_page.file}">{$information_page.memo|default:$information_page.file}</a></p>
 				<!--{/if}-->
@@ -116,11 +116,11 @@
 					<!--{/if}-->
 {* 添付ファイルとイメージの表示 *}
 					<!--{if $entry.file and $entry.image}-->
-						<p><a href="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}entry_files/{$entry.id}/{$entry.file}"><img src="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}entry_images/{$entry.id}/{$entry.image}" alt="{$entry.memo|default:$entry.file}" title="{$entry.memo|default:$entry.file}" width="{$entry_images[$entry.id].width}" height="{$entry_images[$entry.id].height}" /></a></p>
+						<p><a href="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}entry_files/{$entry.id}/{$entry.file}"><img src="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}entry_images/{$entry.id}/{$entry.image}" alt="{$entry.memo|default:$entry.file}" title="{$entry.memo|default:$entry.file}" width="{$entry_images[$entry.id].width}" height="{$entry_images[$entry.id].height}"></a></p>
 					<!--{elseif $entry_thumbnails[$entry.id]}-->
-						<p><a href="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}entry_files/{$entry.id}/{$entry.file}"><img src="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}entry_thumbnails/{$entry.id}/{$entry.file}" alt="{$entry.memo|default:$entry.file}" title="{$entry.memo|default:$entry.file}" width="{$entry_thumbnails[$entry.id].width}" height="{$entry_thumbnails[$entry.id].height}" /></a></p>
+						<p><a href="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}entry_files/{$entry.id}/{$entry.file}"><img src="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}entry_thumbnails/{$entry.id}/{$entry.file}" alt="{$entry.memo|default:$entry.file}" title="{$entry.memo|default:$entry.file}" width="{$entry_thumbnails[$entry.id].width}" height="{$entry_thumbnails[$entry.id].height}"></a></p>
 					<!--{elseif $entry.file and $entry_files[$entry.id].width and $entry_files[$entry.id].height}-->
-						<p><img src="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}entry_files/{$entry.id}/{$entry.file}" alt="{$entry.memo|default:$entry.file}" title="{$entry.memo|default:$entry.file}" width="{$entry_files[$entry.id].width}" height="{$entry_files[$entry.id].height}" /></p>
+						<p><img src="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}entry_files/{$entry.id}/{$entry.file}" alt="{$entry.memo|default:$entry.file}" title="{$entry.memo|default:$entry.file}" width="{$entry_files[$entry.id].width}" height="{$entry_files[$entry.id].height}"></p>
 					<!--{elseif $entry.file}-->
 						<p><a href="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}entry_files/{$entry.id}/{$entry.file}">{$entry.memo|default:$entry.file}</a></p>
 					<!--{/if}-->
@@ -140,9 +140,9 @@
 								<legend>認証フォーム</legend>
 								<dl>
 									<dt>パスワード</dt>
-										<dd><input type="password" name="entry[password]" size="30" value="" /></dd>
+										<dd><input type="password" name="entry[password]" size="30" value=""></dd>
 								</dl>
-								<p><input type="submit" value="認証する" /></p>
+								<p><input type="submit" value="認証する"></p>
 							</fieldset>
 						</form>
 					<!--{/if}-->
@@ -197,7 +197,7 @@
 					<!--{/if}-->
 {* 編集ボタンの表示 *}
 					<!--{if $freo.user.authority == 'root' or $freo.user.id == $entry.user_id}-->
-					<li><a href="{$freo.core.http_file}/admin/entry_form?id={$entry.id}"><img src="{$freo.core.http_url}images/icons/edit.png" alt="編集" title="編集" width="16" height="16" /></a></li>
+					<li><a href="{$freo.core.http_file}/admin/entry_form?id={$entry.id}"><img src="{$freo.core.http_url}images/icons/edit.png" alt="編集" title="編集" width="16" height="16"></a></li>
 					<!--{/if}-->
 {* /編集ボタンの表示 *}
 				</ul>

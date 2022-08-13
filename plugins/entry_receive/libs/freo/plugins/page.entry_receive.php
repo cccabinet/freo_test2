@@ -232,9 +232,9 @@ function freo_page_entry_receive()
 			}
 
 			if ($thumbnail_width and $thumbnail_height) {
-				$text .= '<a href="' . $freo->core['http_url'] . $file_dir . $file . '" class="thickbox"><img src="' . $freo->core['http_url'] . $thumbnail_dir . $file . '" alt="' . $file . '" width="' . $thumbnail_width . '" height="' . $thumbnail_height . '" /></a>';
+				$text .= '<a href="' . $freo->core['http_url'] . $file_dir . $file . '"><img src="' . $freo->core['http_url'] . $thumbnail_dir . $file . '" alt="' . $file . '" width="' . $thumbnail_width . '" height="' . $thumbnail_height . '"></a>';
 			} elseif ($file_width and $file_height) {
-				$text .= '<img src="' . $freo->core['http_url'] . $file_dir . $file . '" alt="' . $file . '" width="' . $file_width . '" height="' . $file_height . '" />';
+				$text .= '<img src="' . $freo->core['http_url'] . $file_dir . $file . '" alt="' . $file . '" width="' . $file_width . '" height="' . $file_height . '">';
 			} else {
 				$text .= '<a href="' . $freo->core['http_url'] . $file_dir . $file . '">' . $file . '</a>';
 			}
@@ -250,8 +250,8 @@ function freo_page_entry_receive()
 
 		//本文マークアップ
 		if ($text != '') {
-			$text = str_replace("\n", '<br />', $text);
-			$text = preg_replace('/(<br \/>){2,}/', "</p>\n<p>", $text);
+			$text = str_replace("\n", '<br>', $text);
+			$text = preg_replace('/(<br>){2,}/', "</p>\n<p>", $text);
 			$text = '<p>' . $text . '</p>';
 		}
 

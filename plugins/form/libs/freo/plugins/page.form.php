@@ -1545,8 +1545,8 @@ function freo_page_form_send()
 		echo "<!DOCTYPE html>\n";
 		echo "<html lang=\"ja\">\n";
 		echo "<head>\n";
-		echo "<meta charset=\"utf-8\" />\n";
-		echo "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n";
+		echo "<meta charset=\"utf-8\">\n";
+		echo "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n";
 		echo "<title>送信完了</title>\n";
 		echo "<script>\n";
 		echo "if (window == window.parent) {\n";

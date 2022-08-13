@@ -25,7 +25,7 @@
 		<form action="{$freo.core.http_file}/admin/filter_update" method="post">
 			<fieldset>
 				<legend>フィルター並び替えフォーム</legend>
-				<input type="hidden" name="freo[token]" value="{$token}" />
+				<input type="hidden" name="freo[token]" value="{$token}">
 				<table summary="フィルター">
 					<thead>
 						<tr>
@@ -48,7 +48,7 @@
 						<tr>
 							<td>{$filter.id}</td>
 							<td>{$filter.name}</td>
-							<td class="number"><!--{if $freo.user.authority == 'root'}--><input type="text" name="sort[{$filter.id}]" size="3" value="{$filter.sort}" /><!--{else}-->{$filter.sort}<!--{/if}--></td>
+							<td class="number"><!--{if $freo.user.authority == 'root'}--><input type="text" name="sort[{$filter.id}]" size="3" value="{$filter.sort}"><!--{else}-->{$filter.sort}<!--{/if}--></td>
 							<td>
 								<a href="{$freo.core.http_file}/admin/filter_form?id={$filter.id}">編集</a>
 								<a href="{$freo.core.http_file}/admin/filter_delete?freo%5Btoken%5D={$token}&amp;id={$filter.id}" class="delete">削除</a>
@@ -58,7 +58,7 @@
 					</tbody>
 				</table>
 				<!--{if $freo.user.authority == 'root'}-->
-				<p><input type="submit" value="並び順を編集する" /></p>
+				<p><input type="submit" value="並び順を編集する"></p>
 				<!--{/if}-->
 			</fieldset>
 		</form>

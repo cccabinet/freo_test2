@@ -16,8 +16,8 @@
 		<form action="{$freo.core.http_file}/catalog/admin_delivery_prefecture_post" method="post">
 			<fieldset>
 				<legend>地域別送料編集フォーム</legend>
-				<input type="hidden" name="freo[token]" value="{$token}" />
-				<input type="hidden" name="plugin_catalog_delivery_prefecture[delivery_id]" value="{$input.plugin_catalog_delivery.id}" />
+				<input type="hidden" name="freo[token]" value="{$token}">
+				<input type="hidden" name="plugin_catalog_delivery_prefecture[delivery_id]" value="{$input.plugin_catalog_delivery.id}">
 				<table summary="配送方法">
 					<thead>
 						<tr>
@@ -35,12 +35,12 @@
 						<!--{foreach from=$plugin_catalog_prefectures|smarty:nodefaults item='plugin_catalog_prefecture'}-->
 						<tr>
 							<td>{$plugin_catalog_prefecture.name}</td>
-							<td class="number"><input type="text" name="sort[{$plugin_catalog_prefecture.id}]" size="3" value="{$input.plugin_catalog_delivery_prefectures[$plugin_catalog_prefecture.id].carriage|default:0}" /> 円</td>
+							<td class="number"><input type="text" name="sort[{$plugin_catalog_prefecture.id}]" size="3" value="{$input.plugin_catalog_delivery_prefectures[$plugin_catalog_prefecture.id].carriage|default:0}"> 円</td>
 						</tr>
 						<!--{/foreach}-->
 					</tbody>
 				</table>
-				<p><input type="submit" value="地域別送料を編集する" /></p>
+				<p><input type="submit" value="地域別送料を編集する"></p>
 			</fieldset>
 		</form>
 	</div>

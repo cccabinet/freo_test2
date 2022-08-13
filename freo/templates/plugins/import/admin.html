@@ -23,14 +23,14 @@
 		<form action="{$freo.core.http_file}/import/admin" method="post" enctype="multipart/form-data">
 			<fieldset>
 				<legend>インポート実行フォーム</legend>
-				<input type="hidden" name="freo[token]" value="{$token}" />
+				<input type="hidden" name="freo[token]" value="{$token}">
 				<dl>
 					<dt>対象</dt>
 						<dd>
-							<input type="file" name="target" size="30" />
+							<input type="file" name="target" size="30">
 						</dd>
 				</dl>
-				<p><input type="submit" value="入力する" /></p>
+				<p><input type="submit" value="入力する"></p>
 			</fieldset>
 		</form>
 		<!--{else}-->

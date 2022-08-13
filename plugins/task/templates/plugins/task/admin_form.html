@@ -16,11 +16,11 @@
 		<form action="{$freo.core.http_file}/task/admin_form{if $freo.query.id}?id={$freo.query.id}{/if}" method="post">
 			<fieldset>
 				<legend>タスク登録フォーム</legend>
-				<input type="hidden" name="freo[token]" value="{$token}" />
-				<input type="hidden" name="plugin_task[id]" value="{$input.plugin_task.id}" />
+				<input type="hidden" name="freo[token]" value="{$token}">
+				<input type="hidden" name="plugin_task[id]" value="{$input.plugin_task.id}">
 				<dl>
 					<dt>内容 <abbr class="attention" title="入力必須">*</abbr></dt>
-						<dd><input type="text" name="plugin_task[title]" size="50" value="{$input.plugin_task.title}" /></dd>
+						<dd><input type="text" name="plugin_task[title]" size="50" value="{$input.plugin_task.title}"></dd>
 					<dt>詳細</dt>
 						<dd><textarea name="plugin_task[text]" cols="50" rows="5">{$input.plugin_task.text}</textarea></dd>
 					<dt>カテゴリー <abbr class="attention" title="入力必須">*</abbr>
@@ -44,7 +44,7 @@
 							</select>
 						</dd>
 				</dl>
-				<p><input type="submit" value="登録する" /></p>
+				<p><input type="submit" value="登録する"></p>
 			</fieldset>
 		</form>
 		<!--{if $freo.query.id}-->
@@ -55,9 +55,9 @@
 		<form action="{$freo.core.http_file}/task/admin_delete" method="get" class="delete">
 			<fieldset>
 				<legend>タスク削除フォーム</legend>
-				<input type="hidden" name="freo[token]" value="{$token}" />
-				<input type="hidden" name="id" value="{$freo.query.id}" />
-				<p><input type="submit" value="削除する" /></p>
+				<input type="hidden" name="freo[token]" value="{$token}">
+				<input type="hidden" name="id" value="{$freo.query.id}">
+				<p><input type="submit" value="削除する"></p>
 			</fieldset>
 		</form>
 		<!--{/if}-->

@@ -13,7 +13,7 @@
 	<form action="{$freo.core.http_file}/message" method="post">
 		<fieldset>
 			<legend>メッセージ送信フォーム</legend>
-			<input type="hidden" name="freo[token]" value="{$token}" />
+			<input type="hidden" name="freo[token]" value="{$token}">
 			<dl>
 				<dt>本文</dt>
 					<dd><textarea name="plugin_message[text]" cols="50" rows="5">{$input.plugin_message.text}</textarea></dd>
@@ -21,21 +21,21 @@
 {* 投稿キープラグインを導入していたら *}
 				<!--{if $freo.plugin.postkey}-->
 				<!--{if !$smarty.session.plugin.postkey.approved}-->
-				<dt>投稿キー（スパム対策に、<img src="{$freo.core.http_file}/postkey" alt="投稿キー" title="投稿キー" width="50" height="20" /> を半角で入力してください。）</dt>
-					<dd><input type="text" name="plugin[postkey][key]" size="10" value="" /></dd>
+				<dt>投稿キー（スパム対策に、<img src="{$freo.core.http_file}/postkey" alt="投稿キー" title="投稿キー" width="50" height="20"> を半角で入力してください。）</dt>
+					<dd><input type="text" name="plugin[postkey][key]" size="10" value=""></dd>
 				<!--{/if}-->
 {* なぞなぞ認証プラグインを導入していたら *}
 				<!--{elseif $freo.plugin.riddle}-->
 				<!--{if !$smarty.session.plugin.riddle.approved}-->
 				<dt>{$plugin_riddle.question}（スパム対策）</dt>
-					<dd><input type="text" name="plugin[riddle][answer]" size="30" value="" /><input type="hidden" name="plugin[riddle][id]" value="{$plugin_riddle.id}" /></dd>
+					<dd><input type="text" name="plugin[riddle][answer]" size="30" value=""><input type="hidden" name="plugin[riddle][id]" value="{$plugin_riddle.id}"></dd>
 				<!--{/if}-->
 				<!--{/if}-->
 {* /スパム対策 *}
 			</dl>
 			<p>
-				<input type="submit" name="preview" value="確認する" />
-				<input type="submit" value="送信する" />
+				<input type="submit" name="preview" value="確認する">
+				<input type="submit" value="送信する">
 			</p>
 		</fieldset>
 	</form>

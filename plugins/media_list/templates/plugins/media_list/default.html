@@ -12,7 +12,7 @@
 			<div class="directory">
 				<p>
 					<a href="{$freo.core.http_file}/media_list?directory={if $smarty.get.directory}{$smarty.get.directory}/{/if}{$media_list.name}"{if $media_list.memo} title="{$media_list.memo}"{/if}>
-						<!--{if $media_list.thumbnail.id}--><img src="{$freo.core.http_url}{$media_list.thumbnail.id}" /><!--{/if}-->
+						<!--{if $media_list.thumbnail.id}--><img src="{$freo.core.http_url}{$media_list.thumbnail.id}"><!--{/if}-->
 					</a>
 					<!--{if $smarty.get.directory}-->
 						<!--{assign var="name" value=$smarty.get.directory|cat:'/'|cat:$media_list.name}-->
@@ -29,7 +29,7 @@
 			<!--{foreach from=$media_lists|smarty:nodefaults item='media_list'}-->
 			<li>
 				<!--{if $media_list.width and $media_list.height}-->
-				<a href="{if $media_list_restriction}{$freo.core.http_file}/file/media/{$smarty.get.directory}/{$media_list.name}{else}{$freo.core.http_url}{$media_list.id}{/if}"{if $media_list.memo} title="{$media_list.memo}"{/if}><img src="{if $media_list_restriction}{$freo.core.http_file}/file/media/{$smarty.get.directory}/{$media_list.name}{if $media_list.thumbnail.id}?type=thumbnail{/if}{else}{$freo.core.http_url}{if $media_list.thumbnail.id}{$media_list.thumbnail.id}{else}{$media_list.id}{/if}{/if}" alt="{$media_list.name}（{$media_list.width}px × {$media_list.height}px）" title="{$media_list.name}（{$media_list.width}px × {$media_list.height}px）" /></a>
+				<a href="{if $media_list_restriction}{$freo.core.http_file}/file/media/{$smarty.get.directory}/{$media_list.name}{else}{$freo.core.http_url}{$media_list.id}{/if}"{if $media_list.memo} title="{$media_list.memo}"{/if}><img src="{if $media_list_restriction}{$freo.core.http_file}/file/media/{$smarty.get.directory}/{$media_list.name}{if $media_list.thumbnail.id}?type=thumbnail{/if}{else}{$freo.core.http_url}{if $media_list.thumbnail.id}{$media_list.thumbnail.id}{else}{$media_list.id}{/if}{/if}" alt="{$media_list.name}（{$media_list.width}px × {$media_list.height}px）" title="{$media_list.name}（{$media_list.width}px × {$media_list.height}px）"></a>
 				<!--{else}-->
 				<a href="{if $media_list_restriction}{$freo.core.http_file}/file/media/{$smarty.get.directory}/{$media_list.name}{else}{$freo.core.http_url}{$media_list.id}{/if}"{if $media_list.memo} title="{$media_list.memo}"{/if}>{$media_list.name}</a>
 				<!--{/if}-->

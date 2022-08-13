@@ -17,9 +17,9 @@
 				<legend>ブックマーク検索フォーム</legend>
 				<dl>
 					<dt>キーワード</dt>
-						<dd><input type="text" name="word" size="50" value="{$smarty.get.word}" /></dd>
+						<dd><input type="text" name="word" size="50" value="{$smarty.get.word}"></dd>
 				</dl>
-				<p><input type="submit" value="検索する" /></p>
+				<p><input type="submit" value="検索する"></p>
 			</fieldset>
 		</form>
 	</div>
@@ -41,9 +41,9 @@
 				{$plugin_bookmark.created|date_format:'%Y/%m/%d'}
 				タグ：<!--{foreach from=$plugin_bookmark_tags[$plugin_bookmark.id]|smarty:nodefaults item='plugin_bookmark_tag' name='loop'}--><a href="{$freo.core.http_file}/bookmark?tag={$plugin_bookmark_tag|smarty:nodefaults|escape:'url'}">{$plugin_bookmark_tag}</a><!--{if !$smarty.foreach.loop.last}-->,&nbsp;<!--{/if}--><!--{/foreach}-->
 				<!--{if $freo.user.authority == 'root' or $freo.user.authority == 'author'}-->
-				<a href="{$freo.core.http_file}/bookmark/admin_form?id={$plugin_bookmark.id}"><img src="{$freo.core.http_url}images/icons/edit.png" alt="編集" title="編集" width="16" height="16" /></a>
+				<a href="{$freo.core.http_file}/bookmark/admin_form?id={$plugin_bookmark.id}"><img src="{$freo.core.http_url}images/icons/edit.png" alt="編集" title="編集" width="16" height="16"></a>
 				<!--{/if}-->
-				<!--{if $plugin_bookmark.text}--><br />{$plugin_bookmark.text|autolink}<!--{/if}-->
+				<!--{if $plugin_bookmark.text}--><br>{$plugin_bookmark.text|autolink}<!--{/if}-->
 			</dd>
 		<!--{/foreach}-->
 	</dl>
