@@ -22,11 +22,11 @@
 						<p class="attention">このエントリーは、パスワードで認証した人のみに公開されています。</p>
 					<!--{/if}-->
 					<!--{if $entry_path.file and $entry_path.image}-->
-						<p><a href="#"><img src="{$entry_path.image}" alt="" width="{$entry_image.width}" height="{$entry_image.height}" /></a></p>
+						<p><a href="#"><img src="{$entry_path.image}" alt="" width="{$entry_image.width}" height="{$entry_image.height}"></a></p>
 					<!--{elseif $entry_path.thumbnail}-->
-						<p><a href="#"><img src="{$entry_path.thumbnail}" alt="" width="{$entry_thumbnail.width}" height="{$entry_thumbnail.height}" /></a></p>
+						<p><a href="#"><img src="{$entry_path.thumbnail}" alt="" width="{$entry_thumbnail.width}" height="{$entry_thumbnail.height}"></a></p>
 					<!--{elseif $entry_path.file and $entry_file.width and $entry_file.height}-->
-						<p><img src="{$entry_path.file}" alt="" width="{$entry_file.width}" height="{$entry_file.height}" /></p>
+						<p><img src="{$entry_path.file}" alt="" width="{$entry_file.width}" height="{$entry_file.height}"></p>
 					<!--{elseif $entry_path.file}-->
 						<p><a href="#">{$entry.memo|default:$entry.file}</a></p>
 					<!--{/if}-->
@@ -66,16 +66,16 @@
 					<form action="{$freo.core.http_file}/admin/entry_form" method="get">
 						<fieldset>
 							<legend>エントリー編集フォーム</legend>
-							<input type="hidden" name="session" value="1" />
-							<input type="hidden" name="id" value="{$freo.query.id}" />
-							<p><input type="submit" value="戻る" /></p>
+							<input type="hidden" name="session" value="1">
+							<input type="hidden" name="id" value="{$freo.query.id}">
+							<p><input type="submit" value="戻る"></p>
 						</fieldset>
 					</form>
 					<form action="{$freo.core.http_file}/admin/entry_preview{if $freo.query.id}?id={$freo.query.id}{/if}" method="post">
 						<fieldset>
 							<legend>エントリー登録フォーム</legend>
-							<input type="hidden" name="freo[token]" value="{$token}" />
-							<p><input type="submit" value="登録する" /></p>
+							<input type="hidden" name="freo[token]" value="{$token}">
+							<p><input type="submit" value="登録する"></p>
 						</fieldset>
 					</form>
 				</div>

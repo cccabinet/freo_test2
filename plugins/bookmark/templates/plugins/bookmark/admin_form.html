@@ -16,18 +16,18 @@
 		<form action="{$freo.core.http_file}/bookmark/admin_form{if $freo.query.id}?id={$freo.query.id}{/if}" method="post">
 			<fieldset>
 				<legend>ブックマーク登録フォーム</legend>
-				<input type="hidden" name="freo[token]" value="{$token}" />
-				<input type="hidden" name="plugin_bookmark[id]" value="{$input.plugin_bookmark.id}" />
+				<input type="hidden" name="freo[token]" value="{$token}">
+				<input type="hidden" name="plugin_bookmark[id]" value="{$input.plugin_bookmark.id}">
 				<dl>
 					<dt>タイトル <abbr class="attention" title="入力必須">*</abbr></dt>
-						<dd><input type="text" name="plugin_bookmark[title]" size="50" value="{$input.plugin_bookmark.title}{$smarty.get.title}" /></dd>
+						<dd><input type="text" name="plugin_bookmark[title]" size="50" value="{$input.plugin_bookmark.title}{$smarty.get.title}"></dd>
 					<dt>URL <abbr class="attention" title="入力必須">*</abbr></dt>
-						<dd><input type="text" name="plugin_bookmark[url]" size="50" value="{$input.plugin_bookmark.url}{$smarty.get.url}" /></dd>
+						<dd><input type="text" name="plugin_bookmark[url]" size="50" value="{$input.plugin_bookmark.url}{$smarty.get.url}"></dd>
 					<dt>本文</dt>
 						<dd><textarea name="plugin_bookmark[text]" cols="50" rows="5">{$input.plugin_bookmark.text}</textarea></dd>
 					<dt>タグ</dt>
 						<dd>
-							<input type="text" name="plugin_bookmark[tag]" id="tag" size="50" value="{$input.plugin_bookmark.tag}" />
+							<input type="text" name="plugin_bookmark[tag]" id="tag" size="50" value="{$input.plugin_bookmark.tag}">
 {* タグの候補をタグクラウド一覧で表示（要ブックマークタグクラウド表示プラグイン） *}
 							<!--{if $freo.plugin.bookmark_tagcloud}-->
 							<div id="taglist">
@@ -39,7 +39,7 @@
 {* /タグの候補をタグクラウド一覧で表示 *}
 						</dd>
 				</dl>
-				<p><input type="submit" value="登録する" /></p>
+				<p><input type="submit" value="登録する"></p>
 			</fieldset>
 		</form>
 		<!--{if $freo.query.id}-->
@@ -50,9 +50,9 @@
 		<form action="{$freo.core.http_file}/bookmark/admin_delete" method="get" class="delete">
 			<fieldset>
 				<legend>ブックマーク削除フォーム</legend>
-				<input type="hidden" name="freo[token]" value="{$token}" />
-				<input type="hidden" name="id" value="{$freo.query.id}" />
-				<p><input type="submit" value="削除する" /></p>
+				<input type="hidden" name="freo[token]" value="{$token}">
+				<input type="hidden" name="id" value="{$freo.query.id}">
+				<p><input type="submit" value="削除する"></p>
 			</fieldset>
 		</form>
 		<!--{/if}-->

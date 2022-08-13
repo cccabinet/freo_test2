@@ -16,21 +16,21 @@
 		<form action="{$freo.core.http_file}/form/admin_form{if $freo.query.id}?id={$freo.query.id}{/if}" method="post">
 			<fieldset>
 				<legend>フォーム登録フォーム</legend>
-				<input type="hidden" name="freo[token]" value="{$token}" />
+				<input type="hidden" name="freo[token]" value="{$token}">
 				<!--{if $freo.query.id}-->
-				<input type="hidden" name="plugin_form[id]" value="{$input.plugin_form.id}" />
+				<input type="hidden" name="plugin_form[id]" value="{$input.plugin_form.id}">
 				<!--{/if}-->
 				<dl>
 					<!--{if !$freo.query.id}-->
 					<dt>フォームID <abbr class="attention" title="入力必須">*</abbr></dt>
-						<dd><input type="text" name="plugin_form[id]" size="30" value="{$input.plugin_form.id}" /></dd>
+						<dd><input type="text" name="plugin_form[id]" size="30" value="{$input.plugin_form.id}"></dd>
 					<!--{/if}-->
 					<dt>フォームの名前 <abbr class="attention" title="入力必須">*</abbr></dt>
-						<dd><input type="text" name="plugin_form[name]" size="50" value="{$input.plugin_form.name}" /></dd>
+						<dd><input type="text" name="plugin_form[name]" size="50" value="{$input.plugin_form.name}"></dd>
 					<dt>送信完了時のリダイレクト先</dt>
-						<dd><input type="text" name="plugin_form[complete]" size="50" value="{$input.plugin_form.complete}" /></dd>
+						<dd><input type="text" name="plugin_form[complete]" size="50" value="{$input.plugin_form.complete}"></dd>
 					<dt>送信済み回数 <abbr class="attention" title="入力必須">*</abbr></dt>
-						<dd><input type="text" name="plugin_form[count]" size="5" value="{$input.plugin_form.count}" /> 回</dd>
+						<dd><input type="text" name="plugin_form[count]" size="5" value="{$input.plugin_form.count}"> 回</dd>
 					<!--{if $smarty.const.FREO_HTTPS_URL}-->
 					<dt>SSLの使用 <abbr class="attention" title="入力必須">*</abbr></dt>
 						<dd>
@@ -40,7 +40,7 @@
 							</select>
 						</dd>
 					<!--{else}-->
-					<input type="hidden" name="plugin_form[secure]" value="{$input.plugin_form.secure}" />
+					<input type="hidden" name="plugin_form[secure]" value="{$input.plugin_form.secure}">
 					<!--{/if}-->
 					<dt>添付ファイル <abbr class="attention" title="入力必須">*</abbr></dt>
 						<dd>
@@ -78,11 +78,11 @@
 				</dl>
 				<dl id="form_reply_content">
 					<dt>メールの自動返信：件名 <abbr class="attention" title="入力必須">*</abbr></dt>
-						<dd><input type="text" name="plugin_form[reply_subject]" size="50" value="{$input.plugin_form.reply_subject}" /></dd>
+						<dd><input type="text" name="plugin_form[reply_subject]" size="50" value="{$input.plugin_form.reply_subject}"></dd>
 					<dt>メールの自動返信：送信者名 <abbr class="attention" title="入力必須">*</abbr></dt>
-						<dd><input type="text" name="plugin_form[reply_name]" size="50" value="{$input.plugin_form.reply_name}" /></dd>
+						<dd><input type="text" name="plugin_form[reply_name]" size="50" value="{$input.plugin_form.reply_name}"></dd>
 					<dt>メールの自動返信：送信元アドレス <abbr class="attention" title="入力必須">*</abbr></dt>
-						<dd><input type="text" name="plugin_form[reply_from]" size="50" value="{$input.plugin_form.reply_from}" /></dd>
+						<dd><input type="text" name="plugin_form[reply_from]" size="50" value="{$input.plugin_form.reply_from}"></dd>
 					<dt>メールの自動返信：本文 <abbr class="attention" title="入力必須">*</abbr></dt>
 						<dd><textarea name="plugin_form[reply_text]" cols="50" rows="10">{$input.plugin_form.reply_text}</textarea></dd>
 				</dl>
@@ -110,7 +110,7 @@
 							</select>
 						</dd>
 				</dl>
-				<p><input type="submit" value="登録する" /></p>
+				<p><input type="submit" value="登録する"></p>
 			</fieldset>
 		</form>
 		<!--{if $freo.query.id}-->
@@ -121,9 +121,9 @@
 		<form action="{$freo.core.http_file}/form/admin_delete" method="get" class="delete">
 			<fieldset>
 				<legend>フォーム削除フォーム</legend>
-				<input type="hidden" name="freo[token]" value="{$token}" />
-				<input type="hidden" name="id" value="{$freo.query.id}" />
-				<p><input type="submit" value="削除する" /></p>
+				<input type="hidden" name="freo[token]" value="{$token}">
+				<input type="hidden" name="id" value="{$freo.query.id}">
+				<p><input type="submit" value="削除する"></p>
 			</fieldset>
 		</form>
 		<!--{/if}-->

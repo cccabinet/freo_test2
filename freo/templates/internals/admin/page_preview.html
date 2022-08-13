@@ -8,11 +8,11 @@
 		<p class="attention">このページは、パスワードで認証した人のみに公開されています。</p>
 	<!--{/if}-->
 	<!--{if $page_path.file and $page_path.image}-->
-		<p><a href="#"><img src="{$page_path.image}" alt="" width="{$page_image.width}" height="{$page_image.height}" /></a></p>
+		<p><a href="#"><img src="{$page_path.image}" alt="" width="{$page_image.width}" height="{$page_image.height}"></a></p>
 	<!--{elseif $page_path.thumbnail}-->
-		<p><a href="#"><img src="{$page_path.thumbnail}" alt="" width="{$page_thumbnail.width}" height="{$page_thumbnail.height}" /></a></p>
+		<p><a href="#"><img src="{$page_path.thumbnail}" alt="" width="{$page_thumbnail.width}" height="{$page_thumbnail.height}"></a></p>
 	<!--{elseif $page_path.file and $page_file.width and $page_file.height}-->
-		<p><img src="{$page_path.file}" alt="" width="{$page_file.width}" height="{$page_file.height}" /></p>
+		<p><img src="{$page_path.file}" alt="" width="{$page_file.width}" height="{$page_file.height}"></p>
 	<!--{elseif $page_path.file}-->
 		<p><a href="#">{$page.memo|default:$page.file}</a></p>
 	<!--{/if}-->
@@ -37,20 +37,22 @@
 		<!--{/foreach}-->
 	</dl>
 	<!--{/if}-->
+	<hr>
+	<p>この内容で登録しますか？</p>
 	<div id="action">
 		<form action="{$freo.core.http_file}/admin/page_form" method="get">
 			<fieldset>
 				<legend>ページ編集フォーム</legend>
-				<input type="hidden" name="session" value="1" />
-				<input type="hidden" name="id" value="{$freo.query.id}" />
-				<p><input type="submit" value="戻る" /></p>
+				<input type="hidden" name="session" value="1">
+				<input type="hidden" name="id" value="{$freo.query.id}">
+				<p><input type="submit" value="戻る"></p>
 			</fieldset>
 		</form>
 		<form action="{$freo.core.http_file}/admin/page_preview{if $freo.query.id}?id={$freo.query.id}{/if}" method="post">
 			<fieldset>
 				<legend>ページ登録フォーム</legend>
-				<input type="hidden" name="freo[token]" value="{$token}" />
-				<p><input type="submit" value="登録する" /></p>
+				<input type="hidden" name="freo[token]" value="{$token}">
+				<p><input type="submit" value="登録する"></p>
 			</fieldset>
 		</form>
 	</div>

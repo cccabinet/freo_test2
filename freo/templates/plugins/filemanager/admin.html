@@ -72,7 +72,7 @@
 			<tbody>
 				<!--{if $smarty.get.path}-->
 				<tr>
-					<td><img src="{$freo.core.http_url}images/icons/directory.png" alt="ディレクトリ" width="16" height="16" /> <code>..</code></td>
+					<td><img src="{$freo.core.http_url}images/icons/directory.png" alt="ディレクトリ" width="16" height="16"> <code>..</code></td>
 					<td></td>
 					<td></td>
 					<td><a href="{$freo.core.http_file}/filemanager/admin?path={$parent|escape:'url'}">上の階層へ</a></td>
@@ -80,7 +80,7 @@
 				<!--{/if}-->
 				<!--{foreach from=$directories|smarty:nodefaults item='directory'}-->
 				<tr>
-					<td><img src="{$freo.core.http_url}images/icons/directory.png" alt="ディレクトリ" width="16" height="16" /> <code>{$directory.name}</code></td>
+					<td><img src="{$freo.core.http_url}images/icons/directory.png" alt="ディレクトリ" width="16" height="16"> <code>{$directory.name}</code></td>
 					<td></td>
 					<td></td>
 					<td>
@@ -92,7 +92,7 @@
 				<!--{/foreach}-->
 				<!--{foreach from=$files|smarty:nodefaults item='file'}-->
 				<tr>
-					<td><img src="{$freo.core.http_url}images/icons/file.png" alt="ファイル" width="16" height="16" /> <code>{$file.name}</code></td>
+					<td><img src="{$freo.core.http_url}images/icons/file.png" alt="ファイル" width="16" height="16"> <code>{$file.name}</code></td>
 					<td><span title="{$file.datetime|date_format:'%Y/%m/%d %H:%M:%S'}"><!--{if $file.datetime|date_format:'%Y%m%d' == $smarty.now|date_format:'%Y%m%d'}-->{$file.datetime|date_format:'%H:%M:%S'}<!--{else}-->{$file.datetime|date_format:'%Y/%m/%d'}<!--{/if}--></span></td>
 					<td class="number"><span title="{$file.size} byte"><!--{if $file.size >= 1024}-->{$file.size/1024|intval}KB<!--{elseif $file.size > 0}-->1KB<!--{else}-->0KB<!--{/if}--></span></td>
 					<td>

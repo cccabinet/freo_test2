@@ -25,7 +25,7 @@
 		<form action="{$freo.core.http_file}/admin/option_update" method="post">
 			<fieldset>
 				<legend>オプション並び替えフォーム</legend>
-				<input type="hidden" name="freo[token]" value="{$token}" />
+				<input type="hidden" name="freo[token]" value="{$token}">
 				<table summary="オプション">
 					<thead>
 						<tr>
@@ -51,7 +51,7 @@
 							<td>{$option.id}</td>
 							<td>{$option.name}</td>
 							<td><!--{if $option.target == 'entry'}-->エントリー<!--{elseif $option.target == 'page'}-->ページ<!--{else}-->すべて<!--{/if}--></td>
-							<td class="number"><input type="text" name="sort[{$option.id}]" size="3" value="{$option.sort}" /></td>
+							<td class="number"><input type="text" name="sort[{$option.id}]" size="3" value="{$option.sort}"></td>
 							<td>
 								<a href="{$freo.core.http_file}/admin/option_form?id={$option.id}">編集</a>
 								<a href="{$freo.core.http_file}/admin/option_delete?freo%5Btoken%5D={$token}&amp;id={$option.id}" class="delete">削除</a>
@@ -60,7 +60,7 @@
 						<!--{/foreach}-->
 					</tbody>
 				</table>
-				<p><input type="submit" value="並び順を編集する" /></p>
+				<p><input type="submit" value="並び順を編集する"></p>
 			</fieldset>
 		</form>
 	</div>

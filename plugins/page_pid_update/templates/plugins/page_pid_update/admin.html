@@ -20,7 +20,7 @@
 		<form action="{$freo.core.http_file}/page_pid_update/admin" method="post">
 			<fieldset>
 				<legend>親ID一括変更フォーム</legend>
-				<input type="hidden" name="freo[token]" value="{$token}" />
+				<input type="hidden" name="freo[token]" value="{$token}">
 				<dl>
 					<dt>一括変更</dt>
 						<dd>
@@ -31,7 +31,7 @@
 								<option value="{$page_pid.pid}">{$page_pid.pid}</option>
 								<!--{/foreach}-->
 							</select>
-							のページを対象に、<br />
+							のページを対象に、<br>
 							親IDを
 							<select name="plugin_page_pid_update[new]">
 								<option value=""></option>
@@ -42,7 +42,7 @@
 							に変更
 						</dd>
 				</dl>
-				<p><input type="submit" value="登録する" /></p>
+				<p><input type="submit" value="登録する"></p>
 			</fieldset>
 		</form>
 	</div>

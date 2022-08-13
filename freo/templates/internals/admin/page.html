@@ -59,25 +59,25 @@
 					<legend>ページ検索フォーム</legend>
 					<dl>
 						<dt>キーワード</dt>
-							<dd><input type="text" name="word" size="50" value="{$smarty.get.word}" /></dd>
+							<dd><input type="text" name="word" size="50" value="{$smarty.get.word}"></dd>
 						<dt>状態</dt>
 							<dd>
-								<input type="checkbox" name="status" id="label_status_private" value="private"{if $freo.query.status == 'private'} checked="checked"{/if} /> <label for="label_status_private">未公開のみ</label>
+								<input type="checkbox" name="status" id="label_status_private" value="private"{if $freo.query.status == 'private'} checked="checked"{/if}> <label for="label_status_private">未公開のみ</label>
 								<!--{if $freo.config.page.approve == 'no'}-->
 								&nbsp;
-								<input type="checkbox" name="approved" id="label_approved_no" value="no"{if $freo.query.approved == 'no'} checked="checked"{/if} /> <label for="label_approved_no">未承認のみ</label>
+								<input type="checkbox" name="approved" id="label_approved_no" value="no"{if $freo.query.approved == 'no'} checked="checked"{/if}> <label for="label_approved_no">未承認のみ</label>
 								<!--{/if}-->
 							</dd>
 					</dl>
-					<p><input type="submit" value="検索する" /></p>
+					<p><input type="submit" value="検索する"></p>
 				</fieldset>
 			</form>
 		</div>
 		<form action="{$freo.core.http_file}/admin/page_update" method="post">
 			<fieldset>
 				<legend>ページ並び替えフォーム</legend>
-				<input type="hidden" name="freo[token]" value="{$token}" />
-				<input type="hidden" name="pid" value="{$freo.query.pid}" />
+				<input type="hidden" name="freo[token]" value="{$token}">
+				<input type="hidden" name="pid" value="{$freo.query.pid}">
 				<table summary="ページ">
 					<thead>
 						<tr>
@@ -126,9 +126,9 @@
 							<td>{$page.title}</td>
 							<td><!--{if $page.approved == 'no'}-->未承認<!--{elseif $page.status == 'private'}-->未公開<!--{elseif $page.status == 'publish'}--><!--{if $page.close}--><!--{if $page.close|date_format:'%Y%m%d%H%M%S' <= $smarty.now|date_format:'%Y%m%d%H%M%S'}-->公開終了<!--{else}--><!--{if $page.close|date_format:'%Y%m%d' == $smarty.now|date_format:'%Y%m%d'}-->{$page.close|date_format:'%H:%M:%S'}<br><!--{else}-->{$page.close|date_format:'%Y/%m/%d'}<br><!--{/if}-->公開終了予定<!--{/if}--><!--{else}-->公開<!--{/if}--><!--{elseif $page.status == 'future'}--><!--{if $page.datetime|date_format:'%Y%m%d%H%M%S' <= $smarty.now|date_format:'%Y%m%d%H%M%S'}--><!--{if $page.close}--><!--{if $page.close|date_format:'%Y%m%d%H%M%S' <= $smarty.now|date_format:'%Y%m%d%H%M%S'}-->公開終了<!--{else}--><!--{if $page.close|date_format:'%Y%m%d' == $smarty.now|date_format:'%Y%m%d'}-->{$page.close|date_format:'%H:%M:%S'}<br><!--{else}-->{$page.close|date_format:'%Y/%m/%d'}<br><!--{/if}-->公開終了予定<!--{/if}--><!--{else}-->公開中<!--{/if}--><!--{else}-->予約公開<!--{/if}--><!--{/if}--></td>
 							<!--{if $freo.config.page.restriction or $freo.config.page.filter}-->
-							<td><!--{if $page.restriction == 'user'}-->ユーザー<!--{elseif $page.restriction == 'group'}--><!--{foreach from=$page_associates[$page.id].group|smarty:nodefaults key='page_group' item='page_group' name='loop'}--><strong>[G]</strong>{$freo.refer.groups[$page_group].name}<!--{if !$smarty.foreach.loop.last}--><br /><!--{/if}--><!--{/foreach}--><!--{elseif $page.restriction == 'password'}-->パスワード<!--{elseif $page_associates[$page.id].filter}--><!--{foreach from=$page_associates[$page.id].filter|smarty:nodefaults key='page_filter' item='page_filter' name='loop'}--><strong>[F]</strong>{$freo.refer.filters[$page_filter].name}<!--{if !$smarty.foreach.loop.last}--><br /><!--{/if}--><!--{/foreach}--><!--{/if}--></td>
+							<td><!--{if $page.restriction == 'user'}-->ユーザー<!--{elseif $page.restriction == 'group'}--><!--{foreach from=$page_associates[$page.id].group|smarty:nodefaults key='page_group' item='page_group' name='loop'}--><strong>[G]</strong>{$freo.refer.groups[$page_group].name}<!--{if !$smarty.foreach.loop.last}--><br><!--{/if}--><!--{/foreach}--><!--{elseif $page.restriction == 'password'}-->パスワード<!--{elseif $page_associates[$page.id].filter}--><!--{foreach from=$page_associates[$page.id].filter|smarty:nodefaults key='page_filter' item='page_filter' name='loop'}--><strong>[F]</strong>{$freo.refer.filters[$page_filter].name}<!--{if !$smarty.foreach.loop.last}--><br><!--{/if}--><!--{/foreach}--><!--{/if}--></td>
 							<!--{/if}-->
-							<td class="number"><!--{if $freo.user.authority == 'root' and !$smarty.get.word and !$smarty.get.user and !$smarty.get.approved and !$smarty.get.status and !$smarty.get.tag and !$smarty.get.date}--><input type="text" name="sort[{$page.id}]" size="3" value="{$page.sort}" /><!--{else}-->{$page.sort}<!--{/if}--></td>
+							<td class="number"><!--{if $freo.user.authority == 'root' and !$smarty.get.word and !$smarty.get.user and !$smarty.get.approved and !$smarty.get.status and !$smarty.get.tag and !$smarty.get.date}--><input type="text" name="sort[{$page.id}]" size="3" value="{$page.sort}"><!--{else}-->{$page.sort}<!--{/if}--></td>
 							<td>
 								<!--{if $page.approved == 'yes' and ($page.status == 'publish' or ($page.status == 'future' and $page.datetime|date_format:'%Y%m%d%H%M%S' <= $smarty.now|date_format:'%Y%m%d%H%M%S')) and (!$page.close or $page.close|date_format:'%Y%m%d%H%M%S' >= $smarty.now|date_format:'%Y%m%d%H%M%S')}-->
 								<a href="{$freo.core.http_file}/page/{$page.id}">確認</a>
@@ -143,7 +143,7 @@
 					</tbody>
 				</table>
 				<!--{if $freo.user.authority == 'root' and !$smarty.get.word and !$smarty.get.user and !$smarty.get.approved and !$smarty.get.status and !$smarty.get.tag and !$smarty.get.date}-->
-				<p><input type="submit" value="並び順を編集する" /></p>
+				<p><input type="submit" value="並び順を編集する"></p>
 				<!--{/if}-->
 			</fieldset>
 		</form>

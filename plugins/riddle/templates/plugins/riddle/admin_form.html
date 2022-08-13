@@ -16,15 +16,15 @@
 		<form action="{$freo.core.http_file}/riddle/admin_form{if $freo.query.id}?id={$freo.query.id}{/if}" method="post">
 			<fieldset>
 				<legend>なぞなぞ登録フォーム</legend>
-				<input type="hidden" name="freo[token]" value="{$token}" />
-				<input type="hidden" name="plugin_riddle[id]" value="{$input.plugin_riddle.id}" />
+				<input type="hidden" name="freo[token]" value="{$token}">
+				<input type="hidden" name="plugin_riddle[id]" value="{$input.plugin_riddle.id}">
 				<dl>
 					<dt>問題 <abbr class="attention" title="入力必須">*</abbr></dt>
-						<dd><input type="text" name="plugin_riddle[question]" size="50" value="{$input.plugin_riddle.question}" /></dd>
+						<dd><input type="text" name="plugin_riddle[question]" size="50" value="{$input.plugin_riddle.question}"></dd>
 					<dt>回答 <abbr class="attention" title="入力必須">*</abbr></dt>
-						<dd><input type="text" name="plugin_riddle[answer]" size="50" value="{$input.plugin_riddle.answer}" /></dd>
+						<dd><input type="text" name="plugin_riddle[answer]" size="50" value="{$input.plugin_riddle.answer}"></dd>
 				</dl>
-				<p><input type="submit" value="登録する" /></p>
+				<p><input type="submit" value="登録する"></p>
 			</fieldset>
 		</form>
 		<!--{if $freo.query.id}-->
@@ -35,9 +35,9 @@
 		<form action="{$freo.core.http_file}/riddle/admin_delete" method="get" class="delete">
 			<fieldset>
 				<legend>なぞなぞ削除フォーム</legend>
-				<input type="hidden" name="freo[token]" value="{$token}" />
-				<input type="hidden" name="id" value="{$freo.query.id}" />
-				<p><input type="submit" value="削除する" /></p>
+				<input type="hidden" name="freo[token]" value="{$token}">
+				<input type="hidden" name="id" value="{$freo.query.id}">
+				<p><input type="submit" value="削除する"></p>
 			</fieldset>
 		</form>
 		<!--{/if}-->
