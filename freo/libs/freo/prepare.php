@@ -318,7 +318,7 @@ echo "<input type=\"hidden\" name=\"token\" value=\"" . session_id() . "\">\n";
 
 echo "<dl>\n";
 echo "<dt><label for=\"url\">設置URL</label></dt>\n";
-echo "<dd><input type=\"text\" name=\"url\" id=\"url\" size=\"30\" value=\"" . $url . "\"></dd>\n";
+echo "<dd><input type=\"url\" name=\"url\" id=\"url\" size=\"30\" value=\"" . $url . "\"></dd>\n";
 echo "<dt><label for=\"database_type\">使用データベース</label></dt>\n";
 echo "<dd>\n";
 echo "<select name=\"database_type\" id=\"database_type\">\n";
