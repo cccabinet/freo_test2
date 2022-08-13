@@ -15,20 +15,20 @@
 			<legend>メッセージ送信フォーム</legend>
 			<input type="hidden" name="freo[token]" value="{$token}">
 			<dl>
-				<dt>本文</dt>
-					<dd><textarea name="plugin_message[text]" cols="50" rows="5">{$input.plugin_message.text}</textarea></dd>
+				<dt><label for="text">本文</label></dt>
+					<dd><textarea name="plugin_message[text]" id="text" cols="50" rows="5">{$input.plugin_message.text}</textarea></dd>
 {* スパム対策 *}
 {* 投稿キープラグインを導入していたら *}
 				<!--{if $freo.plugin.postkey}-->
 				<!--{if !$smarty.session.plugin.postkey.approved}-->
-				<dt>投稿キー（スパム対策に、<img src="{$freo.core.http_file}/postkey" alt="投稿キー" title="投稿キー" width="50" height="20"> を半角で入力してください。）</dt>
-					<dd><input type="text" name="plugin[postkey][key]" size="10" value=""></dd>
+				<dt><label for="postkey">投稿キー（スパム対策に、<img src="{$freo.core.http_file}/postkey" alt="投稿キー" title="投稿キー" width="50" height="20"> を半角で入力してください。）</label></dt>
+					<dd><input type="text" name="plugin[postkey][key]" id="postkey" size="10" value=""></dd>
 				<!--{/if}-->
 {* なぞなぞ認証プラグインを導入していたら *}
 				<!--{elseif $freo.plugin.riddle}-->
 				<!--{if !$smarty.session.plugin.riddle.approved}-->
-				<dt>{$plugin_riddle.question}（スパム対策）</dt>
-					<dd><input type="text" name="plugin[riddle][answer]" size="30" value=""><input type="hidden" name="plugin[riddle][id]" value="{$plugin_riddle.id}"></dd>
+				<dt><label for="riddle">{$plugin_riddle.question}（スパム対策）</label></dt>
+					<dd><input type="text" name="plugin[riddle][answer]" id="riddle" size="30" value=""><input type="hidden" name="plugin[riddle][id]" value="{$plugin_riddle.id}"></dd>
 				<!--{/if}-->
 				<!--{/if}-->
 {* /スパム対策 *}

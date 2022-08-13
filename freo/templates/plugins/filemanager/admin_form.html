@@ -22,8 +22,8 @@
 				<input type="hidden" name="plugin_filemanager[path]" value="{$smarty.get.path}">
 				<input type="hidden" name="plugin_filemanager[directory_org]" value="{$smarty.get.name}">
 				<dl>
-					<dt>ディレクトリ名</dt>
-						<dd><input type="text" name="plugin_filemanager[directory]" size="50" value="{$smarty.get.name}"></dd>
+					<dt><label for="directory">ディレクトリ名</label></dt>
+						<dd><input type="text" name="plugin_filemanager[directory]" id="directory" size="50" value="{$smarty.get.name}"></dd>
 				</dl>
 				<p><input type="submit" value="変更する"></p>
 			</fieldset>
@@ -37,9 +37,9 @@
 				<legend>ディレクトリ移動フォーム</legend>
 				<input type="hidden" name="freo[token]" value="{$token}">
 				<dl>
-					<dt>移動先</dt>
+					<dt><label for="path">移動先</label></dt>
 						<dd>
-							<select name="plugin_filemanager[path]">
+							<select name="plugin_filemanager[path]" id="path">
 								<option value="">ファイル管理ディレクトリ直下</option>
 								<!--{foreach from=$directories|smarty:nodefaults item='directory'}-->
 								<!--{if $smarty.get.path != $directory and $smarty.get.path|cat:$smarty.get.name|cat:'/' != $directory}-->
@@ -78,8 +78,8 @@
 				<input type="hidden" name="plugin_filemanager[exec]" value="insert_directory">
 				<input type="hidden" name="plugin_filemanager[path]" value="{$smarty.get.path}">
 				<dl>
-					<dt>ディレクトリ名</dt>
-						<dd><input type="text" name="plugin_filemanager[directory]" size="50" value="{$input.plugin_filemanager.directory}"></dd>
+					<dt><label for="directory">ディレクトリ名</label></dt>
+						<dd><input type="text" name="plugin_filemanager[directory]" id="directory" size="50" value="{$input.plugin_filemanager.directory}"></dd>
 				</dl>
 				<p><input type="submit" value="作成する"></p>
 			</fieldset>
@@ -117,9 +117,9 @@
 				<!--{/if}-->
 				<dl id="media_file">
 					<!--{if !$smarty.get.path}-->
-					<dt>アップロード先 <abbr class="attention" title="入力必須">*</abbr></dt>
+					<dt><label for="path">アップロード先 <abbr class="attention" title="入力必須">*</abbr></label></dt>
 						<dd>
-							<select name="plugin_filemanager[path]">
+							<select name="plugin_filemanager[path]" id="path">
 								<option value="">ファイル管理ディレクトリ直下</option>
 								<!--{foreach from=$directories|smarty:nodefaults item='directory'}-->
 								<option value="{$directory}"{if $input.plugin_filemanager.path and $input.plugin_filemanager.path == $directory} selected="selected"{/if}>{$directory}</option>
@@ -127,13 +127,13 @@
 							</select>
 						</dd>
 					<!--{/if}-->
-					<dt>ファイル <abbr class="attention" title="入力必須">*</abbr></dt>
-						<dd><input type="file" name="plugin_filemanager[file][]" size="30"></dd>
+					<dt><label for="file">ファイル <abbr class="attention" title="入力必須">*</abbr></label></dt>
+						<dd><input type="file" name="plugin_filemanager[file][]" id="file" size="30"></dd>
 				</dl>
 				<!--{if !$smarty.get.name}-->
 				<dl id="media_template">
-					<dt>ファイル</dt>
-						<dd><input type="file" name="plugin_filemanager[file][]" size="30"></dd>
+					<dt><label for="file">ファイル</label></dt>
+						<dd><input type="file" name="plugin_filemanager[file][]" id="file" size="30"></dd>
 				</dl>
 				<p><a href="javascript:void(0)" id="media_add">ファイル選択欄を追加</a></p>
 				<!--{/if}-->
@@ -155,8 +155,8 @@
 				<input type="hidden" name="plugin_filemanager[path]" value="{$smarty.get.path}">
 				<input type="hidden" name="plugin_filemanager[file]" value="{$smarty.get.name}">
 				<dl>
-					<dt>内容</dt>
-						<dd><textarea name="plugin_filemanager[text]" cols="50" rows="10">{$input.plugin_filemanager.text}</textarea></dd>
+					<dt><label for="text">内容</label></dt>
+						<dd><textarea name="plugin_filemanager[text]" id="text" cols="50" rows="10">{$input.plugin_filemanager.text}</textarea></dd>
 				</dl>
 				<p><input type="submit" value="書き換える"></p>
 			</fieldset>
@@ -174,8 +174,8 @@
 				<input type="hidden" name="plugin_filemanager[path]" value="{$smarty.get.path}">
 				<input type="hidden" name="plugin_filemanager[file_org]" value="{$smarty.get.name}">
 				<dl>
-					<dt>ファイル名</dt>
-						<dd><input type="text" name="plugin_filemanager[file]" size="50" value="{$smarty.get.name}"></dd>
+					<dt><label for="text">ファイル名</label></dt>
+						<dd><input type="text" name="plugin_filemanager[file]" id="text" size="50" value="{$smarty.get.name}"></dd>
 				</dl>
 				<p><input type="submit" value="変更する"></p>
 			</fieldset>
@@ -190,9 +190,9 @@
 				<input type="hidden" name="freo[token]" value="{$token}">
 				<input type="hidden" name="plugin_filemanager[file]" value="{$smarty.get.name}">
 				<dl>
-					<dt>移動先</dt>
+					<dt><label for="path">移動先</label></dt>
 						<dd>
-							<select name="plugin_filemanager[path]">
+							<select name="plugin_filemanager[path]" id="path">
 								<option value="">ファイル管理ディレクトリ直下</option>
 								<!--{foreach from=$directories|smarty:nodefaults item='directory'}-->
 								<!--{if $smarty.get.path != $directory}-->
@@ -230,8 +230,8 @@
 				<input type="hidden" name="plugin_filemanager[exec]" value="insert_file">
 				<input type="hidden" name="plugin_filemanager[path]" value="{$smarty.get.path}">
 				<dl>
-					<dt>ファイル名</dt>
-						<dd><input type="text" name="plugin_filemanager[file]" size="50" value="{$input.plugin_filemanager.file}"></dd>
+					<dt><label for="file">ファイル名</label></dt>
+						<dd><input type="text" name="plugin_filemanager[file]" id="file" size="50" value="{$input.plugin_filemanager.file}"></dd>
 				</dl>
 				<p><input type="submit" value="作成する"></p>
 			</fieldset>

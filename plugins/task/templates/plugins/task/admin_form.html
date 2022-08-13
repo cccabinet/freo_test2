@@ -19,26 +19,26 @@
 				<input type="hidden" name="freo[token]" value="{$token}">
 				<input type="hidden" name="plugin_task[id]" value="{$input.plugin_task.id}">
 				<dl>
-					<dt>内容 <abbr class="attention" title="入力必須">*</abbr></dt>
-						<dd><input type="text" name="plugin_task[title]" size="50" value="{$input.plugin_task.title}"></dd>
-					<dt>詳細</dt>
-						<dd><textarea name="plugin_task[text]" cols="50" rows="5">{$input.plugin_task.text}</textarea></dd>
-					<dt>カテゴリー <abbr class="attention" title="入力必須">*</abbr>
+					<dt><label for="title">内容 <abbr class="attention" title="入力必須">*</abbr></label></dt>
+						<dd><input type="text" name="plugin_task[title]" id="title" size="50" value="{$input.plugin_task.title}"></dd>
+					<dt><label for="text">詳細</label></dt>
+						<dd><textarea name="plugin_task[text]" id="text" cols="50" rows="5">{$input.plugin_task.text}</textarea></dd>
+					<dt><label for="category">カテゴリー <abbr class="attention" title="入力必須">*</abbr></label>
 						<!--{if $freo.user.authority == 'root'}-->
 						<a href="{$freo.core.http_file}/task/admin_category_form" target="_blank" rel="noopener">カテゴリー登録</a>
 						<!--{/if}-->
 					</dt>
 						<dd>
-							<select name="plugin_task[category_id]">
+							<select name="plugin_task[category_id]" id="category">
 								<option value="">選択してください</option>
 								<!--{foreach from=$plugin_task_categories|smarty:nodefaults item='plugin_task_category'}-->
 								<option value="{$plugin_task_category.id}"{if $input.plugin_task.category_id == $plugin_task_category.id} selected="selected"{/if} >{$plugin_task_category.name}</option>
 								<!--{/foreach}-->
 							</select>
 						</dd>
-					<dt>状態 <abbr class="attention" title="入力必須">*</abbr></dt>
+					<dt><label for="status">状態 <abbr class="attention" title="入力必須">*</abbr></label></dt>
 						<dd>
-							<select name="plugin_task[status]">
+							<select name="plugin_task[status]" id="status">
 								<option value="publish"{if $input.plugin_task.status == 'publish'} selected="selected"{/if}>未完了</option>
 								<option value="complete"{if $input.plugin_task.status == 'complete'} selected="selected"{/if}>完了</option>
 							</select>

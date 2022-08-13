@@ -23,30 +23,30 @@
 				<!--{/if}-->
 				<dl>
 					<!--{if !$freo.query.id}-->
-					<dt>お礼ID <abbr class="attention" title="入力必須">*</abbr></dt>
-						<dd><input type="text" name="plugin_clap_thank[id]" size="30" value="{$input.plugin_clap_thank.id}"></dd>
+					<dt><label for="thank_id">お礼ID <abbr class="attention" title="入力必須">*</abbr></label></dt>
+						<dd><input type="text" name="plugin_clap_thank[id]" id="thank_id" size="30" value="{$input.plugin_clap_thank.id}"></dd>
 					<!--{/if}-->
-					<dt>本文 <abbr class="attention" title="入力必須">*</abbr> <a href="{$freo.core.http_file}/admin/media?type=iframe" class="colorbox" title="メディア"><img src="{$freo.core.http_url}images/icons/media.png" alt="メディア管理" title="メディア管理" width="16" height="16"></a> <a href="{$freo.core.http_file}/admin/media_form?type=iframe" class="colorbox" title="メディア"><img src="{$freo.core.http_url}images/icons/media_add.png" alt="メディア登録" title="メディア登録" width="16" height="16"></a></dt>
+					<dt><label for="markitup">本文 <abbr class="attention" title="入力必須">*</abbr> <a href="{$freo.core.http_file}/admin/media?type=iframe" class="colorbox" title="メディア"><img src="{$freo.core.http_url}images/icons/media.png" alt="メディア管理" title="メディア管理" width="16" height="16"></a> <a href="{$freo.core.http_file}/admin/media_form?type=iframe" class="colorbox" title="メディア"><img src="{$freo.core.http_url}images/icons/media_add.png" alt="メディア登録" title="メディア登録" width="16" height="16"></a></label></dt>
 						<dd><textarea name="plugin_clap_thank[text]" cols="50" rows="5" id="markitup">{$input.plugin_clap_thank.text}</textarea></dd>
-					<dt>説明</dt>
-						<dd><textarea name="plugin_clap_thank[memo]" cols="50" rows="5">{$input.plugin_clap_thank.memo}</textarea></dd>
-					<dt>利用対象 <abbr class="attention" title="入力必須">*</abbr></dt>
+					<dt><label for="memo">説明</label></dt>
+						<dd><textarea name="plugin_clap_thank[memo]" id="memo" cols="50" rows="5">{$input.plugin_clap_thank.memo}</textarea></dd>
+					<dt><label for="target">利用対象 <abbr class="attention" title="入力必須">*</abbr></label></dt>
 						<dd>
-							<select name="plugin_clap_thank[target]">
+							<select name="plugin_clap_thank[target]" id="target">
 								<option value="">PCと携帯</option>
 								<option value="pc"{if $input.plugin_clap_thank.target == 'pc'} selected="selected"{/if}>PC</option>
 								<option value="mobile"{if $input.plugin_clap_thank.target == 'mobile'} selected="selected"{/if}>携帯</option>
 							</select>
 						</dd>
-					<dt>状態 <abbr class="attention" title="入力必須">*</abbr></dt>
+					<dt><label for="status">状態 <abbr class="attention" title="入力必須">*</abbr></label></dt>
 						<dd>
-							<select name="plugin_clap_thank[status]">
+							<select name="plugin_clap_thank[status]" id="status">
 								<option value="publish"{if $input.plugin_clap_thank.status == 'publish'} selected="selected"{/if}>公開</option>
 								<option value="private"{if $input.plugin_clap_thank.status == 'private'} selected="selected"{/if}>未公開</option>
 							</select>
 						</dd>
-					<dt>並び順 <abbr class="attention" title="入力必須">*</abbr></dt>
-						<dd><input type="text" name="plugin_clap_thank[sort]" size="5" value="{$input.plugin_clap_thank.sort}"></dd>
+					<dt><label for="sort">並び順 <abbr class="attention" title="入力必須">*</abbr></label></dt>
+						<dd><input type="text" name="plugin_clap_thank[sort]" id="sort" size="5" value="{$input.plugin_clap_thank.sort}"></dd>
 				</dl>
 				<p><input type="submit" value="登録する"></p>
 			</fieldset>

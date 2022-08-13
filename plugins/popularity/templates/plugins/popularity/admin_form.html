@@ -18,13 +18,13 @@
 				<input type="hidden" name="freo[token]" value="{$token}">
 				<input type="hidden" name="plugin_popularity[parameter]" value="{$input.plugin_popularity.parameter}">
 				<dl>
-					<dt>タイトル</dt>
-						<dd><input type="text" name="plugin_popularity[title]" size="50" value="{$input.plugin_popularity.title}{$smarty.get.title}"></dd>
-					<dt>アクセス数</dt>
-						<dd><input type="text" name="plugin_popularity[count]" size="5" value="{$input.plugin_popularity.count}"></dd>
-					<dt>状態</dt>
+					<dt><label for="title">タイトル</label></dt>
+						<dd><input type="text" name="plugin_popularity[title]" id="title" size="50" value="{$input.plugin_popularity.title}{$smarty.get.title}"></dd>
+					<dt><label for="count">アクセス数</label></dt>
+						<dd><input type="text" name="plugin_popularity[count]" id="count" size="5" value="{$input.plugin_popularity.count}"></dd>
+					<dt><label for="status">状態</label></dt>
 						<dd>
-							<select name="plugin_popularity[status]">
+							<select name="plugin_popularity[status]" id="status">
 								<option value="publish"{if $input.plugin_popularity.status == 'publish'} selected="selected"{/if}>表示</option>
 								<option value="private"{if $input.plugin_popularity.status == 'private'} selected="selected"{/if}>非表示</option>
 							</select>

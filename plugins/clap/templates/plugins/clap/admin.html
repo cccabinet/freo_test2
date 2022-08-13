@@ -25,9 +25,9 @@
 				<fieldset>
 					<legend>お礼表示フォーム</legend>
 					<dl>
-						<dt>表示対象</dt>
+						<dt><label for="date">表示対象</label></dt>
 							<dd>
-								<select name="day">
+								<select name="day" id="date">
 									<option value="">選択してください</option>
 									<!--{foreach from=$plugin_clap_days|smarty:nodefaults item='plugin_clap_day'}-->
 									<option value="{$plugin_clap_day.day|date_format:'%Y%m%d'}"{if $smarty.get.day == $plugin_clap_day.day|date_format:'%Y%m%d'} selected="selected"{/if}>{$plugin_clap_day.day|date_format:'%Y/%m/%d'} （{$plugin_clap_day.count}回）</option>
@@ -35,9 +35,9 @@
 								</select>
 							</dd>
 						<!--{if $plugin_clap_titles|smarty:nodefaults}-->
-						<dt>タイトルで絞り込み</dt>
+						<dt><label for="title">タイトルで絞り込み</label></dt>
 							<dd>
-								<select name="title">
+								<select name="title" id="title">
 									<option value="">すべて表示</option>
 									<!--{foreach from=$plugin_clap_titles|smarty:nodefaults item='plugin_clap_title'}-->
 									<option value="{$plugin_clap_title.title}"{if $smarty.get.title == $plugin_clap_title.title} selected="selected"{/if}>{$plugin_clap_title.title} （{$plugin_clap_title.count}回）</option>

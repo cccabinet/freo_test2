@@ -24,35 +24,35 @@
 			<input type="hidden" name="freo[token]" value="{$token}">
 			<h3>ご注文者</h3>
 			<dl>
-				<dt>名前 <abbr class="attention" title="入力必須">*</abbr></dt>
-					<dd><input type="text" name="plugin_catalog_order_user[name]" size="30" value="{$input.plugin_catalog_order_user.name}"></dd>
-				<dt>名前（フリガナ） <abbr class="attention" title="入力必須">*</abbr></dt>
-					<dd><input type="text" name="plugin_catalog_order_user[kana]" size="30" value="{$input.plugin_catalog_order_user.kana}"></dd>
-				<dt>Ｅメール <abbr class="attention" title="入力必須">*</abbr></dt>
-					<dd><input type="text" name="plugin_catalog_order_user[mail]" size="30" value="{$input.plugin_catalog_order_user.mail}"></dd>
-				<dt>電話番号</dt>
-					<dd><input type="text" name="plugin_catalog_order_user[tel]" size="30" value="{$input.plugin_catalog_order_user.tel}"></dd>
+				<dt><label for="user_name">名前 <abbr class="attention" title="入力必須">*</abbr></label></dt>
+					<dd><input type="text" name="plugin_catalog_order_user[name]" id="user_name" size="30" value="{$input.plugin_catalog_order_user.name}"></dd>
+				<dt><label for="kana">名前（フリガナ） <abbr class="attention" title="入力必須">*</abbr></label></dt>
+					<dd><input type="text" name="plugin_catalog_order_user[kana]" id="kana" size="30" value="{$input.plugin_catalog_order_user.kana}"></dd>
+				<dt><label for="mail">Ｅメール <abbr class="attention" title="入力必須">*</abbr></label></dt>
+					<dd><input type="text" name="plugin_catalog_order_user[mail]" id="mail" size="30" value="{$input.plugin_catalog_order_user.mail}"></dd>
+				<dt><label for="tel">電話番号</label></dt>
+					<dd><input type="text" name="plugin_catalog_order_user[tel]" id="tel" size="30" value="{$input.plugin_catalog_order_user.tel}"></dd>
 			</dl>
 			<h3>配送先住所</h3>
 			<dl>
-				<dt>郵便番号（郵便番号を入力すると住所が自動入力されます）</dt>
+				<dt><label for="catalog_order_zipcode">郵便番号（郵便番号を入力すると住所が自動入力されます）</label></dt>
 					<dd><input type="text" name="plugin_catalog_order_user[zipcode]" size="10" value="{$input.plugin_catalog_order_user.zipcode}" id="catalog_order_zipcode"></dd>
-				<dt>都道府県</dt>
+				<dt><label for="prefecture">都道府県</label></dt>
 					<dd>
-						<select name="plugin_catalog_order_user[prefecture]">
+						<select name="plugin_catalog_order_user[prefecture]" id="prefecture">
 							<option value="">選択してください</option>
 							<!--{foreach from=$plugin_catalog_prefectures|smarty:nodefaults item='plugin_catalog_prefecture'}-->
 							<option value="{$plugin_catalog_prefecture.id}"{if $input.plugin_catalog_order_user.prefecture == $plugin_catalog_prefecture.id} selected="selected"{/if}>{$plugin_catalog_prefecture.name}</option>
 							<!--{/foreach}-->
 						</select>
 					</dd>
-				<dt>住所</dt>
-					<dd><input type="text" name="plugin_catalog_order_user[address]" size="50" value="{$input.plugin_catalog_order_user.address}"></dd>
+				<dt><label for="address">住所</label></dt>
+					<dd><input type="text" name="plugin_catalog_order_user[address]" id="address" size="50" value="{$input.plugin_catalog_order_user.address}"></dd>
 			</dl>
 			<h3>連絡事項</h3>
 			<dl>
-				<dt>連絡事項など</dt>
-					<dd><textarea name="plugin_catalog_order_user[text]" cols="50" rows="5">{$input.plugin_catalog_order_user.text}</textarea></dd>
+				<dt><label for="text">連絡事項など</label></dt>
+					<dd><textarea name="plugin_catalog_order_user[text]" id="text" cols="50" rows="5">{$input.plugin_catalog_order_user.text}</textarea></dd>
 			</dl>
 			<p><input type="submit" value="登録する"></p>
 		</fieldset>

@@ -27,11 +27,11 @@
 				<legend>インフォメーション登録フォーム</legend>
 				<input type="hidden" name="freo[token]" value="{$token}">
 				<dl>
-					<dt>エントリーID</dt>
-						<dd><input type="text" name="information[entry_id]" size="5" value="{$input.information.entry_id}"></dd>
-					<dt>ページID</dt>
-						<dd><input type="text" name="information[page_id]" size="30" value="{$input.information.page_id}"></dd>
-					<dt>本文</dt>
+					<dt><label for="entry_id">エントリーID</label></dt>
+						<dd><input type="text" name="information[entry_id]" id="entry_id" size="5" value="{$input.information.entry_id}"></dd>
+					<dt><label for="page_id">ページID</label></dt>
+						<dd><input type="text" name="information[page_id]" id="page_id" size="30" value="{$input.information.page_id}"></dd>
+					<dt><label for="tiny_mce">本文</label></dt>
 						<dd><textarea name="information[text]" cols="65" rows="30" id="tiny_mce">{$input.information.text}</textarea></dd>
 				</dl>
 				<p>

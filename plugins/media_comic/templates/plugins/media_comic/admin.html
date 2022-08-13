@@ -10,30 +10,30 @@
 			<legend>漫画挿入フォーム</legend>
 			<input type="hidden" name="plugin_media_comic[path]" value="{$freo.core.http_file}/media_comic/{$plugin_media_comic_path}">
 			<dl>
-				<dt>表示ページ</dt>
-					<dd>
-						<input type="radio" name="plugin_media_comic[columns]" value="2" checked="checked"> 2ページずつ表示する /
-						<input type="radio" name="plugin_media_comic[columns]" value="1"> 1ページずつ表示する
+				<dt><label for="columns">表示ページ</label></dt>
+					<dd id="columns">
+						<input type="radio" name="plugin_media_comic[columns]" id="media_comic_columns_2" value="2" checked="checked"> <label for="media_comic_columns_2">2ページずつ表示する</label> /
+						<input type="radio" name="plugin_media_comic[columns]" id="media_comic_columns_1" value="1"> <label for="media_comic_columns_1">1ページずつ表示する</label>
 					</dd>
-				<dt>ページ表示順（2ページずつ表示する場合に有効）</dt>
-					<dd>
-						<input type="radio" name="plugin_media_comic[direction]" value="rtl" checked="checked"> 右→左 /
-						<input type="radio" name="plugin_media_comic[direction]" value="ltr"> 左→右
+				<dt><label for="direction">ページ表示順（2ページずつ表示する場合に有効）</label></dt>
+					<dd id="direction">
+						<input type="radio" name="plugin_media_comic[direction]" id="media_comic_direction_rtl" value="rtl" checked="checked"> <label for="media_comic_direction_rtl">右→左</label> /
+						<input type="radio" name="plugin_media_comic[direction]" id="media_comic_direction_ltr" value="ltr"> <label for="media_comic_direction_ltr">左→右</label>
 					</dd>
-				<dt>ページ分割</dt>
-					<dd>
-						<input type="radio" name="plugin_media_comic[devide]" value="off" checked="checked"> 一括で表示 /
-						<input type="radio" name="plugin_media_comic[devide]" value="on"> 分割で表示
+				<dt><label for="devide">ページ分割</label></dt>
+					<dd id="devide">
+						<input type="radio" name="plugin_media_comic[devide]" id="media_comic_devide_off" value="off" checked="checked"> <label for="media_comic_devide_off">一括で表示</label> /
+						<input type="radio" name="plugin_media_comic[devide]" id="media_comic_devide_on" value="on"> <label for="media_comic_devide_on">分割で表示</label>
 					</dd>
-				<dt>終了ページ</dt>
-					<dd>
-						<input type="radio" name="plugin_media_comic[end]" value="off" checked="checked"> 表示しない /
-						<input type="radio" name="plugin_media_comic[end]" value="on"> 表示する
+				<dt><label for="end">終了ページ</label></dt>
+					<dd id="end">
+						<input type="radio" name="plugin_media_comic[end]" id="media_comic_end_off" value="off" checked="checked"> <label for="media_comic_end_off">表示しない</label> /
+						<input type="radio" name="plugin_media_comic[end]" id="media_comic_end_on" value="on"> <label for="media_comic_end_on">表示する</label>
 					</dd>
-				<dt>ナビゲーション</dt>
-					<dd>
-						<input type="radio" name="plugin_media_comic[navigation]" value="on" checked="checked"> 表示する /
-						<input type="radio" name="plugin_media_comic[navigation]" value="off"> 表示しない
+				<dt><label for="navigation">ナビゲーション</label></dt>
+					<dd id="navigation">
+						<input type="radio" name="plugin_media_comic[navigation]" id="media_comic_navigation_on" value="on" checked="checked"> <label for="media_comic_navigation_on">表示する</label> /
+						<input type="radio" name="plugin_media_comic[navigation]" id="media_comic_navigation_off" value="off"> <label for="media_comic_navigation_off">表示しない</label>
 					</dd>
 			</dl>
 			<p><input type="submit" value="挿入する"></p>

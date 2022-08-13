@@ -317,9 +317,9 @@ echo "<legend>設定ファイル編集実行フォーム</legend>\n";
 echo "<input type=\"hidden\" name=\"token\" value=\"" . session_id() . "\">\n";
 
 echo "<dl>\n";
-echo "<dt>設置URL</dt>\n";
-echo "<dd><input type=\"text\" name=\"url\" size=\"30\" value=\"" . $url . "\"></dd>\n";
-echo "<dt>使用データベース</dt>\n";
+echo "<dt><label for=\"url\">設置URL</label></dt>\n";
+echo "<dd><input type=\"text\" name=\"url\" id=\"url\" size=\"30\" value=\"" . $url . "\"></dd>\n";
+echo "<dt><label for=\"database_type\">使用データベース</label></dt>\n";
 echo "<dd>\n";
 echo "<select name=\"database_type\" id=\"database_type\">\n";
 
@@ -336,23 +336,23 @@ echo "</dd>\n";
 echo "</dl>\n";
 
 echo "<dl id=\"database_mysql\">\n";
-echo "<dt>接続先</dt>\n";
-echo "<dd><input type=\"text\" name=\"database_host\" size=\"30\" value=\"\"></dd>\n";
-echo "<dt>ポート</dt>\n";
-echo "<dd><input type=\"text\" name=\"database_port\" size=\"30\" value=\"\"></dd>\n";
-echo "<dt>ユーザー名</dt>\n";
-echo "<dd><input type=\"text\" name=\"database_user\" size=\"30\" value=\"\"></dd>\n";
-echo "<dt>パスワード</dt>\n";
-echo "<dd><input type=\"text\" name=\"database_password\" size=\"30\" value=\"\"></dd>\n";
-echo "<dt>文字コード</dt>\n";
-echo "<dd><input type=\"text\" name=\"database_charset\" size=\"30\" value=\"\"></dd>\n";
+echo "<dt><label for=\"host\">接続先</label></dt>\n";
+echo "<dd><input type=\"text\" name=\"database_host\" id=\"host\" size=\"30\" value=\"\"></dd>\n";
+echo "<dt><label for=\"port\">ポート</label></dt>\n";
+echo "<dd><input type=\"text\" name=\"database_port\" id=\"port\" size=\"30\" value=\"\"></dd>\n";
+echo "<dt><label for=\"user\">ユーザー名</label></dt>\n";
+echo "<dd><input type=\"text\" name=\"database_user\" id=\"user\" size=\"30\" value=\"\"></dd>\n";
+echo "<dt><label for=\"password\">パスワード</label></dt>\n";
+echo "<dd><input type=\"text\" name=\"database_password\" id=\"password\" size=\"30\" value=\"\"></dd>\n";
+echo "<dt><label for=\"charset\">文字コード</label></dt>\n";
+echo "<dd><input type=\"text\" name=\"database_charset\" id=\"charset\" size=\"30\" value=\"\"></dd>\n";
 echo "</dl>\n";
 
 echo "<dl>\n";
-echo "<dt>データベース名</dt>\n";
-echo "<dd><input type=\"text\" name=\"database_name\" size=\"30\" value=\"freo.db\"></dd>\n";
-echo "<dt>テーブル名のプレフィックス</dt>\n";
-echo "<dd><input type=\"text\" name=\"database_prefix\" size=\"30\" value=\"freo_\"></dd>\n";
+echo "<dt><label for=\"database_name\">データベース名</label></dt>\n";
+echo "<dd><input type=\"text\" name=\"database_name\" id=\"database_name\" size=\"30\" value=\"freo.db\"></dd>\n";
+echo "<dt><label for=\"prefix\">テーブル名のプレフィックス</label></dt>\n";
+echo "<dd><input type=\"text\" name=\"database_prefix\" id=\"prefix\" size=\"30\" value=\"freo_\"></dd>\n";
 echo "</dl>\n";
 
 echo "<p><input type=\"submit\" value=\"設定編集\"></p>\n";

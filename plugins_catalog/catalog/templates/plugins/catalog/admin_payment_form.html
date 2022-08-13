@@ -22,20 +22,20 @@
 				<!--{/if}-->
 				<dl>
 					<!--{if !$freo.query.id}-->
-					<dt>支払い方法ID <abbr class="attention" title="入力必須">*</abbr></dt>
-						<dd><input type="text" name="plugin_catalog_payment[id]" size="30" value="{$input.plugin_catalog_payment.id}"></dd>
+					<dt><label for="payment_id">支払い方法ID <abbr class="attention" title="入力必須">*</abbr></label></dt>
+						<dd><input type="text" name="plugin_catalog_payment[id]" id="payment_id" size="30" value="{$input.plugin_catalog_payment.id}"></dd>
 					<!--{/if}-->
-					<dt>支払い方法 <abbr class="attention" title="入力必須">*</abbr></dt>
-						<dd><input type="text" name="plugin_catalog_payment[name]" size="50" value="{$input.plugin_catalog_payment.name}"></dd>
-					<dt>説明</dt>
-						<dd><textarea name="plugin_catalog_payment[text]" cols="50" rows="5">{$input.plugin_catalog_payment.text}</textarea></dd>
-					<dt>手数料</dt>
-						<dd><input type="text" name="plugin_catalog_payment[charge]" size="5" value="{$input.plugin_catalog_payment.charge}"> 円</dd>
-					<dt>並び順 <abbr class="attention" title="入力必須">*</abbr></dt>
-						<dd><input type="text" name="plugin_catalog_payment[sort]" size="5" value="{$input.plugin_catalog_payment.sort}"></dd>
-					<dt>状態 <abbr class="attention" title="入力必須">*</abbr></dt>
+					<dt><label for="payment_name">支払い方法 <abbr class="attention" title="入力必須">*</abbr></label></dt>
+						<dd><input type="text" name="plugin_catalog_payment[name]" id="payment_name" size="50" value="{$input.plugin_catalog_payment.name}"></dd>
+					<dt><label for="text">説明</label></dt>
+						<dd><textarea name="plugin_catalog_payment[text]" id="text" cols="50" rows="5">{$input.plugin_catalog_payment.text}</textarea></dd>
+					<dt><label for="charge">手数料</label></dt>
+						<dd><input type="text" name="plugin_catalog_payment[charge]" id="charge" size="5" value="{$input.plugin_catalog_payment.charge}"> 円</dd>
+					<dt><label for="sort">並び順 <abbr class="attention" title="入力必須">*</abbr></label></dt>
+						<dd><input type="text" name="plugin_catalog_payment[sort]" id="sort" size="5" value="{$input.plugin_catalog_payment.sort}"></dd>
+					<dt><label for="status">状態 <abbr class="attention" title="入力必須">*</abbr></label></dt>
 						<dd>
-							<select name="plugin_catalog_payment[status]">
+							<select name="plugin_catalog_payment[status]" id="status">
 								<option value="publish"{if $input.plugin_catalog_payment.status == 'publish'} selected="selected"{/if}>使用</option>
 								<option value="private"{if $input.plugin_catalog_payment.status == 'private'} selected="selected"{/if}>未使用</option>
 							</select>

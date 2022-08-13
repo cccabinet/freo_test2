@@ -20,10 +20,10 @@
 				<input type="hidden" name="freo[token]" value="{$token}">
 				<input type="hidden" name="plugin_catalog[id]" value="{$freo.query.id}">
 				<dl>
-					<dt>商品ID <abbr class="attention" title="入力必須">*</abbr></dt>
-						<dd><input type="text" name="plugin_catalog[catalog_id]" size="30" value="{$input.plugin_catalog.catalog_id}"></dd>
-					<dt>数量 <abbr class="attention" title="入力必須">*</abbr></dt>
-						<dd><input type="text" name="plugin_catalog[count]" size="5" value="{$input.plugin_catalog.count}"></dd>
+					<dt><label for="catalog_id">商品ID <abbr class="attention" title="入力必須">*</abbr></label></dt>
+						<dd><input type="text" name="plugin_catalog[catalog_id]" id="catalog_id" size="30" value="{$input.plugin_catalog.catalog_id}"></dd>
+					<dt><label for="count">数量 <abbr class="attention" title="入力必須">*</abbr></label></dt>
+						<dd><input type="text" name="plugin_catalog[count]" id="count" size="5" value="{$input.plugin_catalog.count}"></dd>
 				</dl>
 				<p><input type="submit" value="追加する"></p>
 			</fieldset>

@@ -18,10 +18,10 @@
 		<fieldset>
 			<legend>認証フォーム</legend>
 			<dl>
-				<dt>ユーザーID</dt>
-					<dd><input type="text" name="freo[user]" size="30" value="{$smarty.post.freo.user}"></dd>
-				<dt>パスワード</dt>
-					<dd><input type="password" name="freo[password]" size="30" value="{$smarty.post.freo.password}"></dd>
+				<dt><label for="user_id">ユーザーID</label></dt>
+					<dd><input type="text" name="freo[user]" id="user_id" size="30" value="{$smarty.post.freo.user}"></dd>
+				<dt><label for="password">パスワード</label></dt>
+					<dd><input type="password" name="freo[password]" id="password" size="30" value="{$smarty.post.freo.password}"></dd>
 			</dl>
 			<ul>
 				<li><input type="checkbox" name="freo[session]" id="label_session" value="keep"> <label for="label_session">ログイン状態を記憶する</label></li>

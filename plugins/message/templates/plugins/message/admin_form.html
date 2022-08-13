@@ -19,8 +19,8 @@
 				<input type="hidden" name="freo[token]" value="{$token}">
 				<input type="hidden" name="plugin_message[id]" value="{$input.plugin_message.id}">
 				<dl>
-					<dt>本文 <abbr class="attention" title="入力必須">*</abbr></dt>
-						<dd><textarea name="plugin_message[text]" cols="50" rows="5">{$input.plugin_message.text}</textarea></dd>
+					<dt><label for="text">本文 <abbr class="attention" title="入力必須">*</abbr></label></dt>
+						<dd><textarea name="plugin_message[text]" id="text" cols="50" rows="5">{$input.plugin_message.text}</textarea></dd>
 				</dl>
 				<p><input type="submit" value="登録する"></p>
 			</fieldset>

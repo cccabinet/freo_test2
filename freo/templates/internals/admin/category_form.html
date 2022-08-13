@@ -22,31 +22,31 @@
 				<!--{/if}-->
 				<dl>
 					<!--{if !$freo.query.id}-->
-					<dt>カテゴリーID <abbr class="attention" title="入力必須">*</abbr></dt>
-						<dd><input type="text" name="category[id]" size="30" value="{$input.category.id}"></dd>
+					<dt><label for="category_id">カテゴリーID <abbr class="attention" title="入力必須">*</abbr></label></dt>
+						<dd><input type="text" name="category[id]" id="category_id" size="30" value="{$input.category.id}"></dd>
 					<!--{/if}-->
-					<dt>親ID</dt>
+					<dt><label for="category_pid">親ID</label></dt>
 						<dd>
-							<select name="category[pid]">
+							<select name="category[pid]"  id="category_pid">
 								<option value="">なし</option>
 								<!--{foreach from=$categories|smarty:nodefaults item='category'}-->
 								<option value="{$category.id}"{if $input.category.pid == $category.id} selected="selected"{/if} >{$category.id}</option>
 								<!--{/foreach}-->
 							</select>
 						</dd>
-					<dt>カテゴリー名 <abbr class="attention" title="入力必須">*</abbr></dt>
-						<dd><input type="text" name="category[name]" size="50" value="{$input.category.name}"></dd>
-					<dt>説明</dt>
-						<dd><textarea name="category[memo]" cols="50" rows="5">{$input.category.memo}</textarea></dd>
-					<dt>カテゴリーの表示 <abbr class="attention" title="入力必須">*</abbr></dt>
+					<dt><label for="category_name">カテゴリー名 <abbr class="attention" title="入力必須">*</abbr></label></dt>
+						<dd><input type="text" name="category[name]" id="category_name" size="50" value="{$input.category.name}"></dd>
+					<dt><label for="memo">説明</label></dt>
+						<dd><textarea name="category[memo]" id="memo" cols="50" rows="5">{$input.category.memo}</textarea></dd>
+					<dt><label for="display">カテゴリーの表示 <abbr class="attention" title="入力必須">*</abbr></label></dt>
 						<dd>
-							<select name="category[display]">
+							<select name="category[display]" id="display">
 								<option value="publish"{if $input.category.display == 'publish'} selected="selected"{/if}>一覧に表示する</option>
 								<option value="private"{if $input.category.display == 'private'} selected="selected"{/if}>一覧に表示しない</option>
 							</select>
 						</dd>
-					<dt>並び順 <abbr class="attention" title="入力必須">*</abbr></dt>
-						<dd><input type="text" name="category[sort]" size="5" value="{$input.category.sort}"></dd>
+					<dt><label for="sort">並び順 <abbr class="attention" title="入力必須">*</abbr></label></dt>
+						<dd><input type="text" name="category[sort]" id="sort" size="5" value="{$input.category.sort}"></dd>
 				</dl>
 				<p><input type="submit" value="登録する"></p>
 			</fieldset>

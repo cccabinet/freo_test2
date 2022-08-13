@@ -33,8 +33,8 @@
 				<fieldset>
 					<legend>コメント検索フォーム</legend>
 					<dl>
-						<dt>キーワード</dt>
-							<dd><input type="text" name="word" size="50" value="{$smarty.get.word}"></dd>
+						<dt><label for="keyword">キーワード</label></dt>
+							<dd><input type="text" name="word" id="keyword" size="50" value="{$smarty.get.word}"></dd>
 						<!--{if $freo.config.comment.approve == 'no'}-->
 						<dt>状態</dt>
 							<dd>
