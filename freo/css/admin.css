@@ -231,19 +231,3 @@ table.tablesorter thead tr .sorter-false {
 	cursor: default;
 	padding: 4px;
 }
-
-/********* IE6用設定 ************************************************/
-
-* html body {
-	text-align: center;
-}
-* html div#container {
-	width: 800px;
-	text-align: left;
-}
-* html pre {
-	width: 100%;
-}
-* html table tr th, * html table tr td {
-	font-size: 80%;
-}
