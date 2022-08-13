@@ -333,7 +333,7 @@
 			<h3>配送先住所</h3>
 			<dl>
 				<dt><label for="catalog_order_zipcode">郵便番号 <abbr class="attention" title="入力必須">*</abbr>（郵便番号を入力すると住所が自動入力されます）</label></dt>
-					<dd><input type="text" name="plugin_catalog_order[zipcode]" size="10" value="{$input.plugin_catalog_order.zipcode}" id="catalog_order_zipcode"></dd>
+					<dd><input type="text" inputmode="numeric" name="plugin_catalog_order[zipcode]" size="10" value="{$input.plugin_catalog_order.zipcode}" id="catalog_order_zipcode"></dd>
 				<dt><label for="prefecture">都道府県 <abbr class="attention" title="入力必須">*</abbr></label></dt>
 					<dd>
 						<select name="plugin_catalog_order[prefecture]" id="prefecture">

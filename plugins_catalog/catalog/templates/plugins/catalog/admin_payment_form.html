@@ -30,9 +30,9 @@
 					<dt><label for="text">説明</label></dt>
 						<dd><textarea name="plugin_catalog_payment[text]" id="text" cols="50" rows="5">{$input.plugin_catalog_payment.text}</textarea></dd>
 					<dt><label for="charge">手数料</label></dt>
-						<dd><input type="text" name="plugin_catalog_payment[charge]" id="charge" size="5" value="{$input.plugin_catalog_payment.charge}"> 円</dd>
+						<dd><input type="text" inputmode="numeric" name="plugin_catalog_payment[charge]" id="charge" size="5" value="{$input.plugin_catalog_payment.charge}"> 円</dd>
 					<dt><label for="sort">並び順 <abbr class="attention" title="入力必須">*</abbr></label></dt>
-						<dd><input type="text" name="plugin_catalog_payment[sort]" id="sort" size="5" value="{$input.plugin_catalog_payment.sort}"></dd>
+						<dd><input type="text" inputmode="numeric" name="plugin_catalog_payment[sort]" id="sort" size="5" value="{$input.plugin_catalog_payment.sort}"></dd>
 					<dt><label for="status">状態 <abbr class="attention" title="入力必須">*</abbr></label></dt>
 						<dd>
 							<select name="plugin_catalog_payment[status]" id="status">

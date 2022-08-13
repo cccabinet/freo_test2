@@ -41,7 +41,7 @@
 						<tr>
 							<td>{$plugin_catalog_category.id}</td>
 							<td>{$plugin_catalog_category.name}</td>
-							<td class="number"><input type="text" name="sort[{$plugin_catalog_category.id}]" size="3" value="{$plugin_catalog_category.sort}"></td>
+							<td class="number"><input type="text" inputmode="numeric" name="sort[{$plugin_catalog_category.id}]" size="3" value="{$plugin_catalog_category.sort}"></td>
 							<td>
 								<a href="{$freo.core.http_file}/catalog/admin_category_form?id={$plugin_catalog_category.id}">編集</a>
 								<a href="{$freo.core.http_file}/catalog/admin_category_delete?freo%5Btoken%5D={$token}&amp;id={$plugin_catalog_category.id}" class="delete">削除</a>

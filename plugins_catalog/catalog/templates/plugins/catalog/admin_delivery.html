@@ -47,7 +47,7 @@
 							<td>{$plugin_catalog_delivery.name}</td>
 							<td class="number"><!--{if $plugin_catalog_delivery.carriage != ''}-->{$plugin_catalog_delivery.carriage|number_format}円<!--{/if}--></td>
 							<td><!--{if $plugin_catalog_delivery.status == 'publish'}-->使用<!--{elseif $plugin_catalog_delivery.status == 'private'}-->未使用<!--{/if}--></td>
-							<td class="number"><input type="text" name="sort[{$plugin_catalog_delivery.id}]" size="3" value="{$plugin_catalog_delivery.sort}"></td>
+							<td class="number"><input type="text" inputmode="numeric" name="sort[{$plugin_catalog_delivery.id}]" size="3" value="{$plugin_catalog_delivery.sort}"></td>
 							<td>
 								<a href="{$freo.core.http_file}/catalog/admin_delivery_prefecture_form?id={$plugin_catalog_delivery.id}">地域別送料</a>
 								<a href="{$freo.core.http_file}/catalog/admin_delivery_form?id={$plugin_catalog_delivery.id}">編集</a>

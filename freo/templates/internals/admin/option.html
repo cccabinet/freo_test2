@@ -42,7 +42,7 @@
 							<td>{$option.id}</td>
 							<td>{$option.name}</td>
 							<td><!--{if $option.target == 'entry'}-->エントリー<!--{elseif $option.target == 'page'}-->ページ<!--{else}-->すべて<!--{/if}--></td>
-							<td class="number"><input type="text" name="sort[{$option.id}]" size="3" value="{$option.sort}"></td>
+							<td class="number"><input type="text" inputmode="numeric" name="sort[{$option.id}]" size="3" value="{$option.sort}"></td>
 							<td>
 								<a href="{$freo.core.http_file}/admin/option_form?id={$option.id}">編集</a>
 								<a href="{$freo.core.http_file}/admin/option_delete?freo%5Btoken%5D={$token}&amp;id={$option.id}" class="delete">削除</a>

@@ -108,7 +108,7 @@
 					<!--{if $option.type == 'text' and $option.validate == 'numeric'}-->
 					<dt><label for="option">{$option.name}<span class="note">（指定した範囲の数値を含むデータを抽出。一方のみの指定も可能。）</span></label></dt>
 						<dd id="option">
-							<input type="text" name="option[{$option.id}][from]" size="10" value="{$smarty.get.option[$option.id].from}"> 以上、<input type="text" name="option[{$option.id}][to]" size="10" value="{$smarty.get.option[$option.id].to}"> 以下
+							<input type="text" inputmode="decimal" name="option[{$option.id}][from]" size="10" value="{$smarty.get.option[$option.id].from}"> 以上、<input type="text" inputmode="decimal" name="option[{$option.id}][to]" size="10" value="{$smarty.get.option[$option.id].to}"> 以下
 						</dd>
 					<!--{elseif $option.type == 'text' or $option.type == 'textarea'}-->
 					<dt><label for="option">{$option.name}<span class="note">（入力した文字列を含むデータを抽出。）</span></label></dt>
