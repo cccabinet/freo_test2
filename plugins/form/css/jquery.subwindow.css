@@ -11,6 +11,7 @@
   background-color: #000000;
   opacity: 0.50;
 }
+
 #subwindow_foundation {
   z-index: 9999;
   position: fixed;
@@ -19,6 +20,7 @@
   border: 1px solid #000000;
   background-color: #FFFFFF;
 }
+
 #subwindow_title {
   z-index: 9999;
   position: absolute;
@@ -26,6 +28,7 @@
   color: #FFFFFF;
   font-weight: bold;
 }
+
 #subwindow_close {
   z-index: 9999;
   position: absolute;
@@ -37,6 +40,7 @@
   color: #FFFFFF;
   font-weight: bold;
 }
+
 #subwindow_content {
   z-index: 9999;
   overflow: auto;
