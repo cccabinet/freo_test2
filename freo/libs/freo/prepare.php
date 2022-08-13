@@ -362,7 +362,7 @@ echo "</form>\n";
 if (file_exists(FREO_JS_DIR . 'jquery.js')) {
 	echo "<script src=\"https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js\" integrity=\"sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=\" crossorigin=\"anonymous\"></script>\n";
 	echo "<script>\n";
-	echo "$(document).ready(function() {\n";
+	echo "$(function() {\n";
 	echo "	if ($('#database_type').val() != 'mysql') {\n";
 	echo "		$('#database_mysql').hide();\n";
 	echo "	}\n";

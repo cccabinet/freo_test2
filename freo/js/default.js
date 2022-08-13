@@ -7,7 +7,7 @@
 
 *********************************************************************/
 
-$(document).ready(function() {
+$(function() {
 	//ユーティリティ表示ボタン
 	$('.toggle').click(function(){
 		$('#utility').slideToggle();

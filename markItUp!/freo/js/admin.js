@@ -7,7 +7,7 @@
 
 *********************************************************************/
 
-$(document).ready(function() {
+$(function() {
 	//markItUp!
 	$('#markitup').markItUp(mySettings);
 
