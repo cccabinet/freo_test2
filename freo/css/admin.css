@@ -9,9 +9,14 @@ body {
   background-color: #999999;
 }
 
-h2, h3, h4, h5, h6 {
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-size: 120%;
 }
+
 h2 {
   margin: 15px 0;
   padding: 5px 0;
@@ -26,7 +31,7 @@ form h3 {
 
 /********* 全体 *****************************************************/
 
-div#container {
+#container {
   width: 90%;
   margin: 0 auto;
   padding: 20px;
@@ -36,88 +41,103 @@ div#container {
 
 /********* ヘッダー *************************************************/
 
-div#header {
+#header {
   clear: both;
 }
-div#header h1 {
+
+#header h1 {
   line-height: 1.0;
   margin: 0;
 }
-div#header h1 a:link, div#header h1 a:visited {
+
+#header h1 a:link,
+#header h1 a:visited {
   color: #222222;
   text-decoration: none;
 }
-div#header h1 a:active, div#header h1 a:hover {
+
+#header h1 a:active,
+#header h1 a:hover {
   color: #777777;
   text-decoration: none;
 }
 
 /********* フッター *************************************************/
 
-div#footer {
+#footer {
   clear: both;
 }
-div#footer address {
+
+#footer address {
   padding-top: 10px;
   border-top: 1px solid #999999;
 }
 
 /********* メニュー *************************************************/
 
-div#menu {
+#menu {
   float: left;
   width: 200px;
   margin-right: 10px;
   margin-bottom: 20px;
 }
-div#menu ul li ul {
+
+#menu ul li ul {
   margin-top: 0;
   margin-bottom: 0;
 }
 
 /********* 内容 *****************************************************/
 
-div#content {
+#content {
   float: left;
   width: calc(100% - 210px);
 }
 
 /********* 検索 *****************************************************/
 
-div#search form {
+#search form {
   margin-top: 20px;
 }
-div#search form dl {
+
+#search form dl {
   margin: 0;
 }
-div#search form dl dt {
+
+#search form dl dt {
   margin: 0;
 }
-div#search form dl dd {
+
+#search form dl dd {
   margin: 0 0 5px 0;
 }
-div#search form p {
+
+#search form p {
   margin: 0;
 }
 
 /********* ページ移動 ***********************************************/
 
-div#page h2 {
+#page h2 {
   display: none;
 }
-div#page ul.order {
+
+#page ul.order {
   margin: 10px 0;
 }
-div#page ul.order li {
+
+#page ul.order li {
   display: inline;
   list-style: none;
   margin-right: 10px;
 }
-div#page ul.direct {
+
+#page ul.direct {
   margin: 10px 0;
   text-align: right;
 }
-div#page ul.direct li {
+
+#page ul.direct li {
   display: inline;
   list-style: none;
   margin-left: 10px;
@@ -125,12 +145,13 @@ div#page ul.direct li {
 
 /********* 設定編集 *************************************************/
 
-div#config form h3 {
+#config form h3 {
   margin: 10px 0;
   padding: 5px;
   background-color: #EEEEEE;
 }
-div#config form dl {
+
+#config form dl {
   margin-bottom: 20px;
 }
 
@@ -148,17 +169,21 @@ form textarea {
   body {
     padding: 0;
   }
-  div#container {
+
+  #container {
     padding: 15px;
     width: calc(100% - 30px);
   }
 }
+
 @media (max-width: 480px) {
-  div#menu,div#content {
+  #menu,
+  #content {
     float: none;
     width: 100%;
   }
-  div#menu {
+
+  #menu {
     display: none;
   }
 
@@ -167,9 +192,11 @@ form textarea {
     display: block;
     margin-top: 15px;
   }
+
   .toggle::before {
     content: '管理メニューを表示';
   }
+
   .toggle.open::before {
     content: '管理メニューを閉じる';
   }
@@ -192,9 +219,11 @@ form dl dd.list {
   padding: 5px;
   border: 1px solid #CCCCCC;
 }
+
 form dl dd.list ul {
   margin: 0;
 }
+
 form dl dd.list ul li ul {
   margin-left: 20px;
 }
@@ -203,6 +232,7 @@ form dl dd.list ul li ul {
 ul.attention ul.check {
   margin: -2px 0 5px;
 }
+
 ul.attention ul.check li {
   list-style: none;
   font-weight: normal;
@@ -212,6 +242,7 @@ ul.attention ul.check li {
 table.tablesorter {
   width: 100%;
 }
+
 table.tablesorter thead tr .tablesorter-header {
   background-image: url(../images/tablesorter/bg.gif);
   background-repeat: no-repeat;
@@ -220,12 +251,15 @@ table.tablesorter thead tr .tablesorter-header {
   white-space: normal;
   padding: 4px 20px 4px 4px;
 }
+
 table.tablesorter thead tr .tablesorter-headerAsc {
   background-image: url(../images/tablesorter/asc.gif);
 }
+
 table.tablesorter thead tr .tablesorter-headerDesc {
   background-image: url(../images/tablesorter/desc.gif);
 }
+
 table.tablesorter thead tr .sorter-false {
   background-image: none;
   cursor: default;

@@ -4,35 +4,78 @@
 
 /********* HTMLリセット *********************************************/
 
-body, div, h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dt, dd, pre, blockquote, th, td, form, fieldset, input, textarea {
+body,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+pre,
+blockquote,
+th,
+td,
+form,
+fieldset,
+input,
+textarea {
   margin: 0;
   padding: 0;
 }
-h1, h2, h3, h4, h5, h6 {
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-size: 100%;
   font-weight: normal;
 }
-em, strong, code, address, th {
+
+em,
+strong,
+code,
+address,
+th {
   font-weight: normal;
   font-style: normal;
 }
-ul, ol {
+
+ul,
+ol {
   list-style: none;
 }
-q:before, q:after {
+
+q:before,
+q:after {
   content: "";
 }
-abbr, acronym {
+
+abbr,
+acronym {
   border: 0;
 }
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
 th {
   text-align: left;
 }
-fieldset, img {
+
+fieldset,
+img {
   border: 0;
 }
 
@@ -41,6 +84,7 @@ fieldset, img {
 html {
   overflow-y: scroll;
 }
+
 body {
   line-height: 1.4;
   margin: 0 auto;
@@ -53,26 +97,37 @@ body {
   word-break: break-word;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 10px 0;
   font-weight: bold;
 }
+
 h1 {
   font-size: 200%;
   font-family: "Arial Black", Arial;
 }
+
 h2 {
   font-size: 180%;
 }
+
 h3 {
   font-size: 160%;
 }
+
 h4 {
   font-size: 140%;
 }
+
 h5 {
   font-size: 120%;
 }
+
 h6 {
   font-size: 100%;
 }
@@ -80,49 +135,67 @@ h6 {
 p {
   margin: 10px 0;
 }
-em, strong {
+
+em,
+strong {
   font-style: normal;
   font-weight: bold;
 }
+
 ul {
   margin: 10px 20px;
 }
+
 ul li {
   list-style: disc;
 }
+
 ol {
   margin: 10px 30px;
 }
+
 ol li {
   list-style: decimal;
 }
+
 dl {
   margin: 10px 0;
 }
+
 dl dd {
   margin-left: 30px;
 }
+
 pre {
   overflow: auto;
   margin: 10px 0;
   padding: 10px;
   border: 1px solid #DDDDDD;
 }
+
 code {
   color: #000080;
 }
-pre, code {
+
+pre,
+code {
   line-height: 1.2;
   font-size: 100%;
   font-family: "ＭＳ ゴシック", monospace;
 }
+
 blockquote {
   overflow: auto;
   margin: 10px 0;
   padding: 0 15px;
   border-left: 2px solid #7777AA;
 }
-blockquote div, blockquote p, blockquote li, blockquote dt, blockquote dd {
+
+blockquote div,
+blockquote p,
+blockquote li,
+blockquote dt,
+blockquote dd {
   color: #777777;
 }
 
@@ -132,6 +205,7 @@ table {
   table-layout: fixed;
   word-break: break-all;
 }
+
 table tr th {
   padding: 5px;
   border: 1px solid #999999;
@@ -139,10 +213,12 @@ table tr th {
   font-weight: bold;
   text-align: center;
 }
+
 table tr td {
   padding: 5px;
   border: 1px solid #999999;
 }
+
 table tr td input {
   margin: -2px 0;
 }
@@ -150,27 +226,36 @@ table tr td input {
 form {
   margin-bottom: 20px;
 }
+
 form legend {
   display: none;
 }
+
 form dl dd {
   margin: 0 0 10px 0;
 }
-form dl dd input, form dl dd textarea {
+
+form dl dd input,
+form dl dd textarea {
   padding: 4px;
 }
+
 form dl dd select {
   padding: 2px;
 }
+
 form ul {
   margin: 15px 0;
 }
+
 form ul li {
   list-style: none;
 }
+
 form p {
   margin: 20px 0;
 }
+
 form p input {
   padding: 3px 10px;
 }
@@ -182,11 +267,14 @@ img {
   height: auto;
 }
 
-a:link, a:visited {
+a:link,
+a:visited {
   color: #0000CC;
   text-decoration: underline;
 }
-a:active, a:hover {
+
+a:active,
+a:hover {
   color: #FF7700;
   text-decoration: underline;
 }
@@ -200,10 +288,13 @@ span.hidearea {
   border: 2px solid #AAAAAA;
   background-color: #EEEEEE;
 }
-span.hidearea:active, span.hidearea:hover {
+
+span.hidearea:active,
+span.hidearea:hover {
   background-color: #AAAAAA;
   color: #EEEEEE;
 }
+
 div.hidearea {
   padding: 5px 10px;
   border: 2px solid #AAAAAA;
@@ -215,6 +306,7 @@ div.hidearea {
 #action {
   overflow: hidden;
 }
+
 #action form {
   float: left;
   margin-right: 3px;
@@ -224,10 +316,12 @@ div.hidearea {
   color: #00AA00;
   font-weight: bold;
 }
+
 .attention {
   color: #FF0000;
   font-weight: bold;
 }
+
 .number {
   text-align: right;
 }
