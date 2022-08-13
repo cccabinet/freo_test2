@@ -30,7 +30,7 @@
 								<select name="day" id="date">
 									<option value="">選択してください</option>
 									<!--{foreach from=$plugin_clap_days|smarty:nodefaults item='plugin_clap_day'}-->
-									<option value="{$plugin_clap_day.day|date_format:'%Y%m%d'}"{if $smarty.get.day == $plugin_clap_day.day|date_format:'%Y%m%d'} selected="selected"{/if}>{$plugin_clap_day.day|date_format:'%Y/%m/%d'} （{$plugin_clap_day.count}回）</option>
+									<option value="{$plugin_clap_day.day|date_format:'%Y%m%d'}"{if $smarty.get.day == $plugin_clap_day.day|date_format:'%Y%m%d'} selected{/if}>{$plugin_clap_day.day|date_format:'%Y/%m/%d'} （{$plugin_clap_day.count}回）</option>
 									<!--{/foreach}-->
 								</select>
 							</dd>
@@ -40,7 +40,7 @@
 								<select name="title" id="title">
 									<option value="">すべて表示</option>
 									<!--{foreach from=$plugin_clap_titles|smarty:nodefaults item='plugin_clap_title'}-->
-									<option value="{$plugin_clap_title.title}"{if $smarty.get.title == $plugin_clap_title.title} selected="selected"{/if}>{$plugin_clap_title.title} （{$plugin_clap_title.count}回）</option>
+									<option value="{$plugin_clap_title.title}"{if $smarty.get.title == $plugin_clap_title.title} selected{/if}>{$plugin_clap_title.title} （{$plugin_clap_title.count}回）</option>
 									<!--{/foreach}-->
 								</select>
 							</dd>

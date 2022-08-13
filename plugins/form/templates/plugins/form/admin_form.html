@@ -35,8 +35,8 @@
 					<dt><label for="secure">SSLの使用 <abbr class="attention" title="入力必須">*</abbr></label></dt>
 						<dd>
 							<select name="plugin_form[secure]" id="secure">
-								<option value="yes"{if $input.plugin_form.secure == 'yes'} selected="selected"{/if}>使用する</option>
-								<option value="no"{if $input.plugin_form.secure == 'no'} selected="selected"{/if}>使用しない</option>
+								<option value="yes"{if $input.plugin_form.secure == 'yes'} selected{/if}>使用する</option>
+								<option value="no"{if $input.plugin_form.secure == 'no'} selected{/if}>使用しない</option>
 							</select>
 						</dd>
 					<!--{else}-->
@@ -45,15 +45,15 @@
 					<dt><label for="attachment">添付ファイル <abbr class="attention" title="入力必須">*</abbr></label></dt>
 						<dd>
 							<select name="plugin_form[attachment]" id="attachment">
-								<option value="yes"{if $input.plugin_form.attachment == 'yes'} selected="selected"{/if}>許可する</option>
-								<option value="no"{if $input.plugin_form.attachment == 'no'} selected="selected"{/if}>許可しない</option>
+								<option value="yes"{if $input.plugin_form.attachment == 'yes'} selected{/if}>許可する</option>
+								<option value="no"{if $input.plugin_form.attachment == 'no'} selected{/if}>許可しない</option>
 							</select>
 						</dd>
 					<dt><label for="form_mail">メールの送信 <abbr class="attention" title="入力必須">*</abbr></label></dt>
 						<dd>
 							<select name="plugin_form[mail]" id="form_mail">
-								<option value="yes"{if $input.plugin_form.mail == 'yes'} selected="selected"{/if}>送信する</option>
-								<option value="no"{if $input.plugin_form.mail == 'no'} selected="selected"{/if}>送信しない</option>
+								<option value="yes"{if $input.plugin_form.mail == 'yes'} selected{/if}>送信する</option>
+								<option value="no"{if $input.plugin_form.mail == 'no'} selected{/if}>送信しない</option>
 							</select>
 						</dd>
 				</dl>
@@ -71,8 +71,8 @@
 					<dt><label for="form_reply">メールの自動返信 <abbr class="attention" title="入力必須">*</abbr></label></dt>
 						<dd>
 							<select name="plugin_form[reply]" id="form_reply">
-								<option value="yes"{if $input.plugin_form.reply == 'yes'} selected="selected"{/if}>送信する</option>
-								<option value="no"{if $input.plugin_form.reply == 'no'} selected="selected"{/if}>送信しない</option>
+								<option value="yes"{if $input.plugin_form.reply == 'yes'} selected{/if}>送信する</option>
+								<option value="no"{if $input.plugin_form.reply == 'no'} selected{/if}>送信しない</option>
 							</select>
 						</dd>
 				</dl>
@@ -90,8 +90,8 @@
 					<dt><label for="form_record">送信内容の記録 <abbr class="attention" title="入力必須">*</abbr></label></dt>
 						<dd>
 							<select name="plugin_form[record]" id="form_record">
-								<option value="yes"{if $input.plugin_form.record == 'yes'} selected="selected"{/if}>記録する</option>
-								<option value="no"{if $input.plugin_form.record == 'no'} selected="selected"{/if}>記録しない</option>
+								<option value="yes"{if $input.plugin_form.record == 'yes'} selected{/if}>記録する</option>
+								<option value="no"{if $input.plugin_form.record == 'no'} selected{/if}>記録しない</option>
 							</select>
 						</dd>
 				</dl>
@@ -105,8 +105,8 @@
 					<dt><label for="status">状態 <abbr class="attention" title="入力必須">*</abbr></label></dt>
 						<dd>
 							<select name="plugin_form[status]" id="status">
-								<option value="publish"{if $input.plugin_form.status == 'publish'} selected="selected"{/if}>公開</option>
-								<option value="private"{if $input.plugin_form.status == 'private'} selected="selected"{/if}>非公開</option>
+								<option value="publish"{if $input.plugin_form.status == 'publish'} selected{/if}>公開</option>
+								<option value="private"{if $input.plugin_form.status == 'private'} selected{/if}>非公開</option>
 							</select>
 						</dd>
 				</dl>

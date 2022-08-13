@@ -30,7 +30,7 @@
 							<select name="category[pid]"  id="category_pid">
 								<option value="">なし</option>
 								<!--{foreach from=$categories|smarty:nodefaults item='category'}-->
-								<option value="{$category.id}"{if $input.category.pid == $category.id} selected="selected"{/if} >{$category.id}</option>
+								<option value="{$category.id}"{if $input.category.pid == $category.id} selected{/if} >{$category.id}</option>
 								<!--{/foreach}-->
 							</select>
 						</dd>
@@ -41,8 +41,8 @@
 					<dt><label for="display">カテゴリーの表示 <abbr class="attention" title="入力必須">*</abbr></label></dt>
 						<dd>
 							<select name="category[display]" id="display">
-								<option value="publish"{if $input.category.display == 'publish'} selected="selected"{/if}>一覧に表示する</option>
-								<option value="private"{if $input.category.display == 'private'} selected="selected"{/if}>一覧に表示しない</option>
+								<option value="publish"{if $input.category.display == 'publish'} selected{/if}>一覧に表示する</option>
+								<option value="private"{if $input.category.display == 'private'} selected{/if}>一覧に表示しない</option>
 							</select>
 						</dd>
 					<dt><label for="sort">並び順 <abbr class="attention" title="入力必須">*</abbr></label></dt>

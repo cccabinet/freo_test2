@@ -52,10 +52,10 @@
 						<dd>
 							<select name="sort" id="sort">
 								<option value="">指定なし</option>
-								<option value="price"{if $smarty.get.sort == 'price'} selected="selected"{/if}>価格の安い順</option>
-								<option value="price_desc"{if $smarty.get.sort == 'price_desc'} selected="selected"{/if}>価格の高い順</option>
-								<option value="datetime"{if $smarty.get.sort == 'datetime'} selected="selected"{/if}>発行日の早い順</option>
-								<option value="datetime_desc"{if $smarty.get.sort == 'datetime_desc'} selected="selected"{/if}>発行日の遅い順</option>
+								<option value="price"{if $smarty.get.sort == 'price'} selected{/if}>価格の安い順</option>
+								<option value="price_desc"{if $smarty.get.sort == 'price_desc'} selected{/if}>価格の高い順</option>
+								<option value="datetime"{if $smarty.get.sort == 'datetime'} selected{/if}>発行日の早い順</option>
+								<option value="datetime_desc"{if $smarty.get.sort == 'datetime_desc'} selected{/if}>発行日の遅い順</option>
 							</select>
 						</dd>
 				</dl>

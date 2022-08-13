@@ -220,7 +220,7 @@
 								<!--{if $plugin_catalog_delivery_availables[$plugin_catalog_delivery.id]}-->
 								<tr>
 									<td>
-										<input type="radio" name="plugin_catalog_order[delivery_id]" value="{$plugin_catalog_delivery.id}"{if $input.plugin_catalog_order.delivery_id == $plugin_catalog_delivery.id} checked="checked"{/if}>
+										<input type="radio" name="plugin_catalog_order[delivery_id]" value="{$plugin_catalog_delivery.id}"{if $input.plugin_catalog_order.delivery_id == $plugin_catalog_delivery.id} checked{/if}>
 										<input type="hidden" name="preferred_week[{$plugin_catalog_delivery.id}]" value="{$plugin_catalog_delivery.preferred_week}">
 										<input type="hidden" name="preferred_time[{$plugin_catalog_delivery.id}]" value="{$plugin_catalog_delivery.preferred_time}">
 									</td>
@@ -256,7 +256,7 @@
 						<select name="plugin_catalog_order[preferred_week]" id="preferred_week">
 							<option value="">希望なし</option>
 							<!--{foreach from=$freo.config.plugin.catalog.delivery_week|explode:"\n" item='value'}-->
-							<option value="{$value}"{if $value == $input.plugin_catalog_order.preferred_week} selected="selected"{/if}>{$value}</option>
+							<option value="{$value}"{if $value == $input.plugin_catalog_order.preferred_week} selected{/if}>{$value}</option>
 							<!--{/foreach}-->
 						</select>
 					</dd>
@@ -267,7 +267,7 @@
 						<select name="plugin_catalog_order[preferred_time]" id="preferred_time">
 							<option value="">希望なし</option>
 							<!--{foreach from=$freo.config.plugin.catalog.delivery_time|explode:"\n" item='value'}-->
-							<option value="{$value}"{if $value == $input.plugin_catalog_order.preferred_time} selected="selected"{/if}>{$value}</option>
+							<option value="{$value}"{if $value == $input.plugin_catalog_order.preferred_time} selected{/if}>{$value}</option>
 							<!--{/foreach}-->
 						</select>
 					</dd>
@@ -288,7 +288,7 @@
 								<!--{foreach from=$plugin_catalog_payments|smarty:nodefaults item='plugin_catalog_payment'}-->
 								<!--{if $plugin_catalog_payment_availables[$plugin_catalog_payment.id]}-->
 								<tr>
-									<td><input type="radio" name="plugin_catalog_order[payment_id]" value="{$plugin_catalog_payment.id}"{if $input.plugin_catalog_order.payment_id == $plugin_catalog_payment.id} checked="checked"{/if}></td>
+									<td><input type="radio" name="plugin_catalog_order[payment_id]" value="{$plugin_catalog_payment.id}"{if $input.plugin_catalog_order.payment_id == $plugin_catalog_payment.id} checked{/if}></td>
 									<td>{$plugin_catalog_payment.name}</td>
 									<td>{$plugin_catalog_payment.text|nl2br}</td>
 									<td class="number"><!--{if $plugin_catalog_payment.charge}-->{$plugin_catalog_payment.charge|number_format}円<!--{/if}--></td>
@@ -322,7 +322,7 @@
 					<dd id="target">
 						<!--{foreach from=$plugin_catalog_targets|smarty:nodefaults item='plugin_catalog_target'}-->
 						<!--{if $plugin_catalog_cart.catalog_target_max == $plugin_catalog_target.id}-->
-						<input type="checkbox" name="plugin_catalog_order[confirm][{$plugin_catalog_target.id}]" id="label_confirm_{$plugin_catalog_target.id}" value="{$plugin_catalog_target.id}"{if $input.plugin_catalog_order.confirm[$plugin_catalog_target.id]} checked="checked"{/if}> <label for="label_confirm_{$plugin_catalog_target.id}">私は<strong>{$plugin_catalog_target.name}</strong>です。</label>
+						<input type="checkbox" name="plugin_catalog_order[confirm][{$plugin_catalog_target.id}]" id="label_confirm_{$plugin_catalog_target.id}" value="{$plugin_catalog_target.id}"{if $input.plugin_catalog_order.confirm[$plugin_catalog_target.id]} checked{/if}> <label for="label_confirm_{$plugin_catalog_target.id}">私は<strong>{$plugin_catalog_target.name}</strong>です。</label>
 						<input type="hidden" name="plugin_catalog_order[target][{$plugin_catalog_target.id}]" value="{$plugin_catalog_target.id}"><br>
 						<!--{/if}-->
 						<!--{/foreach}-->
@@ -339,7 +339,7 @@
 						<select name="plugin_catalog_order[prefecture]" id="prefecture">
 							<option value="">選択してください</option>
 							<!--{foreach from=$plugin_catalog_prefectures|smarty:nodefaults item='plugin_catalog_prefecture'}-->
-							<option value="{$plugin_catalog_prefecture.id}"{if $input.plugin_catalog_order.prefecture == $plugin_catalog_prefecture.id} selected="selected"{/if}>{$plugin_catalog_prefecture.name}</option>
+							<option value="{$plugin_catalog_prefecture.id}"{if $input.plugin_catalog_order.prefecture == $plugin_catalog_prefecture.id} selected{/if}>{$plugin_catalog_prefecture.name}</option>
 							<!--{/foreach}-->
 						</select>
 					</dd>

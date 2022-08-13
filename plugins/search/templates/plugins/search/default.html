@@ -93,8 +93,8 @@
 					<dd>
 						<select name="target" id="target">
 							<option value="">すべて</option>
-							<option value="entry"{if $smarty.get.target == 'entry'} selected="selected"{/if}>エントリー</option>
-							<option value="page"{if $smarty.get.target == 'page'} selected="selected"{/if}>ページ</option>
+							<option value="entry"{if $smarty.get.target == 'entry'} selected{/if}>エントリー</option>
+							<option value="page"{if $smarty.get.target == 'page'} selected{/if}>ページ</option>
 						</select>
 					</dd>
 				<!--{/if}-->
@@ -119,7 +119,7 @@
 							<ul>
 								<!--{assign var='option_texts' value=$option.text|explode:"\n"}-->
 								<!--{foreach from=$option_texts|smarty:nodefaults item='option_text' name='loop'}-->
-								<li><input type="checkbox" name="option[{$option.id}][{$option_text}]" id="label_option_{$option.id}_{$smarty.foreach.loop.index}" value="{$option_text}"{if $smarty.get.option[$option.id][$option_text] == $option_text} checked="checked"{/if}> <label for="label_option_{$option.id}_{$smarty.foreach.loop.index}">{$option_text}</label></li>
+								<li><input type="checkbox" name="option[{$option.id}][{$option_text}]" id="label_option_{$option.id}_{$smarty.foreach.loop.index}" value="{$option_text}"{if $smarty.get.option[$option.id][$option_text] == $option_text} checked{/if}> <label for="label_option_{$option.id}_{$smarty.foreach.loop.index}">{$option_text}</label></li>
 								<!--{/foreach}-->
 							</ul>
 						</dd>

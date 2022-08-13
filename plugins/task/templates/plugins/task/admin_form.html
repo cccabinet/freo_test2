@@ -32,15 +32,15 @@
 							<select name="plugin_task[category_id]" id="category">
 								<option value="">選択してください</option>
 								<!--{foreach from=$plugin_task_categories|smarty:nodefaults item='plugin_task_category'}-->
-								<option value="{$plugin_task_category.id}"{if $input.plugin_task.category_id == $plugin_task_category.id} selected="selected"{/if} >{$plugin_task_category.name}</option>
+								<option value="{$plugin_task_category.id}"{if $input.plugin_task.category_id == $plugin_task_category.id} selected{/if} >{$plugin_task_category.name}</option>
 								<!--{/foreach}-->
 							</select>
 						</dd>
 					<dt><label for="status">状態 <abbr class="attention" title="入力必須">*</abbr></label></dt>
 						<dd>
 							<select name="plugin_task[status]" id="status">
-								<option value="publish"{if $input.plugin_task.status == 'publish'} selected="selected"{/if}>未完了</option>
-								<option value="complete"{if $input.plugin_task.status == 'complete'} selected="selected"{/if}>完了</option>
+								<option value="publish"{if $input.plugin_task.status == 'publish'} selected{/if}>未完了</option>
+								<option value="complete"{if $input.plugin_task.status == 'complete'} selected{/if}>完了</option>
 							</select>
 						</dd>
 				</dl>

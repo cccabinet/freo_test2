@@ -69,9 +69,9 @@
 					<dd>
 						<select name="media[restriction]" id="article_restriction">
 							<option value="">制限なし</option>
-							<option value="user"{if $input.media.restriction == 'user'} selected="selected"{/if}>ユーザー登録で制限</option>
-							<option value="group"{if $input.media.restriction == 'group'} selected="selected"{/if}>グループで制限</option>
-							<option value="password"{if $input.media.restriction == 'password'} selected="selected"{/if}>パスワードで制限</option>
+							<option value="user"{if $input.media.restriction == 'user'} selected{/if}>ユーザー登録で制限</option>
+							<option value="group"{if $input.media.restriction == 'group'} selected{/if}>グループで制限</option>
+							<option value="password"{if $input.media.restriction == 'password'} selected{/if}>パスワードで制限</option>
 						</select>
 					</dd>
 			</dl>
@@ -80,7 +80,7 @@
 					<dd class="list">
 						<ul>
 							<!--{foreach from=$freo.refer.groups|smarty:nodefaults item='refer_group'}-->
-							<li><input type="checkbox" name="media[group][{$refer_group.id}]" id="label_group_{$refer_group.id}" value="1"{if $input.media.group[$refer_group.id]} checked="checked"{/if}> <label for="label_group_{$refer_group.id}">{$refer_group.name}</label></li>
+							<li><input type="checkbox" name="media[group][{$refer_group.id}]" id="label_group_{$refer_group.id}" value="1"{if $input.media.group[$refer_group.id]} checked{/if}> <label for="label_group_{$refer_group.id}">{$refer_group.name}</label></li>
 							<!--{foreachelse}-->
 							<li>グループが登録されていません。</li>
 							<!--{/foreach}-->
@@ -98,7 +98,7 @@
 					<dd class="list">
 						<ul>
 							<!--{foreach from=$freo.refer.filters|smarty:nodefaults item='refer_filter'}-->
-							<li><input type="checkbox" name="media[filter][{$refer_filter.id}]" id="label_filter_{$refer_filter.id}" value="1"{if $input.media.filter[$refer_filter.id]} checked="checked"{/if}> <label for="label_filter_{$refer_filter.id}">{$refer_filter.name}</label></li>
+							<li><input type="checkbox" name="media[filter][{$refer_filter.id}]" id="label_filter_{$refer_filter.id}" value="1"{if $input.media.filter[$refer_filter.id]} checked{/if}> <label for="label_filter_{$refer_filter.id}">{$refer_filter.name}</label></li>
 							<!--{foreachelse}-->
 							<li>フィルターが登録されていません。</li>
 							<!--{/foreach}-->
@@ -182,7 +182,7 @@
 						<select name="media[path]" id="media_path">
 							<option value="">メディア管理ディレクトリ直下</option>
 							<!--{foreach from=$directories|smarty:nodefaults item='directory'}-->
-							<option value="{$directory}"{if $input.media.path and $input.media.path == $directory} selected="selected"{/if}>{$directory}</option>
+							<option value="{$directory}"{if $input.media.path and $input.media.path == $directory} selected{/if}>{$directory}</option>
 							<!--{/foreach}-->
 						</select>
 					</dd>

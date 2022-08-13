@@ -268,8 +268,8 @@
 						<dd>
 							<select name="comment[restriction]" id="restriction">
 								<option value="">全体に公開</option>
-								<!--{if $freo.user.id}--><option value="user"{if $input.comment.restriction == 'user'} selected="selected"{/if}>登録ユーザーに公開</option><!--{/if}-->
-								<option value="admin"{if $input.comment.restriction == 'admin'} selected="selected"{/if}>管理者に公開</option>
+								<!--{if $freo.user.id}--><option value="user"{if $input.comment.restriction == 'user'} selected{/if}>登録ユーザーに公開</option><!--{/if}-->
+								<option value="admin"{if $input.comment.restriction == 'admin'} selected{/if}>管理者に公開</option>
 							</select>
 						</dd>
 {* スパム対策 *}
@@ -290,7 +290,7 @@
 				</dl>
 				<!--{if !$freo.user.id}-->
 				<ul>
-					<li><input type="checkbox" name="comment[session]" id="label_session" value="keep"{if $input.comment.session} checked="checked"{/if}> <label for="label_session">登録者情報を記憶する</label></li>
+					<li><input type="checkbox" name="comment[session]" id="label_session" value="keep"{if $input.comment.session} checked{/if}> <label for="label_session">登録者情報を記憶する</label></li>
 				</ul>
 				<!--{/if}-->
 				<p>

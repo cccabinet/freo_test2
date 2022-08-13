@@ -34,15 +34,15 @@
 						<dd>
 							<select name="plugin_clap_thank[target]" id="target">
 								<option value="">PCと携帯</option>
-								<option value="pc"{if $input.plugin_clap_thank.target == 'pc'} selected="selected"{/if}>PC</option>
-								<option value="mobile"{if $input.plugin_clap_thank.target == 'mobile'} selected="selected"{/if}>携帯</option>
+								<option value="pc"{if $input.plugin_clap_thank.target == 'pc'} selected{/if}>PC</option>
+								<option value="mobile"{if $input.plugin_clap_thank.target == 'mobile'} selected{/if}>携帯</option>
 							</select>
 						</dd>
 					<dt><label for="status">状態 <abbr class="attention" title="入力必須">*</abbr></label></dt>
 						<dd>
 							<select name="plugin_clap_thank[status]" id="status">
-								<option value="publish"{if $input.plugin_clap_thank.status == 'publish'} selected="selected"{/if}>公開</option>
-								<option value="private"{if $input.plugin_clap_thank.status == 'private'} selected="selected"{/if}>未公開</option>
+								<option value="publish"{if $input.plugin_clap_thank.status == 'publish'} selected{/if}>公開</option>
+								<option value="private"{if $input.plugin_clap_thank.status == 'private'} selected{/if}>未公開</option>
 							</select>
 						</dd>
 					<dt><label for="sort">並び順 <abbr class="attention" title="入力必須">*</abbr></label></dt>

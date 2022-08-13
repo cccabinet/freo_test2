@@ -31,26 +31,26 @@
 						<dd>
 							<select name="option[target]" id="target">
 								<option value="">すべて</option>
-								<option value="entry"{if $input.option.target == 'entry'} selected="selected"{/if}>エントリー</option>
-								<option value="page"{if $input.option.target == 'page'} selected="selected"{/if}>ページ</option>
+								<option value="entry"{if $input.option.target == 'entry'} selected{/if}>エントリー</option>
+								<option value="page"{if $input.option.target == 'page'} selected{/if}>ページ</option>
 							</select>
 						</dd>
 					<dt><label for="option_type">種類 <abbr class="attention" title="入力必須">*</abbr></label></dt>
 						<dd>
 							<select name="option[type]" id="option_type">
-								<option value="text"{if $input.option.type == 'text'} selected="selected"{/if}>一行入力</option>
-								<option value="textarea"{if $input.option.type == 'textarea'} selected="selected"{/if}>複数行入力</option>
-								<option value="select"{if $input.option.type == 'select'} selected="selected"{/if}>セレクトボックス</option>
-								<option value="radio"{if $input.option.type == 'radio'} selected="selected"{/if}>ラジオボタン</option>
-								<option value="checkbox"{if $input.option.type == 'checkbox'} selected="selected"{/if}>チェックボックス</option>
-								<option value="file"{if $input.option.type == 'file'} selected="selected"{/if}>アップロード</option>
+								<option value="text"{if $input.option.type == 'text'} selected{/if}>一行入力</option>
+								<option value="textarea"{if $input.option.type == 'textarea'} selected{/if}>複数行入力</option>
+								<option value="select"{if $input.option.type == 'select'} selected{/if}>セレクトボックス</option>
+								<option value="radio"{if $input.option.type == 'radio'} selected{/if}>ラジオボタン</option>
+								<option value="checkbox"{if $input.option.type == 'checkbox'} selected{/if}>チェックボックス</option>
+								<option value="file"{if $input.option.type == 'file'} selected{/if}>アップロード</option>
 							</select>
 						</dd>
 					<dt><label for="required">必須 <abbr class="attention" title="入力必須">*</abbr></label></dt>
 						<dd>
 							<select name="option[required]" id="required">
-								<option value="yes"{if $input.option.required == 'yes'} selected="selected"{/if}>入力必須</option>
-								<option value="no"{if $input.option.required == 'no'} selected="selected"{/if}>任意</option>
+								<option value="yes"{if $input.option.required == 'yes'} selected{/if}>入力必須</option>
+								<option value="no"{if $input.option.required == 'no'} selected{/if}>任意</option>
 							</select>
 						</dd>
 					<dt><label for="memo">説明</label></dt>
@@ -65,8 +65,8 @@
 						<dd>
 							<select name="option[validate]" id="validate">
 								<option value="">なし</option>
-								<option value="numeric"{if $input.option.validate == 'numeric'} selected="selected"{/if}>数値のみ</option>
-								<option value="alphabet"{if $input.option.validate == 'alphabet'} selected="selected"{/if}>英数字のみ</option>
+								<option value="numeric"{if $input.option.validate == 'numeric'} selected{/if}>数値のみ</option>
+								<option value="alphabet"{if $input.option.validate == 'alphabet'} selected{/if}>英数字のみ</option>
 							</select>
 						</dd>
 				</dl>
