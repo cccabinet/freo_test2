@@ -45,6 +45,7 @@ var mySettings = {
 				]
 		},
 		{name:'太字', className:'bold', key:'B', openWith:'(!(<strong>|!|<b>)!)', closeWith:'(!(</strong>|!|</b>)!)' },
+		{name:'斜字', className:'italic', key:'I', openWith:'(!(<em>|!|<i>)!)', closeWith:'(!(</em>|!|</i>)!)' },
 		{name:'下線', className:'underline', key:'U', openWith:'<u>', closeWith:'</u>' },
 		{name:'打消', className:'stroke', key:'S', openWith:'<del>', closeWith:'</del>' },
 		{separator:'---------------' },

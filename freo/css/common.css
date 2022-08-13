@@ -134,9 +134,11 @@ p {
   margin: 10px 0;
 }
 
-em,
+em {
+  font-style: italic;
+}
+
 strong {
-  font-style: normal;
   font-weight: bold;
 }
 
