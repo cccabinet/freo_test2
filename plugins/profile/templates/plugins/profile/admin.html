@@ -56,7 +56,7 @@
 							<td>{$plugin_profiles[$user.id].kana}</td>
 							<td><!--{if $user.authority == 'root'}-->管理者<!--{elseif $user.authority == 'author'}-->投稿者<!--{elseif $user.authority == 'guest'}-->ゲスト<!--{/if}--></td>
 							<!--{if $freo.user.authority == 'root'}-->
-							<td class="number"><!--{if $plugin_profiles[$user.id].sort != ''}--><input type="text" name="sort[{$user.id}]" size="3" value="{$plugin_profiles[$user.id].sort}"><!--{/if}--></td>
+							<td class="number"><!--{if $plugin_profiles[$user.id].sort != ''}--><input type="text" inputmode="numeric" name="sort[{$user.id}]" size="3" value="{$plugin_profiles[$user.id].sort}"><!--{/if}--></td>
 							<!--{/if}-->
 							<td><a href="{$freo.core.http_file}/profile/admin_form?id={$user.id}">編集</a></td>
 						</tr>

@@ -28,7 +28,7 @@
 					<dt><label for="catalog_name">商品名 <abbr class="attention" title="入力必須">*</abbr></label></dt>
 						<dd><input type="text" name="plugin_catalog[name]" id="catalog_name" size="50" value="{$input.plugin_catalog.name}"></dd>
 					<dt><label for="price">価格（税込） <abbr class="attention" title="入力必須">*</abbr></label></dt>
-						<dd><input type="text" name="plugin_catalog[price]" id="price" size="5" value="{$input.plugin_catalog.price}"> 円</dd>
+						<dd><input type="text" inputmode="numeric" name="plugin_catalog[price]" id="price" size="5" value="{$input.plugin_catalog.price}"> 円</dd>
 					<!--{if $freo.config.plugin.catalog.target}-->
 					<dt><label for="target">対象 <abbr class="attention" title="入力必須">*</abbr></label></dt>
 						<dd>
@@ -59,9 +59,9 @@
 							<input type="button" value="現在日時" id="setDatetime">
 						</dd>
 					<dt><label for="stock">在庫数（空欄にすると無制限）</label></dt>
-						<dd><input type="text" name="plugin_catalog[stock]" id="stock" size="5" value="{$input.plugin_catalog.stock}"></dd>
+						<dd><input type="text" inputmode="numeric" name="plugin_catalog[stock]" id="stock" size="5" value="{$input.plugin_catalog.stock}"></dd>
 					<dt><label for="maximum">一度に購入できる最大数（空欄にすると無制限）</label></dt>
-						<dd><input type="text" name="plugin_catalog[maximum]" id="maximum" size="5" value="{$input.plugin_catalog.maximum}"></dd>
+						<dd><input type="text" inputmode="numeric" name="plugin_catalog[maximum]" id="maximum" size="5" value="{$input.plugin_catalog.maximum}"></dd>
 					<dt><label for="unit">単位（「冊」「枚」など）</label></dt>
 						<dd><input type="text" name="plugin_catalog[unit]" id="unit" size="5" value="{$input.plugin_catalog.unit}"></dd>
 					<dt><label for="file">商品画像（大）</label></dt>
@@ -131,7 +131,7 @@
 				</dl>
 				<dl>
 					<dt><label for="sort">並び順 <abbr class="attention" title="入力必須">*</abbr></label></dt>
-						<dd><input type="text" name="plugin_catalog[sort]" id="sort" size="5" value="{$input.plugin_catalog.sort}"></dd>
+						<dd><input type="text" inputmode="numeric" name="plugin_catalog[sort]" id="sort" size="5" value="{$input.plugin_catalog.sort}"></dd>
 				</dl>
 				<h3>分類</h3>
 				<dl>
@@ -175,25 +175,25 @@
 								<option value="data"{if $input.plugin_catalog.size == 'data'} selected="selected"{/if}>なし（データのみ）</option>
 							</select>
 							<span id="catalog_direct">
-								短辺 <input type="text" name="plugin_catalog[size_short]" size="5" value="{$input.plugin_catalog.size_short}"> mm
+								短辺 <input type="text" inputmode="decimal" name="plugin_catalog[size_short]" size="5" value="{$input.plugin_catalog.size_short}"> mm
 								/
-								長辺 <input type="text" name="plugin_catalog[size_long]" size="5" value="{$input.plugin_catalog.size_long}"> mm
+								長辺 <input type="text" inputmode="decimal" name="plugin_catalog[size_long]" size="5" value="{$input.plugin_catalog.size_long}"> mm
 							</span>
 						</dd>
 				</dl>
 				<dl id="catalog_normal">
 					<dt><label for="thickness">厚さ <abbr class="attention" title="入力必須">*</abbr></label></dt>
-						<dd><input type="text" name="plugin_catalog[thickness]" id="thickness" size="5" value="{$input.plugin_catalog.thickness}"> mm</dd>
+						<dd><input type="text" inputmode="decimal" name="plugin_catalog[thickness]" id="thickness" size="5" value="{$input.plugin_catalog.thickness}"> mm</dd>
 					<dt><label for="weight">重さ <abbr class="attention" title="入力必須">*</abbr></label></dt>
-						<dd><input type="text" name="plugin_catalog[weight]" id="weight" size="5" value="{$input.plugin_catalog.weight}"> g</dd>
+						<dd><input type="text" inputmode="decimal" name="plugin_catalog[weight]" id="weight" size="5" value="{$input.plugin_catalog.weight}"> g</dd>
 					<dt><label for="packing_short">梱包によって追加される短辺 <abbr class="attention" title="入力必須">*</abbr></label></dt>
-						<dd><input type="text" name="plugin_catalog[packing_short]" id="packing_short" size="5" value="{$input.plugin_catalog.packing_short}"> mm</dd>
+						<dd><input type="text" inputmode="decimal" name="plugin_catalog[packing_short]" id="packing_short" size="5" value="{$input.plugin_catalog.packing_short}"> mm</dd>
 					<dt><label for="packing_long">梱包によって追加される長辺 <abbr class="attention" title="入力必須">*</abbr></label></dt>
-						<dd><input type="text" name="plugin_catalog[packing_long]" id="packing_long" size="5" value="{$input.plugin_catalog.packing_long}"> mm</dd>
+						<dd><input type="text" inputmode="decimal" name="plugin_catalog[packing_long]" id="packing_long" size="5" value="{$input.plugin_catalog.packing_long}"> mm</dd>
 					<dt><label for="packing_thickness">梱包によって追加される厚さ <abbr class="attention" title="入力必須">*</abbr></label></dt>
-						<dd><input type="text" name="plugin_catalog[packing_thickness]" id="packing_thickness" size="5" value="{$input.plugin_catalog.packing_thickness}"> mm</dd>
+						<dd><input type="text" inputmode="decimal" name="plugin_catalog[packing_thickness]" id="packing_thickness" size="5" value="{$input.plugin_catalog.packing_thickness}"> mm</dd>
 					<dt><label for="packing_weight">梱包によって追加される重さ <abbr class="attention" title="入力必須">*</abbr></label></dt>
-						<dd><input type="text" name="plugin_catalog[packing_weight]" id="packing_weight" size="5" value="{$input.plugin_catalog.packing_weight}"> g</dd>
+						<dd><input type="text" inputmode="decimal" name="plugin_catalog[packing_weight]" id="packing_weight" size="5" value="{$input.plugin_catalog.packing_weight}"> g</dd>
 					<dt><label for="parallel">並列梱包（商品を2つ並べて梱包）の許可 <abbr class="attention" title="入力必須">*</abbr></label></dt>
 						<dd>
 							<select name="plugin_catalog[parallel]" id="parallel">

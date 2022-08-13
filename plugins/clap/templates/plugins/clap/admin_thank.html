@@ -44,7 +44,7 @@
 							<td>{$plugin_clap_thank.id}</td>
 							<td>{$plugin_clap_thank.memo|mb_truncate:20:'...'}</td>
 							<td><!--{if $plugin_clap_thank.target == 'pc'}-->PC<!--{elseif $plugin_clap_thank.target == 'mobile'}-->携帯<!--{else}-->PCと携帯<!--{/if}--></td>
-							<td class="number"><input type="text" name="sort[{$plugin_clap_thank.id}]" size="3" value="{$plugin_clap_thank.sort}"></td>
+							<td class="number"><input type="text" inputmode="numeric" name="sort[{$plugin_clap_thank.id}]" size="3" value="{$plugin_clap_thank.sort}"></td>
 							<td>
 								<a href="{$freo.core.http_file}/clap/admin_thank_form?id={$plugin_clap_thank.id}">編集</a>
 								<a href="{$freo.core.http_file}/clap/admin_thank_delete?freo%5Btoken%5D={$token}&amp;id={$plugin_clap_thank.id}" class="delete">削除</a>

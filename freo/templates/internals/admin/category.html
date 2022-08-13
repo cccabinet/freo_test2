@@ -56,7 +56,7 @@
 						<tr>
 							<td><a href="{$freo.core.http_file}/admin/category?pid={$category.id}">{$category.id}</a></td>
 							<td>{$category.name}</td>
-							<td class="number"><input type="text" name="sort[{$category.id}]" size="3" value="{$category.sort}"></td>
+							<td class="number"><input type="text" inputmode="numeric" name="sort[{$category.id}]" size="3" value="{$category.sort}"></td>
 							<td>
 								<a href="{$freo.core.http_file}/category/{$category.id}">確認</a>
 								<a href="{$freo.core.http_file}/admin/category_form?id={$category.id}">編集</a>

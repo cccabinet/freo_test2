@@ -355,9 +355,9 @@ function freo_main()
 									}
 									$data .= '>';
 								} elseif ($freo->agent['type'] == 'iphone') {
-									$data .= '<input type="text" name="config[data][' . $name . ']" size="5" value="' . $value . '">';
+									$data .= '<input type="text" inputmode="numeric" name="config[data][' . $name . ']" size="5" value="' . $value . '">';
 								} else {
-									$data .= '<input type="text" name="config[data][' . $name . ']" size="' . (empty($sizes[$name]) ? 10 : $sizes[$name]) . '" value="' . $value . '">';
+									$data .= '<input type="text" inputmode="numeric" name="config[data][' . $name . ']" size="' . (empty($sizes[$name]) ? 10 : $sizes[$name]) . '" value="' . $value . '">';
 								}
 
 								if (!empty($exts[$name])) {

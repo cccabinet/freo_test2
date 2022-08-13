@@ -29,7 +29,7 @@
 						<!--{foreach from=$plugin_catalog_prefectures|smarty:nodefaults item='plugin_catalog_prefecture'}-->
 						<tr>
 							<td>{$plugin_catalog_prefecture.name}</td>
-							<td class="number"><input type="text" name="sort[{$plugin_catalog_prefecture.id}]" size="3" value="{$input.plugin_catalog_delivery_prefectures[$plugin_catalog_prefecture.id].carriage|default:0}"> 円</td>
+							<td class="number"><input type="text" inputmode="numeric" name="sort[{$plugin_catalog_prefecture.id}]" size="3" value="{$input.plugin_catalog_delivery_prefectures[$plugin_catalog_prefecture.id].carriage|default:0}"> 円</td>
 						</tr>
 						<!--{/foreach}-->
 					</tbody>
