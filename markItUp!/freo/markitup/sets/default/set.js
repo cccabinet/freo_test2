@@ -19,29 +19,29 @@ var mySettings = {
 			openWith:'<span style="color:[![色を指定]!]">', 
 			closeWith:'</span>', 
 				dropMenu: [
-					{name:'ホワイト', 	openWith:'<span style="color:#FFFFFF">', 	closeWith:'</span>', className:"col1-1" },
-					{name:'シルバー', 	openWith:'<span style="color:#C0C0C0">', 	closeWith:'</span>', className:"col1-2" },
+					{name:'ホワイト', 	openWith:'<span style="color:#fff">', 	closeWith:'</span>', className:"col1-1" },
+					{name:'シルバー', 	openWith:'<span style="color:#c0c0c0">', 	closeWith:'</span>', className:"col1-2" },
 					{name:'グレー',	openWith:'<span style="color:#808080">', 	closeWith:'</span>', className:"col1-3" },
 
-					{name:'ブラック',	openWith:'<span style="color:#000000">', 	closeWith:'</span>', className:"col2-1" },
-					{name:'レッド',	openWith:'<span style="color:#FF0000">', 	closeWith:'</span>', className:"col2-2" },
+					{name:'ブラック',	openWith:'<span style="color:#000">', 	closeWith:'</span>', className:"col2-1" },
+					{name:'レッド',	openWith:'<span style="color:#f00">', 	closeWith:'</span>', className:"col2-2" },
 					{name:'マルーン', 	openWith:'<span style="color:#800000">', 	closeWith:'</span>', className:"col2-3" },
 
-					{name:'イエロー', 	openWith:'<span style="color:#FFFF00">', 	closeWith:'</span>', className:"col3-1" },
+					{name:'イエロー', 	openWith:'<span style="color:#ff0">', 	closeWith:'</span>', className:"col3-1" },
 					{name:'オリーブ',	openWith:'<span style="color:#808000">', 	closeWith:'</span>', className:"col3-2" },
-					{name:'ライム', 	openWith:'<span style="color:#00FF00">', 	closeWith:'</span>', className:"col3-3" },
+					{name:'ライム', 	openWith:'<span style="color:#0f0">', 	closeWith:'</span>', className:"col3-3" },
 
 					{name:'グリーン', 	openWith:'<span style="color:#008000">', 	closeWith:'</span>', className:"col4-1" },
-					{name:'アクア', 	openWith:'<span style="color:#00FFFF">', 	closeWith:'</span>', className:"col4-2" },
+					{name:'アクア', 	openWith:'<span style="color:#0ff">', 	closeWith:'</span>', className:"col4-2" },
 					{name:'ティール', 	openWith:'<span style="color:#008080">', 	closeWith:'</span>', className:"col4-3" },
 
-					{name:'ブルー', 	openWith:'<span style="color:#0000FF">', 	closeWith:'</span>', className:"col5-1" },
+					{name:'ブルー', 	openWith:'<span style="color:#00f">', 	closeWith:'</span>', className:"col5-1" },
 					{name:'ネイビー', openWith:'<span style="color:#000080">', 	closeWith:'</span>', className:"col5-2" },
-					{name:'フクシャ', 	openWith:'<span style="color:#FF00FF">', 	closeWith:'</span>', className:"col5-3" },
+					{name:'フクシャ', 	openWith:'<span style="color:#f0f">', 	closeWith:'</span>', className:"col5-3" },
 
 					{name:'パープル', 	openWith:'<span style="color:#800080">', 	closeWith:'</span>', className:"col6-1" },
-					{name:'オレンジ',	openWith:'<span style="color:#FFA500">', 	closeWith:'</span>', className:"col6-2" },
-					{name:'文字色',	openWith:'<span style="color:#222222">', 	closeWith:'</span>', className:"col6-3" },
+					{name:'オレンジ',	openWith:'<span style="color:#ffa500">', 	closeWith:'</span>', className:"col6-2" },
+					{name:'文字色',	openWith:'<span style="color:#222">', 	closeWith:'</span>', className:"col6-3" },
 				]
 		},
 		{name:'太字', className:'bold', key:'B', openWith:'(!(<strong>|!|<b>)!)', closeWith:'(!(</strong>|!|</b>)!)' },

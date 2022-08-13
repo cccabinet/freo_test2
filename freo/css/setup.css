@@ -12,12 +12,12 @@ body {
   width: 90%;
   max-width: 550px;
   padding: 10px 20px;
-  border: 1px solid #666666;
+  border: 1px solid #666;
 }
 
 h1 {
   padding-bottom: 5px;
-  border-bottom: 1px solid #999999;
+  border-bottom: 1px solid #999;
   line-height: 1.0;
 }
 
@@ -31,7 +31,7 @@ h6 {
 
 address {
   padding-top: 10px;
-  border-top: 1px solid #999999;
+  border-top: 1px solid #999;
 }
 
 /********* レスポンシブ *********************************************/

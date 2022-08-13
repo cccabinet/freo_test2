@@ -6,7 +6,7 @@
 
 body {
   padding: 10px;
-  background-color: #999999;
+  background-color: #999;
 }
 
 h2,
@@ -19,8 +19,8 @@ h6 {
 h2 {
   margin: 15px 0;
   padding: 5px 0;
-  border-top: 1px solid #999999;
-  border-bottom: 1px solid #999999;
+  border-top: 1px solid #999;
+  border-bottom: 1px solid #999;
   font-weight: bold;
 }
 
@@ -30,8 +30,8 @@ h2 {
   max-width: 1140px;
   margin: 0 auto;
   padding: 20px;
-  border-bottom: 5px solid #666666;
-  background-color: #FFFFFF;
+  border-bottom: 5px solid #666;
+  background-color: #fff;
 }
 
 /********* ヘッダー *************************************************/
@@ -47,13 +47,13 @@ h2 {
 
 #header h1 a:link,
 #header h1 a:visited {
-  color: #222222;
+  color: #222;
   text-decoration: none;
 }
 
 #header h1 a:active,
 #header h1 a:hover {
-  color: #777777;
+  color: #777;
   text-decoration: none;
 }
 
@@ -65,13 +65,13 @@ h2 {
 
 #footer address {
   padding-top: 10px;
-  border-top: 1px solid #999999;
+  border-top: 1px solid #999;
 }
 
 /********* メニュー *************************************************/
 
 #menu {
-  background-color: #666666;
+  background-color: #666;
 }
 
 #menu h2 {
@@ -91,13 +91,13 @@ h2 {
 
 #menu a:link,
 #menu a:visited {
-  color: #FFFFFF;
+  color: #fff;
   text-decoration: none;
 }
 
 #menu a:active,
 #menu a:hover {
-  color: #FFFFFF;
+  color: #fff;
   text-decoration: underline;
 }
 
@@ -117,7 +117,7 @@ h2 {
 #entry .entry {
   max-width: 930px;
   margin: 15px 0;
-  border: 1px solid #999999;
+  border: 1px solid #999;
 }
 
 #entry .entry h3 {
@@ -127,13 +127,13 @@ h2 {
 
 #entry .entry h3 a:link,
 #entry .entry h3 a:visited {
-  color: #222222;
+  color: #222;
   text-decoration: none;
 }
 
 #entry .entry h3 a:active,
 #entry .entry h3 a:hover {
-  color: #777777;
+  color: #777;
   text-decoration: none;
 }
 
@@ -144,7 +144,7 @@ h2 {
 #entry .entry ul.information {
   margin: 2px 10px 15px 10px;
   padding-top: 2px;
-  border-top: 1px solid #CCCCCC;
+  border-top: 1px solid #ccc;
   font-size: 90%;
 }
 
@@ -181,8 +181,8 @@ h2 {
 #entry #entry_link ul.entry_link li.home {
   padding-right: 10px;
   padding-left: 10px;
-  border-right: 1px solid #999999;
-  border-left: 1px solid #999999;
+  border-right: 1px solid #999;
+  border-left: 1px solid #999;
 }
 
 #entry #entry_link ul.entry_link li.previous:before {
@@ -279,7 +279,7 @@ h2 {
 #utility .utility {
   margin: 15px 0;
   padding-bottom: 10px;
-  background-color: #EEEEEE;
+  background-color: #eee;
 }
 
 #utility .utility h3 {
@@ -325,29 +325,29 @@ h2 {
 
 #utility .utility table.calender {
   margin: 0;
-  border: 0px solid #000000;
+  border: 0px solid #000;
   word-break: normal;
 }
 
 #utility .utility table.calender tr th,
 table.calender tr td {
   padding: 5px;
-  border: 0px solid #000000;
-  background-color: #EEEEEE;
+  border: 0px solid #000;
+  background-color: #eee;
   font-weight: normal;
   text-align: center;
 }
 
 #utility .utility table.calender tr td span.day {
-  color: #222222;
+  color: #222;
 }
 
 #utility .utility table.calender tr td span.satday {
-  color: #2222CC;
+  color: #22c;
 }
 
 #utility .utility table.calender tr td span.sunday {
-  color: #CC2222;
+  color: #c22;
 }
 
 #utility .utility ul.calender {
@@ -417,7 +417,7 @@ dl.parts dd {
   display: block;
   width: 140px;
   height: 100px;
-  background-color: #AAAAAA;
+  background-color: #aaa;
   line-height: 100px;
   text-align: center;
 }
@@ -454,7 +454,7 @@ ul.tagcloud li {
   display: inline;
   list-style: none;
   margin-right: 5px;
-  color: #AAAAAA;
+  color: #aaa;
   line-height: 1.0;
 }
 
@@ -509,7 +509,7 @@ ul.tagcloud li a {
   display: block;
   width: 140px;
   height: 100px;
-  background-color: #444444;
+  background-color: #444;
   text-decoration: none;
 }
 
@@ -543,8 +543,8 @@ ul.tagcloud li a {
 
 #search_option {
   padding: 10px 20px;
-  border: 1px solid #CCCCCC;
-  background-color: #EEEEEE;
+  border: 1px solid #ccc;
+  background-color: #eee;
 }
 
 #search_option h3 {
@@ -563,13 +563,13 @@ ul.tagcloud li a {
 }
 
 #search_option span.note {
-  color: #666666;
+  color: #666;
 }
 
 /********* ネタバレ *************************************************/
 
 div.hidearea {
-  color: #EEEEEE;
+  color: #eee;
 }
 
 /********* 個別指定 *************************************************/
@@ -591,8 +591,8 @@ div.hidearea {
 #page_link ul.page_link li.home {
   padding-right: 10px;
   padding-left: 10px;
-  border-right: 1px solid #999999;
-  border-left: 1px solid #999999;
+  border-right: 1px solid #999;
+  border-left: 1px solid #999;
 }
 
 #page_link ul.page_link li.previous:before {

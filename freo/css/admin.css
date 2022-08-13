@@ -6,7 +6,7 @@
 
 body {
   padding: 10px;
-  background-color: #999999;
+  background-color: #999;
 }
 
 h2,
@@ -20,8 +20,8 @@ h6 {
 h2 {
   margin: 15px 0;
   padding: 5px 0;
-  border-top: 1px solid #AAAAAA;
-  border-bottom: 1px solid #AAAAAA;
+  border-top: 1px solid #aaa;
+  border-bottom: 1px solid #aaa;
   font-weight: bold;
 }
 
@@ -35,8 +35,8 @@ form h3 {
   width: 90%;
   margin: 0 auto;
   padding: 20px;
-  border-bottom: 5px solid #666666;
-  background-color: #FFFFFF;
+  border-bottom: 5px solid #666;
+  background-color: #fff;
 }
 
 /********* ヘッダー *************************************************/
@@ -52,13 +52,13 @@ form h3 {
 
 #header h1 a:link,
 #header h1 a:visited {
-  color: #222222;
+  color: #222;
   text-decoration: none;
 }
 
 #header h1 a:active,
 #header h1 a:hover {
-  color: #777777;
+  color: #777;
   text-decoration: none;
 }
 
@@ -70,7 +70,7 @@ form h3 {
 
 #footer address {
   padding-top: 10px;
-  border-top: 1px solid #999999;
+  border-top: 1px solid #999;
 }
 
 /********* メニュー *************************************************/
@@ -148,7 +148,7 @@ form h3 {
 #config form h3 {
   margin: 10px 0;
   padding: 5px;
-  background-color: #EEEEEE;
+  background-color: #eee;
 }
 
 #config form dl {
@@ -217,7 +217,7 @@ dl dd.list ul {
 
 form dl dd.list {
   padding: 5px;
-  border: 1px solid #CCCCCC;
+  border: 1px solid #ccc;
 }
 
 form dl dd.list ul {
