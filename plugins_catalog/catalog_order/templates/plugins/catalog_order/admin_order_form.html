@@ -81,7 +81,7 @@
 				</dl>
 				<h3>注文内容</h3>
 				<!--{if $freo.query.id}-->
-				<table summary="注文内容">
+				<table>
 					<thead>
 						<tr>
 							<th>商品</th>
@@ -121,7 +121,7 @@
 				<ul>
 					<li><a href="{$freo.core.https_file}/catalog_order/admin_order_cart_form?id={$freo.query.id}">注文商品を追加する</a>。</li>
 				</ul>
-				<table summary="合計">
+				<table>
 					<tr>
 						<th>商品合計（税込）</th>
 						<td class="number">{$plugin_catalog_price_total|number_format}円</td>

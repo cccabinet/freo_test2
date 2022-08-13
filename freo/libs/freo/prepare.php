@@ -255,7 +255,7 @@ if (isset($_POST['token']) and $_POST['token'] == session_id()) {
 		echo "<p>に設定してください。</p>\n";
 		echo "<h3>パーミッションの設定</h3>\n";
 		echo "<p>FTPソフトで以下のファイルのパーミッションを設定してください。</p>\n";
-		echo "<table summary=\"パーミッション一覧\">\n";
+		echo "<table>\n";
 		echo "<tr><th>対象</th><th>パーミッション</th></tr>\n";
 		echo "<tr><td><code>configs/</code> 内のファイル</td><td><code>606</code> に設定</td></tr>\n";
 		echo "<tr><td><code>configs/plugins/</code> 内のファイル</td><td><code>606</code> に設定</td></tr>\n";

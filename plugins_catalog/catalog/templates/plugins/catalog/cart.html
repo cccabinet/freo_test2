@@ -38,7 +38,7 @@
 		<form action="{$freo.core.http_file}/catalog/cart_update" method="post">
 			<fieldset>
 				<legend>数量更新フォーム</legend>
-				<table summary="カート">
+				<table>
 					<thead>
 						<tr>
 							<th>商品</th>
@@ -78,7 +78,7 @@
 						<!--{/foreach}-->
 					</tbody>
 				</table>
-				<table summary="合計">
+				<table>
 					<tr>
 						<th>商品合計（税込）</th>
 						<td>{$plugin_catalog_cart.catalog_price_total|number_format}円</td>
