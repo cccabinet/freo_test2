@@ -1,4 +1,42 @@
 </div>
+
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/jquery-colorbox@1.6.4/jquery.colorbox.min.js" integrity="sha384-HCysbL3DGKU6wK4NgLZs85sazwPPnuhyYh/hWZDmxZvVvvrz8A6Djn6SxU5CX57v" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/tablesorter@2.31.3/dist/js/jquery.tablesorter.combined.min.js" integrity="sha256-ounC3wWwZ9iBUyF8x1+X+REppGjK+p6/+w+ky1MGoMM=" crossorigin="anonymous"></script>
+	<script src="{if $smarty.server.HTTPS and $smarty.server.HTTPS != 'off'}{$freo.core.https_url}{else}{$freo.core.http_url}{/if}{$smarty.const.FREO_JS_DIR}common.js"></script>
+	<script src="{if $smarty.server.HTTPS and $smarty.server.HTTPS != 'off'}{$freo.core.https_url}{else}{$freo.core.http_url}{/if}{$smarty.const.FREO_JS_DIR}iframe.js"></script>
+	<script>
+	//エラーメッセージを削除
+	window.parent.$('.plugin_form_error').html('');
+
+{if $errors|smarty:nodefaults}
+	//エラーメッセージを表示
+	var errors = '';
+	{foreach from=$errors|smarty:nodefaults item='error'}
+	if (window.parent.$('#plugin_form_error_{$error.id}').size()) {ldelim}
+		window.parent.$('#plugin_form_error_{$error.id}').html('<span class="plugin_form_error">{$error.message}</span>');
+	{rdelim} else {ldelim}
+		errors += '<li>{$error.message}</li>';
+	{rdelim}
+	{/foreach}
+	if (errors) {ldelim}
+		window.parent.$('#plugin_form_error').html('<ul class="plugin_form_error">' + errors + '</ul>');
+	{rdelim}
+{/if}
+
+	{literal}
+	//入力画面へ戻る
+	$('form#plugin_form').submit(function() {
+		if (window == window.parent) {
+			history.back();
+		} else {
+			window.parent.$.fn.subwindow.close();
+		}
+
+		return false;
+	});
+	{/literal}
+	</script>
 </body>
 
 </html>

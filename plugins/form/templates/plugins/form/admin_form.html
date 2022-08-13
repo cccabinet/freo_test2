@@ -128,43 +128,4 @@
 		</form>
 		<!--{/if}-->
 	</div>
-	<script>
-	{literal}
-	//メールの送信
-	if ($('#form_mail').val() == 'no') {
-		$('#form_mail_content').hide();
-	}
-	$('#form_mail').change(function() {
-		if ($(this).val() == 'yes') {
-			$('#form_mail_content').show();
-		} else {
-			$('#form_mail_content').hide();
-		}
-	});
-
-	//メールの自動返信
-	if ($('#form_reply').val() == 'no') {
-		$('#form_reply_content').hide();
-	}
-	$('#form_reply').change(function() {
-		if ($(this).val() == 'yes') {
-			$('#form_reply_content').show();
-		} else {
-			$('#form_reply_content').hide();
-		}
-	});
-
-	//送信内容の記録
-	if ($('#form_record').val() == 'no') {
-		$('#form_record_content').hide();
-	}
-	$('#form_record').change(function() {
-		if ($(this).val() == 'yes') {
-			$('#form_record_content').show();
-		} else {
-			$('#form_record_content').hide();
-		}
-	});
-	{/literal}
-	</script>
 {include file='internals/admin/footer.html'}

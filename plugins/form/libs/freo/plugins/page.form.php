@@ -1548,6 +1548,9 @@ function freo_page_form_send()
 		echo "<meta charset=\"utf-8\">\n";
 		echo "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n";
 		echo "<title>送信完了</title>\n";
+		echo "</head>\n";
+		echo "<body>\n";
+		echo "<p><a href=\"" . $url . "\">送信完了</a></p>\n";
 		echo "<script>\n";
 		echo "if (window == window.parent) {\n";
 		echo "window.location.href = '" . $url . "';\n";
@@ -1555,9 +1558,6 @@ function freo_page_form_send()
 		echo "window.parent.location.href = '" . $url . "';\n";
 		echo "}\n";
 		echo "</script>\n";
-		echo "</head>\n";
-		echo "<body>\n";
-		echo "<p><a href=\"" . $url . "\">送信完了</a></p>\n";
 		echo "</body>\n";
 		echo "</html>\n";
 	}
