@@ -119,7 +119,7 @@
 {* イメージの登録 *}
 					<dt><label for="page_image">ファイルのイメージ</label></dt>
 						<dd>
-							<input type="file" name="page[image]" id="page_image" size="30">
+							<input type="file" name="page[image]" id="page_image" accept="image/*" size="30">
 							<!--{if $input.page.image}-->
 								<div>現在のイメージ</div>
 								<a href="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}page_images/{$freo.query.id}/{$input.page.image}"><img src="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}page_images/{$freo.query.id}/{$input.page.image}" alt="現在のイメージ" width="100"></a>

@@ -66,7 +66,7 @@
 						<dd><input type="text" name="plugin_catalog[unit]" id="unit" size="5" value="{$input.plugin_catalog.unit}"></dd>
 					<dt><label for="file">商品画像（大）</label></dt>
 						<dd>
-							<input type="file" name="plugin_catalog[file]" id="file" size="30">
+							<input type="file" name="plugin_catalog[file]" id="file" accept="image/*" size="30">
 							<!--{if $input.plugin_catalog.file}-->
 								<div>現在の商品画像</div>
 								<a href="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/catalog_files/{$freo.query.id}/{$input.plugin_catalog.file}"><!--{if $input.plugin_catalog.file|regex_match:'/\.(jpe?g|png|gif)$/i'}--><img src="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/catalog_files/{$freo.query.id}/{$input.plugin_catalog.file}" alt="現在のファイル" width="100"><!--{else}-->{$input.plugin_catalog.file}<!--{/if}--></a>
@@ -76,7 +76,7 @@
 						</dd>
 					<dt><label for="file_thumbnail">商品画像（小）</label></dt>
 						<dd>
-							<input type="file" name="plugin_catalog[file_thumbnail]" id="file_thumbnail" size="30">
+							<input type="file" name="plugin_catalog[file_thumbnail]" id="file_thumbnail" accept="image/*" size="30">
 							<!--{if $input.plugin_catalog.file_thumbnail}-->
 								<div>現在の商品画像</div>
 								<a href="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/catalog_files/{$freo.query.id}/{$input.plugin_catalog.file_thumbnail}"><img src="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/catalog_files/{$freo.query.id}/{$input.plugin_catalog.file_thumbnail}" alt="現在のファイル" width="100"></a>
