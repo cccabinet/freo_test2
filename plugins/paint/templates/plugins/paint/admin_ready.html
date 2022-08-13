@@ -9,9 +9,9 @@
 			<fieldset>
 				<legend>イラスト設定フォーム</legend>
 				<dl>
-					<dt>使用ツール</dt>
+					<dt><label for="tool">使用ツール</label></dt>
 						<dd>
-							<select name="tool">
+							<select name="tool" id="tool">
 								<!--{if $plugin_paint_tools.paintbbs}-->
 								<option value="paintbbs"{if $freo.config.plugin.paint.default_tool == 'paintbbs'} selected="selected"{/if}>PaintBBS</option>
 								<!--{/if}-->
@@ -21,8 +21,8 @@
 								<!--{/if}-->
 							</select>
 						</dd>
-					<dt>キャンパスサイズ</dt>
-						<dd>
+					<dt><label for="size">キャンパスサイズ</label></dt>
+						<dd id="size">
 							<input type="text" name="width" size="4" value="{$freo.config.plugin.paint.default_width}">
 							×
 							<input type="text" name="height" size="4" value="{$freo.config.plugin.paint.default_height}">

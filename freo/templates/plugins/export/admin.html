@@ -9,9 +9,9 @@
 			<fieldset>
 				<legend>エクスポート実行フォーム</legend>
 				<dl>
-					<dt>対象</dt>
+					<dt><label for="target">対象</label></dt>
 						<dd>
-							<select name="target">
+							<select name="target" id="target">
 								<option value="">すべて</option>
 								<!--{foreach from=$plugin_exports|smarty:nodefaults item='plugin_export'}-->
 								<option value="{$plugin_export}">{$plugin_export}</option>

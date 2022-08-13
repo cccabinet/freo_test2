@@ -58,8 +58,8 @@
 				<fieldset>
 					<legend>ページ検索フォーム</legend>
 					<dl>
-						<dt>キーワード</dt>
-							<dd><input type="text" name="word" size="50" value="{$smarty.get.word}"></dd>
+						<dt><label for="keyword">キーワード</label></dt>
+							<dd><input type="text" name="word" id="keyword" size="50" value="{$smarty.get.word}"></dd>
 						<dt>状態</dt>
 							<dd>
 								<input type="checkbox" name="status" id="label_status_private" value="private"{if $freo.query.status == 'private'} checked="checked"{/if}> <label for="label_status_private">未公開のみ</label>

@@ -18,12 +18,12 @@
 				<input type="hidden" name="freo[token]" value="{$token}">
 				<input type="hidden" name="plugin_paint[id]" value="{$input.plugin_paint.id}">
 				<dl>
-					<dt>タイトル</dt>
-						<dd><input type="text" name="plugin_paint[title]" size="50" value="{$input.plugin_paint.title}{$smarty.get.title}"></dd>
-					<dt>本文</dt>
-						<dd><textarea name="plugin_paint[text]" cols="50" rows="5">{$input.plugin_paint.text}</textarea></dd>
-					<dt>タグ</dt>
-						<dd><input type="text" name="plugin_paint[tag]" size="50" value="{$input.plugin_paint.tag}"></dd>
+					<dt><label for="title">タイトル</label></dt>
+						<dd><input type="text" name="plugin_paint[title]" id="title" size="50" value="{$input.plugin_paint.title}{$smarty.get.title}"></dd>
+					<dt><label for="text">本文</label></dt>
+						<dd><textarea name="plugin_paint[text]" id="text" cols="50" rows="5">{$input.plugin_paint.text}</textarea></dd>
+					<dt><label for="tag">タグ</label></dt>
+						<dd><input type="text" name="plugin_paint[tag]" id="tag" size="50" value="{$input.plugin_paint.tag}"></dd>
 				</dl>
 				<p><input type="submit" value="登録する"></p>
 			</fieldset>

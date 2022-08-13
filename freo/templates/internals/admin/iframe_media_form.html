@@ -21,8 +21,8 @@
 			<input type="hidden" name="media[path]" value="{$freo.query.path}">
 			<input type="hidden" name="media[directory_org]" value="{$smarty.get.name}">
 			<dl>
-				<dt>ディレクトリ名</dt>
-					<dd><input type="text" name="media[directory]" size="50" value="{$smarty.get.name}"></dd>
+				<dt><label for="media_directory">ディレクトリ名</label></dt>
+					<dd><input type="text" name="media[directory]" id="media_directory" size="50" value="{$smarty.get.name}"></dd>
 			</dl>
 			<p><input type="submit" value="変更する"></p>
 		</fieldset>
@@ -36,9 +36,9 @@
 			<legend>メディア移動フォーム</legend>
 			<input type="hidden" name="freo[token]" value="{$token}">
 			<dl>
-				<dt>移動先</dt>
+				<dt><label for="media_path">移動先</label></dt>
 					<dd>
-						<select name="media[path]">
+						<select name="media[path]" id="media_path">
 							<option value="">メディア管理ディレクトリ直下</option>
 							<!--{foreach from=$directories|smarty:nodefaults item='directory'}-->
 							<!--{if $freo.query.path != $directory and $freo.query.path|cat:$smarty.get.name|cat:'/' != $directory}-->
@@ -65,7 +65,7 @@
 			<input type="hidden" name="media[directory]" value="{$smarty.get.name}">
 			<!--{if $freo.config.media.restriction}-->
 			<dl>
-				<dt>制限</dt>
+				<dt><label for="article_restriction">制限</label></dt>
 					<dd>
 						<select name="media[restriction]" id="article_restriction">
 							<option value="">制限なし</option>
@@ -88,8 +88,8 @@
 					</dd>
 			</dl>
 			<dl id="article_password">
-				<dt>パスワードで制限</dt>
-					<dd><input type="password" name="media[password]" size="30" value="{$input.media.password}"></dd>
+				<dt><label for="media_password">パスワードで制限</label></dt>
+					<dd><input type="password" name="media[password]" id="media_password" size="30" value="{$input.media.password}"></dd>
 			</dl>
 			<!--{/if}-->
 			<!--{if $freo.config.media.filter}-->
@@ -137,8 +137,8 @@
 			<input type="hidden" name="media[exec]" value="insert_directory">
 			<input type="hidden" name="media[path]" value="{$freo.query.path}">
 			<dl>
-				<dt>ディレクトリ名</dt>
-					<dd><input type="text" name="media[directory]" size="50" value="{$input.media.directory}"></dd>
+				<dt><label for="media_directory">ディレクトリ名</label></dt>
+					<dd><input type="text" name="media[directory]" id="media_directory" size="50" value="{$input.media.directory}"></dd>
 			</dl>
 			<p><input type="submit" value="作成する"></p>
 		</fieldset>
@@ -177,9 +177,9 @@
 			<!--{/if}-->
 			<dl id="media_file">
 				<!--{if !$freo.query.path}-->
-				<dt>アップロード先 <abbr class="attention" title="入力必須">*</abbr></dt>
+				<dt><label for="media_path">アップロード先 <abbr class="attention" title="入力必須">*</abbr></label></dt>
 					<dd>
-						<select name="media[path]">
+						<select name="media[path]" id="media_path">
 							<option value="">メディア管理ディレクトリ直下</option>
 							<!--{foreach from=$directories|smarty:nodefaults item='directory'}-->
 							<option value="{$directory}"{if $input.media.path and $input.media.path == $directory} selected="selected"{/if}>{$directory}</option>
@@ -187,22 +187,22 @@
 						</select>
 					</dd>
 				<!--{/if}-->
-				<dt>ファイル <abbr class="attention" title="入力必須">*</abbr></dt>
-					<dd><input type="file" name="media[file][]" size="30"></dd>
+				<dt><label for="media_file">ファイル <abbr class="attention" title="入力必須">*</abbr></label></dt>
+					<dd><input type="file" name="media[file][]" id="media_file" size="30"></dd>
 			</dl>
 			<!--{if !$freo.query.name}-->
 			<dl id="media_template">
-				<dt>ファイル</dt>
-					<dd><input type="file" name="media[file][]" size="30"></dd>
+				<dt><label for="media_file">ファイル</label></dt>
+					<dd><input type="file" name="media[file][]" id="media_file" size="30"></dd>
 			</dl>
 			<p><a href="javascript:void(0)" id="media_add">ファイル選択欄を追加</a></p>
 			<!--{/if}-->
 			<!--{if $freo.config.media.thumbnail}-->
 			<dl>
-				<dt>サムネイル画像の最大横幅 <abbr class="attention" title="入力必須">*</abbr></dt>
-					<dd><input type="text" name="media[thumbnail_width]" size="4" value="{$input.media.thumbnail_width}"> px</dd>
-				<dt>サムネイル画像の最大縦幅 <abbr class="attention" title="入力必須">*</abbr></dt>
-					<dd><input type="text" name="media[thumbnail_height]" size="4" value="{$input.media.thumbnail_height}"> px</dd>
+				<dt><label for="media_thumbnail_width">サムネイル画像の最大横幅 <abbr class="attention" title="入力必須">*</abbr></label></dt>
+					<dd><input type="text" name="media[thumbnail_width]" id="media_thumbnail_width" size="4" value="{$input.media.thumbnail_width}"> px</dd>
+				<dt><label for="media_thumbnail_height">サムネイル画像の最大縦幅 <abbr class="attention" title="入力必須">*</abbr></label></dt>
+					<dd><input type="text" name="media[thumbnail_height]" id="media_thumbnail_height" size="4" value="{$input.media.thumbnail_height}"> px</dd>
 			</dl>
 			<!--{/if}-->
 			<p><input type="submit" value="登録する"></p>
@@ -224,8 +224,8 @@
 			<input type="hidden" name="media[path]" value="{$freo.query.path}">
 			<input type="hidden" name="media[file_org]" value="{$smarty.get.name}">
 			<dl>
-				<dt>画像</dt>
-					<dd><input type="file" name="media[thumbnail]" size="30"></dd>
+				<dt><label for="media_thumbnail">画像</label></dt>
+					<dd><input type="file" name="media[thumbnail]" id="media_thumbnail" size="30"></dd>
 			</dl>
 			<p><input type="submit" value="登録する"></p>
 		</fieldset>
@@ -245,8 +245,8 @@
 			<input type="hidden" name="media[path]" value="{$freo.query.path}">
 			<input type="hidden" name="media[file]" value="{$smarty.get.name}">
 			<dl>
-				<dt>内容</dt>
-					<dd><textarea name="media[text]" cols="50" rows="10">{$input.media.text}</textarea></dd>
+				<dt><label for="media_text">内容</label></dt>
+					<dd><textarea name="media[text]" id="media_text" cols="50" rows="10">{$input.media.text}</textarea></dd>
 			</dl>
 			<p><input type="submit" value="書き換える"></p>
 		</fieldset>
@@ -264,8 +264,8 @@
 			<input type="hidden" name="media[path]" value="{$freo.query.path}">
 			<input type="hidden" name="media[file]" value="{$smarty.get.name}">
 			<dl>
-				<dt>ファイルの説明</dt>
-					<dd><input type="text" name="media[memo]" size="50" value="{$input.media.memo}"></dd>
+				<dt><label for="media_memo">ファイルの説明</label></dt>
+					<dd><input type="text" name="media[memo]" id="media_memo" size="50" value="{$input.media.memo}"></dd>
 			</dl>
 			<p><input type="submit" value="登録する"></p>
 		</fieldset>
@@ -282,8 +282,8 @@
 			<input type="hidden" name="media[path]" value="{$freo.query.path}">
 			<input type="hidden" name="media[file_org]" value="{$smarty.get.name}">
 			<dl>
-				<dt>ファイル名</dt>
-					<dd><input type="text" name="media[file]" size="50" value="{$smarty.get.name}"></dd>
+				<dt><label for="media_file">ファイル名</label></dt>
+					<dd><input type="text" name="media[file]" id="media_memo" size="50" value="{$smarty.get.name}"></dd>
 			</dl>
 			<p><input type="submit" value="変更する"></p>
 		</fieldset>
@@ -298,9 +298,9 @@
 			<input type="hidden" name="freo[token]" value="{$token}">
 			<input type="hidden" name="media[file]" value="{$smarty.get.name}">
 			<dl>
-				<dt>移動先</dt>
+				<dt><label for="media_path">移動先</label></dt>
 					<dd>
-						<select name="media[path]">
+						<select name="media[path]" id="media_memo">
 							<option value="">メディア管理ディレクトリ直下</option>
 							<!--{foreach from=$directories|smarty:nodefaults item='directory'}-->
 							<!--{if $freo.query.path != $directory}-->
@@ -339,8 +339,8 @@
 			<input type="hidden" name="media[exec]" value="insert_file">
 			<input type="hidden" name="media[path]" value="{$freo.query.path}">
 			<dl>
-				<dt>ファイル名</dt>
-					<dd><input type="text" name="media[file]" size="50" value="{$input.media.file}"></dd>
+				<dt><label for="media_file">ファイル名</label></dt>
+					<dd><input type="text" name="media[file]" id="media_memo" size="50" value="{$input.media.file}"></dd>
 			</dl>
 			<p><input type="submit" value="作成する"></p>
 		</fieldset>
