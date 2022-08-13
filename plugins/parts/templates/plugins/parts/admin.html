@@ -42,7 +42,7 @@
 							<td>{$plugin_part.id}</td>
 							<td>{$plugin_part.name}</td>
 							<td><!--{if $plugin_part.status == 'publish'}-->公開<!--{else}-->未公開<!--{/if}--></td>
-							<td class="number"><input type="text" name="sort[{$plugin_part.id}]" size="3" value="{$plugin_part.sort}"></td>
+							<td class="number"><input type="text" inputmode="numeric" name="sort[{$plugin_part.id}]" size="3" value="{$plugin_part.sort}"></td>
 							<td>
 								<a href="{$freo.core.http_file}/parts/admin_form?id={$plugin_part.id}">編集</a>
 								<a href="{$freo.core.http_file}/parts/admin_delete?freo%5Btoken%5D={$token}&amp;id={$plugin_part.id}" class="delete">削除</a>

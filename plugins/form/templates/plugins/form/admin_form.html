@@ -30,7 +30,7 @@
 					<dt><label for="complete">送信完了時のリダイレクト先</label></dt>
 						<dd><input type="text" name="plugin_form[complete]" id="complete" size="50" value="{$input.plugin_form.complete}"></dd>
 					<dt><label for="count">送信済み回数 <abbr class="attention" title="入力必須">*</abbr></label></dt>
-						<dd><input type="text" name="plugin_form[count]" id="count" size="5" value="{$input.plugin_form.count}"> 回</dd>
+						<dd><input type="text" inputmode="numeric" name="plugin_form[count]" id="count" size="5" value="{$input.plugin_form.count}"> 回</dd>
 					<!--{if $smarty.const.FREO_HTTPS_URL}-->
 					<dt><label for="secure">SSLの使用 <abbr class="attention" title="入力必須">*</abbr></label></dt>
 						<dd>

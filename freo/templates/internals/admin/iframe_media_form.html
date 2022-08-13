@@ -200,9 +200,9 @@
 			<!--{if $freo.config.media.thumbnail}-->
 			<dl>
 				<dt><label for="media_thumbnail_width">サムネイル画像の最大横幅 <abbr class="attention" title="入力必須">*</abbr></label></dt>
-					<dd><input type="text" name="media[thumbnail_width]" id="media_thumbnail_width" size="4" value="{$input.media.thumbnail_width}"> px</dd>
+					<dd><input type="text" inputmode="numeric" name="media[thumbnail_width]" id="media_thumbnail_width" size="4" value="{$input.media.thumbnail_width}"> px</dd>
 				<dt><label for="media_thumbnail_height">サムネイル画像の最大縦幅 <abbr class="attention" title="入力必須">*</abbr></label></dt>
-					<dd><input type="text" name="media[thumbnail_height]" id="media_thumbnail_height" size="4" value="{$input.media.thumbnail_height}"> px</dd>
+					<dd><input type="text" inputmode="numeric" name="media[thumbnail_height]" id="media_thumbnail_height" size="4" value="{$input.media.thumbnail_height}"> px</dd>
 			</dl>
 			<!--{/if}-->
 			<p><input type="submit" value="登録する"></p>

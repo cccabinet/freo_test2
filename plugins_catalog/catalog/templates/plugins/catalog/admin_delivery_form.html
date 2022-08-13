@@ -29,46 +29,46 @@
 						<dd><input type="text" name="plugin_catalog_delivery[name]" id="delivery_name" size="50" value="{$input.plugin_catalog_delivery.name}"></dd>
 					<dt><label for="short">利用できる短辺の範囲 <abbr class="attention" title="入力必須">*</abbr></label></dt>
 						<dd id="short">
-							最小 <input type="text" name="plugin_catalog_delivery[short_min]" size="5" value="{$input.plugin_catalog_delivery.short_min}"> mm
+							最小 <input type="text" inputmode="decimal" name="plugin_catalog_delivery[short_min]" size="5" value="{$input.plugin_catalog_delivery.short_min}"> mm
 							～
-							最大 <input type="text" name="plugin_catalog_delivery[short_max]" size="5" value="{$input.plugin_catalog_delivery.short_max}"> mm
+							最大 <input type="text" inputmode="decimal" name="plugin_catalog_delivery[short_max]" size="5" value="{$input.plugin_catalog_delivery.short_max}"> mm
 						</dd>
 					<dt><label for="long">利用できる長辺の範囲 <abbr class="attention" title="入力必須">*</abbr></label></dt>
 						<dd id="long">
-							最小 <input type="text" name="plugin_catalog_delivery[long_min]" size="5" value="{$input.plugin_catalog_delivery.long_min}"> mm
+							最小 <input type="text" inputmode="decimal" name="plugin_catalog_delivery[long_min]" size="5" value="{$input.plugin_catalog_delivery.long_min}"> mm
 							～
-							最大 <input type="text" name="plugin_catalog_delivery[long_max]" size="5" value="{$input.plugin_catalog_delivery.long_max}"> mm
+							最大 <input type="text" inputmode="decimal" name="plugin_catalog_delivery[long_max]" size="5" value="{$input.plugin_catalog_delivery.long_max}"> mm
 						</dd>
 					<dt><label for="thickness">利用できる厚さの範囲 <abbr class="attention" title="入力必須">*</abbr></label></dt>
 						<dd id="thickness">
-							最小 <input type="text" name="plugin_catalog_delivery[thickness_min]" size="5" value="{$input.plugin_catalog_delivery.thickness_min}"> mm
+							最小 <input type="text" inputmode="decimal" name="plugin_catalog_delivery[thickness_min]" size="5" value="{$input.plugin_catalog_delivery.thickness_min}"> mm
 							～
-							最大 <input type="text" name="plugin_catalog_delivery[thickness_max]" size="5" value="{$input.plugin_catalog_delivery.thickness_max}"> mm
+							最大 <input type="text" inputmode="decimal" name="plugin_catalog_delivery[thickness_max]" size="5" value="{$input.plugin_catalog_delivery.thickness_max}"> mm
 						</dd>
 					<dt><label for="total">利用できる3辺合計の範囲 <abbr class="attention" title="入力必須">*</abbr></label></dt>
 						<dd id="total">
-							最小 <input type="text" name="plugin_catalog_delivery[total_min]" size="5" value="{$input.plugin_catalog_delivery.total_min}"> mm
+							最小 <input type="text" inputmode="decimal" name="plugin_catalog_delivery[total_min]" size="5" value="{$input.plugin_catalog_delivery.total_min}"> mm
 							～
-							最大 <input type="text" name="plugin_catalog_delivery[total_max]" size="5" value="{$input.plugin_catalog_delivery.total_max}"> mm
+							最大 <input type="text" inputmode="decimal" name="plugin_catalog_delivery[total_max]" size="5" value="{$input.plugin_catalog_delivery.total_max}"> mm
 						</dd>
 					<dt><label for="weight">利用できる重さの範囲 <abbr class="attention" title="入力必須">*</abbr></label></dt>
 						<dd id="weight">
-							最小 <input type="text" name="plugin_catalog_delivery[weight_min]" size="5" value="{$input.plugin_catalog_delivery.weight_min}"> g
+							最小 <input type="text" inputmode="decimal" name="plugin_catalog_delivery[weight_min]" size="5" value="{$input.plugin_catalog_delivery.weight_min}"> g
 							～
-							最大 <input type="text" name="plugin_catalog_delivery[weight_max]" size="5" value="{$input.plugin_catalog_delivery.weight_max}"> g
+							最大 <input type="text" inputmode="decimal" name="plugin_catalog_delivery[weight_max]" size="5" value="{$input.plugin_catalog_delivery.weight_max}"> g
 						</dd>
 					<dt><label for="packing_short">梱包材による短辺の増加分（利用できる短辺の最大値から減算されます） <abbr class="attention" title="入力必須">*</abbr></label></dt>
-						<dd><input type="text" name="plugin_catalog_delivery[packing_short]" id="packing_short" size="5" value="{$input.plugin_catalog_delivery.packing_short}"> mm</dd>
+						<dd><input type="text" inputmode="decimal" name="plugin_catalog_delivery[packing_short]" id="packing_short" size="5" value="{$input.plugin_catalog_delivery.packing_short}"> mm</dd>
 					<dt><label for="packing_long]">梱包材による長辺の増加分（利用できる長辺の最大値から減算されます） <abbr class="attention" title="入力必須">*</abbr></label></dt>
-						<dd><input type="text" name="plugin_catalog_delivery[packing_long]" id="packing_long" size="5" value="{$input.plugin_catalog_delivery.packing_long}"> mm</dd>
+						<dd><input type="text" inputmode="decimal" name="plugin_catalog_delivery[packing_long]" id="packing_long" size="5" value="{$input.plugin_catalog_delivery.packing_long}"> mm</dd>
 					<dt><label for="packing_thickness">梱包材による厚さの増加分（利用できる厚さの最大値から減算されます） <abbr class="attention" title="入力必須">*</abbr></label></dt>
-						<dd><input type="text" name="plugin_catalog_delivery[packing_thickness]" id="packing_thickness" size="5" value="{$input.plugin_catalog_delivery.packing_thickness}"> mm</dd>
+						<dd><input type="text" inputmode="decimal" name="plugin_catalog_delivery[packing_thickness]" id="packing_thickness" size="5" value="{$input.plugin_catalog_delivery.packing_thickness}"> mm</dd>
 					<dt><label for="packing_total">梱包材による3辺合計の増加分（利用できる3辺合計の最大値から減算されます） <abbr class="attention" title="入力必須">*</abbr></label></dt>
-						<dd><input type="text" name="plugin_catalog_delivery[packing_total]" id="packing_total" size="5" value="{$input.plugin_catalog_delivery.packing_total}"> mm</dd>
+						<dd><input type="text" inputmode="decimal" name="plugin_catalog_delivery[packing_total]" id="packing_total" size="5" value="{$input.plugin_catalog_delivery.packing_total}"> mm</dd>
 					<dt><label for="packing_weight">梱包材による重さの増加分（利用できる重さの最大値から減算されます） <abbr class="attention" title="入力必須">*</abbr></label></dt>
-						<dd><input type="text" name="plugin_catalog_delivery[packing_weight]" id="packing_weight" size="5" value="{$input.plugin_catalog_delivery.packing_weight}"> g</dd>
+						<dd><input type="text" inputmode="decimal" name="plugin_catalog_delivery[packing_weight]" id="packing_weight" size="5" value="{$input.plugin_catalog_delivery.packing_weight}"> g</dd>
 					<dt><label for="carriage">送料（<!--{if $freo.query.id}--><a href="{$freo.core.http_file}/catalog/admin_delivery_prefecture_form?id={$freo.query.id}">地域別送料</a>が加算されます<!--{else}-->地域別送料が加算されます<!--{/if}-->）</label></dt>
-						<dd><input type="text" name="plugin_catalog_delivery[carriage]" id="carriage" size="5" value="{$input.plugin_catalog_delivery.carriage}"> 円</dd>
+						<dd><input type="text" inputmode="numeric" name="plugin_catalog_delivery[carriage]" id="carriage" size="5" value="{$input.plugin_catalog_delivery.carriage}"> 円</dd>
 					<dt><label for="preferred_week">配送希望曜日の指定 <abbr class="attention" title="入力必須">*</abbr></label></dt>
 						<dd>
 							<select name="plugin_catalog_delivery[preferred_week]" id="preferred_week">
@@ -94,7 +94,7 @@
 					<dt><label for="text">説明</label></dt>
 						<dd><textarea name="plugin_catalog_delivery[text]" id="text" cols="50" rows="5">{$input.plugin_catalog_delivery.text}</textarea></dd>
 					<dt><label for="soirt">並び順 <abbr class="attention" title="入力必須">*</abbr></label></dt>
-						<dd><input type="text" name="plugin_catalog_delivery[sort]" id="sort" size="5" value="{$input.plugin_catalog_delivery.sort}"></dd>
+						<dd><input type="text" inputmode="numeric" name="plugin_catalog_delivery[sort]" id="sort" size="5" value="{$input.plugin_catalog_delivery.sort}"></dd>
 					<dt><label for="status">状態 <abbr class="attention" title="入力必須">*</abbr></label></dt>
 						<dd>
 							<select name="plugin_catalog_delivery[status]" id="status">

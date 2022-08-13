@@ -59,7 +59,7 @@
 								<!--{/if}-->
 							</td>
 							<td class="number">{$catalog.price|number_format}円</td>
-							<td class="number"><input type="text" name="count[{$catalog.id}]" size="3" value="{$plugin_catalog_cart.catalog_counts[$catalog.id]}"></td>
+							<td class="number"><input type="text" inputmode="numeric" name="count[{$catalog.id}]" size="3" value="{$plugin_catalog_cart.catalog_counts[$catalog.id]}"></td>
 							<td class="number">{$plugin_catalog_cart.catalog_price_subtotals[$catalog.id]|number_format}円</td>
 							<td>
 								<a href="{$freo.core.http_file}/catalog/cart_delete?id={$catalog.id}" class="delete">削除</a>

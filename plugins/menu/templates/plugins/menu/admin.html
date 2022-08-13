@@ -40,7 +40,7 @@
 						<tr>
 							<td>{$plugin_menu.id}</td>
 							<td>{$plugin_menu.title}</td>
-							<td class="number"><input type="text" name="sort[{$plugin_menu.id}]" size="3" value="{$plugin_menu.sort}"></td>
+							<td class="number"><input type="text" inputmode="numeric" name="sort[{$plugin_menu.id}]" size="3" value="{$plugin_menu.sort}"></td>
 							<td>
 								<a href="{$freo.core.http_file}/menu/admin_form?id={$plugin_menu.id}">編集</a>
 								<a href="{$freo.core.http_file}/menu/admin_delete?freo%5Btoken%5D={$token}&amp;id={$plugin_menu.id}" class="delete">削除</a>
