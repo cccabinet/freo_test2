@@ -22,15 +22,15 @@
 				<!--{/if}-->
 				<dl>
 					<!--{if !$freo.query.id}-->
-					<dt>グループID <abbr class="attention" title="入力必須">*</abbr></dt>
-						<dd><input type="text" name="group[id]" size="30" value="{$input.group.id}"></dd>
+					<dt><label for="group_id">グループID <abbr class="attention" title="入力必須">*</abbr></label></dt>
+						<dd><input type="text" name="group[id]" id="group_id" size="30" value="{$input.group.id}"></dd>
 					<!--{/if}-->
-					<dt>グループ名 <abbr class="attention" title="入力必須">*</abbr></dt>
-						<dd><input type="text" name="group[name]" size="50" value="{$input.group.name}"></dd>
-					<dt>説明</dt>
-						<dd><textarea name="group[memo]" cols="50" rows="5">{$input.group.memo}</textarea></dd>
-					<dt>並び順 <abbr class="attention" title="入力必須">*</abbr></dt>
-						<dd><input type="text" name="group[sort]" size="5" value="{$input.group.sort}"></dd>
+					<dt><label for="group_name">グループ名 <abbr class="attention" title="入力必須">*</abbr></label></dt>
+						<dd><input type="text" name="group[name]" id="group_name" size="50" value="{$input.group.name}"></dd>
+					<dt><label for="memo">説明</label></dt>
+						<dd><textarea name="group[memo]" id="memo" cols="50" rows="5">{$input.group.memo}</textarea></dd>
+					<dt><label for="sort">並び順 <abbr class="attention" title="入力必須">*</abbr></label></dt>
+						<dd><input type="text" name="group[sort]" id="sort" size="5" value="{$input.group.sort}"></dd>
 				</dl>
 				<p><input type="submit" value="登録する"></p>
 			</fieldset>

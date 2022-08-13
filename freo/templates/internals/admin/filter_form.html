@@ -22,15 +22,15 @@
 				<!--{/if}-->
 				<dl>
 					<!--{if !$freo.query.id}-->
-					<dt>フィルターID <abbr class="attention" title="入力必須">*</abbr></dt>
-						<dd><input type="text" name="filter[id]" size="30" value="{$input.filter.id}"></dd>
+					<dt><label for="filter_id">フィルターID <abbr class="attention" title="入力必須">*</abbr></label></dt>
+						<dd><input type="text" name="filter[id]" id="filter_id" size="30" value="{$input.filter.id}"></dd>
 					<!--{/if}-->
-					<dt>フィルター名 <abbr class="attention" title="入力必須">*</abbr></dt>
-						<dd><input type="text" name="filter[name]" size="50" value="{$input.filter.name}"></dd>
-					<dt>説明</dt>
-						<dd><textarea name="filter[memo]" cols="50" rows="5">{$input.filter.memo}</textarea></dd>
-					<dt>並び順 <abbr class="attention" title="入力必須">*</abbr></dt>
-						<dd><input type="text" name="filter[sort]" size="5" value="{$input.filter.sort}"></dd>
+					<dt><label for="filter_name">フィルター名 <abbr class="attention" title="入力必須">*</abbr></label></dt>
+						<dd><input type="text" name="filter[name]" id="filter_name" size="50" value="{$input.filter.name}"></dd>
+					<dt><label for="memo">説明</label></dt>
+						<dd><textarea name="filter[memo]" id="memo" cols="50" rows="5">{$input.filter.memo}</textarea></dd>
+					<dt><label for="sort">並び順 <abbr class="attention" title="入力必須">*</abbr></label></dt>
+						<dd><input type="text" name="filter[sort]" id="sort" size="5" value="{$input.filter.sort}"></dd>
 				</dl>
 				<p><input type="submit" value="登録する"></p>
 			</fieldset>

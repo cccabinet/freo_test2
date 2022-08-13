@@ -29,19 +29,19 @@
 			<legend>プロフィール登録フォーム</legend>
 			<input type="hidden" name="freo[token]" value="{$token}">
 			<dl>
-				<dt>名前 <abbr class="attention" title="入力必須">*</abbr></dt>
-					<dd><input type="text" name="user[name]" size="30" value="{$input.user.name}"></dd>
-				<dt>フリガナ <abbr class="attention" title="入力必須">*</abbr></dt>
-					<dd><input type="text" name="plugin_profile[kana]" size="30" value="{$input.plugin_profile.kana}"></dd>
-				<dt>メールアドレス <abbr class="attention" title="入力必須">*</abbr></dt>
-					<dd><input type="text" name="user[mail]" size="30" value="{$input.user.mail}"></dd>
-				<dt>URL</dt>
-					<dd><input type="text" name="user[url]" size="30" value="{$input.user.url}"></dd>
-				<dt>紹介文</dt>
-					<dd><textarea name="user[text]" cols="50" rows="5">{$input.user.text}</textarea></dd>
-				<dt>イメージ</dt>
+				<dt><label for="user_name">名前 <abbr class="attention" title="入力必須">*</abbr></label></dt>
+					<dd><input type="text" name="user[name]" id="user_name" size="30" value="{$input.user.name}"></dd>
+				<dt><label for="kana">フリガナ <abbr class="attention" title="入力必須">*</abbr></label></dt>
+					<dd><input type="text" name="plugin_profile[kana]" id="kana" size="30" value="{$input.plugin_profile.kana}"></dd>
+				<dt><label for="mail">メールアドレス <abbr class="attention" title="入力必須">*</abbr></label></dt>
+					<dd><input type="text" name="user[mail]" id="mail" size="30" value="{$input.user.mail}"></dd>
+				<dt><label for="url">URL</label></dt>
+					<dd><input type="text" name="user[url]" id="url" size="30" value="{$input.user.url}"></dd>
+				<dt><label for="text">紹介文</label></dt>
+					<dd><textarea name="user[text]" id="text" cols="50" rows="5">{$input.user.text}</textarea></dd>
+				<dt><label for="file">イメージ</label></dt>
 					<dd>
-						<input type="file" name="plugin_profile[file]" size="30">
+						<input type="file" name="plugin_profile[file]" id="file" size="30">
 						<!--{if $input.plugin_profile.file}-->
 							<div>現在のイメージ</div>
 							<a href="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/profile_files/{$freo.user.id}/{$input.plugin_profile.file}"><img src="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/profile_files/{$freo.user.id}/{$input.plugin_profile.file}" alt="現在のイメージ" width="100"></a>
@@ -49,11 +49,11 @@
 							<input type="hidden" name="plugin_profile[file]" value="{$input.plugin_profile.file}">
 						<!--{/if}-->
 					</dd>
-				<dt>タグ</dt>
-					<dd><input type="text" name="plugin_profile[tag]" size="50" value="{$input.plugin_profile.tag}"></dd>
-				<dt>カテゴリー</dt>
+				<dt><label for="tag">タグ</label></dt>
+					<dd><input type="text" name="plugin_profile[tag]" id="tag" size="50" value="{$input.plugin_profile.tag}"></dd>
+				<dt><label for="category">カテゴリー</label></dt>
 					<dd>
-						<select name="plugin_profile[category_id]">
+						<select name="plugin_profile[category_id]" id="category">
 							<option value="">選択してください</option>
 							<!--{foreach from=$plugin_profile_categories|smarty:nodefaults item='plugin_profile_category'}-->
 							<option value="{$plugin_profile_category.id}"{if $input.plugin_profile.category_id == $plugin_profile_category.id} selected="selected"{/if}>{$plugin_profile_category.name}</option>
@@ -64,9 +64,9 @@
 			<h3>ファイル</h3>
 			<dl>
 				<!--{if $freo.config.plugin.profile.file01_name}-->
-				<dt>{$freo.config.plugin.profile.file01_name}</dt>
+				<dt><label for="file01">{$freo.config.plugin.profile.file01_name}</label></dt>
 					<dd>
-						<input type="file" name="plugin_profile[file01]" size="30">
+						<input type="file" name="plugin_profile[file01]" id="file01" size="30">
 						<!--{if $input.plugin_profile.file01}-->
 							<div>現在の{$freo.config.plugin.profile.file01_name}</div>
 							<a href="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/profile_files/{$freo.user.id}/{$input.plugin_profile.file01}"><!--{if $input.plugin_profile.file01|regex_match:'/\.(jpe?g|png|gif)$/i'}--><img src="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/profile_files/{$freo.user.id}/{$input.plugin_profile.file01}" alt="現在のファイル" width="100"><!--{else}-->{$input.plugin_profile.file01}<!--{/if}--></a>
@@ -76,9 +76,9 @@
 					</dd>
 				<!--{/if}-->
 				<!--{if $freo.config.plugin.profile.file02_name}-->
-				<dt>{$freo.config.plugin.profile.file02_name}</dt>
+				<dt><label for="file02">{$freo.config.plugin.profile.file02_name}</label></dt>
 					<dd>
-						<input type="file" name="plugin_profile[file02]" size="30">
+						<input type="file" name="plugin_profile[file02]" id="file02" size="30">
 						<!--{if $input.plugin_profile.file02}-->
 							<div>現在の{$freo.config.plugin.profile.file02_name}</div>
 							<a href="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/profile_files/{$freo.user.id}/{$input.plugin_profile.file02}"><!--{if $input.plugin_profile.file02|regex_match:'/\.(jpe?g|png|gif)$/i'}--><img src="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/profile_files/{$freo.user.id}/{$input.plugin_profile.file02}" alt="現在のファイル" width="100"><!--{else}-->{$input.plugin_profile.file02}<!--{/if}--></a>
@@ -88,9 +88,9 @@
 					</dd>
 				<!--{/if}-->
 				<!--{if $freo.config.plugin.profile.file03_name}-->
-				<dt>{$freo.config.plugin.profile.file03_name}</dt>
+				<dt><label for="file03">{$freo.config.plugin.profile.file03_name}</label></dt>
 					<dd>
-						<input type="file" name="plugin_profile[file03]" size="30">
+						<input type="file" name="plugin_profile[file03]" id="file03" size="30">
 						<!--{if $input.plugin_profile.file03}-->
 							<div>現在の{$freo.config.plugin.profile.file03_name}</div>
 							<a href="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/profile_files/{$freo.user.id}/{$input.plugin_profile.file03}"><!--{if $input.plugin_profile.file03|regex_match:'/\.(jpe?g|png|gif)$/i'}--><img src="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/profile_files/{$freo.user.id}/{$input.plugin_profile.file03}" alt="現在のファイル" width="100"><!--{else}-->{$input.plugin_profile.file03}<!--{/if}--></a>
@@ -100,9 +100,9 @@
 					</dd>
 				<!--{/if}-->
 				<!--{if $freo.config.plugin.profile.file04_name}-->
-				<dt>{$freo.config.plugin.profile.file04_name}</dt>
+				<dt><label for="file04">{$freo.config.plugin.profile.file04_name}</label></dt>
 					<dd>
-						<input type="file" name="plugin_profile[file04]" size="30">
+						<input type="file" name="plugin_profile[file04]" id="file04" size="30">
 						<!--{if $input.plugin_profile.file04}-->
 							<div>現在の{$freo.config.plugin.profile.file04_name}</div>
 							<a href="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/profile_files/{$freo.user.id}/{$input.plugin_profile.file04}"><!--{if $input.plugin_profile.file04|regex_match:'/\.(jpe?g|png|gif)$/i'}--><img src="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/profile_files/{$freo.user.id}/{$input.plugin_profile.file04}" alt="現在のファイル" width="100"><!--{else}-->{$input.plugin_profile.file04}<!--{/if}--></a>
@@ -112,9 +112,9 @@
 					</dd>
 				<!--{/if}-->
 				<!--{if $freo.config.plugin.profile.file05_name}-->
-				<dt>{$freo.config.plugin.profile.file05_name}</dt>
+				<dt><label for="file05">{$freo.config.plugin.profile.file05_name}</label></dt>
 					<dd>
-						<input type="file" name="plugin_profile[file05]" size="30">
+						<input type="file" name="plugin_profile[file05]" id="file05" size="30">
 						<!--{if $input.plugin_profile.file05}-->
 							<div>現在の{$freo.config.plugin.profile.file05_name}</div>
 							<a href="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/profile_files/{$freo.user.id}/{$input.plugin_profile.file05}"><!--{if $input.plugin_profile.file05|regex_match:'/\.(jpe?g|png|gif)$/i'}--><img src="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/profile_files/{$freo.user.id}/{$input.plugin_profile.file05}" alt="現在のファイル" width="100"><!--{else}-->{$input.plugin_profile.file05}<!--{/if}--></a>
@@ -124,9 +124,9 @@
 					</dd>
 				<!--{/if}-->
 				<!--{if $freo.config.plugin.profile.file06_name}-->
-				<dt>{$freo.config.plugin.profile.file06_name}</dt>
+				<dt><label for="file06">{$freo.config.plugin.profile.file06_name}</label></dt>
 					<dd>
-						<input type="file" name="plugin_profile[file06]" size="30">
+						<input type="file" name="plugin_profile[file06]" id="file06" size="30">
 						<!--{if $input.plugin_profile.file06}-->
 							<div>現在の{$freo.config.plugin.profile.file06_name}</div>
 							<a href="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/profile_files/{$freo.user.id}/{$input.plugin_profile.file06}"><!--{if $input.plugin_profile.file06|regex_match:'/\.(jpe?g|png|gif)$/i'}--><img src="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/profile_files/{$freo.user.id}/{$input.plugin_profile.file06}" alt="現在のファイル" width="100"><!--{else}-->{$input.plugin_profile.file06}<!--{/if}--></a>
@@ -136,9 +136,9 @@
 					</dd>
 				<!--{/if}-->
 				<!--{if $freo.config.plugin.profile.file07_name}-->
-				<dt>{$freo.config.plugin.profile.file07_name}</dt>
+				<dt><label for="file07">{$freo.config.plugin.profile.file07_name}</label></dt>
 					<dd>
-						<input type="file" name="plugin_profile[file07]" size="30">
+						<input type="file" name="plugin_profile[file07]" id="file07" size="30">
 						<!--{if $input.plugin_profile.file07}-->
 							<div>現在の{$freo.config.plugin.profile.file07_name}</div>
 							<a href="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/profile_files/{$freo.user.id}/{$input.plugin_profile.file07}"><!--{if $input.plugin_profile.file07|regex_match:'/\.(jpe?g|png|gif)$/i'}--><img src="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/profile_files/{$freo.user.id}/{$input.plugin_profile.file07}" alt="現在のファイル" width="100"><!--{else}-->{$input.plugin_profile.file07}<!--{/if}--></a>
@@ -148,9 +148,9 @@
 					</dd>
 				<!--{/if}-->
 				<!--{if $freo.config.plugin.profile.file08_name}-->
-				<dt>{$freo.config.plugin.profile.file08_name}</dt>
+				<dt><label for="file08">{$freo.config.plugin.profile.file08_name}</label></dt>
 					<dd>
-						<input type="file" name="plugin_profile[file08]" size="30">
+						<input type="file" name="plugin_profile[file08]" id="file08" size="30">
 						<!--{if $input.plugin_profile.file08}-->
 							<div>現在の{$freo.config.plugin.profile.file08_name}</div>
 							<a href="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/profile_files/{$freo.user.id}/{$input.plugin_profile.file08}"><!--{if $input.plugin_profile.file08|regex_match:'/\.(jpe?g|png|gif)$/i'}--><img src="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/profile_files/{$freo.user.id}/{$input.plugin_profile.file08}" alt="現在のファイル" width="100"><!--{else}-->{$input.plugin_profile.file08}<!--{/if}--></a>
@@ -160,9 +160,9 @@
 					</dd>
 				<!--{/if}-->
 				<!--{if $freo.config.plugin.profile.file09_name}-->
-				<dt>{$freo.config.plugin.profile.file09_name}</dt>
+				<dt><label for="file09">{$freo.config.plugin.profile.file09_name}</label></dt>
 					<dd>
-						<input type="file" name="plugin_profile[file09]" size="30">
+						<input type="file" name="plugin_profile[file09]" id="file09" size="30">
 						<!--{if $input.plugin_profile.file09}-->
 							<div>現在の{$freo.config.plugin.profile.file09_name}</div>
 							<a href="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/profile_files/{$freo.user.id}/{$input.plugin_profile.file09}"><!--{if $input.plugin_profile.file09|regex_match:'/\.(jpe?g|png|gif)$/i'}--><img src="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/profile_files/{$freo.user.id}/{$input.plugin_profile.file09}" alt="現在のファイル" width="100"><!--{else}-->{$input.plugin_profile.file09}<!--{/if}--></a>
@@ -172,9 +172,9 @@
 					</dd>
 				<!--{/if}-->
 				<!--{if $freo.config.plugin.profile.file10_name}-->
-				<dt>{$freo.config.plugin.profile.file10_name}</dt>
+				<dt><label for="file10">{$freo.config.plugin.profile.file10_name}</label></dt>
 					<dd>
-						<input type="file" name="plugin_profile[file10]" size="30">
+						<input type="file" name="plugin_profile[file10]" id="file10" size="30">
 						<!--{if $input.plugin_profile.file10}-->
 							<div>現在の{$freo.config.plugin.profile.file10_name}</div>
 							<a href="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/profile_files/{$freo.user.id}/{$input.plugin_profile.file10}"><!--{if $input.plugin_profile.file10|regex_match:'/\.(jpe?g|png|gif)$/i'}--><img src="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/profile_files/{$freo.user.id}/{$input.plugin_profile.file10}" alt="現在のファイル" width="100"><!--{else}-->{$input.plugin_profile.file10}<!--{/if}--></a>
@@ -187,14 +187,14 @@
 			<h3>オプション</h3>
 			<dl>
 				<!--{if $freo.config.plugin.profile.option01_name}-->
-				<dt>{$freo.config.plugin.profile.option01_name}</dt>
+				<dt><label for="option01">{$freo.config.plugin.profile.option01_name}</label></dt>
 					<!--{if $freo.config.plugin.profile.option01_type == 'text'}-->
-					<dd><input type="text" name="plugin_profile[option01]" size="50" value="{$input.plugin_profile.option01}"></dd>
+					<dd><input type="text" name="plugin_profile[option01]" id="option01" size="50" value="{$input.plugin_profile.option01}"></dd>
 					<!--{elseif $freo.config.plugin.profile.option01_type == 'textarea'}-->
-					<dd><textarea name="plugin_profile[option01]" cols="50" rows="5">{$input.plugin_profile.option01}</textarea></dd>
+					<dd><textarea name="plugin_profile[option01]" id="option01" cols="50" rows="5">{$input.plugin_profile.option01}</textarea></dd>
 					<!--{elseif $freo.config.plugin.profile.option01_type == 'select'}-->
 					<dd>
-						<select name="plugin_profile[option01]">
+						<select name="plugin_profile[option01]" id="option01">
 							<option value="">選択してください</option>
 							<!--{foreach from=$freo.config.plugin.profile.option01_text|explode:"\n" item='value'}-->
 							<option value="{$value}"{if $value == $input.plugin_profile.option01} selected="selected"{/if}>{$value}</option>
@@ -202,7 +202,7 @@
 						</select>
 					</dd>
 					<!--{elseif $freo.config.plugin.profile.option01_type == 'radio'}-->
-					<dd>
+					<dd id="option01">
 						<input type="radio" name="plugin_profile[option01]" id="label_option_01" value=""{if !$input.plugin_profile.option01} checked="checked"{/if}> <label for="label_option_01">選択なし</label>
 						<!--{foreach from=$freo.config.plugin.profile.option01_text|explode:"\n" item='value' name='loop'}-->
 						<input type="radio" name="plugin_profile[option01]" id="label_option_01_{$smarty.foreach.loop.index}" value="{$value}"{if $value == $input.plugin_profile.option01} checked="checked"{/if}> <label for="label_option_01_{$smarty.foreach.loop.index}">{$value}</label>
@@ -213,14 +213,14 @@
 				<input type="hidden" name="plugin_profile[option01]" value="">
 				<!--{/if}-->
 				<!--{if $freo.config.plugin.profile.option02_name}-->
-				<dt>{$freo.config.plugin.profile.option02_name}</dt>
+				<dt><label for="option02">{$freo.config.plugin.profile.option02_name}</label></dt>
 					<!--{if $freo.config.plugin.profile.option02_type == 'text'}-->
-					<dd><input type="text" name="plugin_profile[option02]" size="50" value="{$input.plugin_profile.option02}"></dd>
+					<dd><input type="text" name="plugin_profile[option02]" id="option02" size="50" value="{$input.plugin_profile.option02}"></dd>
 					<!--{elseif $freo.config.plugin.profile.option02_type == 'textarea'}-->
-					<dd><textarea name="plugin_profile[option02]" cols="50" rows="5">{$input.plugin_profile.option02}</textarea></dd>
+					<dd><textarea name="plugin_profile[option02]" id="option02" cols="50" rows="5">{$input.plugin_profile.option02}</textarea></dd>
 					<!--{elseif $freo.config.plugin.profile.option02_type == 'select'}-->
 					<dd>
-						<select name="plugin_profile[option02]">
+						<select name="plugin_profile[option02]" id="option02">
 							<option value="">選択してください</option>
 							<!--{foreach from=$freo.config.plugin.profile.option02_text|explode:"\n" item='value'}-->
 							<option value="{$value}"{if $value == $input.plugin_profile.option02} selected="selected"{/if}>{$value}</option>
@@ -228,7 +228,7 @@
 						</select>
 					</dd>
 					<!--{elseif $freo.config.plugin.profile.option02_type == 'radio'}-->
-					<dd>
+					<dd id="option02">
 						<input type="radio" name="plugin_profile[option02]" id="label_option_02" value=""{if !$input.plugin_profile.option02} checked="checked"{/if}> <label for="label_option_02">選択なし</label>
 						<!--{foreach from=$freo.config.plugin.profile.option02_text|explode:"\n" item='value' name='loop'}-->
 						<input type="radio" name="plugin_profile[option02]" id="label_option_02_{$smarty.foreach.loop.index}" value="{$value}"{if $value == $input.plugin_profile.option02} checked="checked"{/if}> <label for="label_option_02_{$smarty.foreach.loop.index}">{$value}</label>
@@ -239,14 +239,14 @@
 				<input type="hidden" name="plugin_profile[option02]" value="">
 				<!--{/if}-->
 				<!--{if $freo.config.plugin.profile.option03_name}-->
-				<dt>{$freo.config.plugin.profile.option03_name}</dt>
+				<dt><label for="option03">{$freo.config.plugin.profile.option03_name}</label></dt>
 					<!--{if $freo.config.plugin.profile.option03_type == 'text'}-->
-					<dd><input type="text" name="plugin_profile[option03]" size="50" value="{$input.plugin_profile.option03}"></dd>
+					<dd><input type="text" name="plugin_profile[option03]" id="option03" size="50" value="{$input.plugin_profile.option03}"></dd>
 					<!--{elseif $freo.config.plugin.profile.option03_type == 'textarea'}-->
-					<dd><textarea name="plugin_profile[option03]" cols="50" rows="5">{$input.plugin_profile.option03}</textarea></dd>
+					<dd><textarea name="plugin_profile[option03]" id="option03" cols="50" rows="5">{$input.plugin_profile.option03}</textarea></dd>
 					<!--{elseif $freo.config.plugin.profile.option03_type == 'select'}-->
 					<dd>
-						<select name="plugin_profile[option03]">
+						<select name="plugin_profile[option03]" id="option03">
 							<option value="">選択してください</option>
 							<!--{foreach from=$freo.config.plugin.profile.option03_text|explode:"\n" item='value'}-->
 							<option value="{$value}"{if $value == $input.plugin_profile.option03} selected="selected"{/if}>{$value}</option>
@@ -254,7 +254,7 @@
 						</select>
 					</dd>
 					<!--{elseif $freo.config.plugin.profile.option03_type == 'radio'}-->
-					<dd>
+					<dd id="option03">
 						<input type="radio" name="plugin_profile[option03]" id="label_option_03" value=""{if !$input.plugin_profile.option03} checked="checked"{/if}> <label for="label_option_03">選択なし</label>
 						<!--{foreach from=$freo.config.plugin.profile.option03_text|explode:"\n" item='value' name='loop'}-->
 						<input type="radio" name="plugin_profile[option03]" id="label_option_03_{$smarty.foreach.loop.index}" value="{$value}"{if $value == $input.plugin_profile.option03} checked="checked"{/if}> <label for="label_option_03_{$smarty.foreach.loop.index}">{$value}</label>
@@ -265,14 +265,14 @@
 				<input type="hidden" name="plugin_profile[option03]" value="">
 				<!--{/if}-->
 				<!--{if $freo.config.plugin.profile.option04_name}-->
-				<dt>{$freo.config.plugin.profile.option04_name}</dt>
+				<dt><label for="option04">{$freo.config.plugin.profile.option04_name}</label></dt>
 					<!--{if $freo.config.plugin.profile.option04_type == 'text'}-->
-					<dd><input type="text" name="plugin_profile[option04]" size="50" value="{$input.plugin_profile.option04}"></dd>
+					<dd><input type="text" name="plugin_profile[option04]" id="option04" size="50" value="{$input.plugin_profile.option04}"></dd>
 					<!--{elseif $freo.config.plugin.profile.option04_type == 'textarea'}-->
-					<dd><textarea name="plugin_profile[option04]" cols="50" rows="5">{$input.plugin_profile.option04}</textarea></dd>
+					<dd><textarea name="plugin_profile[option04]" id="option04" cols="50" rows="5">{$input.plugin_profile.option04}</textarea></dd>
 					<!--{elseif $freo.config.plugin.profile.option04_type == 'select'}-->
 					<dd>
-						<select name="plugin_profile[option04]">
+						<select name="plugin_profile[option04]" id="option04">
 							<option value="">選択してください</option>
 							<!--{foreach from=$freo.config.plugin.profile.option04_text|explode:"\n" item='value'}-->
 							<option value="{$value}"{if $value == $input.plugin_profile.option04} selected="selected"{/if}>{$value}</option>
@@ -280,7 +280,7 @@
 						</select>
 					</dd>
 					<!--{elseif $freo.config.plugin.profile.option04_type == 'radio'}-->
-					<dd>
+					<dd id="option04">
 						<input type="radio" name="plugin_profile[option04]" id="label_option_04" value=""{if !$input.plugin_profile.option04} checked="checked"{/if}> <label for="label_option_04">選択なし</label>
 						<!--{foreach from=$freo.config.plugin.profile.option04_text|explode:"\n" item='value' name='loop'}-->
 						<input type="radio" name="plugin_profile[option04]" id="label_option_04_{$smarty.foreach.loop.index}" value="{$value}"{if $value == $input.plugin_profile.option04} checked="checked"{/if}> <label for="label_option_04_{$smarty.foreach.loop.index}">{$value}</label>
@@ -291,14 +291,14 @@
 				<input type="hidden" name="plugin_profile[option04]" value="">
 				<!--{/if}-->
 				<!--{if $freo.config.plugin.profile.option05_name}-->
-				<dt>{$freo.config.plugin.profile.option05_name}</dt>
+				<dt><label for="option05">{$freo.config.plugin.profile.option05_name}</label></dt>
 					<!--{if $freo.config.plugin.profile.option05_type == 'text'}-->
-					<dd><input type="text" name="plugin_profile[option05]" size="50" value="{$input.plugin_profile.option05}"></dd>
+					<dd><input type="text" name="plugin_profile[option05]" id="option05" size="50" value="{$input.plugin_profile.option05}"></dd>
 					<!--{elseif $freo.config.plugin.profile.option05_type == 'textarea'}-->
-					<dd><textarea name="plugin_profile[option05]" cols="50" rows="5">{$input.plugin_profile.option05}</textarea></dd>
+					<dd><textarea name="plugin_profile[option05]" id="option05" cols="50" rows="5">{$input.plugin_profile.option05}</textarea></dd>
 					<!--{elseif $freo.config.plugin.profile.option05_type == 'select'}-->
 					<dd>
-						<select name="plugin_profile[option05]">
+						<select name="plugin_profile[option05]" id="option05">
 							<option value="">選択してください</option>
 							<!--{foreach from=$freo.config.plugin.profile.option05_text|explode:"\n" item='value'}-->
 							<option value="{$value}"{if $value == $input.plugin_profile.option05} selected="selected"{/if}>{$value}</option>
@@ -306,7 +306,7 @@
 						</select>
 					</dd>
 					<!--{elseif $freo.config.plugin.profile.option05_type == 'radio'}-->
-					<dd>
+					<dd id="option05">
 						<input type="radio" name="plugin_profile[option05]" id="label_option_05" value=""{if !$input.plugin_profile.option05} checked="checked"{/if}> <label for="label_option_05">選択なし</label>
 						<!--{foreach from=$freo.config.plugin.profile.option05_text|explode:"\n" item='value' name='loop'}-->
 						<input type="radio" name="plugin_profile[option05]" id="label_option_05_{$smarty.foreach.loop.index}" value="{$value}"{if $value == $input.plugin_profile.option05} checked="checked"{/if}> <label for="label_option_05_{$smarty.foreach.loop.index}">{$value}</label>
@@ -317,14 +317,14 @@
 				<input type="hidden" name="plugin_profile[option05]" value="">
 				<!--{/if}-->
 				<!--{if $freo.config.plugin.profile.option06_name}-->
-				<dt>{$freo.config.plugin.profile.option06_name}</dt>
+				<dt><label for="option06">{$freo.config.plugin.profile.option06_name}</label></dt>
 					<!--{if $freo.config.plugin.profile.option06_type == 'text'}-->
-					<dd><input type="text" name="plugin_profile[option06]" size="50" value="{$input.plugin_profile.option06}"></dd>
+					<dd><input type="text" name="plugin_profile[option06]" id="option06" size="50" value="{$input.plugin_profile.option06}"></dd>
 					<!--{elseif $freo.config.plugin.profile.option06_type == 'textarea'}-->
-					<dd><textarea name="plugin_profile[option06]" cols="50" rows="5">{$input.plugin_profile.option06}</textarea></dd>
+					<dd><textarea name="plugin_profile[option06]" id="option06" cols="50" rows="5">{$input.plugin_profile.option06}</textarea></dd>
 					<!--{elseif $freo.config.plugin.profile.option06_type == 'select'}-->
 					<dd>
-						<select name="plugin_profile[option06]">
+						<select name="plugin_profile[option06]" id="option06">
 							<option value="">選択してください</option>
 							<!--{foreach from=$freo.config.plugin.profile.option06_text|explode:"\n" item='value'}-->
 							<option value="{$value}"{if $value == $input.plugin_profile.option06} selected="selected"{/if}>{$value}</option>
@@ -332,7 +332,7 @@
 						</select>
 					</dd>
 					<!--{elseif $freo.config.plugin.profile.option06_type == 'radio'}-->
-					<dd>
+					<dd id="option06">
 						<input type="radio" name="plugin_profile[option06]" id="label_option_06" value=""{if !$input.plugin_profile.option06} checked="checked"{/if}> <label for="label_option_06">選択なし</label>
 						<!--{foreach from=$freo.config.plugin.profile.option06_text|explode:"\n" item='value' name='loop'}-->
 						<input type="radio" name="plugin_profile[option06]" id="label_option_06_{$smarty.foreach.loop.index}" value="{$value}"{if $value == $input.plugin_profile.option06} checked="checked"{/if}> <label for="label_option_06_{$smarty.foreach.loop.index}">{$value}</label>
@@ -343,14 +343,14 @@
 				<input type="hidden" name="plugin_profile[option06]" value="">
 				<!--{/if}-->
 				<!--{if $freo.config.plugin.profile.option07_name}-->
-				<dt>{$freo.config.plugin.profile.option07_name}</dt>
+				<dt><label for="option07">{$freo.config.plugin.profile.option07_name}</label></dt>
 					<!--{if $freo.config.plugin.profile.option07_type == 'text'}-->
-					<dd><input type="text" name="plugin_profile[option07]" size="50" value="{$input.plugin_profile.option07}"></dd>
+					<dd><input type="text" name="plugin_profile[option07]" id="option07" size="50" value="{$input.plugin_profile.option07}"></dd>
 					<!--{elseif $freo.config.plugin.profile.option07_type == 'textarea'}-->
-					<dd><textarea name="plugin_profile[option07]" cols="50" rows="5">{$input.plugin_profile.option07}</textarea></dd>
+					<dd><textarea name="plugin_profile[option07]" id="option07" cols="50" rows="5">{$input.plugin_profile.option07}</textarea></dd>
 					<!--{elseif $freo.config.plugin.profile.option07_type == 'select'}-->
 					<dd>
-						<select name="plugin_profile[option07]">
+						<select name="plugin_profile[option07]" id="option07">
 							<option value="">選択してください</option>
 							<!--{foreach from=$freo.config.plugin.profile.option07_text|explode:"\n" item='value'}-->
 							<option value="{$value}"{if $value == $input.plugin_profile.option07} selected="selected"{/if}>{$value}</option>
@@ -358,7 +358,7 @@
 						</select>
 					</dd>
 					<!--{elseif $freo.config.plugin.profile.option07_type == 'radio'}-->
-					<dd>
+					<dd id="option07">
 						<input type="radio" name="plugin_profile[option07]" id="label_option_07" value=""{if !$input.plugin_profile.option07} checked="checked"{/if}> <label for="label_option_07">選択なし</label>
 						<!--{foreach from=$freo.config.plugin.profile.option07_text|explode:"\n" item='value' name='loop'}-->
 						<input type="radio" name="plugin_profile[option07]" id="label_option_07_{$smarty.foreach.loop.index}" value="{$value}"{if $value == $input.plugin_profile.option07} checked="checked"{/if}> <label for="label_option_07_{$smarty.foreach.loop.index}">{$value}</label>
@@ -369,14 +369,14 @@
 				<input type="hidden" name="plugin_profile[option07]" value="">
 				<!--{/if}-->
 				<!--{if $freo.config.plugin.profile.option08_name}-->
-				<dt>{$freo.config.plugin.profile.option08_name}</dt>
+				<dt><label for="option08">{$freo.config.plugin.profile.option08_name}</label></dt>
 					<!--{if $freo.config.plugin.profile.option08_type == 'text'}-->
-					<dd><input type="text" name="plugin_profile[option08]" size="50" value="{$input.plugin_profile.option08}"></dd>
+					<dd><input type="text" name="plugin_profile[option08]" id="option08" size="50" value="{$input.plugin_profile.option08}"></dd>
 					<!--{elseif $freo.config.plugin.profile.option08_type == 'textarea'}-->
-					<dd><textarea name="plugin_profile[option08]" cols="50" rows="5">{$input.plugin_profile.option08}</textarea></dd>
+					<dd><textarea name="plugin_profile[option08]" id="option08" cols="50" rows="5">{$input.plugin_profile.option08}</textarea></dd>
 					<!--{elseif $freo.config.plugin.profile.option08_type == 'select'}-->
 					<dd>
-						<select name="plugin_profile[option08]">
+						<select name="plugin_profile[option08]" id="option08">
 							<option value="">選択してください</option>
 							<!--{foreach from=$freo.config.plugin.profile.option08_text|explode:"\n" item='value'}-->
 							<option value="{$value}"{if $value == $input.plugin_profile.option08} selected="selected"{/if}>{$value}</option>
@@ -384,7 +384,7 @@
 						</select>
 					</dd>
 					<!--{elseif $freo.config.plugin.profile.option08_type == 'radio'}-->
-					<dd>
+					<dd id="option08">
 						<input type="radio" name="plugin_profile[option08]" id="label_option_08" value=""{if !$input.plugin_profile.option08} checked="checked"{/if}> <label for="label_option_08">選択なし</label>
 						<!--{foreach from=$freo.config.plugin.profile.option08_text|explode:"\n" item='value' name='loop'}-->
 						<input type="radio" name="plugin_profile[option08]" id="label_option_08_{$smarty.foreach.loop.index}" value="{$value}"{if $value == $input.plugin_profile.option08} checked="checked"{/if}> <label for="label_option_08_{$smarty.foreach.loop.index}">{$value}</label>
@@ -395,14 +395,14 @@
 				<input type="hidden" name="plugin_profile[option08]" value="">
 				<!--{/if}-->
 				<!--{if $freo.config.plugin.profile.option09_name}-->
-				<dt>{$freo.config.plugin.profile.option09_name}</dt>
+				<dt><label for="option09">{$freo.config.plugin.profile.option09_name}</label></dt>
 					<!--{if $freo.config.plugin.profile.option09_type == 'text'}-->
-					<dd><input type="text" name="plugin_profile[option09]" size="50" value="{$input.plugin_profile.option09}"></dd>
+					<dd><input type="text" name="plugin_profile[option09]" id="option09" size="50" value="{$input.plugin_profile.option09}"></dd>
 					<!--{elseif $freo.config.plugin.profile.option09_type == 'textarea'}-->
-					<dd><textarea name="plugin_profile[option09]" cols="50" rows="5">{$input.plugin_profile.option09}</textarea></dd>
+					<dd><textarea name="plugin_profile[option09]" id="option09" cols="50" rows="5">{$input.plugin_profile.option09}</textarea></dd>
 					<!--{elseif $freo.config.plugin.profile.option09_type == 'select'}-->
 					<dd>
-						<select name="plugin_profile[option09]">
+						<select name="plugin_profile[option09]" id="option09">
 							<option value="">選択してください</option>
 							<!--{foreach from=$freo.config.plugin.profile.option09_text|explode:"\n" item='value'}-->
 							<option value="{$value}"{if $value == $input.plugin_profile.option09} selected="selected"{/if}>{$value}</option>
@@ -410,7 +410,7 @@
 						</select>
 					</dd>
 					<!--{elseif $freo.config.plugin.profile.option09_type == 'radio'}-->
-					<dd>
+					<dd id="option09">
 						<input type="radio" name="plugin_profile[option09]" id="label_option_09" value=""{if !$input.plugin_profile.option09} checked="checked"{/if}> <label for="label_option_09">選択なし</label>
 						<!--{foreach from=$freo.config.plugin.profile.option09_text|explode:"\n" item='value' name='loop'}-->
 						<input type="radio" name="plugin_profile[option09]" id="label_option_09_{$smarty.foreach.loop.index}" value="{$value}"{if $value == $input.plugin_profile.option09} checked="checked"{/if}> <label for="label_option_09_{$smarty.foreach.loop.index}">{$value}</label>
@@ -421,14 +421,14 @@
 				<input type="hidden" name="plugin_profile[option09]" value="">
 				<!--{/if}-->
 				<!--{if $freo.config.plugin.profile.option10_name}-->
-				<dt>{$freo.config.plugin.profile.option10_name}</dt>
+				<dt><label for="option10">{$freo.config.plugin.profile.option10_name}</label></dt>
 					<!--{if $freo.config.plugin.profile.option10_type == 'text'}-->
-					<dd><input type="text" name="plugin_profile[option10]" size="50" value="{$input.plugin_profile.option10}"></dd>
+					<dd><input type="text" name="plugin_profile[option10]" id="option10" size="50" value="{$input.plugin_profile.option10}"></dd>
 					<!--{elseif $freo.config.plugin.profile.option10_type == 'textarea'}-->
-					<dd><textarea name="plugin_profile[option10]" cols="50" rows="5">{$input.plugin_profile.option10}</textarea></dd>
+					<dd><textarea name="plugin_profile[option10]" id="option10" cols="50" rows="5">{$input.plugin_profile.option10}</textarea></dd>
 					<!--{elseif $freo.config.plugin.profile.option10_type == 'select'}-->
 					<dd>
-						<select name="plugin_profile[option10]">
+						<select name="plugin_profile[option10]" id="option10">
 							<option value="">選択してください</option>
 							<!--{foreach from=$freo.config.plugin.profile.option10_text|explode:"\n" item='value'}-->
 							<option value="{$value}"{if $value == $input.plugin_profile.option10} selected="selected"{/if}>{$value}</option>
@@ -436,7 +436,7 @@
 						</select>
 					</dd>
 					<!--{elseif $freo.config.plugin.profile.option10_type == 'radio'}-->
-					<dd>
+					<dd id="option10">
 						<input type="radio" name="plugin_profile[option10]" id="label_option_10" value=""{if !$input.plugin_profile.option10} checked="checked"{/if}> <label for="label_option_10">選択なし</label>
 						<!--{foreach from=$freo.config.plugin.profile.option10_text|explode:"\n" item='value' name='loop'}-->
 						<input type="radio" name="plugin_profile[option10]" id="label_option_10_{$smarty.foreach.loop.index}" value="{$value}"{if $value == $input.plugin_profile.option10} checked="checked"{/if}> <label for="label_option_10_{$smarty.foreach.loop.index}">{$value}</label>

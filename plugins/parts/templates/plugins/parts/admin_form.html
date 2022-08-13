@@ -22,22 +22,22 @@
 				<!--{/if}-->
 				<dl>
 					<!--{if !$freo.query.id}-->
-					<dt>ブログパーツID <abbr class="attention" title="入力必須">*</abbr></dt>
-						<dd><input type="text" name="plugin_parts[id]" size="30" value="{$input.plugin_parts.id}"></dd>
+					<dt><label for="parts_id">ブログパーツID <abbr class="attention" title="入力必須">*</abbr></label></dt>
+						<dd><input type="text" name="plugin_parts[id]" id="parts_id" size="30" value="{$input.plugin_parts.id}"></dd>
 					<!--{/if}-->
-					<dt>名前 <abbr class="attention" title="入力必須">*</abbr></dt>
-						<dd><input type="text" name="plugin_parts[name]" size="50" value="{$input.plugin_parts.name}"></dd>
-					<dt>内容</dt>
-						<dd><textarea name="plugin_parts[text]" cols="50" rows="5">{$input.plugin_parts.text}</textarea></dd>
-					<dt>状態 <abbr class="attention" title="入力必須">*</abbr></dt>
+					<dt><label for="parts_name">名前 <abbr class="attention" title="入力必須">*</abbr></label></dt>
+						<dd><input type="text" name="plugin_parts[name]" id="parts_name" size="50" value="{$input.plugin_parts.name}"></dd>
+					<dt><label for="text">内容</label></dt>
+						<dd><textarea name="plugin_parts[text]" id="text" cols="50" rows="5">{$input.plugin_parts.text}</textarea></dd>
+					<dt><label for="status">状態 <abbr class="attention" title="入力必須">*</abbr></label></dt>
 						<dd>
-							<select name="plugin_parts[status]">
+							<select name="plugin_parts[status]" id="status">
 								<option value="publish"{if $input.plugin_catalog.status == 'publish'} selected="selected"{/if}>公開</option>
 								<option value="private"{if $input.plugin_catalog.status == 'private'} selected="selected"{/if}>未公開</option>
 							</select>
 						</dd>
-					<dt>並び順 <abbr class="attention" title="入力必須">*</abbr></dt>
-						<dd><input type="text" name="plugin_parts[sort]" size="5" value="{$input.plugin_parts.sort}"></dd>
+					<dt><label for="sort">並び順 <abbr class="attention" title="入力必須">*</abbr></label></dt>
+						<dd><input type="text" name="plugin_parts[sort]" id="sort" size="5" value="{$input.plugin_parts.sort}"></dd>
 				</dl>
 				<p><input type="submit" value="登録する"></p>
 			</fieldset>

@@ -22,19 +22,19 @@
 				<!--{/if}-->
 				<dl>
 					<!--{if !$freo.query.id}-->
-					<dt>フォームID <abbr class="attention" title="入力必須">*</abbr></dt>
-						<dd><input type="text" name="plugin_form[id]" size="30" value="{$input.plugin_form.id}"></dd>
+					<dt><label for="form_id">フォームID <abbr class="attention" title="入力必須">*</abbr></label></dt>
+						<dd><input type="text" name="plugin_form[id]" id="form_id" size="30" value="{$input.plugin_form.id}"></dd>
 					<!--{/if}-->
-					<dt>フォームの名前 <abbr class="attention" title="入力必須">*</abbr></dt>
-						<dd><input type="text" name="plugin_form[name]" size="50" value="{$input.plugin_form.name}"></dd>
-					<dt>送信完了時のリダイレクト先</dt>
-						<dd><input type="text" name="plugin_form[complete]" size="50" value="{$input.plugin_form.complete}"></dd>
-					<dt>送信済み回数 <abbr class="attention" title="入力必須">*</abbr></dt>
-						<dd><input type="text" name="plugin_form[count]" size="5" value="{$input.plugin_form.count}"> 回</dd>
+					<dt><label for="form_name">フォームの名前 <abbr class="attention" title="入力必須">*</abbr></label></dt>
+						<dd><input type="text" name="plugin_form[name]" id="form_name" size="50" value="{$input.plugin_form.name}"></dd>
+					<dt><label for="complete">送信完了時のリダイレクト先</label></dt>
+						<dd><input type="text" name="plugin_form[complete]" id="complete" size="50" value="{$input.plugin_form.complete}"></dd>
+					<dt><label for="count">送信済み回数 <abbr class="attention" title="入力必須">*</abbr></label></dt>
+						<dd><input type="text" name="plugin_form[count]" id="count" size="5" value="{$input.plugin_form.count}"> 回</dd>
 					<!--{if $smarty.const.FREO_HTTPS_URL}-->
-					<dt>SSLの使用 <abbr class="attention" title="入力必須">*</abbr></dt>
+					<dt><label for="secure">SSLの使用 <abbr class="attention" title="入力必須">*</abbr></label></dt>
 						<dd>
-							<select name="plugin_form[secure]">
+							<select name="plugin_form[secure]" id="secure">
 								<option value="yes"{if $input.plugin_form.secure == 'yes'} selected="selected"{/if}>使用する</option>
 								<option value="no"{if $input.plugin_form.secure == 'no'} selected="selected"{/if}>使用しない</option>
 							</select>
@@ -42,14 +42,14 @@
 					<!--{else}-->
 					<input type="hidden" name="plugin_form[secure]" value="{$input.plugin_form.secure}">
 					<!--{/if}-->
-					<dt>添付ファイル <abbr class="attention" title="入力必須">*</abbr></dt>
+					<dt><label for="attachment">添付ファイル <abbr class="attention" title="入力必須">*</abbr></label></dt>
 						<dd>
-							<select name="plugin_form[attachment]">
+							<select name="plugin_form[attachment]" id="attachment">
 								<option value="yes"{if $input.plugin_form.attachment == 'yes'} selected="selected"{/if}>許可する</option>
 								<option value="no"{if $input.plugin_form.attachment == 'no'} selected="selected"{/if}>許可しない</option>
 							</select>
 						</dd>
-					<dt>メールの送信 <abbr class="attention" title="入力必須">*</abbr></dt>
+					<dt><label for="form_mail">メールの送信 <abbr class="attention" title="入力必須">*</abbr></label></dt>
 						<dd>
 							<select name="plugin_form[mail]" id="form_mail">
 								<option value="yes"{if $input.plugin_form.mail == 'yes'} selected="selected"{/if}>送信する</option>
@@ -58,17 +58,17 @@
 						</dd>
 				</dl>
 				<dl id="form_mail_content">
-					<dt>メールの送信：送信先（改行区切りで複数指定可能） <abbr class="attention" title="入力必須">*</abbr></dt>
-						<dd><textarea name="plugin_form[mail_to]" cols="50" rows="5">{$input.plugin_form.mail_to}</textarea></dd>
-					<dt>メールの送信：Cc（改行区切りで複数指定可能）</dt>
-						<dd><textarea name="plugin_form[mail_cc]" cols="50" rows="5">{$input.plugin_form.mail_cc}</textarea></dd>
-					<dt>メールの送信：Bcc（改行区切りで複数指定可能）</dt>
-						<dd><textarea name="plugin_form[mail_bcc]" cols="50" rows="5">{$input.plugin_form.mail_bcc}</textarea></dd>
-					<dt>メールの送信：本文 <abbr class="attention" title="入力必須">*</abbr></dt>
-						<dd><textarea name="plugin_form[mail_text]" cols="50" rows="10">{$input.plugin_form.mail_text}</textarea></dd>
+					<dt><label for="mail_to">メールの送信：送信先（改行区切りで複数指定可能） <abbr class="attention" title="入力必須">*</abbr></label></dt>
+						<dd><textarea name="plugin_form[mail_to]" id="mail_to" cols="50" rows="5">{$input.plugin_form.mail_to}</textarea></dd>
+					<dt><label for="mail_cc">メールの送信：Cc（改行区切りで複数指定可能）</label></dt>
+						<dd><textarea name="plugin_form[mail_cc]" id="mail_cc" cols="50" rows="5">{$input.plugin_form.mail_cc}</textarea></dd>
+					<dt><label for="mail_bcc">メールの送信：Bcc（改行区切りで複数指定可能）</label></dt>
+						<dd><textarea name="plugin_form[mail_bcc]" id="mail_bcc" cols="50" rows="5">{$input.plugin_form.mail_bcc}</textarea></dd>
+					<dt><label for="mail_text">メールの送信：本文 <abbr class="attention" title="入力必須">*</abbr></label></dt>
+						<dd><textarea name="plugin_form[mail_text]" id="mail_text" cols="50" rows="10">{$input.plugin_form.mail_text}</textarea></dd>
 				</dl>
 				<dl>
-					<dt>メールの自動返信 <abbr class="attention" title="入力必須">*</abbr></dt>
+					<dt><label for="form_reply">メールの自動返信 <abbr class="attention" title="入力必須">*</abbr></label></dt>
 						<dd>
 							<select name="plugin_form[reply]" id="form_reply">
 								<option value="yes"{if $input.plugin_form.reply == 'yes'} selected="selected"{/if}>送信する</option>
@@ -77,17 +77,17 @@
 						</dd>
 				</dl>
 				<dl id="form_reply_content">
-					<dt>メールの自動返信：件名 <abbr class="attention" title="入力必須">*</abbr></dt>
-						<dd><input type="text" name="plugin_form[reply_subject]" size="50" value="{$input.plugin_form.reply_subject}"></dd>
-					<dt>メールの自動返信：送信者名 <abbr class="attention" title="入力必須">*</abbr></dt>
-						<dd><input type="text" name="plugin_form[reply_name]" size="50" value="{$input.plugin_form.reply_name}"></dd>
-					<dt>メールの自動返信：送信元アドレス <abbr class="attention" title="入力必須">*</abbr></dt>
-						<dd><input type="text" name="plugin_form[reply_from]" size="50" value="{$input.plugin_form.reply_from}"></dd>
-					<dt>メールの自動返信：本文 <abbr class="attention" title="入力必須">*</abbr></dt>
-						<dd><textarea name="plugin_form[reply_text]" cols="50" rows="10">{$input.plugin_form.reply_text}</textarea></dd>
+					<dt><label for="reply_subject">メールの自動返信：件名 <abbr class="attention" title="入力必須">*</abbr></label></dt>
+						<dd><input type="text" name="plugin_form[reply_subject]" id="reply_subject" size="50" value="{$input.plugin_form.reply_subject}"></dd>
+					<dt><label for="reply_name">メールの自動返信：送信者名 <abbr class="attention" title="入力必須">*</abbr></label></dt>
+						<dd><input type="text" name="plugin_form[reply_name]" id="reply_name" size="50" value="{$input.plugin_form.reply_name}"></dd>
+					<dt><label for="reply_from">メールの自動返信：送信元アドレス <abbr class="attention" title="入力必須">*</abbr></label></dt>
+						<dd><input type="text" name="plugin_form[reply_from]" id="reply_from" size="50" value="{$input.plugin_form.reply_from}"></dd>
+					<dt><label for="reply_text">メールの自動返信：本文 <abbr class="attention" title="入力必須">*</abbr></label></dt>
+						<dd><textarea name="plugin_form[reply_text]" id="reply_text" cols="50" rows="10">{$input.plugin_form.reply_text}</textarea></dd>
 				</dl>
 				<dl>
-					<dt>送信内容の記録 <abbr class="attention" title="入力必須">*</abbr></dt>
+					<dt><label for="form_record">送信内容の記録 <abbr class="attention" title="入力必須">*</abbr></label></dt>
 						<dd>
 							<select name="plugin_form[record]" id="form_record">
 								<option value="yes"{if $input.plugin_form.record == 'yes'} selected="selected"{/if}>記録する</option>
@@ -96,15 +96,15 @@
 						</dd>
 				</dl>
 				<dl id="form_record_content">
-					<dt>送信内容の記録：本文 <abbr class="attention" title="入力必須">*</abbr></dt>
-						<dd><textarea name="plugin_form[record_text]" cols="50" rows="10">{$input.plugin_form.record_text}</textarea></dd>
+					<dt><label for="record_text">送信内容の記録：本文 <abbr class="attention" title="入力必須">*</abbr></label></dt>
+						<dd><textarea name="plugin_form[record_text]" id="record_text" cols="50" rows="10">{$input.plugin_form.record_text}</textarea></dd>
 				</dl>
 				<dl>
-					<dt>フォームの説明</dt>
-						<dd><textarea name="plugin_form[memo]" cols="50" rows="5">{$input.plugin_form.memo}</textarea></dd>
-					<dt>状態 <abbr class="attention" title="入力必須">*</abbr></dt>
+					<dt><label for="memo">フォームの説明</label></dt>
+						<dd><textarea name="plugin_form[memo]" id="memo" cols="50" rows="5">{$input.plugin_form.memo}</textarea></dd>
+					<dt><label for="status">状態 <abbr class="attention" title="入力必須">*</abbr></label></dt>
 						<dd>
-							<select name="plugin_form[status]">
+							<select name="plugin_form[status]" id="status">
 								<option value="publish"{if $input.plugin_form.status == 'publish'} selected="selected"{/if}>公開</option>
 								<option value="private"{if $input.plugin_form.status == 'private'} selected="selected"{/if}>非公開</option>
 							</select>

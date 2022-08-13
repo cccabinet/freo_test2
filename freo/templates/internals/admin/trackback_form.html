@@ -18,14 +18,14 @@
 				<input type="hidden" name="freo[token]" value="{$token}">
 				<input type="hidden" name="trackback[id]" value="{$input.trackback.id}">
 				<dl>
-					<dt>名前</dt>
-						<dd><input type="text" name="trackback[name]" size="30" value="{$input.trackback.name}"></dd>
-					<dt>URL</dt>
-						<dd><input type="text" name="trackback[url]" size="30" value="{$input.trackback.url}"></dd>
-					<dt>タイトル</dt>
-						<dd><input type="text" name="trackback[title]" size="30" value="{$input.trackback.title}"></dd>
-					<dt>本文</dt>
-						<dd><textarea name="trackback[text]" cols="50" rows="10">{$input.trackback.text}</textarea></dd>
+					<dt><label for="trackback_name">名前</label></dt>
+						<dd><input type="text" name="trackback[name]" id="trackback_name" size="30" value="{$input.trackback.name}"></dd>
+					<dt><label for="url">URL</label></dt>
+						<dd><input type="text" name="trackback[url]" id="url" size="30" value="{$input.trackback.url}"></dd>
+					<dt><label for="title">タイトル</label></dt>
+						<dd><input type="text" name="trackback[title]" id="title" size="30" value="{$input.trackback.title}"></dd>
+					<dt><label for="text">本文</label></dt>
+						<dd><textarea name="trackback[text]" id="text" cols="50" rows="10">{$input.trackback.text}</textarea></dd>
 				</dl>
 				<p>
 					<input type="submit" name="preview" value="確認する">

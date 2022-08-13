@@ -19,15 +19,15 @@
 				<legend>サークル登録フォーム</legend>
 				<input type="hidden" name="freo[token]" value="{$token}">
 				<dl>
-					<dt>サークル名 <abbr class="attention" title="入力必須">*</abbr></dt>
-						<dd><input type="text" name="plugin_circle[name]" size="50" value="{$input.plugin_circle.name}"></dd>
-					<dt>サークル名（フリガナ） <abbr class="attention" title="入力必須">*</abbr></dt>
-						<dd><input type="text" name="plugin_circle[kana]" size="50" value="{$input.plugin_circle.kana}"></dd>
-					<dt>サークルURL</dt>
-						<dd><input type="text" name="plugin_circle[url]" size="50" value="{$input.plugin_circle.url}"></dd>
-					<dt>サークルカット</dt>
+					<dt><label for="circle_name">サークル名 <abbr class="attention" title="入力必須">*</abbr></label></dt>
+						<dd><input type="text" name="plugin_circle[name]" id="circle_name" size="50" value="{$input.plugin_circle.name}"></dd>
+					<dt><label for="kana">サークル名（フリガナ） <abbr class="attention" title="入力必須">*</abbr></label></dt>
+						<dd><input type="text" name="plugin_circle[kana]" id="kana" size="50" value="{$input.plugin_circle.kana}"></dd>
+					<dt><label for="url">サークルURL</label></dt>
+						<dd><input type="text" name="plugin_circle[url]" id="url" size="50" value="{$input.plugin_circle.url}"></dd>
+					<dt><label for="image">サークルカット</label></dt>
 						<dd>
-							<input type="file" name="plugin_circle[image]" size="30">
+							<input type="file" name="plugin_circle[image]" id="image" size="30">
 							<!--{if $input.plugin_circle.image}-->
 								<div>現在のサークルカット</div>
 								<a href="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/circle_images/{$freo.query.id}/{$input.plugin_circle.image}"><img src="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/circle_images/{$freo.query.id}/{$input.plugin_circle.image}" alt="現在のファイル" width="100"></a>
@@ -35,9 +35,9 @@
 								<input type="hidden" name="plugin_circle[image]" value="{$input.plugin_circle.image}">
 							<!--{/if}-->
 						</dd>
-					<dt>添付ファイル</dt>
+					<dt><label for="file">添付ファイル</label></dt>
 						<dd>
-							<input type="file" name="plugin_circle[file]" size="30">
+							<input type="file" name="plugin_circle[file]" id="file" size="30">
 							<!--{if $input.plugin_circle.file}-->
 								<div>現在の添付ファイル</div>
 								<a href="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/circle_files/{$freo.query.id}/{$input.plugin_circle.file}"><img src="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/circle_files/{$freo.query.id}/{$input.plugin_circle.file}" alt="現在のファイル" width="100"></a>
@@ -45,11 +45,11 @@
 								<input type="hidden" name="plugin_circle[file]" value="{$input.plugin_circle.file}">
 							<!--{/if}-->
 						</dd>
-					<dt>サークルスペース</dt>
-						<dd><input type="text" name="plugin_circle[space]" size="50" value="{$input.plugin_circle.space}"></dd>
-					<dt>カップリング</dt>
-						<dd><input type="text" name="plugin_circle[coupling]" size="50" value="{$input.plugin_circle.coupling}"></dd>
-					<dt>タグ</dt>
+					<dt><label for="space">サークルスペース</label></dt>
+						<dd><input type="text" name="plugin_circle[space]" id="space" size="50" value="{$input.plugin_circle.space}"></dd>
+					<dt><label for="coupling">カップリング</label></dt>
+						<dd><input type="text" name="plugin_circle[coupling]" id="coupling" size="50" value="{$input.plugin_circle.coupling}"></dd>
+					<dt><label for="tag">タグ</label></dt>
 						<dd>
 							<input type="text" name="plugin_circle[tag]" id="tag" size="50" value="{$input.plugin_circle.tag}">
 {* タグの候補をタグクラウド一覧で表示（要サークルタグクラウド表示プラグイン） *}
@@ -62,15 +62,15 @@
 							<!--{/if}-->
 {* /タグの候補をタグクラウド一覧で表示 *}
 						</dd>
-					<dt>紹介文</dt>
-						<dd><textarea name="plugin_circle[text]" cols="50" rows="5">{$input.plugin_circle.text}</textarea></dd>
-					<dt>カテゴリー 
+					<dt><label for="text">紹介文</label></dt>
+						<dd><textarea name="plugin_circle[text]" id="text" cols="50" rows="5">{$input.plugin_circle.text}</textarea></dd>
+					<dt><label for="category">カテゴリー</label> 
 						<!--{if $freo.user.authority == 'root'}-->
 						<a href="{$freo.core.http_file}/circle/admin_category_form" target="_blank" rel="noopener">カテゴリー登録</a>
 						<!--{/if}-->
 					</dt>
 						<dd>
-							<select name="plugin_circle[category_id]">
+							<select name="plugin_circle[category_id]" id="category">
 								<option value="">選択してください</option>
 								<!--{foreach from=$plugin_circle_categories|smarty:nodefaults item='plugin_circle_category'}-->
 								<option value="{$plugin_circle_category.id}"{if $input.plugin_circle.category_id == $plugin_circle_category.id} selected="selected"{/if} >{$plugin_circle_category.name}</option>
@@ -80,24 +80,24 @@
 				</dl>
 				<h3>代表者</h3>
 				<dl>
-					<dt>サークル代表者名 <abbr class="attention" title="入力必須">*</abbr></dt>
-						<dd><input type="text" name="plugin_circle[owner_name]" size="50" value="{$input.plugin_circle.owner_name}"></dd>
-					<dt>サークル代表者名（フリガナ） <abbr class="attention" title="入力必須">*</abbr></dt>
-						<dd><input type="text" name="plugin_circle[owner_kana]" size="50" value="{$input.plugin_circle.owner_kana}"></dd>
+					<dt><label for="owner_name">サークル代表者名 <abbr class="attention" title="入力必須">*</abbr></label></dt>
+						<dd><input type="text" name="plugin_circle[owner_name]" id="owner_name" size="50" value="{$input.plugin_circle.owner_name}"></dd>
+					<dt><label for="owner_kana">サークル代表者名（フリガナ） <abbr class="attention" title="入力必須">*</abbr></label></dt>
+						<dd><input type="text" name="plugin_circle[owner_kana]" id="owner_kana" size="50" value="{$input.plugin_circle.owner_kana}"></dd>
 				</dl>
 				<h3>企画</h3>
 				<dl>
-					<dt>企画名</dt>
-						<dd><input type="text" name="plugin_circle[plan_name]" size="50" value="{$input.plugin_circle.plan_name}"></dd>
-					<dt>企画URL</dt>
-						<dd><input type="text" name="plugin_circle[plan_url]" size="50" value="{$input.plugin_circle.plan_url}"></dd>
-					<dt>企画詳細</dt>
-						<dd><textarea name="plugin_circle[plan_text]" cols="50" rows="5">{$input.plugin_circle.plan_text}</textarea></dd>
+					<dt><label for="plan_name">企画名</label></dt>
+						<dd><input type="text" name="plugin_circle[plan_name]" id="plan_name" size="50" value="{$input.plugin_circle.plan_name}"></dd>
+					<dt><label for="plan_url">企画URL</label></dt>
+						<dd><input type="text" name="plugin_circle[plan_url]" id="plan_url" size="50" value="{$input.plugin_circle.plan_url}"></dd>
+					<dt><label for="plan_text">企画詳細</label></dt>
+						<dd><textarea name="plugin_circle[plan_text]" id="plan_text" cols="50" rows="5">{$input.plugin_circle.plan_text}</textarea></dd>
 				</dl>
 				<h3>管理者用</h3>
 				<dl>
-					<dt>メモ</dt>
-						<dd><textarea name="plugin_circle[admin_text]" cols="50" rows="5">{$input.plugin_circle.admin_text}</textarea></dd>
+					<dt><label for="admin_text">メモ</label></dt>
+						<dd><textarea name="plugin_circle[admin_text]" id="admin_text" cols="50" rows="5">{$input.plugin_circle.admin_text}</textarea></dd>
 				</dl>
 				<p><input type="submit" value="登録する"></p>
 			</fieldset>

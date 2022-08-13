@@ -86,12 +86,12 @@
 		<fieldset>
 			<legend>キーワード検索フォーム</legend>
 			<dl>
-				<dt>キーワード</dt>
-					<dd><input type="text" name="word" size="50" value="{$smarty.get.word}"></dd>
+				<dt><label for="keyword">キーワード</label></dt>
+					<dd><input type="text" name="word" id="keyword" size="50" value="{$smarty.get.word}"></dd>
 				<!--{if !$smarty.get.page_name}-->
-				<dt>検索対象</dt>
+				<dt><label for="target">検索対象</label></dt>
 					<dd>
-						<select name="target">
+						<select name="target" id="target">
 							<option value="">すべて</option>
 							<option value="entry"{if $smarty.get.target == 'entry'} selected="selected"{/if}>エントリー</option>
 							<option value="page"{if $smarty.get.target == 'page'} selected="selected"{/if}>ページ</option>
@@ -106,16 +106,16 @@
 				<dl>
 					<!--{foreach from=$freo.refer.options|smarty:nodefaults item='option'}-->
 					<!--{if $option.type == 'text' and $option.validate == 'numeric'}-->
-					<dt>{$option.name}<span class="note">（指定した範囲の数値を含むデータを抽出。一方のみの指定も可能。）</span></dt>
-						<dd>
+					<dt><label for="option">{$option.name}<span class="note">（指定した範囲の数値を含むデータを抽出。一方のみの指定も可能。）</span></label></dt>
+						<dd id="option">
 							<input type="text" name="option[{$option.id}][from]" size="10" value="{$smarty.get.option[$option.id].from}"> 以上、<input type="text" name="option[{$option.id}][to]" size="10" value="{$smarty.get.option[$option.id].to}"> 以下
 						</dd>
 					<!--{elseif $option.type == 'text' or $option.type == 'textarea'}-->
-					<dt>{$option.name}<span class="note">（入力した文字列を含むデータを抽出。）</span></dt>
-						<dd><input type="text" name="option[{$option.id}]" size="50" value="{$smarty.get.option[$option.id]}"></dd>
+					<dt><label for="option">{$option.name}<span class="note">（入力した文字列を含むデータを抽出。）</span></label></dt>
+						<dd><input type="text" name="option[{$option.id}]" id="option" size="50" value="{$smarty.get.option[$option.id]}"></dd>
 					<!--{elseif $option.type == 'select' or $option.type == 'radio' or $option.type == 'checkbox'}-->
-					<dt>{$option.name}<span class="note">（選択した項目をどれか一つでも含むデータを抽出。）</span></dt>
-						<dd>
+					<dt><label for="option">{$option.name}<span class="note">（選択した項目をどれか一つでも含むデータを抽出。）</span></label></dt>
+						<dd id="option">
 							<ul>
 								<!--{assign var='option_texts' value=$option.text|explode:"\n"}-->
 								<!--{foreach from=$option_texts|smarty:nodefaults item='option_text' name='loop'}-->

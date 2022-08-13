@@ -82,12 +82,12 @@ function freo_main()
 		echo "<legend>セットアップ実行フォーム</legend>\n";
 		echo "<input type=\"hidden\" name=\"freo[token]\" value=\"" . freo_token('create') . "\">\n";
 		echo "<dl>\n";
-		echo "<dt>メールアドレス</dt>\n";
-		echo "<dd><input type=\"text\" name=\"setup[mail]\" size=\"30\" value=\"" . (isset($_POST['setup']['mail']) ? htmlspecialchars($_POST['setup']['mail'], ENT_QUOTES) : '') . "\"></dd>\n";
-		echo "<dt>ユーザーID</dt>\n";
-		echo "<dd><input type=\"text\" name=\"setup[user]\" size=\"20\" value=\"" . (isset($_POST['setup']['user']) ? htmlspecialchars($_POST['setup']['user'], ENT_QUOTES) : '') . "\"></dd>\n";
-		echo "<dt>パスワード</dt>\n";
-		echo "<dd><input type=\"password\" name=\"setup[password]\" size=\"20\" value=\"" . (isset($_POST['setup']['password']) ? htmlspecialchars($_POST['setup']['password'], ENT_QUOTES) : '') . "\"></dd>\n";
+		echo "<dt><label for=\"mail\">メールアドレス</label></dt>\n";
+		echo "<dd><input type=\"text\" name=\"setup[mail]\" id=\"mail\" size=\"30\" value=\"" . (isset($_POST['setup']['mail']) ? htmlspecialchars($_POST['setup']['mail'], ENT_QUOTES) : '') . "\"></dd>\n";
+		echo "<dt><label for=\"user\">ユーザーID</label></dt>\n";
+		echo "<dd><input type=\"text\" name=\"setup[user]\" id=\"user\" size=\"20\" value=\"" . (isset($_POST['setup']['user']) ? htmlspecialchars($_POST['setup']['user'], ENT_QUOTES) : '') . "\"></dd>\n";
+		echo "<dt><label for=\"password\">パスワード</label></dt>\n";
+		echo "<dd><input type=\"password\" name=\"setup[password]\" id=\"password\" size=\"20\" value=\"" . (isset($_POST['setup']['password']) ? htmlspecialchars($_POST['setup']['password'], ENT_QUOTES) : '') . "\"></dd>\n";
 		echo "</dl>\n";
 		echo "<p><input type=\"submit\" value=\"セットアップ実行\"></p>\n";
 		echo "</fieldset>\n";

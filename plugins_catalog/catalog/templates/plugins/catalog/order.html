@@ -251,9 +251,9 @@
 					</dd>
 			</dl>
 			<dl id="order_preferred_week">
-				<dt>希望する配送曜日</dt>
+				<dt><label for="preferred_week">希望する配送曜日</label></dt>
 					<dd>
-						<select name="plugin_catalog_order[preferred_week]">
+						<select name="plugin_catalog_order[preferred_week]" id="preferred_week">
 							<option value="">希望なし</option>
 							<!--{foreach from=$freo.config.plugin.catalog.delivery_week|explode:"\n" item='value'}-->
 							<option value="{$value}"{if $value == $input.plugin_catalog_order.preferred_week} selected="selected"{/if}>{$value}</option>
@@ -262,9 +262,9 @@
 					</dd>
 			</dl>
 			<dl id="order_preferred_time">
-				<dt>希望する配送時間</dt>
+				<dt><label for="preferred_time">希望する配送時間</label></dt>
 					<dd>
-						<select name="plugin_catalog_order[preferred_time]">
+						<select name="plugin_catalog_order[preferred_time]" id="preferred_time">
 							<option value="">希望なし</option>
 							<!--{foreach from=$freo.config.plugin.catalog.delivery_time|explode:"\n" item='value'}-->
 							<option value="{$value}"{if $value == $input.plugin_catalog_order.preferred_time} selected="selected"{/if}>{$value}</option>
@@ -309,17 +309,17 @@
 			</dl>
 			<h3>ご注文者</h3>
 			<dl>
-				<dt>名前 <abbr class="attention" title="入力必須">*</abbr></dt>
-					<dd><input type="text" name="plugin_catalog_order[name]" size="30" value="{$input.plugin_catalog_order.name}"></dd>
-				<dt>名前（フリガナ） <abbr class="attention" title="入力必須">*</abbr></dt>
-					<dd><input type="text" name="plugin_catalog_order[kana]" size="30" value="{$input.plugin_catalog_order.kana}"></dd>
-				<dt>Ｅメール <abbr class="attention" title="入力必須">*</abbr></dt>
-					<dd><input type="text" name="plugin_catalog_order[mail]" size="30" value="{$input.plugin_catalog_order.mail}"></dd>
-				<dt>電話番号</dt>
-					<dd><input type="text" name="plugin_catalog_order[tel]" size="30" value="{$input.plugin_catalog_order.tel}"></dd>
+				<dt><label for="catalog_order_name">名前 <abbr class="attention" title="入力必須">*</abbr></label></dt>
+					<dd><input type="text" name="plugin_catalog_order[name]" id="catalog_order_name" size="30" value="{$input.plugin_catalog_order.name}"></dd>
+				<dt><label for="kana">名前（フリガナ） <abbr class="attention" title="入力必須">*</abbr></label></dt>
+					<dd><input type="text" name="plugin_catalog_order[kana]" id="kana" size="30" value="{$input.plugin_catalog_order.kana}"></dd>
+				<dt><label for="mail">Ｅメール <abbr class="attention" title="入力必須">*</abbr></label></dt>
+					<dd><input type="text" name="plugin_catalog_order[mail]" id="mail" size="30" value="{$input.plugin_catalog_order.mail}"></dd>
+				<dt><label for="tel">電話番号</label></dt>
+					<dd><input type="text" name="plugin_catalog_order[tel]" id="tel" size="30" value="{$input.plugin_catalog_order.tel}"></dd>
 				<!--{if $plugin_catalog_cart.catalog_target_max}-->
-				<dt>対象確認 <abbr class="attention" title="入力必須">*</abbr></dt>
-					<dd>
+				<dt><label for="target">対象確認 <abbr class="attention" title="入力必須">*</abbr></label></dt>
+					<dd id="target">
 						<!--{foreach from=$plugin_catalog_targets|smarty:nodefaults item='plugin_catalog_target'}-->
 						<!--{if $plugin_catalog_cart.catalog_target_max == $plugin_catalog_target.id}-->
 						<input type="checkbox" name="plugin_catalog_order[confirm][{$plugin_catalog_target.id}]" id="label_confirm_{$plugin_catalog_target.id}" value="{$plugin_catalog_target.id}"{if $input.plugin_catalog_order.confirm[$plugin_catalog_target.id]} checked="checked"{/if}> <label for="label_confirm_{$plugin_catalog_target.id}">私は<strong>{$plugin_catalog_target.name}</strong>です。</label>
@@ -332,19 +332,19 @@
 			<!--{if $plugin_catalog_cart.catalog_short_max > 0 and $plugin_catalog_cart.catalog_long_max > 0}-->
 			<h3>配送先住所</h3>
 			<dl>
-				<dt>郵便番号 <abbr class="attention" title="入力必須">*</abbr>（郵便番号を入力すると住所が自動入力されます）</dt>
+				<dt><label for="catalog_order_zipcode">郵便番号 <abbr class="attention" title="入力必須">*</abbr>（郵便番号を入力すると住所が自動入力されます）</label></dt>
 					<dd><input type="text" name="plugin_catalog_order[zipcode]" size="10" value="{$input.plugin_catalog_order.zipcode}" id="catalog_order_zipcode"></dd>
-				<dt>都道府県 <abbr class="attention" title="入力必須">*</abbr></dt>
+				<dt><label for="prefecture">都道府県 <abbr class="attention" title="入力必須">*</abbr></label></dt>
 					<dd>
-						<select name="plugin_catalog_order[prefecture]">
+						<select name="plugin_catalog_order[prefecture]" id="prefecture">
 							<option value="">選択してください</option>
 							<!--{foreach from=$plugin_catalog_prefectures|smarty:nodefaults item='plugin_catalog_prefecture'}-->
 							<option value="{$plugin_catalog_prefecture.id}"{if $input.plugin_catalog_order.prefecture == $plugin_catalog_prefecture.id} selected="selected"{/if}>{$plugin_catalog_prefecture.name}</option>
 							<!--{/foreach}-->
 						</select>
 					</dd>
-				<dt>住所 <abbr class="attention" title="入力必須">*</abbr></dt>
-					<dd><input type="text" name="plugin_catalog_order[address]" size="50" value="{$input.plugin_catalog_order.address}"></dd>
+				<dt><label for="address">住所 <abbr class="attention" title="入力必須">*</abbr></label></dt>
+					<dd><input type="text" name="plugin_catalog_order[address]" id="address" size="50" value="{$input.plugin_catalog_order.address}"></dd>
 			</dl>
 			<!--{else}-->
 			<input type="hidden" name="plugin_catalog_order[zipcode]" value="{$input.plugin_catalog_order.zipcode}">
@@ -353,8 +353,8 @@
 			<!--{/if}-->
 			<h3>連絡事項</h3>
 			<dl>
-				<dt>連絡事項など</dt>
-					<dd><textarea name="plugin_catalog_order[text]" cols="50" rows="5">{$input.plugin_catalog_order.text}</textarea></dd>
+				<dt><label for="text">連絡事項など</label></dt>
+					<dd><textarea name="plugin_catalog_order[text]" id="text" cols="50" rows="5">{$input.plugin_catalog_order.text}</textarea></dd>
 			</dl>
 			<p><input type="submit" value="確認画面へ進む"></p>
 		</fieldset>

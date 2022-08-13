@@ -22,17 +22,17 @@
 				<!--{/if}-->
 				<dl>
 					<!--{if !$freo.query.id}-->
-					<dt>メニューID <abbr class="attention" title="入力必須">*</abbr></dt>
-						<dd><input type="text" name="plugin_menu[id]" size="30" value="{$input.plugin_menu.id}"></dd>
+					<dt><label for="menu_id">メニューID <abbr class="attention" title="入力必須">*</abbr></label></dt>
+						<dd><input type="text" name="plugin_menu[id]" id="menu_id" size="30" value="{$input.plugin_menu.id}"></dd>
 					<!--{/if}-->
-					<dt>タイトル <abbr class="attention" title="入力必須">*</abbr></dt>
-						<dd><input type="text" name="plugin_menu[title]" size="50" value="{$input.plugin_menu.title}"></dd>
-					<dt>URL <abbr class="attention" title="入力必須">*</abbr></dt>
-						<dd><input type="text" name="plugin_menu[url]" size="50" value="{$input.plugin_menu.url}"></dd>
-					<dt>説明</dt>
-						<dd><textarea name="plugin_menu[memo]" cols="50" rows="5">{$input.plugin_menu.memo}</textarea></dd>
-					<dt>並び順 <abbr class="attention" title="入力必須">*</abbr></dt>
-						<dd><input type="text" name="plugin_menu[sort]" size="5" value="{$input.plugin_menu.sort}"></dd>
+					<dt><label for="title">タイトル <abbr class="attention" title="入力必須">*</abbr></label></dt>
+						<dd><input type="text" name="plugin_menu[title]" id="title" size="50" value="{$input.plugin_menu.title}"></dd>
+					<dt><label for="url">URL <abbr class="attention" title="入力必須">*</abbr></label></dt>
+						<dd><input type="text" name="plugin_menu[url]" id="url" size="50" value="{$input.plugin_menu.url}"></dd>
+					<dt><label for="memo">説明</label></dt>
+						<dd><textarea name="plugin_menu[memo]" id="memo" cols="50" rows="5">{$input.plugin_menu.memo}</textarea></dd>
+					<dt><label for="sort">並び順 <abbr class="attention" title="入力必須">*</abbr></label></dt>
+						<dd><input type="text" name="plugin_menu[sort]" id="sort" size="5" value="{$input.plugin_menu.sort}"></dd>
 				</dl>
 				<p><input type="submit" value="登録する"></p>
 			</fieldset>

@@ -19,13 +19,13 @@
 				<input type="hidden" name="freo[token]" value="{$token}">
 				<input type="hidden" name="plugin_bookmark[id]" value="{$input.plugin_bookmark.id}">
 				<dl>
-					<dt>タイトル <abbr class="attention" title="入力必須">*</abbr></dt>
-						<dd><input type="text" name="plugin_bookmark[title]" size="50" value="{$input.plugin_bookmark.title}{$smarty.get.title}"></dd>
-					<dt>URL <abbr class="attention" title="入力必須">*</abbr></dt>
-						<dd><input type="text" name="plugin_bookmark[url]" size="50" value="{$input.plugin_bookmark.url}{$smarty.get.url}"></dd>
-					<dt>本文</dt>
-						<dd><textarea name="plugin_bookmark[text]" cols="50" rows="5">{$input.plugin_bookmark.text}</textarea></dd>
-					<dt>タグ</dt>
+					<dt><label for="title">タイトル <abbr class="attention" title="入力必須">*</abbr></label></dt>
+						<dd><input type="text" name="plugin_bookmark[title]" id="title" size="50" value="{$input.plugin_bookmark.title}{$smarty.get.title}"></dd>
+					<dt><label for="url">URL <abbr class="attention" title="入力必須">*</abbr></label></dt>
+						<dd><input type="text" name="plugin_bookmark[url]" id="url" size="50" value="{$input.plugin_bookmark.url}{$smarty.get.url}"></dd>
+					<dt><label for="text">本文</label></dt>
+						<dd><textarea name="plugin_bookmark[text]" id="text" cols="50" rows="5">{$input.plugin_bookmark.text}</textarea></dd>
+					<dt><label for="tag">タグ</label></dt>
 						<dd>
 							<input type="text" name="plugin_bookmark[tag]" id="tag" size="50" value="{$input.plugin_bookmark.tag}">
 {* タグの候補をタグクラウド一覧で表示（要ブックマークタグクラウド表示プラグイン） *}

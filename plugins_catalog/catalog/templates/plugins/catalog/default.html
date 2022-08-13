@@ -46,11 +46,11 @@
 				<!--{if $smarty.get.option10}--><input type="hidden" name="option10" value="{$smarty.get.option10}"><!--{/if}-->
 				<!--{if $smarty.get.condition}--><input type="hidden" name="condition" value="{$smarty.get.condition}"><!--{/if}-->
 				<dl>
-					<dt>キーワード</dt>
-						<dd><input type="text" name="word" size="50" value="{$smarty.get.word}"></dd>
-					<dt>表示順</dt>
+					<dt><label for="keyword">キーワード</label></dt>
+						<dd><input type="text" name="word" id="keyword" size="50" value="{$smarty.get.word}"></dd>
+					<dt><label for="sort">表示順</label></dt>
 						<dd>
-							<select name="sort">
+							<select name="sort" id="sort">
 								<option value="">指定なし</option>
 								<option value="price"{if $smarty.get.sort == 'price'} selected="selected"{/if}>価格の安い順</option>
 								<option value="price_desc"{if $smarty.get.sort == 'price_desc'} selected="selected"{/if}>価格の高い順</option>
