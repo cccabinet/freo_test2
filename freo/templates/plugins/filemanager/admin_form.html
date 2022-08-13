@@ -127,15 +127,14 @@
 							</select>
 						</dd>
 					<!--{/if}-->
+				<!--{if $smarty.get.name}-->
 					<dt><label for="file">ファイル <abbr class="attention" title="入力必須">*</abbr></label></dt>
 						<dd><input type="file" name="plugin_filemanager[file][]" id="file" size="30"></dd>
 				</dl>
-				<!--{if !$smarty.get.name}-->
-				<dl id="media_template">
-					<dt><label for="file">ファイル</label></dt>
-						<dd><input type="file" name="plugin_filemanager[file][]" id="file" size="30"></dd>
+				<!--{else}-->
+					<dt><label for="file">ファイル（複数選択可）<br>※Ctrl+クリックで複数のファイルを選択</label></dt>
+						<dd><input type="file" name="plugin_filemanager[file][]" id="file" size="30" multiple></dd>
 				</dl>
-				<p><a href="javascript:void(0)" id="media_add">ファイル選択欄を追加</a></p>
 				<!--{/if}-->
 				<p><input type="submit" value="登録する"></p>
 			</fieldset>

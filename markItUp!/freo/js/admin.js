@@ -63,11 +63,28 @@ $(function() {
 		}
 	});
 
-	//メディアアップロード欄追加
-	$('#media_add').click(function() {
-		$('#media_file').append($('#media_template').html());
-	});
-	$('#media_template').hide();
+	//アップロードファイルの表示
+	$('input[type="file"]').on('change', handleFileSelect);
+	function handleFileSelect(evt) {
+		$('#preview').remove();
+		$(this).parents('dd').append('<div id="preview"></div>');
+		var files = evt.target.files;
+		for (var i = 0, f; f = files[i]; i++) {
+			var reader = new FileReader();
+			reader.onload = (function(theFile) {
+				return function(e) {
+					if (theFile.type.match('image.*')) {
+						var $html = ['<div style="display:inline-block;"><img src="', e.target.result,'" title="', escape(theFile.name), '" style="height:100px;" /><div style="text-align: center;"><small>', escape(theFile.name),'</small></div></div>'].join('');
+					} else {
+						var $html = ['<div style="display:inline-block;"><small>', escape(theFile.name),'</small></div>'].join('');
+					}
+					$('#preview').append($html);
+				};
+			})(f);
+			reader.readAsDataURL(f);
+		}
+	}
+
 
 	//公開終了
 	if ($('#article_close_set').val() == '0') {
