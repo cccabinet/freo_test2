@@ -68,10 +68,10 @@
 						<!--{/if}-->
 						<dt>状態</dt>
 							<dd>
-								<input type="checkbox" name="status" id="label_status_private" value="private"{if $freo.query.status == 'private'} checked="checked"{/if}> <label for="label_status_private">未公開のみ</label>
+								<input type="checkbox" name="status" id="label_status_private" value="private"{if $freo.query.status == 'private'} checked{/if}> <label for="label_status_private">未公開のみ</label>
 								<!--{if $freo.config.entry.approve == 'no'}-->
 								&nbsp;
-								<input type="checkbox" name="approved" id="label_approved_no" value="no"{if $freo.query.approved == 'no'} checked="checked"{/if}> <label for="label_approved_no">未承認のみ</label>
+								<input type="checkbox" name="approved" id="label_approved_no" value="no"{if $freo.query.approved == 'no'} checked{/if}> <label for="label_approved_no">未承認のみ</label>
 								<!--{/if}-->
 							</dd>
 					</dl>

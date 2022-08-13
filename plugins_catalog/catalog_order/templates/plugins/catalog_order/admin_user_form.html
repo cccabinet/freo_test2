@@ -45,7 +45,7 @@
 							<select name="plugin_catalog_order_user[prefecture]" id="prefecture">
 								<option value="">選択してください</option>
 								<!--{foreach from=$plugin_catalog_prefectures|smarty:nodefaults item='plugin_catalog_prefecture'}-->
-								<option value="{$plugin_catalog_prefecture.id}"{if $input.plugin_catalog_order_user.prefecture == $plugin_catalog_prefecture.id} selected="selected"{/if}>{$plugin_catalog_prefecture.name}</option>
+								<option value="{$plugin_catalog_prefecture.id}"{if $input.plugin_catalog_order_user.prefecture == $plugin_catalog_prefecture.id} selected{/if}>{$plugin_catalog_prefecture.name}</option>
 								<!--{/foreach}-->
 							</select>
 						</dd>

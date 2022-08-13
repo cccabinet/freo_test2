@@ -36,8 +36,8 @@
 					<dt><label for="status">状態 <abbr class="attention" title="入力必須">*</abbr></label></dt>
 						<dd>
 							<select name="plugin_catalog_payment[status]" id="status">
-								<option value="publish"{if $input.plugin_catalog_payment.status == 'publish'} selected="selected"{/if}>使用</option>
-								<option value="private"{if $input.plugin_catalog_payment.status == 'private'} selected="selected"{/if}>未使用</option>
+								<option value="publish"{if $input.plugin_catalog_payment.status == 'publish'} selected{/if}>使用</option>
+								<option value="private"{if $input.plugin_catalog_payment.status == 'private'} selected{/if}>未使用</option>
 							</select>
 						</dd>
 				</dl>
