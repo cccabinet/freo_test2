@@ -185,27 +185,27 @@ tinymce.init({
 	quickbars_insert_toolbar: 'freomedia image media quicktable | hr charmap nonbreaking pagebreak',
 	quickbars_selection_toolbar: 'bold underline strikethrough styleselect | quicklink removeformat',
 	color_map: [
-		'#FFFFFF', 'ホワイト',
-		'#C0C0C0', 'シルバー',
+		'#fff', 'ホワイト',
+		'#c0c0c0', 'シルバー',
 		'#808080', 'グレー',
-		'#000000', 'ブラック',
-		'#FF0000', 'レッド',
+		'#000', 'ブラック',
+		'#f00', 'レッド',
 
 		'#800000', 'マルーン',
-		'#FFFF00', 'イエロー',
+		'#ff0', 'イエロー',
 		'#808000', 'オリーブ',
-		'#00FF00', 'ライム',
+		'#0f0', 'ライム',
 		'#008000', 'グリーン',
 
-		'#00FFFF', 'アクア',
+		'#0ff', 'アクア',
 		'#008080', 'ティール',
-		'#0000FF', 'ブルー',
+		'#00f', 'ブルー',
 		'#000080', 'ネイビー',
-		'#FF00FF', 'フクシャ',
+		'#f0f', 'フクシャ',
 
 		'#800080', 'パープル',
-		'#FFA500', 'オレンジ',
-		'#222222', '文字色',
+		'#ffa500', 'オレンジ',
+		'#222', '文字色',
 	],
 	style_formats: [
 		{title: '見出し', items: [

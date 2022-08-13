@@ -88,8 +88,8 @@ html {
 body {
   margin: 0 auto;
   padding: 0 10px;
-  background-color: #FFFFFF;
-  color: #222222;
+  background-color: #fff;
+  color: #222;
   font: 80%/1.4 "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック",sans-serif;
   word-wrap: break-word;
   word-break: break-word;
@@ -168,7 +168,7 @@ pre {
   margin: 10px 0;
   padding: 10px;
   overflow: auto;
-  border: 1px solid #DDDDDD;
+  border: 1px solid #ddd;
 }
 
 code {
@@ -184,7 +184,7 @@ blockquote {
   margin: 10px 0;
   padding: 0 15px;
   overflow: auto;
-  border-left: 2px solid #7777AA;
+  border-left: 2px solid #77a;
 }
 
 blockquote div,
@@ -192,7 +192,7 @@ blockquote p,
 blockquote li,
 blockquote dt,
 blockquote dd {
-  color: #777777;
+  color: #777;
 }
 
 table {
@@ -204,15 +204,15 @@ table {
 
 table tr th {
   padding: 5px;
-  border: 1px solid #999999;
-  background-color: #EEEEEE;
+  border: 1px solid #999;
+  background-color: #eee;
   font-weight: bold;
   text-align: center;
 }
 
 table tr td {
   padding: 5px;
-  border: 1px solid #999999;
+  border: 1px solid #999;
 }
 
 table tr td input {
@@ -265,13 +265,13 @@ img {
 
 a:link,
 a:visited {
-  color: #0000CC;
+  color: #00c;
   text-decoration: underline;
 }
 
 a:active,
 a:hover {
-  color: #FF7700;
+  color: #f70;
   text-decoration: underline;
 }
 
@@ -279,22 +279,22 @@ a:hover {
 
 span.hidearea {
   padding: 3px 10px;
-  border: 2px solid #AAAAAA;
-  background-color: #EEEEEE;
+  border: 2px solid #aaa;
+  background-color: #eee;
   line-height: 2.0;
   cursor: pointer;
 }
 
 span.hidearea:active,
 span.hidearea:hover {
-  background-color: #AAAAAA;
-  color: #EEEEEE;
+  background-color: #aaa;
+  color: #eee;
 }
 
 div.hidearea {
   padding: 5px 10px;
-  border: 2px solid #AAAAAA;
-  background-color: #EEEEEE;
+  border: 2px solid #aaa;
+  background-color: #eee;
 }
 
 /********* 個別指定 *************************************************/
@@ -309,12 +309,12 @@ div.hidearea {
 }
 
 .complete {
-  color: #00AA00;
+  color: #0a0;
   font-weight: bold;
 }
 
 .attention {
-  color: #FF0000;
+  color: #f00;
   font-weight: bold;
 }
 
