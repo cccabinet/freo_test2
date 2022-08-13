@@ -83,7 +83,7 @@ function freo_main()
 		echo "<input type=\"hidden\" name=\"freo[token]\" value=\"" . freo_token('create') . "\">\n";
 		echo "<dl>\n";
 		echo "<dt><label for=\"mail\">メールアドレス</label></dt>\n";
-		echo "<dd><input type=\"text\" name=\"setup[mail]\" id=\"mail\" size=\"30\" value=\"" . (isset($_POST['setup']['mail']) ? htmlspecialchars($_POST['setup']['mail'], ENT_QUOTES) : '') . "\"></dd>\n";
+		echo "<dd><input type=\"email\" name=\"setup[mail]\" id=\"mail\" size=\"30\" value=\"" . (isset($_POST['setup']['mail']) ? htmlspecialchars($_POST['setup']['mail'], ENT_QUOTES) : '') . "\"></dd>\n";
 		echo "<dt><label for=\"user\">ユーザーID</label></dt>\n";
 		echo "<dd><input type=\"text\" name=\"setup[user]\" id=\"user\" size=\"20\" value=\"" . (isset($_POST['setup']['user']) ? htmlspecialchars($_POST['setup']['user'], ENT_QUOTES) : '') . "\"></dd>\n";
 		echo "<dt><label for=\"password\">パスワード</label></dt>\n";
