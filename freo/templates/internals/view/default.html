@@ -279,7 +279,7 @@
 						<!--{elseif $freo.plugin.riddle}-->
 						<!--{if !$freo.user.id and !$smarty.session.plugin.riddle.approved}-->
 						<dt><label for="riddle">{$plugin_riddle.question}（スパム対策）</label></dt>
-							<dd><input type="text" name="plugin[riddle][answer]" id="riddle" size="30" value=""><input type="hidden" name="plugin[riddle][id]" value="{$plugin_riddle.id}"></dd>
+							<dd><input type="text" name="plugin[riddle][answer]" id="riddle" size="30" value="" placeholder="答えを入れてください"><input type="hidden" name="plugin[riddle][id]" value="{$plugin_riddle.id}"></dd>
 						<!--{/if}-->
 						<!--{/if}-->
 {* /スパム対策 *}
