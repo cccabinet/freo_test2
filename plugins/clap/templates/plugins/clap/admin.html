@@ -53,7 +53,7 @@
 		<!--{if $plugin_claps|smarty:nodefaults}-->
 		<h3>拍手</h3>
 		<p><strong>{$smarty.get.hour}</strong>時の拍手は<strong>{$plugin_claps|smarty:nodefaults|@count}</strong>件です。</p>
-		<table summary="拍手メッセージ">
+		<table>
 			<thead>
 				<tr>
 					<th>送信時間</th>
@@ -90,7 +90,7 @@
 		<!--{else}-->
 		<h3>拍手数</h3>
 		<p>送信回数は<strong>{$plugin_clap_counts.count}</strong>回、送信人数は<strong>{$plugin_clap_counts.session|@count}</strong>人です。</p>
-		<table summary="拍手数">
+		<table>
 			<thead>
 				<tr>
 					<th>送信時間</th>
@@ -118,7 +118,7 @@
 		<!--{if $plugin_clap_texts|smarty:nodefaults}-->
 		<h3>拍手メッセージ</h3>
 		<p>メッセージは<strong>{$plugin_clap_texts|smarty:nodefaults|@count}</strong>件です。</p>
-		<table summary="拍手メッセージ">
+		<table>
 			<thead>
 				<tr>
 					<th>送信時間</th>

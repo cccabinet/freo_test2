@@ -53,14 +53,14 @@ echo "</head>\n";
 echo "<body>\n";
 echo "<h1>PHP Checker</h1>\n";
 echo "<h2>PHP</h2>\n";
-echo "<table summary=\"PHP\">\n";
+echo "<table>\n";
 echo "<tr>\n";
 echo "<th>PHP Version</th>\n";
 echo "<td>" . (phpversion() >= 5 ? phpversion() : '<strong>' . phpversion() . '</strong>') . "</td>\n";
 echo "</tr>\n";
 echo "</table>\n";
 echo "<h2>PDO</h2>\n";
-echo "<table summary=\"PDO\">\n";
+echo "<table>\n";
 echo "<tr>\n";
 echo "<th>PDO</th>\n";
 echo "<td>" . (class_exists('pdo') ? 'OK' : '<strong>NG</strong>') . "</td>\n";
@@ -79,14 +79,14 @@ echo "<td>" . (phpversion('pdo_sqlite') ? phpversion('pdo_sqlite') : '<strong>NG
 echo "</tr>\n";
 echo "</table>\n";
 echo "<h2>GD</h2>\n";
-echo "<table summary=\"GD\">\n";
+echo "<table>\n";
 echo "<tr>\n";
 echo "<th>GD</th>\n";
 echo "<td>" . (function_exists('gd_info') ? 'OK' : '<strong>NG</strong>') . "</td>\n";
 echo "</tr>\n";
 echo "</table>\n";
 echo "<h2>MultiByte</h2>\n";
-echo "<table summary=\"MultiByte\">\n";
+echo "<table>\n";
 echo "<tr>\n";
 echo "<th>MultiByte</th>\n";
 echo "<td>" . (function_exists('mb_language') ? 'OK' : '<strong>NG</strong>') . "</td>\n";
@@ -95,7 +95,7 @@ echo "</table>\n";
 
 if (defined('FREO_PERMISSION_MODE') and FREO_PERMISSION_MODE) {
 	echo "<h2>Chmod</h2>\n";
-	echo "<table summary=\"Chmod\">\n";
+	echo "<table>\n";
 	echo "<tr>\n";
 	echo "<th>Chmod</th>\n";
 	echo "<td>" . ($chmod ? 'OK' : '<strong>NG</strong>') . "</td>\n";
@@ -104,7 +104,7 @@ if (defined('FREO_PERMISSION_MODE') and FREO_PERMISSION_MODE) {
 }
 
 echo "<h2>Charset</h2>\n";
-echo "<table summary=\"Charset\">\n";
+echo "<table>\n";
 echo "<tr>\n";
 echo "<th>default_charset</th>\n";
 echo "<td>" . (ini_get('default_charset') ? ini_get('default_charset') : 'NONE') . "</td>\n";
@@ -131,7 +131,7 @@ echo "<td>" . (ini_get('mbstring.substitute_character') ? ini_get('mbstring.subs
 echo "</tr>\n";
 echo "</table>\n";
 echo "<h2>Session</h2>\n";
-echo "<table summary=\"Session\">\n";
+echo "<table>\n";
 echo "<tr>\n";
 echo "<th>session.use_trans_sid</th>\n";
 echo "<td>" . (ini_get('session.use_trans_sid') ? 'ON' : 'OFF') . "</td>\n";
@@ -154,7 +154,7 @@ echo "<td>" . (ini_get('session.cache_limiter') ? ini_get('session.cache_limiter
 echo "</tr>\n";
 echo "</table>\n";
 echo "<h2>Other</h2>\n";
-echo "<table summary=\"Other\">\n";
+echo "<table>\n";
 echo "<tr>\n";
 echo "<th>register_globals</th>\n";
 echo "<td>" . (ini_get('register_globals') ? 'ON' : 'OFF') . "</td>\n";
@@ -165,7 +165,7 @@ echo "<td>" . (ini_get('magic_quotes_gpc') ? 'ON' : 'OFF') . "</td>\n";
 echo "</tr>\n";
 echo "</table>\n";
 echo "<h2>Details</h2>\n";
-echo "<table summary=\"Details\">\n";
+echo "<table>\n";
 echo "<tr>\n";
 echo "<th>Directive</th>\n";
 echo "<th>global_value</th>\n";
