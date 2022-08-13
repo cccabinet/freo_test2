@@ -192,10 +192,10 @@ if (isset($_POST['token']) and $_POST['token'] == session_id()) {
 	echo "<title>設定編集</title>\n";
 
 	if (file_exists(FREO_CSS_DIR . 'common.css')) {
-		echo "<link rel=\"stylesheet\" href=\"" . FREO_CSS_DIR . "common.css\" type=\"text/css\" media=\"all\" />\n";
+		echo "<link rel=\"stylesheet\" href=\"" . FREO_CSS_DIR . "common.css\" />\n";
 	}
 	if (file_exists(FREO_CSS_DIR . 'setup.css')) {
-		echo "<link rel=\"stylesheet\" href=\"" . FREO_CSS_DIR . "setup.css\" type=\"text/css\" media=\"all\" />\n";
+		echo "<link rel=\"stylesheet\" href=\"" . FREO_CSS_DIR . "setup.css\" />\n";
 	}
 
 	echo "</head>\n";
@@ -294,10 +294,10 @@ echo "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />
 echo "<title>設定編集</title>\n";
 
 if (file_exists(FREO_CSS_DIR . 'common.css')) {
-	echo "<link rel=\"stylesheet\" href=\"" . FREO_CSS_DIR . "common.css\" type=\"text/css\" media=\"all\" />\n";
+	echo "<link rel=\"stylesheet\" href=\"" . FREO_CSS_DIR . "common.css\" />\n";
 }
 if (file_exists(FREO_CSS_DIR . 'setup.css')) {
-	echo "<link rel=\"stylesheet\" href=\"" . FREO_CSS_DIR . "setup.css\" type=\"text/css\" media=\"all\" />\n";
+	echo "<link rel=\"stylesheet\" href=\"" . FREO_CSS_DIR . "setup.css\" />\n";
 }
 if (file_exists(FREO_JS_DIR . 'jquery.js')) {
 	echo "<script type=\"text/javascript\" src=\"https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js\" integrity=\"sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=\" crossorigin=\"anonymous\"></script>\n";
@@ -399,7 +399,7 @@ function freo_setup_error($message)
 	echo "<title>エラーが発生しました</title>\n";
 
 	if (file_exists(FREO_CSS_DIR . 'common.css')) {
-		echo "<link rel=\"stylesheet\" href=\"" . FREO_CSS_DIR . "common.css\" type=\"text/css\" media=\"all\" />\n";
+		echo "<link rel=\"stylesheet\" href=\"" . FREO_CSS_DIR . "common.css\" />\n";
 	}
 
 	echo "</head>\n";

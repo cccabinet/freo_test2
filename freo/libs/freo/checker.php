@@ -38,10 +38,10 @@ echo "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />
 echo "<title>PHP Checker</title>\n";
 
 if (file_exists(FREO_CSS_DIR . 'common.css')) {
-	echo "<link rel=\"stylesheet\" href=\"" . FREO_CSS_DIR . "common.css\" type=\"text/css\" media=\"all\" />\n";
+	echo "<link rel=\"stylesheet\" href=\"" . FREO_CSS_DIR . "common.css\" />\n";
 }
 
-echo "<style type=\"text/css\">\n";
+echo "<style>\n";
 echo "em {\n";
 echo "color: #FF0000;\n";
 echo "}\n";
