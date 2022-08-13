@@ -12,13 +12,6 @@
 					<th>管理ページ</th>
 				</tr>
 			</thead>
-			<tfoot>
-				<tr>
-					<th>プラグインの名前</th>
-					<th>バージョン</th>
-					<th>管理ページ</th>
-				</tr>
-			</tfoot>
 			<tbody>
 				<!--{foreach from=$freo.plugin|smarty:nodefaults item='plugin'}-->
 				<tr>
@@ -28,6 +21,13 @@
 				</tr>
 				<!--{/foreach}-->
 			</tbody>
+			<tfoot>
+				<tr>
+					<th>プラグインの名前</th>
+					<th>バージョン</th>
+					<th>管理ページ</th>
+				</tr>
+			</tfoot>
 		</table>
 	</div>
 {include file='internals/admin/footer.html'}

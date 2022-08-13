@@ -12,13 +12,6 @@
 					<th>ユニークアクセス</th>
 				</tr>
 			</thead>
-			<tfoot>
-				<tr>
-					<th>日</th>
-					<th>ページビュー</th>
-					<th>ユニークアクセス</th>
-				</tr>
-			</tfoot>
 			<tbody>
 				<!--{foreach from=$plugin_count_days|smarty:nodefaults item='plugin_count_day'}-->
 				<tr>
@@ -28,6 +21,13 @@
 				</tr>
 				<!--{/foreach}-->
 			</tbody>
+			<tfoot>
+				<tr>
+					<th>日</th>
+					<th>ページビュー</th>
+					<th>ユニークアクセス</th>
+				</tr>
+			</tfoot>
 		</table>
 		<ul>
 			<li>過去のカウント数は以下のとおりです。</li>
@@ -40,13 +40,6 @@
 					<th>ユニークアクセス</th>
 				</tr>
 			</thead>
-			<tfoot>
-				<tr>
-					<th>年月</th>
-					<th>ページビュー</th>
-					<th>ユニークアクセス</th>
-				</tr>
-			</tfoot>
 			<tbody>
 				<!--{foreach from=$plugin_count_months|smarty:nodefaults item='plugin_count_month'}-->
 				<tr>
@@ -56,6 +49,13 @@
 				</tr>
 				<!--{/foreach}-->
 			</tbody>
+			<tfoot>
+				<tr>
+					<th>年月</th>
+					<th>ページビュー</th>
+					<th>ユニークアクセス</th>
+				</tr>
+			</tfoot>
 		</table>
 	</div>
 {include file='internals/admin/footer.html'}

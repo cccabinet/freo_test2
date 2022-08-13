@@ -29,14 +29,6 @@
 					<th>作業</th>
 				</tr>
 			</thead>
-			<tfoot>
-				<tr>
-					<th>No</th>
-					<th>日時</th>
-					<th>タイトル</th>
-					<th>作業</th>
-				</tr>
-			</tfoot>
 			<tbody>
 				<!--{foreach from=$plugin_tasks|smarty:nodefaults item='plugin_task'}-->
 				<tr>
@@ -50,6 +42,14 @@
 				</tr>
 				<!--{/foreach}-->
 			</tbody>
+			<tfoot>
+				<tr>
+					<th>No</th>
+					<th>日時</th>
+					<th>タイトル</th>
+					<th>作業</th>
+				</tr>
+			</tfoot>
 		</table>
 		<!--{if $plugin_task_page > 1}-->
 		<div id="page">

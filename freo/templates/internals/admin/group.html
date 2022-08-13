@@ -35,14 +35,6 @@
 							<th>作業</th>
 						</tr>
 					</thead>
-					<tfoot>
-						<tr>
-							<th>ID</th>
-							<th>グループ名</th>
-							<th>並び順</th>
-							<th>作業</th>
-						</tr>
-					</tfoot>
 					<tbody>
 						<!--{foreach from=$groups|smarty:nodefaults item='group'}-->
 						<tr>
@@ -56,6 +48,14 @@
 						</tr>
 						<!--{/foreach}-->
 					</tbody>
+					<tfoot>
+						<tr>
+							<th>ID</th>
+							<th>グループ名</th>
+							<th>並び順</th>
+							<th>作業</th>
+						</tr>
+					</tfoot>
 				</table>
 				<!--{if $freo.user.authority == 'root'}-->
 				<p><input type="submit" value="並び順を編集する"></p>

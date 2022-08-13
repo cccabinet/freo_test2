@@ -14,14 +14,6 @@
 					<th>注文数</th>
 				</tr>
 			</thead>
-			<tfoot>
-				<tr>
-					<th>商品ID</th>
-					<th>商品名</th>
-					<th>価格</th>
-					<th>注文数</th>
-				</tr>
-			</tfoot>
 			<tbody>
 				<!--{foreach from=$plugin_catalog_order_sets|smarty:nodefaults item='plugin_catalog_order_set'}-->
 				<tr>
@@ -32,6 +24,14 @@
 				</tr>
 				<!--{/foreach}-->
 			</tbody>
+			<tfoot>
+				<tr>
+					<th>商品ID</th>
+					<th>商品名</th>
+					<th>価格</th>
+					<th>注文数</th>
+				</tr>
+			</tfoot>
 		</table>
 	</div>
 {include file='internals/admin/footer.html'}

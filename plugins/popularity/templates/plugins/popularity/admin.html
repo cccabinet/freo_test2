@@ -30,13 +30,6 @@
 					<th>作業</th>
 				</tr>
 			</thead>
-			<tfoot>
-				<tr>
-					<th>ページ</th>
-					<th>アクセス数</th>
-					<th>作業</th>
-				</tr>
-			</tfoot>
 			<!--{if $plugin_popularity_raws|smarty:nodefaults}-->
 			<tbody>
 				<!--{foreach from=$plugin_popularity_raws|smarty:nodefaults item='plugin_popularity_raw'}-->
@@ -58,6 +51,13 @@
 				<!--{/foreach}-->
 			</tbody>
 			<!--{/if}-->
+			<tfoot>
+				<tr>
+					<th>ページ</th>
+					<th>アクセス数</th>
+					<th>作業</th>
+				</tr>
+			</tfoot>
 		</table>
 		<h2>データリセット</h2>
 		<ul>

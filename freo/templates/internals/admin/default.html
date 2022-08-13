@@ -63,14 +63,6 @@
 					<th>更新日時</th>
 				</tr>
 			</thead>
-			<tfoot>
-				<tr>
-					<th>項目</th>
-					<th>登録件数</th>
-					<th>未承認</th>
-					<th>更新日時</th>
-				</tr>
-			</tfoot>
 			<tbody>
 				<tr>
 					<td>エントリー</td>
@@ -103,6 +95,14 @@
 					<td><!--{if $user_modified|date_format:'%Y%m%d' == $smarty.now|date_format:'%Y%m%d'}-->{$user_modified|date_format:'%H:%M:%S'}<!--{else}-->{$user_modified|date_format:'%Y/%m/%d'}<!--{/if}--></td>
 				</tr>
 			</tbody>
+			<tfoot>
+				<tr>
+					<th>項目</th>
+					<th>登録件数</th>
+					<th>未承認</th>
+					<th>更新日時</th>
+				</tr>
+			</tfoot>
 		</table>
 		<h3>ファイルサイズ</h3>
 		<table>
@@ -112,12 +112,6 @@
 					<th>ファイルサイズ</th>
 				</tr>
 			</thead>
-			<tfoot>
-				<tr>
-					<th>項目</th>
-					<th>ファイルサイズ</th>
-				</tr>
-			</tfoot>
 			<tbody>
 				<tr>
 					<td>エントリーファイル</td>
@@ -148,6 +142,12 @@
 					<td class="number">{$media_size/1024|intval|number_format}KB</td>
 				</tr>
 			</tbody>
+			<tfoot>
+				<tr>
+					<th>項目</th>
+					<th>ファイルサイズ</th>
+				</tr>
+			</tfoot>
 		</table>
 	</div>
 {include file='internals/admin/footer.html'}

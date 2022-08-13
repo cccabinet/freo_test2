@@ -13,14 +13,6 @@
 					<th>本文</th>
 				</tr>
 			</thead>
-			<tfoot>
-				<tr>
-					<th>日時</th>
-					<th>ユーザーID</th>
-					<th>ホスト名（IPアドレス）</th>
-					<th>本文</th>
-				</tr>
-			</tfoot>
 			<tbody>
 				<!--{foreach from=$logs|smarty:nodefaults item='log'}-->
 				<tr>
@@ -31,6 +23,14 @@
 				</tr>
 				<!--{/foreach}-->
 			</tbody>
+			<tfoot>
+				<tr>
+					<th>日時</th>
+					<th>ユーザーID</th>
+					<th>ホスト名（IPアドレス）</th>
+					<th>本文</th>
+				</tr>
+			</tfoot>
 		</table>
 		<!--{if $log_page > 1}-->
 		<div id="page">
