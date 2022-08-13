@@ -187,15 +187,14 @@
 							</select>
 						</dd>
 					<!--{/if}-->
+				<!--{if $freo.query.name}-->
 					<dt><label for="media_file">ファイル <abbr class="attention" title="入力必須">*</abbr></label></dt>
 						<dd><input type="file" name="media[file][]" id="media_file" size="30"></dd>
 				</dl>
-				<!--{if !$freo.query.name}-->
-				<dl id="media_template">
-					<dt><label for="media_file">ファイル</label></dt>
-						<dd><input type="file" name="media[file][]" id="media_file" size="30"></dd>
+				<!--{else}-->
+					<dt><label for="media_file">ファイル <abbr class="attention" title="入力必須">*</abbr>（複数選択可）<br>※Ctrl+クリックで複数のファイルを選択</label></dt>
+						<dd><input type="file" name="media[file][]" id="media_file" size="30" multiple></dd>
 				</dl>
-				<p><a href="javascript:void(0)" id="media_add">ファイル選択欄を追加</a></p>
 				<!--{/if}-->
 				<!--{if $freo.config.media.thumbnail}-->
 				<dl>
