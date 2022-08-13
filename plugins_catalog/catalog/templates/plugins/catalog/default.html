@@ -31,23 +31,23 @@
 		<form action="{$freo.core.http_file}/catalog" method="get">
 			<fieldset>
 				<legend>絞り込み表示フォーム</legend>
-				<!--{if $smarty.get.category_id}--><input type="hidden" name="category_id" value="{$smarty.get.category_id}" /><!--{/if}-->
-				<!--{if $smarty.get.tag}--><input type="hidden" name="tag" value="{$smarty.get.tag}" /><!--{/if}-->
-				<!--{if $smarty.get.date}--><input type="hidden" name="date" value="{$smarty.get.date}" /><!--{/if}-->
-				<!--{if $smarty.get.option01}--><input type="hidden" name="option01" value="{$smarty.get.option01}" /><!--{/if}-->
-				<!--{if $smarty.get.option02}--><input type="hidden" name="option02" value="{$smarty.get.option02}" /><!--{/if}-->
-				<!--{if $smarty.get.option03}--><input type="hidden" name="option03" value="{$smarty.get.option03}" /><!--{/if}-->
-				<!--{if $smarty.get.option04}--><input type="hidden" name="option04" value="{$smarty.get.option04}" /><!--{/if}-->
-				<!--{if $smarty.get.option05}--><input type="hidden" name="option05" value="{$smarty.get.option05}" /><!--{/if}-->
-				<!--{if $smarty.get.option06}--><input type="hidden" name="option06" value="{$smarty.get.option06}" /><!--{/if}-->
-				<!--{if $smarty.get.option07}--><input type="hidden" name="option07" value="{$smarty.get.option07}" /><!--{/if}-->
-				<!--{if $smarty.get.option08}--><input type="hidden" name="option08" value="{$smarty.get.option08}" /><!--{/if}-->
-				<!--{if $smarty.get.option09}--><input type="hidden" name="option09" value="{$smarty.get.option09}" /><!--{/if}-->
-				<!--{if $smarty.get.option10}--><input type="hidden" name="option10" value="{$smarty.get.option10}" /><!--{/if}-->
-				<!--{if $smarty.get.condition}--><input type="hidden" name="condition" value="{$smarty.get.condition}" /><!--{/if}-->
+				<!--{if $smarty.get.category_id}--><input type="hidden" name="category_id" value="{$smarty.get.category_id}"><!--{/if}-->
+				<!--{if $smarty.get.tag}--><input type="hidden" name="tag" value="{$smarty.get.tag}"><!--{/if}-->
+				<!--{if $smarty.get.date}--><input type="hidden" name="date" value="{$smarty.get.date}"><!--{/if}-->
+				<!--{if $smarty.get.option01}--><input type="hidden" name="option01" value="{$smarty.get.option01}"><!--{/if}-->
+				<!--{if $smarty.get.option02}--><input type="hidden" name="option02" value="{$smarty.get.option02}"><!--{/if}-->
+				<!--{if $smarty.get.option03}--><input type="hidden" name="option03" value="{$smarty.get.option03}"><!--{/if}-->
+				<!--{if $smarty.get.option04}--><input type="hidden" name="option04" value="{$smarty.get.option04}"><!--{/if}-->
+				<!--{if $smarty.get.option05}--><input type="hidden" name="option05" value="{$smarty.get.option05}"><!--{/if}-->
+				<!--{if $smarty.get.option06}--><input type="hidden" name="option06" value="{$smarty.get.option06}"><!--{/if}-->
+				<!--{if $smarty.get.option07}--><input type="hidden" name="option07" value="{$smarty.get.option07}"><!--{/if}-->
+				<!--{if $smarty.get.option08}--><input type="hidden" name="option08" value="{$smarty.get.option08}"><!--{/if}-->
+				<!--{if $smarty.get.option09}--><input type="hidden" name="option09" value="{$smarty.get.option09}"><!--{/if}-->
+				<!--{if $smarty.get.option10}--><input type="hidden" name="option10" value="{$smarty.get.option10}"><!--{/if}-->
+				<!--{if $smarty.get.condition}--><input type="hidden" name="condition" value="{$smarty.get.condition}"><!--{/if}-->
 				<dl>
 					<dt>キーワード</dt>
-						<dd><input type="text" name="word" size="50" value="{$smarty.get.word}" /></dd>
+						<dd><input type="text" name="word" size="50" value="{$smarty.get.word}"></dd>
 					<dt>表示順</dt>
 						<dd>
 							<select name="sort">
@@ -59,7 +59,7 @@
 							</select>
 						</dd>
 				</dl>
-				<p><input type="submit" value="絞り込む" /></p>
+				<p><input type="submit" value="絞り込む"></p>
 			</fieldset>
 		</form>
 
@@ -75,7 +75,7 @@
 		<h3><a href="{$freo.core.http_file}/catalog/view/{$plugin_catalog.id}">{$plugin_catalog.name}</a><!--{if $plugin_catalog.datetime|recently:7:'day'}--> <small class="attention">New!</small><!--{/if}--></h3>
 
 		<!--{if $plugin_catalog_files[$plugin_catalog.id].file or $plugin_catalog_files[$plugin_catalog.id].file_thumbnail}-->
-		<p><a href="{$freo.core.http_file}/catalog/view/{$plugin_catalog.id}"><img src="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/catalog_files/{$plugin_catalog.id}/{$plugin_catalog_files[$plugin_catalog.id].file_thumbnail|default:$plugin_catalog_files[$plugin_catalog.id].file}" alt="商品画像" /></a></p>
+		<p><a href="{$freo.core.http_file}/catalog/view/{$plugin_catalog.id}"><img src="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}plugins/catalog_files/{$plugin_catalog.id}/{$plugin_catalog_files[$plugin_catalog.id].file_thumbnail|default:$plugin_catalog_files[$plugin_catalog.id].file}" alt="商品画像"></a></p>
 		<!--{/if}-->
 
 		<!--{if $plugin_catalog.text}-->
@@ -86,9 +86,9 @@
 		<form action="{$freo.core.http_file}/catalog/cart_putin" method="post">
 			<fieldset>
 				<legend>商品購入フォーム</legend>
-				<input type="hidden" name="plugin_catalog[id]" value="{$plugin_catalog.id}" />
-				<input type="hidden" name="plugin_catalog[count]" value="1" />
-				<p><input type="submit" value="カートに入れる" /></p>
+				<input type="hidden" name="plugin_catalog[id]" value="{$plugin_catalog.id}">
+				<input type="hidden" name="plugin_catalog[count]" value="1">
+				<p><input type="submit" value="カートに入れる"></p>
 			</fieldset>
 		</form>
 		<!--{/if}-->

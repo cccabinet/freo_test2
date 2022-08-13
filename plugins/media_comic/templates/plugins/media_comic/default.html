@@ -2,11 +2,11 @@
 <html lang="ja">
 
 <head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>{$plugin_media_comic_memo|default:'comic'} | {$freo.config.basis.title}</title>
-	<link rel="stylesheet" href="{$freo.core.http_url}{$smarty.const.FREO_CSS_DIR}common.css" />
-	<link rel="stylesheet" href="{$freo.core.http_url}{$smarty.const.FREO_CSS_DIR}plugins/media_comic.css" />
+	<link rel="stylesheet" href="{$freo.core.http_url}{$smarty.const.FREO_CSS_DIR}common.css">
+	<link rel="stylesheet" href="{$freo.core.http_url}{$smarty.const.FREO_CSS_DIR}plugins/media_comic.css">
 	<style>
 
 	{if $plugin_media_comic_cover == false}
@@ -120,7 +120,7 @@
 		<div id="media_comic">
 			<!--{foreach from=$plugin_media_comics|smarty:nodefaults key='page' item='plugin_media_comic'}-->
 			<div class="media_comic" id="page-{$page}">
-				<!--{foreach from=$plugin_media_comic|smarty:nodefaults item='plugin_media_comic'}--><p><a href="#page-{$plugin_media_comic.link}"><img src="{if $plugin_media_comic_restriction}{$freo.core.http_file}/file/media/{$smarty.const.FREO_PLUGIN_MEDIA_COMIC_DIR}{$smarty.get.comic}/{$plugin_media_comic.file}{else}{$freo.core.http_url}{$plugin_media_comic_dir}{$plugin_media_comic.file}{/if}" alt="{$plugin_media_comic.id}" title="{$plugin_media_comic.id}" width="{$plugin_media_comic_width}" height="{$plugin_media_comic_height}" /></a></p><!--{/foreach}-->
+				<!--{foreach from=$plugin_media_comic|smarty:nodefaults item='plugin_media_comic'}--><p><a href="#page-{$plugin_media_comic.link}"><img src="{if $plugin_media_comic_restriction}{$freo.core.http_file}/file/media/{$smarty.const.FREO_PLUGIN_MEDIA_COMIC_DIR}{$smarty.get.comic}/{$plugin_media_comic.file}{else}{$freo.core.http_url}{$plugin_media_comic_dir}{$plugin_media_comic.file}{/if}" alt="{$plugin_media_comic.id}" title="{$plugin_media_comic.id}" width="{$plugin_media_comic_width}" height="{$plugin_media_comic_height}"></a></p><!--{/foreach}-->
 			</div>
 			<!--{/foreach}-->
 			<div class="media_comic end" id="page-{$plugin_media_comic_end}">
@@ -155,7 +155,7 @@
 			<!--{foreach from=$plugin_media_comics|smarty:nodefaults key='page' item='plugin_media_comic'}-->
 			<!--{if $page == $freo.query.page}-->
 			<div class="media_comic">
-				<!--{foreach from=$plugin_media_comic|smarty:nodefaults item='plugin_media_comic'}--><p><a href="{$freo.core.https_file}/media_comic/{$freo.query.comic}?page={$plugin_media_comic.link}{if $freo.query.columns == '1'}&amp;columns=1{/if}{if $freo.query.direction == 'ltr'}&amp;direction=ltr{/if}&amp;devide=on{if $freo.query.end == 'on'}&amp;end=on{/if}{if $freo.query.navigation == 'off'}&amp;navigation=off{/if}"><img src="{if $plugin_media_comic_restriction}{$freo.core.http_file}/file/media/{$smarty.const.FREO_PLUGIN_MEDIA_COMIC_DIR}{$smarty.get.comic}/{$plugin_media_comic.file}{else}{$freo.core.http_url}{$plugin_media_comic_dir}{$plugin_media_comic.file}{/if}" alt="{$plugin_media_comic.id}" title="{$plugin_media_comic.id}" width="{$plugin_media_comic_width}" height="{$plugin_media_comic_height}" /></a></p><!--{/foreach}-->
+				<!--{foreach from=$plugin_media_comic|smarty:nodefaults item='plugin_media_comic'}--><p><a href="{$freo.core.https_file}/media_comic/{$freo.query.comic}?page={$plugin_media_comic.link}{if $freo.query.columns == '1'}&amp;columns=1{/if}{if $freo.query.direction == 'ltr'}&amp;direction=ltr{/if}&amp;devide=on{if $freo.query.end == 'on'}&amp;end=on{/if}{if $freo.query.navigation == 'off'}&amp;navigation=off{/if}"><img src="{if $plugin_media_comic_restriction}{$freo.core.http_file}/file/media/{$smarty.const.FREO_PLUGIN_MEDIA_COMIC_DIR}{$smarty.get.comic}/{$plugin_media_comic.file}{else}{$freo.core.http_url}{$plugin_media_comic_dir}{$plugin_media_comic.file}{/if}" alt="{$plugin_media_comic.id}" title="{$plugin_media_comic.id}" width="{$plugin_media_comic_width}" height="{$plugin_media_comic_height}"></a></p><!--{/foreach}-->
 			</div>
 			<!--{/if}-->
 			<!--{/foreach}-->

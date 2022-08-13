@@ -25,7 +25,7 @@
 		<form action="{$freo.core.http_file}/admin/group_update" method="post">
 			<fieldset>
 				<legend>グループ並び替えフォーム</legend>
-				<input type="hidden" name="freo[token]" value="{$token}" />
+				<input type="hidden" name="freo[token]" value="{$token}">
 				<table summary="グループ">
 					<thead>
 						<tr>
@@ -48,7 +48,7 @@
 						<tr>
 							<td>{$group.id}</td>
 							<td>{$group.name}</td>
-							<td class="number"><!--{if $freo.user.authority == 'root'}--><input type="text" name="sort[{$group.id}]" size="3" value="{$group.sort}" /><!--{else}-->{$group.sort}<!--{/if}--></td>
+							<td class="number"><!--{if $freo.user.authority == 'root'}--><input type="text" name="sort[{$group.id}]" size="3" value="{$group.sort}"><!--{else}-->{$group.sort}<!--{/if}--></td>
 							<td>
 								<a href="{$freo.core.http_file}/admin/group_form?id={$group.id}">編集</a>
 								<a href="{$freo.core.http_file}/admin/group_delete?freo%5Btoken%5D={$token}&amp;id={$group.id}" class="delete">削除</a>
@@ -58,7 +58,7 @@
 					</tbody>
 				</table>
 				<!--{if $freo.user.authority == 'root'}-->
-				<p><input type="submit" value="並び順を編集する" /></p>
+				<p><input type="submit" value="並び順を編集する"></p>
 				<!--{/if}-->
 			</fieldset>
 		</form>

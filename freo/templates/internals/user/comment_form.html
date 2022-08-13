@@ -18,9 +18,9 @@
 	<form action="{$freo.core.http_file}/user/comment_form?id={$freo.query.id}" method="post">
 		<fieldset>
 			<legend>登録フォーム</legend>
-			<input type="hidden" name="freo[token]" value="{$token}" />
-			<input type="hidden" name="comment[id]" value="{$input.comment.id}" />
-			<input type="hidden" name="comment[user_id]" value="{$input.comment.user_id}" />
+			<input type="hidden" name="freo[token]" value="{$token}">
+			<input type="hidden" name="comment[id]" value="{$input.comment.id}">
+			<input type="hidden" name="comment[user_id]" value="{$input.comment.user_id}">
 			<dl>
 				<dt>コメント</dt>
 					<dd><textarea name="comment[text]" cols="50" rows="10">{$input.comment.text}</textarea></dd>
@@ -34,8 +34,8 @@
 					</dd>
 			</dl>
 			<p>
-				<input type="submit" name="preview" value="確認する" />
-				<input type="submit" value="登録する" />
+				<input type="submit" name="preview" value="確認する">
+				<input type="submit" value="登録する">
 			</p>
 		</fieldset>
 	</form>
@@ -47,9 +47,9 @@
 	<form action="{$freo.core.http_file}/user/comment_delete" method="get" class="delete">
 		<fieldset>
 			<legend>コメント削除フォーム</legend>
-			<input type="hidden" name="freo[token]" value="{$token}" />
-			<input type="hidden" name="id" value="{$freo.query.id}" />
-			<p><input type="submit" value="削除する" /></p>
+			<input type="hidden" name="freo[token]" value="{$token}">
+			<input type="hidden" name="id" value="{$freo.query.id}">
+			<p><input type="submit" value="削除する"></p>
 		</fieldset>
 	</form>
 	<!--{/if}-->

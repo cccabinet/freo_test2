@@ -18,13 +18,13 @@
 		<form action="{$freo.core.http_file}/clap" method="post">
 			<fieldset>
 				<legend>お礼メッセージ送信フォーム</legend>
-				<input type="hidden" name="freo[token]" value="{$token}" />
-				<input type="hidden" name="plugin_clap[title]" value="{$smarty.post.plugin_clap.title}" />
+				<input type="hidden" name="freo[token]" value="{$token}">
+				<input type="hidden" name="plugin_clap[title]" value="{$smarty.post.plugin_clap.title}">
 				<dl>
 					<dt>メッセージ</dt>
 						<dd><textarea name="plugin_clap[text]" cols="50" rows="5"></textarea></dd>
 				</dl>
-				<p><input type="submit" value="もっと送る" /></p>
+				<p><input type="submit" value="もっと送る"></p>
 			</fieldset>
 		</form>
 	<!--{/if}-->

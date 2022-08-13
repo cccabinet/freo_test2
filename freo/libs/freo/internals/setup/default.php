@@ -46,13 +46,13 @@ function freo_main()
 	echo "<!DOCTYPE html>\n";
 	echo "<html lang=\"ja\">\n";
 	echo "<head>\n";
-	echo "<meta charset=\"utf-8\" />\n";
-	echo "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n";
+	echo "<meta charset=\"utf-8\">\n";
+	echo "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n";
 	echo "<title>セットアップ</title>\n";
 
 	if (file_exists(FREO_CSS_DIR)) {
-		echo "<link rel=\"stylesheet\" href=\"" . FREO_HTTP_URL . FREO_CSS_DIR . "common.css\" />\n";
-		echo "<link rel=\"stylesheet\" href=\"" . FREO_HTTP_URL . FREO_CSS_DIR . "setup.css\" />\n";
+		echo "<link rel=\"stylesheet\" href=\"" . FREO_HTTP_URL . FREO_CSS_DIR . "common.css\">\n";
+		echo "<link rel=\"stylesheet\" href=\"" . FREO_HTTP_URL . FREO_CSS_DIR . "setup.css\">\n";
 	}
 	if (file_exists(FREO_JS_DIR)) {
 		echo "<script src=\"https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js\" integrity=\"sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=\" crossorigin=\"anonymous\"></script>\n";
@@ -86,16 +86,16 @@ function freo_main()
 		echo "<form action=\"" . ($freo->core['https_file'] ? $freo->core['https_file'] : $freo->core['http_file']) . "/setup\" method=\"post\">\n";
 		echo "<fieldset>\n";
 		echo "<legend>セットアップ実行フォーム</legend>\n";
-		echo "<input type=\"hidden\" name=\"freo[token]\" value=\"" . freo_token('create') . "\" />\n";
+		echo "<input type=\"hidden\" name=\"freo[token]\" value=\"" . freo_token('create') . "\">\n";
 		echo "<dl>\n";
 		echo "<dt>メールアドレス</dt>\n";
-		echo "<dd><input type=\"text\" name=\"setup[mail]\" size=\"30\" value=\"" . (isset($_POST['setup']['mail']) ? htmlspecialchars($_POST['setup']['mail'], ENT_QUOTES) : '') . "\" /></dd>\n";
+		echo "<dd><input type=\"text\" name=\"setup[mail]\" size=\"30\" value=\"" . (isset($_POST['setup']['mail']) ? htmlspecialchars($_POST['setup']['mail'], ENT_QUOTES) : '') . "\"></dd>\n";
 		echo "<dt>ユーザーID</dt>\n";
-		echo "<dd><input type=\"text\" name=\"setup[user]\" size=\"20\" value=\"" . (isset($_POST['setup']['user']) ? htmlspecialchars($_POST['setup']['user'], ENT_QUOTES) : '') . "\" /></dd>\n";
+		echo "<dd><input type=\"text\" name=\"setup[user]\" size=\"20\" value=\"" . (isset($_POST['setup']['user']) ? htmlspecialchars($_POST['setup']['user'], ENT_QUOTES) : '') . "\"></dd>\n";
 		echo "<dt>パスワード</dt>\n";
-		echo "<dd><input type=\"password\" name=\"setup[password]\" size=\"20\" value=\"" . (isset($_POST['setup']['password']) ? htmlspecialchars($_POST['setup']['password'], ENT_QUOTES) : '') . "\" /></dd>\n";
+		echo "<dd><input type=\"password\" name=\"setup[password]\" size=\"20\" value=\"" . (isset($_POST['setup']['password']) ? htmlspecialchars($_POST['setup']['password'], ENT_QUOTES) : '') . "\"></dd>\n";
 		echo "</dl>\n";
-		echo "<p><input type=\"submit\" value=\"セットアップ実行\" /></p>\n";
+		echo "<p><input type=\"submit\" value=\"セットアップ実行\"></p>\n";
 		echo "</fieldset>\n";
 		echo "</form>\n";
 	} else {
@@ -109,8 +109,8 @@ function freo_main()
 			echo "<form action=\"" . ($freo->core['https_file'] ? $freo->core['https_file'] : $freo->core['http_file']) . "/setup\" method=\"post\">\n";
 			echo "<fieldset>\n";
 			echo "<legend>セットアップ実行フォーム</legend>\n";
-			echo "<input type=\"hidden\" name=\"freo[token]\" value=\"" . freo_token('create') . "\" />\n";
-			echo "<p><input type=\"submit\" value=\"セットアップ実行\" /></p>\n";
+			echo "<input type=\"hidden\" name=\"freo[token]\" value=\"" . freo_token('create') . "\">\n";
+			echo "<p><input type=\"submit\" value=\"セットアップ実行\"></p>\n";
 			echo "</fieldset>\n";
 			echo "</form>\n";
 		} else {

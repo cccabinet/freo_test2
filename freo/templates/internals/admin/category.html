@@ -32,8 +32,8 @@
 		<form action="{$freo.core.http_file}/admin/category_update" method="post">
 			<fieldset>
 				<legend>カテゴリー並び替えフォーム</legend>
-				<input type="hidden" name="freo[token]" value="{$token}" />
-				<input type="hidden" name="pid" value="{$freo.query.pid}" />
+				<input type="hidden" name="freo[token]" value="{$token}">
+				<input type="hidden" name="pid" value="{$freo.query.pid}">
 				<table summary="カテゴリー">
 					<thead>
 						<tr>
@@ -64,7 +64,7 @@
 						<tr>
 							<td><a href="{$freo.core.http_file}/admin/category?pid={$category.id}">{$category.id}</a></td>
 							<td>{$category.name}</td>
-							<td class="number"><input type="text" name="sort[{$category.id}]" size="3" value="{$category.sort}" /></td>
+							<td class="number"><input type="text" name="sort[{$category.id}]" size="3" value="{$category.sort}"></td>
 							<td>
 								<a href="{$freo.core.http_file}/category/{$category.id}">確認</a>
 								<a href="{$freo.core.http_file}/admin/category_form?id={$category.id}">編集</a>
@@ -74,7 +74,7 @@
 						<!--{/foreach}-->
 					</tbody>
 				</table>
-				<p><input type="submit" value="並び順を編集する" /></p>
+				<p><input type="submit" value="並び順を編集する"></p>
 			</fieldset>
 		</form>
 	</div>

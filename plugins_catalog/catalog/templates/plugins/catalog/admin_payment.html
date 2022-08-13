@@ -26,7 +26,7 @@
 		<form action="{$freo.core.http_file}/catalog/admin_payment_update" method="post">
 			<fieldset>
 				<legend>支払い方法並び替えフォーム</legend>
-				<input type="hidden" name="freo[token]" value="{$token}" />
+				<input type="hidden" name="freo[token]" value="{$token}">
 				<table summary="支払い方法">
 					<thead>
 						<tr>
@@ -55,7 +55,7 @@
 							<td>{$plugin_catalog_payment.name}</td>
 							<td class="number"><!--{if $plugin_catalog_payment.charge != ''}-->{$plugin_catalog_payment.charge|number_format}円<!--{/if}--></td>
 							<td><!--{if $plugin_catalog_payment.status == 'publish'}-->使用<!--{elseif $plugin_catalog_payment.status == 'private'}-->未使用<!--{/if}--></td>
-							<td class="number"><input type="text" name="sort[{$plugin_catalog_payment.id}]" size="3" value="{$plugin_catalog_payment.sort}" /></td>
+							<td class="number"><input type="text" name="sort[{$plugin_catalog_payment.id}]" size="3" value="{$plugin_catalog_payment.sort}"></td>
 							<td>
 								<a href="{$freo.core.http_file}/catalog/admin_payment_form?id={$plugin_catalog_payment.id}">編集</a>
 								<a href="{$freo.core.http_file}/catalog/admin_payment_delete?freo%5Btoken%5D={$token}&amp;id={$plugin_catalog_payment.id}" class="delete">削除</a>
@@ -64,7 +64,7 @@
 						<!--{/foreach}-->
 					</tbody>
 				</table>
-				<p><input type="submit" value="並び順を編集する" /></p>
+				<p><input type="submit" value="並び順を編集する"></p>
 			</fieldset>
 		</form>
 	</div>

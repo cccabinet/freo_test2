@@ -1450,7 +1450,7 @@ function freo_option($text, $options, $path)
 				list($width, $height, $size) = freo_file($file);
 
 				if ($width > 0 and $height > 0) {
-					$text = preg_replace('/\[\$' . $key . '((\s+[^\]]+)*)\|image]/', '<img src="' . FREO_HTTP_URL . $file . '"$1 />', $text);
+					$text = preg_replace('/\[\$' . $key . '((\s+[^\]]+)*)\|image]/', '<img src="' . FREO_HTTP_URL . $file . '"$1>', $text);
 				}
 			}
 
@@ -1465,12 +1465,12 @@ function freo_option($text, $options, $path)
 			if (file_exists($file) and file_exists($thumbnail)) {
 				list($width, $height, $size) = freo_file($thumbnail);
 
-				$text = preg_replace('/\[\$' . $key . '((\s+[^\]]+)*)\]/', '<a href="' . FREO_HTTP_URL . $file . '"><img src="' . FREO_HTTP_URL . $thumbnail . '"$1 /></a>', $text);
+				$text = preg_replace('/\[\$' . $key . '((\s+[^\]]+)*)\]/', '<a href="' . FREO_HTTP_URL . $file . '"><img src="' . FREO_HTTP_URL . $thumbnail . '"$1></a>', $text);
 			} elseif (file_exists($file)) {
 				list($width, $height, $size) = freo_file($file);
 
 				if ($width > 0 and $height > 0) {
-					$text = preg_replace('/\[\$' . $key . '((\s+[^\]]+)*)\]/', '<a href="' . FREO_HTTP_URL . $file . '"><img src="' . FREO_HTTP_URL . $file . '"$1 /></a>', $text);
+					$text = preg_replace('/\[\$' . $key . '((\s+[^\]]+)*)\]/', '<a href="' . FREO_HTTP_URL . $file . '"><img src="' . FREO_HTTP_URL . $file . '"$1></a>', $text);
 				} else {
 					$text = preg_replace('/\[\$' . $key . '(\s+[^\]]+)\]/', '<a href="' . FREO_HTTP_URL . $file . '">$1</a>', $text);
 					$text = preg_replace('/\[\$' . $key . '\]/', '<a href="' . FREO_HTTP_URL . $file . '">' . FREO_HTTP_URL . $file . '</a>', $text);

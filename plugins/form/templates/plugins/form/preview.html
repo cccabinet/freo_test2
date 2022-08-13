@@ -13,14 +13,14 @@
 		<form action="{if $smarty.server.HTTPS and $smarty.server.HTTPS != 'off'}{$freo.core.https_file}{else}{$freo.core.http_file}{/if}/form/{$freo.query.id}" method="get" id="plugin_form">
 			<fieldset>
 				<legend>メール編集フォーム</legend>
-				<p><input type="submit" value="編集する" /></p>
+				<p><input type="submit" value="編集する"></p>
 			</fieldset>
 		</form>
 		<form action="{if $smarty.server.HTTPS and $smarty.server.HTTPS != 'off'}{$freo.core.https_file}{else}{$freo.core.http_file}{/if}/form/send/{$freo.query.id}" method="post" id="plugin_form_post">
 			<fieldset>
 				<legend>メール送信フォーム</legend>
-				<input type="hidden" name="freo[token]" value="{$token}" />
-				<p><input type="submit" value="送信する" /></p>
+				<input type="hidden" name="freo[token]" value="{$token}">
+				<p><input type="submit" value="送信する"></p>
 			</fieldset>
 		</form>
 	</div>

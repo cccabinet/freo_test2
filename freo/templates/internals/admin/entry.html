@@ -56,7 +56,7 @@
 					<legend>エントリー検索フォーム</legend>
 					<dl>
 						<dt>キーワード</dt>
-							<dd><input type="text" name="word" size="50" value="{$smarty.get.word}" /></dd>
+							<dd><input type="text" name="word" size="50" value="{$smarty.get.word}"></dd>
 						<!--{if $freo.config.entry.category}-->
 						<dt>カテゴリー</dt>
 							<dd>
@@ -68,14 +68,14 @@
 						<!--{/if}-->
 						<dt>状態</dt>
 							<dd>
-								<input type="checkbox" name="status" id="label_status_private" value="private"{if $freo.query.status == 'private'} checked="checked"{/if} /> <label for="label_status_private">未公開のみ</label>
+								<input type="checkbox" name="status" id="label_status_private" value="private"{if $freo.query.status == 'private'} checked="checked"{/if}> <label for="label_status_private">未公開のみ</label>
 								<!--{if $freo.config.entry.approve == 'no'}-->
 								&nbsp;
-								<input type="checkbox" name="approved" id="label_approved_no" value="no"{if $freo.query.approved == 'no'} checked="checked"{/if} /> <label for="label_approved_no">未承認のみ</label>
+								<input type="checkbox" name="approved" id="label_approved_no" value="no"{if $freo.query.approved == 'no'} checked="checked"{/if}> <label for="label_approved_no">未承認のみ</label>
 								<!--{/if}-->
 							</dd>
 					</dl>
-					<p><input type="submit" value="検索する" /></p>
+					<p><input type="submit" value="検索する"></p>
 				</fieldset>
 			</form>
 		</div>
@@ -115,7 +115,7 @@
 					<td>{$entry.title}</td>
 					<td><!--{if $entry.approved == 'no'}-->未承認<!--{elseif $entry.status == 'private'}-->未公開<!--{elseif $entry.status == 'publish'}--><!--{if $entry.close}--><!--{if $entry.close|date_format:'%Y%m%d%H%M%S' <= $smarty.now|date_format:'%Y%m%d%H%M%S'}-->公開終了<!--{else}--><!--{if $entry.close|date_format:'%Y%m%d' == $smarty.now|date_format:'%Y%m%d'}-->{$entry.close|date_format:'%H:%M:%S'}<br><!--{else}-->{$entry.close|date_format:'%Y/%m/%d'}<br><!--{/if}-->公開終了予定<!--{/if}--><!--{else}-->公開<!--{/if}--><!--{elseif $entry.status == 'future'}--><!--{if $entry.datetime|date_format:'%Y%m%d%H%M%S' <= $smarty.now|date_format:'%Y%m%d%H%M%S'}--><!--{if $entry.close}--><!--{if $entry.close|date_format:'%Y%m%d%H%M%S' <= $smarty.now|date_format:'%Y%m%d%H%M%S'}-->公開終了<!--{else}--><!--{if $entry.close|date_format:'%Y%m%d' == $smarty.now|date_format:'%Y%m%d'}-->{$entry.close|date_format:'%H:%M:%S'}<br><!--{else}-->{$entry.close|date_format:'%Y/%m/%d'}<br><!--{/if}-->公開終了予定<!--{/if}--><!--{else}-->公開中<!--{/if}--><!--{else}-->予約公開<!--{/if}--><!--{/if}--></td>
 					<!--{if $freo.config.entry.restriction or $freo.config.entry.filter}-->
-					<td><!--{if $entry.restriction == 'user'}-->ユーザー<!--{elseif $entry.restriction == 'group'}--><!--{foreach from=$entry_associates[$entry.id].group|smarty:nodefaults key='entry_group' item='entry_group' name='loop'}--><strong>[G]</strong>{$freo.refer.groups[$entry_group].name}<!--{if !$smarty.foreach.loop.last}--><br /><!--{/if}--><!--{/foreach}--><!--{elseif $entry.restriction == 'password'}-->パスワード<!--{elseif $entry_associates[$entry.id].filter}--><!--{foreach from=$entry_associates[$entry.id].filter|smarty:nodefaults key='entry_filter' item='entry_filter' name='loop'}--><strong>[F]</strong>{$freo.refer.filters[$entry_filter].name}<!--{if !$smarty.foreach.loop.last}--><br /><!--{/if}--><!--{/foreach}--><!--{/if}--></td>
+					<td><!--{if $entry.restriction == 'user'}-->ユーザー<!--{elseif $entry.restriction == 'group'}--><!--{foreach from=$entry_associates[$entry.id].group|smarty:nodefaults key='entry_group' item='entry_group' name='loop'}--><strong>[G]</strong>{$freo.refer.groups[$entry_group].name}<!--{if !$smarty.foreach.loop.last}--><br><!--{/if}--><!--{/foreach}--><!--{elseif $entry.restriction == 'password'}-->パスワード<!--{elseif $entry_associates[$entry.id].filter}--><!--{foreach from=$entry_associates[$entry.id].filter|smarty:nodefaults key='entry_filter' item='entry_filter' name='loop'}--><strong>[F]</strong>{$freo.refer.filters[$entry_filter].name}<!--{if !$smarty.foreach.loop.last}--><br><!--{/if}--><!--{/foreach}--><!--{/if}--></td>
 					<!--{/if}-->
 					<td>
 						<!--{if $entry.approved == 'yes' and ($entry.status == 'publish' or ($entry.status == 'future' and $entry.datetime|date_format:'%Y%m%d%H%M%S' <= $smarty.now|date_format:'%Y%m%d%H%M%S')) and (!$entry.close or $entry.close|date_format:'%Y%m%d%H%M%S' >= $smarty.now|date_format:'%Y%m%d%H%M%S')}-->

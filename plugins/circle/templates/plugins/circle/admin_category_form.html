@@ -17,23 +17,23 @@
 		<form action="{$freo.core.http_file}/circle/admin_category_form{if $freo.query.id}?id={$freo.query.id}{/if}" method="post">
 			<fieldset>
 				<legend>カテゴリー登録フォーム</legend>
-				<input type="hidden" name="freo[token]" value="{$token}" />
+				<input type="hidden" name="freo[token]" value="{$token}">
 				<!--{if $freo.query.id}-->
-				<input type="hidden" name="plugin_circle_category[id]" value="{$input.plugin_circle_category.id}" />
+				<input type="hidden" name="plugin_circle_category[id]" value="{$input.plugin_circle_category.id}">
 				<!--{/if}-->
 				<dl>
 					<!--{if !$freo.query.id}-->
 					<dt>カテゴリーID <abbr class="attention" title="入力必須">*</abbr></dt>
-						<dd><input type="text" name="plugin_circle_category[id]" size="30" value="{$input.plugin_circle_category.id}" /></dd>
+						<dd><input type="text" name="plugin_circle_category[id]" size="30" value="{$input.plugin_circle_category.id}"></dd>
 					<!--{/if}-->
 					<dt>カテゴリー名 <abbr class="attention" title="入力必須">*</abbr></dt>
-						<dd><input type="text" name="plugin_circle_category[name]" size="50" value="{$input.plugin_circle_category.name}" /></dd>
+						<dd><input type="text" name="plugin_circle_category[name]" size="50" value="{$input.plugin_circle_category.name}"></dd>
 					<dt>説明</dt>
 						<dd><textarea name="plugin_circle_category[memo]" cols="50" rows="5">{$input.plugin_circle_category.memo}</textarea></dd>
 					<dt>並び順 <abbr class="attention" title="入力必須">*</abbr></dt>
-						<dd><input type="text" name="plugin_circle_category[sort]" size="5" value="{$input.plugin_circle_category.sort}" /></dd>
+						<dd><input type="text" name="plugin_circle_category[sort]" size="5" value="{$input.plugin_circle_category.sort}"></dd>
 				</dl>
-				<p><input type="submit" value="登録する" /></p>
+				<p><input type="submit" value="登録する"></p>
 			</fieldset>
 		</form>
 		<!--{if $freo.query.id}-->
@@ -44,9 +44,9 @@
 		<form action="{$freo.core.http_file}/circle/admin_category_delete" method="get" class="delete">
 			<fieldset>
 				<legend>カテゴリー削除フォーム</legend>
-				<input type="hidden" name="freo[token]" value="{$token}" />
-				<input type="hidden" name="id" value="{$freo.query.id}" />
-				<p><input type="submit" value="削除する" /></p>
+				<input type="hidden" name="freo[token]" value="{$token}">
+				<input type="hidden" name="id" value="{$freo.query.id}">
+				<p><input type="submit" value="削除する"></p>
 			</fieldset>
 		</form>
 		<!--{/if}-->

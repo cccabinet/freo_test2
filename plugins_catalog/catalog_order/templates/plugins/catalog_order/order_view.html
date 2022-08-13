@@ -36,7 +36,7 @@
 		<tbody>
 			<!--{foreach from=$plugin_catalogs|smarty:nodefaults item='catalog'}-->
 			<tr>
-				<td>[{$catalog.id}]<br />{$catalog.name}</td>
+				<td>[{$catalog.id}]<br>{$catalog.name}</td>
 				<td class="number">{$plugin_catalog_order_sets[$catalog.id].price|number_format}円</td>
 				<td class="number">{$plugin_catalog_order_sets[$catalog.id].count|number_format}</td>
 				<td class="number">{$plugin_catalog_price_subtotals[$catalog.id]|number_format}円</td>

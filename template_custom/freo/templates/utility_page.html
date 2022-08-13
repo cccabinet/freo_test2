@@ -67,9 +67,9 @@
 						<input type="hidden" name="page_id" value="%">
 						<dl>
 							<dt>キーワード</dt>
-								<dd><input type="text" name="word" size="50" value="{$smarty.get.word}" /></dd>
+								<dd><input type="text" name="word" size="50" value="{$smarty.get.word}"></dd>
 						</dl>
-						<p><input type="submit" value="検索する" /></p>
+						<p><input type="submit" value="検索する"></p>
 					</fieldset>
 				</form>
 			</div>
@@ -83,9 +83,9 @@
 						<legend>ページ検索フォーム</legend>
 						<dl>
 							<dt>キーワード</dt>
-								<dd><input type="text" name="word" size="50" value="{$smarty.get.word}" /></dd>
+								<dd><input type="text" name="word" size="50" value="{$smarty.get.word}"></dd>
 						</dl>
-						<p><input type="submit" value="検索する" /></p>
+						<p><input type="submit" value="検索する"></p>
 					</fieldset>
 				</form>
 			</div>
@@ -160,7 +160,7 @@
 			<div class="content">
 				<ul class="gallery">
 					<!--{foreach from=$plugin_page_images|smarty:nodefaults item='plugin_page_image'}-->
-					<li><a href="{$freo.core.http_file}/page/{$plugin_page_image.id}"><!--{if $plugin_page_image.image}--><img src="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}page_images/{$plugin_page_image.id}/{$plugin_page_image.image}" alt="{$plugin_page_image.memo|default:$plugin_page_image.title}" title="{$plugin_page_image.memo|default:$plugin_page_image.title}" /><!--{else}--><img src="{$freo.core.http_url}images/forbidden.png" alt="{$plugin_page_image.memo|default:$plugin_page_image.title}" title="{$plugin_page_image.memo|default:$plugin_page_image.title}" /><!--{/if}--></a></li>
+					<li><a href="{$freo.core.http_file}/page/{$plugin_page_image.id}"><!--{if $plugin_page_image.image}--><img src="{$freo.core.http_url}{$smarty.const.FREO_FILE_DIR}page_images/{$plugin_page_image.id}/{$plugin_page_image.image}" alt="{$plugin_page_image.memo|default:$plugin_page_image.title}" title="{$plugin_page_image.memo|default:$plugin_page_image.title}"><!--{else}--><img src="{$freo.core.http_url}images/forbidden.png" alt="{$plugin_page_image.memo|default:$plugin_page_image.title}" title="{$plugin_page_image.memo|default:$plugin_page_image.title}"><!--{/if}--></a></li>
 					<!--{/foreach}-->
 				</ul>
 			</div>

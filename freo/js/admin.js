@@ -165,6 +165,7 @@ tinymce.init({
 	entity_encoding : 'raw',
 	extended_valid_elements: 'iframe[*]',
 	height: 500,
+	element_format : 'html',
 	plugins: 'advlist lists link image charmap preview anchor hr nonbreaking searchreplace visualblocks code fullscreen insertdatetime media table pagebreak quickbars help',
 	external_plugins:{
 		'freomedia': freo_path + 'js/tinymce/plugins/freomedia/plugin.min.js',

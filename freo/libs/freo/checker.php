@@ -33,12 +33,12 @@ if (defined('FREO_PERMISSION_MODE') and FREO_PERMISSION_MODE and @chmod(FREO_TEM
 echo "<!DOCTYPE html>\n";
 echo "<html lang=\"ja\">\n";
 echo "<head>\n";
-echo "<meta charset=\"utf-8\" />\n";
-echo "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n";
+echo "<meta charset=\"utf-8\">\n";
+echo "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n";
 echo "<title>PHP Checker</title>\n";
 
 if (file_exists(FREO_CSS_DIR . 'common.css')) {
-	echo "<link rel=\"stylesheet\" href=\"" . FREO_CSS_DIR . "common.css\" />\n";
+	echo "<link rel=\"stylesheet\" href=\"" . FREO_CSS_DIR . "common.css\">\n";
 }
 
 echo "<style>\n";
