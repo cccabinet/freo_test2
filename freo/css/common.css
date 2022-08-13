@@ -37,8 +37,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-size: 100%;
   font-weight: normal;
+  font-size: 100%;
 }
 
 em,
@@ -46,8 +46,8 @@ strong,
 code,
 address,
 th {
-  font-weight: normal;
   font-style: normal;
+  font-weight: normal;
 }
 
 ul,
@@ -86,13 +86,11 @@ html {
 }
 
 body {
-  line-height: 1.4;
   margin: 0 auto;
   padding: 0 10px;
   background-color: #FFFFFF;
   color: #222222;
-  font-size: 80%;
-  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
+  font: 80%/1.4 "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック",sans-serif;
   word-wrap: break-word;
   word-break: break-word;
 }
@@ -109,7 +107,7 @@ h6 {
 
 h1 {
   font-size: 200%;
-  font-family: "Arial Black", Arial;
+  font-family: "Arial Black",Arial;
 }
 
 h2 {
@@ -167,9 +165,9 @@ dl dd {
 }
 
 pre {
-  overflow: auto;
   margin: 10px 0;
   padding: 10px;
+  overflow: auto;
   border: 1px solid #DDDDDD;
 }
 
@@ -179,15 +177,13 @@ code {
 
 pre,
 code {
-  line-height: 1.2;
-  font-size: 100%;
-  font-family: "ＭＳ ゴシック", monospace;
+  font: 100%/1.2 "ＭＳ ゴシック",monospace;
 }
 
 blockquote {
-  overflow: auto;
   margin: 10px 0;
   padding: 0 15px;
+  overflow: auto;
   border-left: 2px solid #7777AA;
 }
 
@@ -200,10 +196,10 @@ blockquote dd {
 }
 
 table {
-  margin: 15px 0;
   max-width: 100%;
-  table-layout: fixed;
+  margin: 15px 0;
   word-break: break-all;
+  table-layout: fixed;
 }
 
 table tr th {
@@ -261,10 +257,10 @@ form p input {
 }
 
 img {
-  vertical-align: middle;
-  margin: auto 1px;
   max-width : 100%;
   height: auto;
+  margin: auto 1px;
+  vertical-align: middle;
 }
 
 a:link,
@@ -282,11 +278,11 @@ a:hover {
 /********* ネタバレ *************************************************/
 
 span.hidearea {
-  line-height: 2.0;
-  cursor: pointer;
   padding: 3px 10px;
   border: 2px solid #AAAAAA;
   background-color: #EEEEEE;
+  line-height: 2.0;
+  cursor: pointer;
 }
 
 span.hidearea:active,

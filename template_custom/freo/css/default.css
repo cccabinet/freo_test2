@@ -41,8 +41,8 @@ h2 {
 }
 
 #header h1 {
-  line-height: 1.0;
   margin: 0;
+  line-height: 1.0;
 }
 
 #header h1 a:link,
@@ -268,8 +268,8 @@ h2 {
 #utility {
   float: left;
   width: 200px;
-  margin-left: 10px;
   margin-bottom: 20px;
+  margin-left: 10px;
 }
 
 #utility h2 {
@@ -367,8 +367,8 @@ table.calender tr td {
 }
 
 #utility .utility ul.gallery li {
-  padding: 5px 1px;
   display: inline-block;
+  padding: 5px 1px;
 }
 
 #utility .utility ul.gallery li img {
@@ -397,10 +397,10 @@ dl.parts dd {
 }
 
 #gallery .gallery p.picture {
-  overflow: hidden;
   width: 140px;
   height: 100px;
   margin: 0;
+  overflow: hidden;
 }
 
 #gallery .gallery p.picture a {
@@ -415,17 +415,17 @@ dl.parts dd {
 
 #gallery .gallery p.picture a span.empty {
   display: block;
-  line-height: 100px;
   width: 140px;
   height: 100px;
   background-color: #AAAAAA;
+  line-height: 100px;
   text-align: center;
 }
 
 #gallery .gallery p.comment {
-  overflow: hidden;
   width: 140px;
   margin: 3px 0 0;
+  overflow: hidden;
   font-size: 80%;
   text-align: center;
   text-overflow: ellipsis;
@@ -466,10 +466,10 @@ ul.tagcloud {
 
 ul.tagcloud li {
   display: inline;
-  line-height: 1.0;
   list-style: none;
   margin-right: 5px;
   color: #AAAAAA;
+  line-height: 1.0;
 }
 
 ul.tagcloud li a {
@@ -496,8 +496,8 @@ ul.tagcloud li a {
 #media ul li span.directory {
   display: block;
   margin: 10px 0;
-  font-size: 120%;
   font-weight: bold;
+  font-size: 120%;
 }
 
 #media ul li ul {
@@ -545,8 +545,8 @@ ul.tagcloud li a {
 #document ul li span.directory {
   display: block;
   margin: 10px 0;
-  font-size: 120%;
   font-weight: bold;
+  font-size: 120%;
 }
 
 #document ul li ul {
