@@ -43,14 +43,6 @@
 					<th>作業</th>
 				</tr>
 			</thead>
-			<tfoot>
-				<tr>
-					<th>No</th>
-					<th>日時</th>
-					<th>本文</th>
-					<th>作業</th>
-				</tr>
-			</tfoot>
 			<tbody>
 				<!--{foreach from=$plugin_messages|smarty:nodefaults item='plugin_message'}-->
 				<tr>
@@ -65,6 +57,14 @@
 				</tr>
 				<!--{/foreach}-->
 			</tbody>
+			<tfoot>
+				<tr>
+					<th>No</th>
+					<th>日時</th>
+					<th>本文</th>
+					<th>作業</th>
+				</tr>
+			</tfoot>
 		</table>
 		<!--{if $plugin_message_page > 1}-->
 		<div id="page">

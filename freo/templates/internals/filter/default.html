@@ -29,12 +29,6 @@
 						<th>設定内容</th>
 					</tr>
 				</thead>
-				<tfoot>
-					<tr>
-						<th>フィルター</th>
-						<th>設定内容</th>
-					</tr>
-				</tfoot>
 				<tbody>
 					<!--{foreach from=$freo.refer.filters|smarty:nodefaults item='refer_filter'}-->
 					<tr>
@@ -47,6 +41,12 @@
 					</tr>
 					<!--{/foreach}-->
 				</tbody>
+				<tfoot>
+					<tr>
+						<th>フィルター</th>
+						<th>設定内容</th>
+					</tr>
+				</tfoot>
 			</table>
 			<p><input type="submit" value="設定する"></p>
 		</fieldset>

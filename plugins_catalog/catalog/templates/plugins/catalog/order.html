@@ -30,15 +30,6 @@
 				<th>小計（税込）</th>
 			</tr>
 		</thead>
-		<tfoot>
-			<tr>
-				<th>商品</th>
-				<th>画像</th>
-				<th>価格（税込）</th>
-				<th>数量</th>
-				<th>小計（税込）</th>
-			</tr>
-		</tfoot>
 		<tbody>
 			<!--{foreach from=$plugin_catalog_cart.catalogs|smarty:nodefaults item='catalog'}-->
 			<tr>
@@ -54,6 +45,15 @@
 			</tr>
 			<!--{/foreach}-->
 		</tbody>
+		<tfoot>
+			<tr>
+				<th>商品</th>
+				<th>画像</th>
+				<th>価格（税込）</th>
+				<th>数量</th>
+				<th>小計（税込）</th>
+			</tr>
+		</tfoot>
 	</table>
 	<table>
 		<tr>
@@ -80,17 +80,6 @@
 					<th>重さ（g）</th>
 				</tr>
 			</thead>
-			<tfoot>
-				<tr>
-					<th>商品</th>
-					<th>サイズ</th>
-					<th>数量</th>
-					<th>短辺（mm）</th>
-					<th>長辺（mm）</th>
-					<th>厚さ（mm）</th>
-					<th>重さ（g）</th>
-				</tr>
-			</tfoot>
 			<tbody>
 				<!--{foreach from=$plugin_catalog_cart.catalogs|smarty:nodefaults item='catalog'}-->
 				<tr>
@@ -127,6 +116,17 @@
 					<td class="number">合計<strong>{$plugin_catalog_cart.catalog_weight_total|number_format}</strong></td>
 				</tr>
 			</tbody>
+			<tfoot>
+				<tr>
+					<th>商品</th>
+					<th>サイズ</th>
+					<th>数量</th>
+					<th>短辺（mm）</th>
+					<th>長辺（mm）</th>
+					<th>厚さ（mm）</th>
+					<th>重さ（g）</th>
+				</tr>
+			</tfoot>
 		</table>
 		<!--{if $plugin_catalog_parallel_total}-->
 		<h4>並列梱包確認</h4>
@@ -163,6 +163,19 @@
 					<th>利用</th>
 				</tr>
 			</thead>
+			<tbody>
+				<!--{foreach from=$plugin_catalog_deliveries|smarty:nodefaults item='plugin_catalog_delivery'}-->
+				<tr>
+					<td>{$plugin_catalog_delivery.name}</td>
+					<td class="number">{$plugin_catalog_delivery.short_min|number_format}～{$plugin_catalog_delivery.short_max|number_format}<span style="color:#696;">－{$plugin_catalog_delivery.packing_short|number_format}</span></td>
+					<td class="number">{$plugin_catalog_delivery.long_min|number_format}～{$plugin_catalog_delivery.long_max|number_format}<span style="color:#696;">－{$plugin_catalog_delivery.packing_long|number_format}</span></td>
+					<td class="number">{$plugin_catalog_delivery.thickness_min|number_format}～{$plugin_catalog_delivery.thickness_max|number_format}<span style="color:#696;">－{$plugin_catalog_delivery.packing_thickness|number_format}</span></td>
+					<td class="number">{$plugin_catalog_delivery.total_min|number_format}～{$plugin_catalog_delivery.total_max|number_format}<span style="color:#696;">－{$plugin_catalog_delivery.packing_total|number_format}</span></td>
+					<td class="number">{$plugin_catalog_delivery.weight_min|number_format}～{$plugin_catalog_delivery.weight_max|number_format}<span style="color:#696;">－{$plugin_catalog_delivery.packing_weight|number_format}</span></td>
+					<td><!--{if $plugin_catalog_delivery_availables[$plugin_catalog_delivery.id]}--><strong>可</strong><!--{/if}--></td>
+				</tr>
+				<!--{/foreach}-->
+			</tbody>
 			<tfoot>
 				<tr>
 					<th>配送方法</th>
@@ -174,19 +187,6 @@
 					<th>利用</th>
 				</tr>
 			</tfoot>
-			<tbody>
-				<!--{foreach from=$plugin_catalog_deliveries|smarty:nodefaults item='plugin_catalog_delivery'}-->
-				<tr>
-					<td>{$plugin_catalog_delivery.name}</td>
-					<td class="number">{$plugin_catalog_delivery.short_min}～{$plugin_catalog_delivery.short_max}<span style="color:#696;">－{$plugin_catalog_delivery.packing_short}</span></td>
-					<td class="number">{$plugin_catalog_delivery.long_min}～{$plugin_catalog_delivery.long_max}<span style="color:#696;">－{$plugin_catalog_delivery.packing_long}</span></td>
-					<td class="number">{$plugin_catalog_delivery.thickness_min}～{$plugin_catalog_delivery.thickness_max}<span style="color:#696;">－{$plugin_catalog_delivery.packing_thickness}</span></td>
-					<td class="number">{$plugin_catalog_delivery.total_min}～{$plugin_catalog_delivery.total_max}<span style="color:#696;">－{$plugin_catalog_delivery.packing_total}</span></td>
-					<td class="number">{$plugin_catalog_delivery.weight_min}～{$plugin_catalog_delivery.weight_max}<span style="color:#696;">－{$plugin_catalog_delivery.packing_weight}</span></td>
-					<td><!--{if $plugin_catalog_delivery_availables[$plugin_catalog_delivery.id]}--><strong>可</strong><!--{/if}--></td>
-				</tr>
-				<!--{/foreach}-->
-			</tbody>
 		</table>
 		<p>以上により、利用可能な配送方法は以下のとおりです。</p>
 		<ul>
@@ -215,15 +215,6 @@
 									<th>利用できるお支払い方法</th>
 								</tr>
 							</thead>
-							<tfoot>
-								<tr>
-									<th>選択</th>
-									<th>配送方法</th>
-									<th>説明</th>
-									<th>送料</th>
-									<th>利用できるお支払い方法</th>
-								</tr>
-							</tfoot>
 							<tbody>
 								<!--{foreach from=$plugin_catalog_deliveries|smarty:nodefaults item='plugin_catalog_delivery'}-->
 								<!--{if $plugin_catalog_delivery_availables[$plugin_catalog_delivery.id]}-->
@@ -247,6 +238,15 @@
 								<!--{/if}-->
 								<!--{/foreach}-->
 							</tbody>
+							<tfoot>
+								<tr>
+									<th>選択</th>
+									<th>配送方法</th>
+									<th>説明</th>
+									<th>送料</th>
+									<th>利用できるお支払い方法</th>
+								</tr>
+							</tfoot>
 						</table>
 					</dd>
 			</dl>
@@ -284,14 +284,6 @@
 									<th>手数料</th>
 								</tr>
 							</thead>
-							<tfoot>
-								<tr>
-									<th>選択</th>
-									<th>お支払い方法</th>
-									<th>説明</th>
-									<th>手数料</th>
-								</tr>
-							</tfoot>
 							<tbody>
 								<!--{foreach from=$plugin_catalog_payments|smarty:nodefaults item='plugin_catalog_payment'}-->
 								<!--{if $plugin_catalog_payment_availables[$plugin_catalog_payment.id]}-->
@@ -304,6 +296,14 @@
 								<!--{/if}-->
 								<!--{/foreach}-->
 							</tbody>
+							<tfoot>
+								<tr>
+									<th>選択</th>
+									<th>お支払い方法</th>
+									<th>説明</th>
+									<th>手数料</th>
+								</tr>
+							</tfoot>
 						</table>
 					</dd>
 			</dl>

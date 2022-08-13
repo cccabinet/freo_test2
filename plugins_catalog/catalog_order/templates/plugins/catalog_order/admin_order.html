@@ -72,18 +72,6 @@
 					<th>作業</th>
 				</tr>
 			</thead>
-			<tfoot>
-				<tr>
-					<th>注文ID</th>
-					<th>対応状況</th>
-					<th>注文日時</th>
-					<th>名前</th>
-					<!--{if $freo.config.user.regist and $freo.config.plugin.catalog_order.user}-->
-					<th>ユーザーID</th>
-					<!--{/if}-->
-					<th>作業</th>
-				</tr>
-			</tfoot>
 			<tbody>
 				<!--{foreach from=$plugin_catalog_orders|smarty:nodefaults item='plugin_catalog_order'}-->
 				<tr>
@@ -103,6 +91,18 @@
 				</tr>
 				<!--{/foreach}-->
 			</tbody>
+			<tfoot>
+				<tr>
+					<th>注文ID</th>
+					<th>対応状況</th>
+					<th>注文日時</th>
+					<th>名前</th>
+					<!--{if $freo.config.user.regist and $freo.config.plugin.catalog_order.user}-->
+					<th>ユーザーID</th>
+					<!--{/if}-->
+					<th>作業</th>
+				</tr>
+			</tfoot>
 		</table>
 		<!--{if $plugin_catalog_order_page > 1}-->
 		<div id="page">

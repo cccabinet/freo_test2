@@ -39,16 +39,6 @@
 					<th>作業</th>
 				</tr>
 			</thead>
-			<tfoot>
-				<tr>
-					<th>ID</th>
-					<th>登録日時</th>
-					<th>名前</th>
-					<th>承認</th>
-					<th>権限</th>
-					<th>作業</th>
-				</tr>
-			</tfoot>
 			<tbody>
 				<!--{foreach from=$users|smarty:nodefaults item='user'}-->
 				<tr>
@@ -67,6 +57,16 @@
 				</tr>
 				<!--{/foreach}-->
 			</tbody>
+			<tfoot>
+				<tr>
+					<th>ID</th>
+					<th>登録日時</th>
+					<th>名前</th>
+					<th>承認</th>
+					<th>権限</th>
+					<th>作業</th>
+				</tr>
+			</tfoot>
 		</table>
 	</div>
 {include file='internals/admin/footer.html'}

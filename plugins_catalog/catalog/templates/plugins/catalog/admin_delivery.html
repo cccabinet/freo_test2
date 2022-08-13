@@ -40,16 +40,6 @@
 							<th>作業</th>
 						</tr>
 					</thead>
-					<tfoot>
-						<tr>
-							<th>ID</th>
-							<th>配送方法名</th>
-							<th>送料</th>
-							<th>状態</th>
-							<th>並び順</th>
-							<th>作業</th>
-						</tr>
-					</tfoot>
 					<tbody>
 						<!--{foreach from=$plugin_catalog_deliveries|smarty:nodefaults item='plugin_catalog_delivery'}-->
 						<tr>
@@ -66,6 +56,16 @@
 						</tr>
 						<!--{/foreach}-->
 					</tbody>
+					<tfoot>
+						<tr>
+							<th>ID</th>
+							<th>配送方法名</th>
+							<th>送料</th>
+							<th>状態</th>
+							<th>並び順</th>
+							<th>作業</th>
+						</tr>
+					</tfoot>
 				</table>
 				<p><input type="submit" value="並び順を編集する"></p>
 			</fieldset>
