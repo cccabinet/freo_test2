@@ -28,9 +28,9 @@
 					<dt><label for="authority">権限 <abbr class="attention" title="入力必須">*</abbr></label></dt>
 						<dd>
 							<select name="user[authority]" id="authority">
-								<option value="root"{if $input.user.authority == 'root'} selected="selected"{/if}>管理者</option>
-								<option value="author"{if $input.user.authority == 'author'} selected="selected"{/if}>投稿者</option>
-								<option value="guest"{if $input.user.authority == 'guest'} selected="selected"{/if}>ゲスト</option>
+								<option value="root"{if $input.user.authority == 'root'} selected{/if}>管理者</option>
+								<option value="author"{if $input.user.authority == 'author'} selected{/if}>投稿者</option>
+								<option value="guest"{if $input.user.authority == 'guest'} selected{/if}>ゲスト</option>
 							</select>
 						</dd>
 					<dt><label for="user_name">名前 <abbr class="attention" title="入力必須">*</abbr></label></dt>
@@ -46,7 +46,7 @@
 						<dd class="list" id="group">
 							<ul>
 								<!--{foreach from=$freo.refer.groups|smarty:nodefaults item='refer_group'}-->
-								<li><input type="checkbox" name="user_associate[group][{$refer_group.id}]" id="label_group_{$refer_group.id}" value="1"{if $input.user_associate.group[$refer_group.id]} checked="checked"{/if}> <label for="label_group_{$refer_group.id}">{$refer_group.name}</label></li>
+								<li><input type="checkbox" name="user_associate[group][{$refer_group.id}]" id="label_group_{$refer_group.id}" value="1"{if $input.user_associate.group[$refer_group.id]} checked{/if}> <label for="label_group_{$refer_group.id}">{$refer_group.name}</label></li>
 								<!--{foreachelse}-->
 								<li>グループが登録されていません。</li>
 								<!--{/foreach}-->
@@ -90,7 +90,7 @@
 					<dt><label for="article">登録された記事の扱い</label></dt>
 						<dd id="article">
 							<ul>
-								<li><input type="radio" name="article" id="label_article_delete" value="delete" checked="checked"> <label for="label_article_delete">ユーザーが登録した記事も一括削除</label></li>
+								<li><input type="radio" name="article" id="label_article_delete" value="delete" checked> <label for="label_article_delete">ユーザーが登録した記事も一括削除</label></li>
 								<li>
 									<input type="radio" name="article" id="label_article_alter" value="alter">
 									<label for="label_article_alter">

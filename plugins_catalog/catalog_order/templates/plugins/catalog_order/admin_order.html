@@ -31,7 +31,7 @@
 								<select name="status" id="status">
 									<option value=""></option>
 									<!--{foreach from=$plugin_catalog_order_status|smarty:nodefaults item='plugin_catalog_order_stat'}-->
-									<option value="{$plugin_catalog_order_stat.id}"{if $plugin_catalog_order_stat.id == $smarty.get.status} selected="selected"{/if}>{$plugin_catalog_order_stat.name}</option>
+									<option value="{$plugin_catalog_order_stat.id}"{if $plugin_catalog_order_stat.id == $smarty.get.status} selected{/if}>{$plugin_catalog_order_stat.name}</option>
 									<!--{/foreach}-->
 								</select>
 							</dd>
@@ -40,7 +40,7 @@
 								<select name="date" id="date">
 									<option value=""></option>
 									<!--{foreach from=$plugin_catalog_order_months|smarty:nodefaults item='plugin_catalog_order_month'}-->
-									<option value="{$plugin_catalog_order_month.year}{$plugin_catalog_order_month.month}"{if $plugin_catalog_order_month.year|cat:$plugin_catalog_order_month.month == $smarty.get.date} selected="selected"{/if}>{$plugin_catalog_order_month.year}年{$plugin_catalog_order_month.month}月</option>
+									<option value="{$plugin_catalog_order_month.year}{$plugin_catalog_order_month.month}"{if $plugin_catalog_order_month.year|cat:$plugin_catalog_order_month.month == $smarty.get.date} selected{/if}>{$plugin_catalog_order_month.year}年{$plugin_catalog_order_month.month}月</option>
 									<!--{/foreach}-->
 								</select>
 							</dd>

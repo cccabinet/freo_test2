@@ -13,11 +13,11 @@
 						<dd>
 							<select name="tool" id="tool">
 								<!--{if $plugin_paint_tools.paintbbs}-->
-								<option value="paintbbs"{if $freo.config.plugin.paint.default_tool == 'paintbbs'} selected="selected"{/if}>PaintBBS</option>
+								<option value="paintbbs"{if $freo.config.plugin.paint.default_tool == 'paintbbs'} selected{/if}>PaintBBS</option>
 								<!--{/if}-->
 								<!--{if $plugin_paint_tools.spainter}-->
-								<option value="shipainter"{if $freo.config.plugin.paint.default_tool == 'shipainter'} selected="selected"{/if}>しぃペインター</option>
-								<option value="shipainterpro"{if $freo.config.plugin.paint.default_tool == 'shipainterpro'} selected="selected"{/if}>しぃペインタープロ</option>
+								<option value="shipainter"{if $freo.config.plugin.paint.default_tool == 'shipainter'} selected{/if}>しぃペインター</option>
+								<option value="shipainterpro"{if $freo.config.plugin.paint.default_tool == 'shipainterpro'} selected{/if}>しぃペインタープロ</option>
 								<!--{/if}-->
 							</select>
 						</dd>

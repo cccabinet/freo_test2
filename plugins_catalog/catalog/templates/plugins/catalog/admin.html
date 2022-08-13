@@ -43,7 +43,7 @@
 								<select name="category_id" id="category">
 									<option value="">すべてのカテゴリー</option>
 									<!--{foreach from=$plugin_catalog_categories|smarty:nodefaults item='plugin_catalog_category'}-->
-									<option value="{$plugin_catalog_category.id}"{if $smarty.get.category_id == $plugin_catalog_category.id} selected="selected"{/if}>{$plugin_catalog_category.name}</option>
+									<option value="{$plugin_catalog_category.id}"{if $smarty.get.category_id == $plugin_catalog_category.id} selected{/if}>{$plugin_catalog_category.name}</option>
 									<!--{/foreach}-->
 								</select>
 							</dd>

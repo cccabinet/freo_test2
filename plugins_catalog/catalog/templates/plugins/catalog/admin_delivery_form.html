@@ -40,7 +40,7 @@
 							最大 <input type="text" inputmode="decimal" name="plugin_catalog_delivery[long_max]" size="5" value="{$input.plugin_catalog_delivery.long_max}"> mm
 						</dd>
 					<dt><label for="thickness">利用できる厚さの範囲 <abbr class="attention" title="入力必須">*</abbr></label></dt>
-						<dd id="thickness">
+						<dd>
 							最小 <input type="text" inputmode="decimal" name="plugin_catalog_delivery[thickness_min]" size="5" value="{$input.plugin_catalog_delivery.thickness_min}"> mm
 							～
 							最大 <input type="text" inputmode="decimal" name="plugin_catalog_delivery[thickness_max]" size="5" value="{$input.plugin_catalog_delivery.thickness_max}"> mm
@@ -72,34 +72,34 @@
 					<dt><label for="preferred_week">配送希望曜日の指定 <abbr class="attention" title="入力必須">*</abbr></label></dt>
 						<dd>
 							<select name="plugin_catalog_delivery[preferred_week]" id="preferred_week">
-								<option value="yes"{if $input.plugin_catalog_delivery.preferred_week == 'yes'} selected="selected"{/if}>指定可</option>
-								<option value="no"{if $input.plugin_catalog_delivery.preferred_week == 'no'} selected="selected"{/if}>指定不可</option>
+								<option value="yes"{if $input.plugin_catalog_delivery.preferred_week == 'yes'} selected{/if}>指定可</option>
+								<option value="no"{if $input.plugin_catalog_delivery.preferred_week == 'no'} selected{/if}>指定不可</option>
 							</select>
 						</dd>
 					<dt><label for="preferred_time">配送希望時間の指定 <abbr class="attention" title="入力必須">*</abbr></label></dt>
 						<dd>
 							<select name="plugin_catalog_delivery[preferred_time]" id="preferred_time">
-								<option value="yes"{if $input.plugin_catalog_delivery.preferred_time == 'yes'} selected="selected"{/if}>指定可</option>
-								<option value="no"{if $input.plugin_catalog_delivery.preferred_time == 'no'} selected="selected"{/if}>指定不可</option>
+								<option value="yes"{if $input.plugin_catalog_delivery.preferred_time == 'yes'} selected{/if}>指定可</option>
+								<option value="no"{if $input.plugin_catalog_delivery.preferred_time == 'no'} selected{/if}>指定不可</option>
 							</select>
 						</dd>
 					<dt><label for="payments">利用できる支払い方法 <abbr class="attention" title="入力必須">*</abbr></label></dt>
 						<dd id="payments">
 							<ul>
 								<!--{foreach from=$plugin_catalog_payments|smarty:nodefaults item='plugin_catalog_payment'}-->
-								<li><input type="checkbox" name="plugin_catalog_delivery[payments][{$plugin_catalog_payment.id}]" id="label_plugin_catalog_delivery_payment_{$plugin_catalog_payment.id}" value="1"{if $input.plugin_catalog_delivery_sets[$plugin_catalog_payment.id]} checked="checked"{/if}> <label for="label_plugin_catalog_delivery_payment_{$plugin_catalog_payment.id}">{$plugin_catalog_payment.name}</label></li>
+								<li><input type="checkbox" name="plugin_catalog_delivery[payments][{$plugin_catalog_payment.id}]" id="label_plugin_catalog_delivery_payment_{$plugin_catalog_payment.id}" value="1"{if $input.plugin_catalog_delivery_sets[$plugin_catalog_payment.id]} checked{/if}> <label for="label_plugin_catalog_delivery_payment_{$plugin_catalog_payment.id}">{$plugin_catalog_payment.name}</label></li>
 								<!--{/foreach}-->
 							</ul>
 						</dd>
-					<dt><label for="text">説明</label></dt>
-						<dd><textarea name="plugin_catalog_delivery[text]" id="text" cols="50" rows="5">{$input.plugin_catalog_delivery.text}</textarea></dd>
-					<dt><label for="soirt">並び順 <abbr class="attention" title="入力必須">*</abbr></label></dt>
-						<dd><input type="text" inputmode="numeric" name="plugin_catalog_delivery[sort]" id="sort" size="5" value="{$input.plugin_catalog_delivery.sort}"></dd>
-					<dt><label for="status">状態 <abbr class="attention" title="入力必須">*</abbr></label></dt>
+					<dt>説明</dt>
+						<dd><textarea name="plugin_catalog_delivery[text]" cols="50" rows="5">{$input.plugin_catalog_delivery.text}</textarea></dd>
+					<dt>並び順 <abbr class="attention" title="入力必須">*</abbr></dt>
+						<dd><input type="text" inputmode="numeric" name="plugin_catalog_delivery[sort]" size="5" value="{$input.plugin_catalog_delivery.sort}"></dd>
+					<dt>状態 <abbr class="attention" title="入力必須">*</abbr></dt>
 						<dd>
 							<select name="plugin_catalog_delivery[status]" id="status">
-								<option value="publish"{if $input.plugin_catalog_delivery.status == 'publish'} selected="selected"{/if}>使用</option>
-								<option value="private"{if $input.plugin_catalog_delivery.status == 'private'} selected="selected"{/if}>未使用</option>
+								<option value="publish"{if $input.plugin_catalog_delivery.status == 'publish'} selected{/if}>使用</option>
+								<option value="private"{if $input.plugin_catalog_delivery.status == 'private'} selected{/if}>未使用</option>
 							</select>
 						</dd>
 				</dl>

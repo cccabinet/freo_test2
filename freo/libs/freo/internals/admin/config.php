@@ -241,7 +241,7 @@ function freo_main()
 									list($option_key, $option_value) = explode(':', $option, 2);
 
 									if (in_array($option_key, explode(',', $value))) {
-										$checked = ' checked="checked"';
+										$checked = ' checked';
 									} else {
 										$checked = '';
 									}
@@ -264,7 +264,7 @@ function freo_main()
 									list($option_key, $option_value) = explode(':', $option, 2);
 
 									if ($value == $option_key) {
-										$checked = ' checked="checked"';
+										$checked = ' checked';
 									} else {
 										$checked = '';
 									}
@@ -286,11 +286,11 @@ function freo_main()
 
 								$data .= '<select name="config[data][' . $name . ']">';
 								if ($value == 'On') {
-									$data .= '<option value="On" selected="selected">' . $options[0] . '</option>';
+									$data .= '<option value="On" selected>' . $options[0] . '</option>';
 									$data .= '<option value="Off">' . $options[1] . '</option>';
 								} else {
 									$data .= '<option value="On">' . $options[0] . '</option>';
-									$data .= '<option value="Off" selected="selected">' . $options[1] . '</option>';
+									$data .= '<option value="Off" selected>' . $options[1] . '</option>';
 								}
 								$data .= '</select>';
 

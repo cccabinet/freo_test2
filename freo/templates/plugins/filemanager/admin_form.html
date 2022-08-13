@@ -122,7 +122,7 @@
 							<select name="plugin_filemanager[path]" id="path">
 								<option value="">ファイル管理ディレクトリ直下</option>
 								<!--{foreach from=$directories|smarty:nodefaults item='directory'}-->
-								<option value="{$directory}"{if $input.plugin_filemanager.path and $input.plugin_filemanager.path == $directory} selected="selected"{/if}>{$directory}</option>
+								<option value="{$directory}"{if $input.plugin_filemanager.path and $input.plugin_filemanager.path == $directory} selected{/if}>{$directory}</option>
 								<!--{/foreach}-->
 							</select>
 						</dd>
