@@ -66,7 +66,7 @@
 		<h4>サイズ計算</h4>
 		<ul>
 			<li>カート内の商品を梱包したときのサイズは以下のとおりです。</li>
-			<li><span style="color:#669966;">梱包材による加算は緑の数値で表示されています。</span></li>
+			<li><span style="color:#696;">梱包材による加算は緑の数値で表示されています。</span></li>
 		</ul>
 		<table summary="サイズ計算">
 			<thead>
@@ -99,23 +99,23 @@
 					<td class="number">{$plugin_catalog_cart.catalog_counts[$catalog.id]|number_format}{$catalog.unit}</td>
 					<td class="number">
 						<!--{if $plugin_catalog_sizes[$catalog.size].short}-->
-							{$plugin_catalog_sizes[$catalog.size].short|number_format}<span style="color:#669966;">＋{$catalog.packing_short|number_format}</span>＝{$plugin_catalog_sizes[$catalog.size].short+$catalog.packing_short|number_format}
+							{$plugin_catalog_sizes[$catalog.size].short|number_format}<span style="color:#696;">＋{$catalog.packing_short|number_format}</span>＝{$plugin_catalog_sizes[$catalog.size].short+$catalog.packing_short|number_format}
 						<!--{else}-->
-							{$catalog.size_short|number_format}<span style="color:#669966;">＋{$catalog.packing_short|number_format}</span>＝{$catalog.size_short+$catalog.packing_short|number_format}
+							{$catalog.size_short|number_format}<span style="color:#696;">＋{$catalog.packing_short|number_format}</span>＝{$catalog.size_short+$catalog.packing_short|number_format}
 						<!--{/if}-->
 					</td>
 					<td class="number">
 						<!--{if $plugin_catalog_sizes[$catalog.size].long}-->
-							{$plugin_catalog_sizes[$catalog.size].long|number_format}<span style="color:#669966;">＋{$catalog.packing_long|number_format}</span>＝{$plugin_catalog_sizes[$catalog.size].long+$catalog.packing_long|number_format}
+							{$plugin_catalog_sizes[$catalog.size].long|number_format}<span style="color:#696;">＋{$catalog.packing_long|number_format}</span>＝{$plugin_catalog_sizes[$catalog.size].long+$catalog.packing_long|number_format}
 						<!--{else}-->
-							{$catalog.size_long|number_format}<span style="color:#669966;">＋{$catalog.packing_long|number_format}</span>＝{$catalog.size_long+$catalog.packing_long|number_format}
+							{$catalog.size_long|number_format}<span style="color:#696;">＋{$catalog.packing_long|number_format}</span>＝{$catalog.size_long+$catalog.packing_long|number_format}
 						<!--{/if}-->
 					</td>
 					<td class="number">
-						{$catalog.thickness|number_format}×{$plugin_catalog_cart.catalog_counts[$catalog.id]|number_format}<span style="color:#669966;">＋{$catalog.packing_thickness|number_format}×{$plugin_catalog_cart.catalog_counts[$catalog.id]|number_format}</span>＝{$catalog.thickness*$plugin_catalog_cart.catalog_counts[$catalog.id]+$catalog.packing_thickness*$plugin_catalog_cart.catalog_counts[$catalog.id]|number_format}
+						{$catalog.thickness|number_format}×{$plugin_catalog_cart.catalog_counts[$catalog.id]|number_format}<span style="color:#696;">＋{$catalog.packing_thickness|number_format}×{$plugin_catalog_cart.catalog_counts[$catalog.id]|number_format}</span>＝{$catalog.thickness*$plugin_catalog_cart.catalog_counts[$catalog.id]+$catalog.packing_thickness*$plugin_catalog_cart.catalog_counts[$catalog.id]|number_format}
 					</td>
 					<td class="number">
-						{$catalog.weight|number_format}×{$plugin_catalog_cart.catalog_counts[$catalog.id]|number_format}<span style="color:#669966;">＋{$catalog.packing_weight|number_format}×{$plugin_catalog_cart.catalog_counts[$catalog.id]|number_format}</span>＝{$catalog.weight*$plugin_catalog_cart.catalog_counts[$catalog.id]+$catalog.packing_weight*$plugin_catalog_cart.catalog_counts[$catalog.id]|number_format}
+						{$catalog.weight|number_format}×{$plugin_catalog_cart.catalog_counts[$catalog.id]|number_format}<span style="color:#696;">＋{$catalog.packing_weight|number_format}×{$plugin_catalog_cart.catalog_counts[$catalog.id]|number_format}</span>＝{$catalog.weight*$plugin_catalog_cart.catalog_counts[$catalog.id]+$catalog.packing_weight*$plugin_catalog_cart.catalog_counts[$catalog.id]|number_format}
 					</td>
 				</tr>
 				<!--{/foreach}-->
@@ -149,7 +149,7 @@
 		<h4>配送方法</h4>
 		<ul>
 			<li>配送方法は以下のとおりです。</li>
-			<li><span style="color:#669966;">梱包材による減算は緑の数値で表示されています。</span></li>
+			<li><span style="color:#696;">梱包材による減算は緑の数値で表示されています。</span></li>
 		</ul>
 		<table summary="配送方法">
 			<thead>
@@ -178,11 +178,11 @@
 				<!--{foreach from=$plugin_catalog_deliveries|smarty:nodefaults item='plugin_catalog_delivery'}-->
 				<tr>
 					<td>{$plugin_catalog_delivery.name}</td>
-					<td class="number">{$plugin_catalog_delivery.short_min}～{$plugin_catalog_delivery.short_max}<span style="color:#669966;">－{$plugin_catalog_delivery.packing_short}</span></td>
-					<td class="number">{$plugin_catalog_delivery.long_min}～{$plugin_catalog_delivery.long_max}<span style="color:#669966;">－{$plugin_catalog_delivery.packing_long}</span></td>
-					<td class="number">{$plugin_catalog_delivery.thickness_min}～{$plugin_catalog_delivery.thickness_max}<span style="color:#669966;">－{$plugin_catalog_delivery.packing_thickness}</span></td>
-					<td class="number">{$plugin_catalog_delivery.total_min}～{$plugin_catalog_delivery.total_max}<span style="color:#669966;">－{$plugin_catalog_delivery.packing_total}</span></td>
-					<td class="number">{$plugin_catalog_delivery.weight_min}～{$plugin_catalog_delivery.weight_max}<span style="color:#669966;">－{$plugin_catalog_delivery.packing_weight}</span></td>
+					<td class="number">{$plugin_catalog_delivery.short_min}～{$plugin_catalog_delivery.short_max}<span style="color:#696;">－{$plugin_catalog_delivery.packing_short}</span></td>
+					<td class="number">{$plugin_catalog_delivery.long_min}～{$plugin_catalog_delivery.long_max}<span style="color:#696;">－{$plugin_catalog_delivery.packing_long}</span></td>
+					<td class="number">{$plugin_catalog_delivery.thickness_min}～{$plugin_catalog_delivery.thickness_max}<span style="color:#696;">－{$plugin_catalog_delivery.packing_thickness}</span></td>
+					<td class="number">{$plugin_catalog_delivery.total_min}～{$plugin_catalog_delivery.total_max}<span style="color:#696;">－{$plugin_catalog_delivery.packing_total}</span></td>
+					<td class="number">{$plugin_catalog_delivery.weight_min}～{$plugin_catalog_delivery.weight_max}<span style="color:#696;">－{$plugin_catalog_delivery.packing_weight}</span></td>
 					<td><!--{if $plugin_catalog_delivery_availables[$plugin_catalog_delivery.id]}--><em>可</em><!--{/if}--></td>
 				</tr>
 				<!--{/foreach}-->
