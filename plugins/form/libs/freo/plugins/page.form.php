@@ -1548,7 +1548,7 @@ function freo_page_form_send()
 		echo "<meta charset=\"utf-8\" />\n";
 		echo "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n";
 		echo "<title>送信完了</title>\n";
-		echo "<script type=\"text/javascript\">\n";
+		echo "<script>\n";
 		echo "if (window == window.parent) {\n";
 		echo "window.location.href = '" . $url . "';\n";
 		echo "} else {\n";
