@@ -606,43 +606,4 @@
 		</form>
 		<!--{/if}-->
 	</div>
-	<script>
-	{literal}
-	//サイズ
-	if ($('#catalog_size').val() == 'data') {
-		$('#catalog_direct').hide();
-		$('#catalog_normal').hide();
-	} else if ($('#catalog_size').val() == 'direct') {
-		$('#catalog_direct').show();
-		$('#catalog_normal').show();
-	} else {
-		$('#catalog_direct').hide();
-		$('#catalog_normal').show();
-	}
-	$('#catalog_size').change(function() {
-		if ($(this).val() == 'data') {
-			$('#catalog_direct').hide();
-			$('#catalog_normal').hide();
-		} else if ($(this).val() == 'direct') {
-			$('#catalog_direct').show();
-			$('#catalog_normal').show();
-		} else {
-			$('#catalog_direct').hide();
-			$('#catalog_normal').show();
-		}
-	});
-
-	//公開終了
-	if ($('#catalog_close_set').val() == '0') {
-		$('#catalog_close').hide();
-	}
-	$('#catalog_close_set').change(function() {
-		if ($(this).val() == '1') {
-			$('#catalog_close').show();
-		} else {
-			$('#catalog_close').hide();
-		}
-	});
-	{/literal}
-	</script>
 {include file='internals/admin/footer.html'}
