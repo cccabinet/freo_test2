@@ -6,7 +6,7 @@
 
 *********************************************************************/
 
-$(document).ready(function() {
+$(function() {
 	var matches = null;
 	var first   = 0;
 	var last    = 0;
