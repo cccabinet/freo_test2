@@ -93,8 +93,11 @@
 ├── plugins/
 │   ├── bookmark/templates/plugins/bookmark/【ブックマーク登録プラグイン】
 │   │   └── default.html（ブックマーク一覧表示テンプレート）
+│   ├── circle/templates/plugins/circle/【サークル管理プラグイン】
+│   │   └── form.html（ユーザー用サークル編集テンプレート）
 │   ├── clap/templates/plugins/clap/【拍手送信プラグイン】
-│   │   └── admin_text.html（拍手メッセージ管理テンプレート）
+│   │   ├── admin_text.html（拍手メッセージ管理テンプレート）
+│   │   └── admin_thank_form.html（お礼登録/編集テンプレート）
 │   ├── entry_tagmanager/【エントリータグ管理プラグイン】
 │   │   └── libs/freo/plugins/
 │   │        ├── config.entry_tagmanager.php（設定ファイル）
