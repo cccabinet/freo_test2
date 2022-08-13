@@ -8,9 +8,9 @@
 		<!--{/if}-->
 		<ul>
 			<!--{if $freo.query.catalog_id}-->
-			<li>この商品は<em>{$plugin_catalog_targets[$freo.query.id].name}</em>対象の商品です。</li>
+			<li>この商品は<strong>{$plugin_catalog_targets[$freo.query.id].name}</strong>対象の商品です。</li>
 			<!--{else}-->
-			<li>商品一覧に<em>{$plugin_catalog_targets[$freo.query.id].name}</em>対象の商品も表示します。</li>
+			<li>商品一覧に<strong>{$plugin_catalog_targets[$freo.query.id].name}</strong>対象の商品も表示します。</li>
 			<!--{/if}-->
 		</ul>
 		<form action="{$freo.core.https_file}/catalog/target/{$freo.query.id}" method="post">

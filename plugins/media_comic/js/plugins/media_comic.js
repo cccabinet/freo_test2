@@ -43,10 +43,10 @@ $(function() {
 			show = '1';
 		}
 
-		current = ' / <em>' + show + '</em>ページ目を表示';
+		current = ' / <strong>' + show + '</strong>ページ目を表示';
 	}
 
-	$('#status').html('全<em>' + media_comic_all + '</em>ページ' + current);
+	$('#status').html('全<strong>' + media_comic_all + '</strong>ページ' + current);
 
 	//ページを移動
 	$('div#menu a, div#media_comic a').click(function() {
@@ -95,7 +95,7 @@ $(function() {
 					show = page * media_comic_columns;
 				}
 
-				current = ' / <em>' + show + '</em>ページ目を表示';
+				current = ' / <strong>' + show + '</strong>ページ目を表示';
 			} else {
 				current = '';
 			}
@@ -109,13 +109,13 @@ $(function() {
 					show = page * media_comic_columns + 1;
 				}
 
-				current = ' / <em>' + show + '</em>ページ目を表示';
+				current = ' / <strong>' + show + '</strong>ページ目を表示';
 			} else {
 				current = '';
 			}
 		}
 
-		$('#status').html('全<em>' + media_comic_all + '</em>ページ' + current);
+		$('#status').html('全<strong>' + media_comic_all + '</strong>ページ' + current);
 
 		return false;
 	});

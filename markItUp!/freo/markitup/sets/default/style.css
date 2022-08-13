@@ -5,6 +5,9 @@
 .markItUp .bold a {
 	background-image:url(images/bold.png);
 }
+.markItUp .italic a {
+	background-image:url(images/italic.png);
+}
 .markItUp .underline a {
 	background-image:url(images/underline.png);
 }

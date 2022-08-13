@@ -10,7 +10,7 @@
 	<ul>
 		<li>カート内の商品を注文します。</li>
 		<!--{if $freo.config.plugin.catalog.free_shipping and $plugin_catalog_cart.catalog_price_total >= $freo.config.plugin.catalog.free_shipping}-->
-		<li>商品合計が<em>{$freo.config.plugin.catalog.free_shipping|number_format}円以上</em>なので送料が無料になります。</li>
+		<li>商品合計が<strong>{$freo.config.plugin.catalog.free_shipping|number_format}円以上</strong>なので送料が無料になります。</li>
 		<!--{/if}-->
 		<li><a href="{$freo.core.http_file}/catalog/cart">カートへ戻る</a>。</li>
 		<li><a href="{$freo.core.http_file}/catalog">商品一覧へ戻る</a>。</li>
@@ -121,10 +121,10 @@
 				<!--{/foreach}-->
 				<tr>
 					<td colspan="3"></td>
-					<td class="number">最大<em>{$plugin_catalog_cart.catalog_short_max|number_format}</em></td>
-					<td class="number">最大<em>{$plugin_catalog_cart.catalog_long_max|number_format}</em></td>
-					<td class="number">合計<em>{$plugin_catalog_cart.catalog_thickness_total|number_format}</em></td>
-					<td class="number">合計<em>{$plugin_catalog_cart.catalog_weight_total|number_format}</em></td>
+					<td class="number">最大<strong>{$plugin_catalog_cart.catalog_short_max|number_format}</strong></td>
+					<td class="number">最大<strong>{$plugin_catalog_cart.catalog_long_max|number_format}</strong></td>
+					<td class="number">合計<strong>{$plugin_catalog_cart.catalog_thickness_total|number_format}</strong></td>
+					<td class="number">合計<strong>{$plugin_catalog_cart.catalog_weight_total|number_format}</strong></td>
 				</tr>
 			</tbody>
 		</table>
@@ -141,10 +141,10 @@
 		<p>並列梱包される商品は以下のとおりです。</p>
 		<ul>
 			<!--{foreach from=$plugin_catalog_parallels|smarty:nodefaults item='plugin_catalog_parallel'}-->
-			<li><em>{$plugin_catalog_cart.catalogs[$plugin_catalog_parallel.thin].name}</em>と<em>{$plugin_catalog_cart.catalogs[$plugin_catalog_parallel.thick].name}</em>を並列梱包することにより、厚さの合計から<em>{$plugin_catalog_parallel.thickness|number_format}</em>mm差し引かれます。</li>
+			<li><strong>{$plugin_catalog_cart.catalogs[$plugin_catalog_parallel.thin].name}</strong>と<strong>{$plugin_catalog_cart.catalogs[$plugin_catalog_parallel.thick].name}</strong>を並列梱包することにより、厚さの合計から<strong>{$plugin_catalog_parallel.thickness|number_format}</strong>mm差し引かれます。</li>
 			<!--{/foreach}-->
 		</ul>
-		<p>つまり厚さの合計から<em>{$plugin_catalog_parallel_total|number_format}</em>mm差し引かれ、商品全体の厚さは<em>{$plugin_catalog_cart.catalog_thickness_total-$plugin_catalog_parallel_total|number_format}</em>mmとなります。</p>
+		<p>つまり厚さの合計から<strong>{$plugin_catalog_parallel_total|number_format}</strong>mm差し引かれ、商品全体の厚さは<strong>{$plugin_catalog_cart.catalog_thickness_total-$plugin_catalog_parallel_total|number_format}</strong>mmとなります。</p>
 		<!--{/if}-->
 		<h4>配送方法</h4>
 		<ul>
@@ -183,7 +183,7 @@
 					<td class="number">{$plugin_catalog_delivery.thickness_min}～{$plugin_catalog_delivery.thickness_max}<span style="color:#696;">－{$plugin_catalog_delivery.packing_thickness}</span></td>
 					<td class="number">{$plugin_catalog_delivery.total_min}～{$plugin_catalog_delivery.total_max}<span style="color:#696;">－{$plugin_catalog_delivery.packing_total}</span></td>
 					<td class="number">{$plugin_catalog_delivery.weight_min}～{$plugin_catalog_delivery.weight_max}<span style="color:#696;">－{$plugin_catalog_delivery.packing_weight}</span></td>
-					<td><!--{if $plugin_catalog_delivery_availables[$plugin_catalog_delivery.id]}--><em>可</em><!--{/if}--></td>
+					<td><!--{if $plugin_catalog_delivery_availables[$plugin_catalog_delivery.id]}--><strong>可</strong><!--{/if}--></td>
 				</tr>
 				<!--{/foreach}-->
 			</tbody>
@@ -322,7 +322,7 @@
 					<dd>
 						<!--{foreach from=$plugin_catalog_targets|smarty:nodefaults item='plugin_catalog_target'}-->
 						<!--{if $plugin_catalog_cart.catalog_target_max == $plugin_catalog_target.id}-->
-						<input type="checkbox" name="plugin_catalog_order[confirm][{$plugin_catalog_target.id}]" id="label_confirm_{$plugin_catalog_target.id}" value="{$plugin_catalog_target.id}"{if $input.plugin_catalog_order.confirm[$plugin_catalog_target.id]} checked="checked"{/if}> <label for="label_confirm_{$plugin_catalog_target.id}">私は<em>{$plugin_catalog_target.name}</em>です。</label>
+						<input type="checkbox" name="plugin_catalog_order[confirm][{$plugin_catalog_target.id}]" id="label_confirm_{$plugin_catalog_target.id}" value="{$plugin_catalog_target.id}"{if $input.plugin_catalog_order.confirm[$plugin_catalog_target.id]} checked="checked"{/if}> <label for="label_confirm_{$plugin_catalog_target.id}">私は<strong>{$plugin_catalog_target.name}</strong>です。</label>
 						<input type="hidden" name="plugin_catalog_order[target][{$plugin_catalog_target.id}]" value="{$plugin_catalog_target.id}"><br>
 						<!--{/if}-->
 						<!--{/foreach}-->

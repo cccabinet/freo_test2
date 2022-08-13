@@ -30,7 +30,7 @@
 		<div class="address"><p>{$plugin_catalog_prefectures[$input.plugin_catalog_order.prefecture].name} {$input.plugin_catalog_order.address}</p></div>
 		<div class="name"><p>{$input.plugin_catalog_order.name} 様</p></div>
 		<div class="message"><p>この度はお買い上げありがとうございました。以下の内容で納品させていただきます。</p></div>
-		<div class="amount"><p>ご請求金額合計（税込）：<em>{$plugin_catalog_price_total+$input.plugin_catalog_order.carriage+$input.plugin_catalog_order.charge-$input.plugin_catalog_order.discount|number_format}円</em></p></div>
+		<div class="amount"><p>ご請求金額合計（税込）：<strong>{$plugin_catalog_price_total+$input.plugin_catalog_order.carriage+$input.plugin_catalog_order.charge-$input.plugin_catalog_order.discount|number_format}円</strong></p></div>
 		<h3>ご注文内容</h3>
 		<div class="information">
 			<dl>

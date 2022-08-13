@@ -64,8 +64,8 @@
 		<!--{if $input.user.approved == 'no'}-->
 		<h2>ID.{$freo.query.id}のユーザーを承認</h2>
 		<ul>
-			<li>このユーザーは<em>未承認</em>です。</li>
-			<li>このユーザーを承認するには、<em>承認ボタン</em>を押してください。</li>
+			<li>このユーザーは<strong>未承認</strong>です。</li>
+			<li>このユーザーを承認するには、<strong>承認ボタン</strong>を押してください。</li>
 		</ul>
 		<form action="{$freo.core.http_file}/admin/user_approve" method="get" class="approve">
 			<fieldset>
@@ -78,7 +78,7 @@
 		<!--{/if}-->
 		<h2 id="user_delete">ID.{$freo.query.id}のユーザーを削除</h2>
 		<ul>
-			<li>このユーザーを削除するには、<em>削除ボタン</em>を押してください。</li>
+			<li>このユーザーを削除するには、<strong>削除ボタン</strong>を押してください。</li>
 			<li>すでに登録された記事は、削除するか所有者を変更することができます。</li>
 		</ul>
 		<form action="{$freo.core.http_file}/admin/user_delete" method="get" class="delete">

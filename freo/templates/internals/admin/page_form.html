@@ -13,14 +13,14 @@
 			<li><abbr class="attention" title="入力必須">*</abbr> の付いた項目は入力必須項目です。</li>
 {* 現在のページの状態 *}
 			<!--{if !$freo.query.id and $input.page.status == 'publish'}-->
-			<li>現在、このページの状態は「<em>公開</em>」です。下書き保存するには状態を「<em>未公開</em>」に変更してから登録してください。</li>
+			<li>現在、このページの状態は「<strong>公開</strong>」です。下書き保存するには状態を「<strong>未公開</strong>」に変更してから登録してください。</li>
 			<!--{elseif $input.page.status == 'private'}-->
-			<li>現在、このページの状態は「<em>未公開</em>」です。公開するには状態を「<em>公開</em>」に変更してから登録してください。</li>
+			<li>現在、このページの状態は「<strong>未公開</strong>」です。公開するには状態を「<strong>公開</strong>」に変更してから登録してください。</li>
 			<!--{elseif $input.page.status == 'future'}-->
 			<!--{if $input.page.datetime|date_format:'%Y%m%d%H%M%S' >= $smarty.now|date_format:'%Y%m%d%H%M%S'}-->
-			<li>現在、このページは「<em>予約公開待ち</em>」です。今すぐ公開するには日時を「<em>現在日時</em>」に変更してから登録してください。</li>
+			<li>現在、このページは「<strong>予約公開待ち</strong>」です。今すぐ公開するには日時を「<strong>現在日時</strong>」に変更してから登録してください。</li>
 			<!--{else}-->
-			<li>現在、このページは「<em>予約公開済み</em>」です。</li>
+			<li>現在、このページは「<strong>予約公開済み</strong>」です。</li>
 			<!--{/if}-->
 			<!--{/if}-->
 {* /現在のページの状態 *}
@@ -377,8 +377,8 @@
 		<!--{if $input.page.approved == 'no'}-->
 		<h2>ID.{$freo.query.id}のページを承認</h2>
 		<ul>
-			<li>このページは<em>未承認</em>です。</li>
-			<li>このページを承認するには、<em>承認ボタン</em>を押してください。</li>
+			<li>このページは<strong>未承認</strong>です。</li>
+			<li>このページを承認するには、<strong>承認ボタン</strong>を押してください。</li>
 		</ul>
 		<form action="{$freo.core.http_file}/admin/page_approve" method="get" class="approve">
 			<fieldset>
@@ -395,7 +395,7 @@
 		<!--{if $freo.plugin.page_id_update}-->
 		<h2>ID.{$freo.query.id}のIDを変更</h2>
 		<ul>
-			<li>新しいIDを入力して <em>変更ボタン</em>を押してください。</li>
+			<li>新しいIDを入力して <strong>変更ボタン</strong>を押してください。</li>
 			<li>IDを変更すると、<strong>ページのURLやアップロードファイルのURLが変更されます。</strong>リンク切れが発生する可能性があるので注意してください。</li>
 		</ul>
 		<form action="{$freo.core.http_file}/page_id_update?id={$freo.query.id}" method="post">
@@ -414,7 +414,7 @@
 {* ページ削除の表示 *}
 		<h2>ID.{$freo.query.id}のページを削除</h2>
 		<ul>
-			<li>このページを削除するには、<em>削除ボタン</em>を押してください。</li>
+			<li>このページを削除するには、<strong>削除ボタン</strong>を押してください。</li>
 		</ul>
 		<form action="{$freo.core.http_file}/admin/page_delete" method="get" class="delete">
 			<fieldset>

@@ -42,7 +42,7 @@ if (file_exists(FREO_CSS_DIR . 'common.css')) {
 }
 
 echo "<style>\n";
-echo "em {\n";
+echo "strong {\n";
 echo "color: #FF0000;\n";
 echo "}\n";
 echo "table tr th {\n";
@@ -56,14 +56,14 @@ echo "<h2>PHP</h2>\n";
 echo "<table summary=\"PHP\">\n";
 echo "<tr>\n";
 echo "<th>PHP Version</th>\n";
-echo "<td>" . (phpversion() >= 5 ? phpversion() : '<em>' . phpversion() . '</em>') . "</td>\n";
+echo "<td>" . (phpversion() >= 5 ? phpversion() : '<strong>' . phpversion() . '</strong>') . "</td>\n";
 echo "</tr>\n";
 echo "</table>\n";
 echo "<h2>PDO</h2>\n";
 echo "<table summary=\"PDO\">\n";
 echo "<tr>\n";
 echo "<th>PDO</th>\n";
-echo "<td>" . (class_exists('pdo') ? 'OK' : '<em>NG</em>') . "</td>\n";
+echo "<td>" . (class_exists('pdo') ? 'OK' : '<strong>NG</strong>') . "</td>\n";
 echo "</tr>\n";
 echo "<tr>\n";
 echo "<th>PDO Version</th>\n";
@@ -71,25 +71,25 @@ echo "<td>" . phpversion('pdo') . "</td>\n";
 echo "</tr>\n";
 echo "<tr>\n";
 echo "<th>PDO_MYSQL Version</th>\n";
-echo "<td>" . (phpversion('pdo_mysql') ? phpversion('pdo_mysql') : '<em>NG</em>') . "</td>\n";
+echo "<td>" . (phpversion('pdo_mysql') ? phpversion('pdo_mysql') : '<strong>NG</strong>') . "</td>\n";
 echo "</tr>\n";
 echo "<tr>\n";
 echo "<th>PDO_SQLITE Version</th>\n";
-echo "<td>" . (phpversion('pdo_sqlite') ? phpversion('pdo_sqlite') : '<em>NG</em>') . "</td>\n";
+echo "<td>" . (phpversion('pdo_sqlite') ? phpversion('pdo_sqlite') : '<strong>NG</strong>') . "</td>\n";
 echo "</tr>\n";
 echo "</table>\n";
 echo "<h2>GD</h2>\n";
 echo "<table summary=\"GD\">\n";
 echo "<tr>\n";
 echo "<th>GD</th>\n";
-echo "<td>" . (function_exists('gd_info') ? 'OK' : '<em>NG</em>') . "</td>\n";
+echo "<td>" . (function_exists('gd_info') ? 'OK' : '<strong>NG</strong>') . "</td>\n";
 echo "</tr>\n";
 echo "</table>\n";
 echo "<h2>MultiByte</h2>\n";
 echo "<table summary=\"MultiByte\">\n";
 echo "<tr>\n";
 echo "<th>MultiByte</th>\n";
-echo "<td>" . (function_exists('mb_language') ? 'OK' : '<em>NG</em>') . "</td>\n";
+echo "<td>" . (function_exists('mb_language') ? 'OK' : '<strong>NG</strong>') . "</td>\n";
 echo "</tr>\n";
 echo "</table>\n";
 
@@ -98,7 +98,7 @@ if (defined('FREO_PERMISSION_MODE') and FREO_PERMISSION_MODE) {
 	echo "<table summary=\"Chmod\">\n";
 	echo "<tr>\n";
 	echo "<th>Chmod</th>\n";
-	echo "<td>" . ($chmod ? 'OK' : '<em>NG</em>') . "</td>\n";
+	echo "<td>" . ($chmod ? 'OK' : '<strong>NG</strong>') . "</td>\n";
 	echo "</tr>\n";
 	echo "</table>\n";
 }

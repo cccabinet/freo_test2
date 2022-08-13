@@ -48,8 +48,8 @@
 		<!--{if $input.comment.approved == 'no'}-->
 		<h2>No.{$freo.query.id}のコメントを承認</h2>
 		<ul>
-			<li>このコメントは<em>未承認</em>です。</li>
-			<li>このコメントを承認するには、<em>承認ボタン</em>を押してください。</li>
+			<li>このコメントは<strong>未承認</strong>です。</li>
+			<li>このコメントを承認するには、<strong>承認ボタン</strong>を押してください。</li>
 		</ul>
 		<form action="{$freo.core.http_file}/admin/comment_approve" method="get" class="approve">
 			<fieldset>
@@ -62,7 +62,7 @@
 		<!--{/if}-->
 		<h2>No.{$freo.query.id}のコメントを削除</h2>
 		<ul>
-			<li>このコメントを削除するには、<em>削除ボタン</em>を押してください。</li>
+			<li>このコメントを削除するには、<strong>削除ボタン</strong>を押してください。</li>
 		</ul>
 		<form action="{$freo.core.http_file}/admin/comment_delete" method="get" class="delete">
 			<fieldset>

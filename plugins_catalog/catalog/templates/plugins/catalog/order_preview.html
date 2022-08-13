@@ -58,7 +58,7 @@
 		<!--{/if}-->
 		<tr>
 			<th>お支払い額合計（税込）</th>
-			<td class="number"><em>{$plugin_catalog_cart.catalog_price_total+$plugin_catalog_delivery.carriage+$plugin_catalog_payment.charge|number_format}円</em></td>
+			<td class="number"><strong>{$plugin_catalog_cart.catalog_price_total+$plugin_catalog_delivery.carriage+$plugin_catalog_payment.charge|number_format}円</strong></td>
 		</tr>
 	</table>
 	<h3>配送方法・お支払い方法</h3>
@@ -93,7 +93,7 @@
 			<dd>
 				<!--{foreach from=$plugin_catalog_targets|smarty:nodefaults item='plugin_catalog_target'}-->
 				<!--{if $plugin_catalog_order.target[$plugin_catalog_target.id]}-->
-				私は<em>{$plugin_catalog_target.name}</em>です。<br>
+				私は<strong>{$plugin_catalog_target.name}</strong>です。<br>
 				<!--{/if}-->
 				<!--{/foreach}-->
 			</dd>
