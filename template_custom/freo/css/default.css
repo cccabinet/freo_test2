@@ -5,583 +5,583 @@
 /********* HTML再定義 ***********************************************/
 
 body {
-	padding: 10px;
-	background-color: #999999;
+  padding: 10px;
+  background-color: #999999;
 }
 
 h2, h3, h4, h5, h6 {
-	font-size: 120%;
+  font-size: 120%;
 }
 h2 {
-	margin: 15px 0;
-	padding: 5px 0;
-	border-top: 1px solid #999999;
-	border-bottom: 1px solid #999999;
-	font-weight: bold;
+  margin: 15px 0;
+  padding: 5px 0;
+  border-top: 1px solid #999999;
+  border-bottom: 1px solid #999999;
+  font-weight: bold;
 }
 
 /********* 全体 *****************************************************/
 
 div#container {
-	max-width: 1140px;
-	margin: 0 auto;
-	padding: 20px;
-	border-bottom: 5px solid #666666;
-	background-color: #FFFFFF;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 20px;
+  border-bottom: 5px solid #666666;
+  background-color: #FFFFFF;
 }
 
 /********* ヘッダー *************************************************/
 
 div#header {
-	clear: both;
+  clear: both;
 }
 div#header h1 {
-	line-height: 1.0;
-	margin: 0;
+  line-height: 1.0;
+  margin: 0;
 }
 div#header h1 a:link, div#header h1 a:visited {
-	color: #222222;
-	text-decoration: none;
+  color: #222222;
+  text-decoration: none;
 }
 div#header h1 a:active, div#header h1 a:hover {
-	color: #777777;
-	text-decoration: none;
+  color: #777777;
+  text-decoration: none;
 }
 
 /********* フッター *************************************************/
 
 div#footer {
-	clear: both;
+  clear: both;
 }
 div#footer address {
-	padding-top: 10px;
-	border-top: 1px solid #999999;
+  padding-top: 10px;
+  border-top: 1px solid #999999;
 }
 
 /********* メニュー *************************************************/
 
 div#menu {
-	background-color: #666666;
+  background-color: #666666;
 }
 div#menu h2 {
-	display: none;
+  display: none;
 }
 div#menu ul {
-	margin: 0;
-	padding: 5px 10px;
+  margin: 0;
+  padding: 5px 10px;
 }
 div#menu ul li {
-	display: inline;
-	list-style: none;
-	margin-right: 10px;
+  display: inline;
+  list-style: none;
+  margin-right: 10px;
 }
 
 div#menu a:link, div#menu a:visited {
-	color: #FFFFFF;
-	text-decoration: none;
+  color: #FFFFFF;
+  text-decoration: none;
 }
 div#menu a:active, div#menu a:hover {
-	color: #FFFFFF;
-	text-decoration: underline;
+  color: #FFFFFF;
+  text-decoration: underline;
 }
 
 /********* 内容 *****************************************************/
 
 div#content {
-	float: left;
-	width: calc(100% - 210px);
+  float: left;
+  width: calc(100% - 210px);
 }
 
 /********* エントリー ***********************************************/
 
 div#entry h2 {
-	display: none;
+  display: none;
 }
 div#entry div.entry {
-	max-width: 930px;
-	margin: 15px 0;
-	border: 1px solid #999999;
+  max-width: 930px;
+  margin: 15px 0;
+  border: 1px solid #999999;
 }
 div#entry div.entry h3 {
-	margin: 0;
-	padding: 10px 10px 0 10px;
+  margin: 0;
+  padding: 10px 10px 0 10px;
 }
 div#entry div.entry h3 a:link, div#entry div.entry h3 a:visited {
-	color: #222222;
-	text-decoration: none;
+  color: #222222;
+  text-decoration: none;
 }
 div#entry div.entry h3 a:active, div#entry div.entry h3 a:hover {
-	color: #777777;
-	text-decoration: none;
+  color: #777777;
+  text-decoration: none;
 }
 div#entry div.entry div.content {
-	margin: 0 10px;
+  margin: 0 10px;
 }
 div#entry div.entry ul.information {
-	margin: 2px 10px 15px 10px;
-	padding-top: 2px;
-	border-top: 1px solid #CCCCCC;
-	font-size: 90%;
+  margin: 2px 10px 15px 10px;
+  padding-top: 2px;
+  border-top: 1px solid #CCCCCC;
+  font-size: 90%;
 }
 div#entry div.entry ul.information li {
-	display: inline;
-	margin-right: 5px;
+  display: inline;
+  margin-right: 5px;
 }
 div#entry div.entry ul.link {
-	margin: 0;
-	padding: 10px;
-	text-align: right;
+  margin: 0;
+  padding: 10px;
+  text-align: right;
 }
 div#entry div.entry ul.link li {
-	display: inline;
-	margin-left: 5px;
+  display: inline;
+  margin-left: 5px;
 }
 
 div#entry div#entry_link h3 {
-	display: none;
+  display: none;
 }
 div#entry div#entry_link ul.entry_link {
-	margin: 0;
+  margin: 0;
 }
 div#entry div#entry_link ul.entry_link li {
-	display: inline;
-	list-style: none;
-	margin-right: 10px;
+  display: inline;
+  list-style: none;
+  margin-right: 10px;
 }
 div#entry div#entry_link ul.entry_link li.home {
-	padding-right: 10px;
-	padding-left: 10px;
-	border-right: 1px solid #999999;
-	border-left: 1px solid #999999;
+  padding-right: 10px;
+  padding-left: 10px;
+  border-right: 1px solid #999999;
+  border-left: 1px solid #999999;
 }
 div#entry div#entry_link ul.entry_link li.previous:before {
-	content: "<< ";
+  content: "<< ";
 }
 div#entry div#entry_link ul.entry_link li.next:after {
-	content: " >>";
+  content: " >>";
 }
 
 /********* ページ移動 ***********************************************/
 
 div#page h2 {
-	display: none;
+  display: none;
 }
 div#page ul.order {
-	margin: 10px 0;
+  margin: 10px 0;
 }
 div#page ul.order li {
-	display: inline;
-	list-style: none;
-	margin-right: 10px;
+  display: inline;
+  list-style: none;
+  margin-right: 10px;
 }
 div#page ul.direct {
-	margin: 10px 0;
-	text-align: right;
+  margin: 10px 0;
+  text-align: right;
 }
 div#page ul.direct li {
-	display: inline;
-	list-style: none;
-	margin-left: 10px;
+  display: inline;
+  list-style: none;
+  margin-left: 10px;
 }
 
 /********* コメント *************************************************/
 
 div#comment div.comment ul.information {
-	margin: 15px 0 0 0;
-	text-align: right;
+  margin: 15px 0 0 0;
+  text-align: right;
 }
 div#comment div.comment ul.information li {
-	display: inline;
-	margin-left: 5px;
+  display: inline;
+  margin-left: 5px;
 }
 
 /********* トラックバック *******************************************/
 
 div#trackback div.trackback ul.information {
-	margin: 15px 0 0 0;
-	text-align: right;
+  margin: 15px 0 0 0;
+  text-align: right;
 }
 div#trackback div.trackback ul.information li {
-	display: inline;
-	margin-left: 5px;
+  display: inline;
+  margin-left: 5px;
 }
 div#trackback_url p code {
-	word-break: break-all;
+  word-break: break-all;
 }
 
 /********* インフォメーション ***************************************/
 
 div#information {
-	margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 div#information ul.continue {
-	margin: 0;
-	text-align: right;
+  margin: 0;
+  text-align: right;
 }
 div#information ul.continue li {
-	display: inline;
+  display: inline;
 }
 
 /********* ユーティリティ *******************************************/
 
 div#utility {
-	float: left;
-	width: 200px;
-	margin-left: 10px;
-	margin-bottom: 20px;
+  float: left;
+  width: 200px;
+  margin-left: 10px;
+  margin-bottom: 20px;
 }
 div#utility h2 {
-	display: none;
+  display: none;
 }
 div#utility div.utility {
-	margin: 15px 0;
-	padding-bottom: 10px;
-	background-color: #EEEEEE;
+  margin: 15px 0;
+  padding-bottom: 10px;
+  background-color: #EEEEEE;
 }
 div#utility div.utility h3 {
-	padding: 10px 10px 0 10px;
+  padding: 10px 10px 0 10px;
 }
 div#utility div.utility div.content {
-	margin: 0 10px;
+  margin: 0 10px;
 }
 div#utility div.utility ul {
-	margin-right: 0;
+  margin-right: 0;
 }
 div#utility div.utility ul li ul {
-	margin-top: 0;
-	margin-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 div#utility div.utility form {
-	margin: 0;
+  margin: 0;
 }
 div#utility div.utility form dl {
-	margin: 0;
+  margin: 0;
 }
 div#utility div.utility form dl dt {
-	display: none;
+  display: none;
 }
 div#utility div.utility form dl dd {
-	margin: 0;
+  margin: 0;
 }
 div#utility div.utility form dl dd input {
-	width: 170px;
+  width: 170px;
 }
 div#utility div.utility form p {
-	margin: 0 0 10px 0;
+  margin: 0 0 10px 0;
 }
 
 div#utility div.utility table.calender {
-	margin: 0;
-	border: 0px solid #000000;
-	word-break: normal;
+  margin: 0;
+  border: 0px solid #000000;
+  word-break: normal;
 }
 div#utility div.utility table.calender tr th, table.calender tr td {
-	padding: 5px;
-	border: 0px solid #000000;
-	background-color: #EEEEEE;
-	font-weight: normal;
-	text-align: center;
+  padding: 5px;
+  border: 0px solid #000000;
+  background-color: #EEEEEE;
+  font-weight: normal;
+  text-align: center;
 }
 div#utility div.utility table.calender tr td span.day {
-	color: #222222;
+  color: #222222;
 }
 div#utility div.utility table.calender tr td span.satday {
-	color: #2222CC;
+  color: #2222CC;
 }
 div#utility div.utility table.calender tr td span.sunday {
-	color: #CC2222;
+  color: #CC2222;
 }
 div#utility div.utility ul.calender {
-	margin: 10px 0;
+  margin: 10px 0;
 }
 div#utility div.utility ul.calender li {
-	display: inline;
-	list-style: none;
-	margin-right: 10px;
+  display: inline;
+  list-style: none;
+  margin-right: 10px;
 }
 
 /* 新着画像 */
 div#utility div.utility ul.gallery {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
 div#utility div.utility ul.gallery li {
-	padding: 5px 1px;
-	display: inline-block;
+  padding: 5px 1px;
+  display: inline-block;
 }
 div#utility div.utility ul.gallery li img {
-	width: 64px;
-	height: 64px;
+  width: 64px;
+  height: 64px;
 }
 
 /* ブログパーツ */
 dl.parts dd {
-	margin: 0 auto;
+  margin: 0 auto;
 }
 .twitter-timeline {
-	min-width: 180px!important;
+  min-width: 180px!important;
 }
 
 /********* ギャラリー ***********************************************/
 
 div#gallery {
-	overflow: hidden;
+  overflow: hidden;
 }
 div#gallery div.gallery {
-	float: left;
-	margin-right: 12px;
-	margin-bottom: 20px;
+  float: left;
+  margin-right: 12px;
+  margin-bottom: 20px;
 }
 div#gallery div.gallery p.picture {
-	overflow: hidden;
-	width: 140px;
-	height: 100px;
-	margin: 0;
+  overflow: hidden;
+  width: 140px;
+  height: 100px;
+  margin: 0;
 }
 div#gallery div.gallery p.picture a {
-	color: #FFFFFF;
-	text-decoration: none;
+  color: #FFFFFF;
+  text-decoration: none;
 }
 div#gallery div.gallery p.picture a img {
-	min-width: 140px;
-	min-height: 100px;
+  min-width: 140px;
+  min-height: 100px;
 }
 div#gallery div.gallery p.picture a span.empty {
-	display: block;
-	line-height: 100px;
-	width: 140px;
-	height: 100px;
-	background-color: #AAAAAA;
-	text-align: center;
+  display: block;
+  line-height: 100px;
+  width: 140px;
+  height: 100px;
+  background-color: #AAAAAA;
+  text-align: center;
 }
 div#gallery div.gallery p.comment {
-	overflow: hidden;
-	width: 140px;
-	margin: 3px 0 0;
-	font-size: 80%;
-	text-align: center;
-	text-overflow: ellipsis;
-	white-space: nowrap;
+  overflow: hidden;
+  width: 140px;
+  margin: 3px 0 0;
+  font-size: 80%;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 div#gallery ul {
-	margin: 10px 0 20px 0;
+  margin: 10px 0 20px 0;
 }
 div#gallery ul li {
-	display: inline;
+  display: inline;
 }
 div#gallery ul li img {
-	margin: 0 2px 10px 0;
+  margin: 0 2px 10px 0;
 }
 
 /********* 画像による目次 ***********************************************/
 
 div#page_gallery ul {
-	margin: 10px 0 20px 0;
+  margin: 10px 0 20px 0;
 }
 div#page_gallery ul li {
-	display: inline;
+  display: inline;
 }
 div#page_gallery ul li img {
-	margin: 0 2px 10px 0;
+  margin: 0 2px 10px 0;
 }
 
 /********* タグクラウド ************************************************/
 
 ul.tagcloud {
-	margin: 10px 0;
+  margin: 10px 0;
 }
 ul.tagcloud li {
-	display: inline;
-	line-height: 1.0;
-	list-style: none;
-	margin-right: 5px;
-	color: #AAAAAA;
+  display: inline;
+  line-height: 1.0;
+  list-style: none;
+  margin-right: 5px;
+  color: #AAAAAA;
 }
 ul.tagcloud li a {
-	text-decoration: none;
+  text-decoration: none;
 }
 
 /********* メディア一覧 ************************************************/
 
 div#media ul {
-	margin: 10px 0;
+  margin: 10px 0;
 }
 div#media ul li {
-	display: inline;
-	list-style: none;
+  display: inline;
+  list-style: none;
 }
 div#media ul li img {
-	max-width: 80px;
-	max-height: 80px;
-	margin-bottom: 10px;
+  max-width: 80px;
+  max-height: 80px;
+  margin-bottom: 10px;
 }
 div#media ul li span.directory {
-	display: block;
-	margin: 10px 0;
-	font-size: 120%;
-	font-weight: bold;
+  display: block;
+  margin: 10px 0;
+  font-size: 120%;
+  font-weight: bold;
 }
 div#media ul li ul {
-	margin: 0 0 0 20px;
+  margin: 0 0 0 20px;
 }
 
 div.directories {
-	overflow: hidden;
+  overflow: hidden;
 }
 div.directories div.directory {
-	float: left;
-	margin-right: 10px;
-	margin-bottom: 20px;
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 20px;
 }
 div.directories div.directory p {
-	margin: 0;
-	text-align: center;
+  margin: 0;
+  text-align: center;
 }
 div.directories div.directory p a {
-	display: block;
-	width: 140px;
-	height: 100px;
-	background-color: #444444;
-	text-decoration: none;
+  display: block;
+  width: 140px;
+  height: 100px;
+  background-color: #444444;
+  text-decoration: none;
 }
 div.directories div.directory p a img {
-	max-width: 140px;
-	max-height: 100px;
+  max-width: 140px;
+  max-height: 100px;
 }
 
 /********* メディア文章一覧 *************************************************/
 
 div#document ul {
-	margin: 10px 0;
+  margin: 10px 0;
 }
 div#document ul li {
-	list-style: none;
+  list-style: none;
 }
 div#document ul li span.directory {
-	display: block;
-	margin: 10px 0;
-	font-size: 120%;
-	font-weight: bold;
+  display: block;
+  margin: 10px 0;
+  font-size: 120%;
+  font-weight: bold;
 }
 div#document ul li ul {
-	margin: 0 0 0 20px;
+  margin: 0 0 0 20px;
 }
 
 /********* オプション項目からの絞り込み検索 *************************************************/
 
 div#search_option {
-	padding: 10px 20px;
-	border: 1px solid #CCCCCC;
-	background-color: #EEEEEE;
+  padding: 10px 20px;
+  border: 1px solid #CCCCCC;
+  background-color: #EEEEEE;
 }
 div#search_option h3 {
-	font-size: 100%;
+  font-size: 100%;
 }
 div#search_option dl dd ul {
-	margin: 0;
-	padding: 2px 0;
+  margin: 0;
+  padding: 2px 0;
 }
 div#search_option dl dd ul li {
-	display: inline;
-	list-style: none;
-	margin-right: 10px;
+  display: inline;
+  list-style: none;
+  margin-right: 10px;
 }
 div#search_option span.note {
-	color: #666666;
+  color: #666666;
 }
 
 /********* ネタバレ *************************************************/
 
 div.hidearea {
-	color: #EEEEEE;
+  color: #EEEEEE;
 }
 
 /********* 個別指定 *************************************************/
 
 div.content {
-	overflow-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 div#page_link ul.page_link {
-	margin: 0 0 20px 0;
+  margin: 0 0 20px 0;
 }
 div#page_link ul.page_link li {
-	display: inline;
-	list-style: none;
-	margin-right: 10px;
+  display: inline;
+  list-style: none;
+  margin-right: 10px;
 }
 div#page_link ul.page_link li.home {
-	padding-right: 10px;
-	padding-left: 10px;
-	border-right: 1px solid #999999;
-	border-left: 1px solid #999999;
+  padding-right: 10px;
+  padding-left: 10px;
+  border-right: 1px solid #999999;
+  border-left: 1px solid #999999;
 }
 div#page_link ul.page_link li.previous:before {
-	content: "<< ";
+  content: "<< ";
 }
 div#page_link ul.page_link li.next:after {
-	content: " >>";
+  content: " >>";
 }
 
 ul.link {
-	margin: 0;
-	padding: 10px;
-	text-align: right;
+  margin: 0;
+  padding: 10px;
+  text-align: right;
 }
 ul.link li {
-	display: inline;
-	margin-left: 5px;
+  display: inline;
+  margin-left: 5px;
 }
 
 /********* レスポンシブ *********************************************/
 
 .toggle {
-	display: none;
+  display: none;
 }
 
 @media (max-width: 480px) {
-	body {
-		padding: 5px;
-	}
-	form textarea {
-		width: calc(100% - 10px);
-	}
-	div#container {
-		width: 90%;
-		padding: 15px;
-	}
-	div#content {
-		float: none;
-		width: 100%;
-	}
-	div#entry div.entry {
-		width: 100%;
-		border-right: 0;
-		border-left: 0;
-	}
-	div#utility {
-		display: none;
-		float: none;
-		width: 100%;
-		margin: 0;
-	}
+  body {
+    padding: 5px;
+  }
+  form textarea {
+    width: calc(100% - 10px);
+  }
+  div#container {
+    width: 90%;
+    padding: 15px;
+  }
+  div#content {
+    float: none;
+    width: 100%;
+  }
+  div#entry div.entry {
+    width: 100%;
+    border-right: 0;
+    border-left: 0;
+  }
+  div#utility {
+    display: none;
+    float: none;
+    width: 100%;
+    margin: 0;
+  }
 
-	/* ユーティリティ表示ボタン */
-	.toggle {
-		display: block;
-		margin: 15px 0;
-	}
-	.toggle.toggle::before {
-		content: 'ユーティリティを表示';
-	}
-	.toggle.open::before {
-		content: 'ユーティリティを閉じる';
-	}
+  /* ユーティリティ表示ボタン */
+  .toggle {
+    display: block;
+    margin: 15px 0;
+  }
+  .toggle.toggle::before {
+    content: 'ユーティリティを表示';
+  }
+  .toggle.open::before {
+    content: 'ユーティリティを閉じる';
+  }
 }
 
 @media (max-width: 370px) {
-	div#container form input[size="50"] {
-		width: 100%;
-	}
+  div#container form input[size="50"] {
+    width: 100%;
+  }
 }
