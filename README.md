@@ -178,8 +178,8 @@
 
 ## カスタマイズの内容
 freoのデフォルトのテンプレートは、XHTML1.0で書かれているので、これをHTML仕様に変更して、できるだけ[Google HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.html)に準ずるようにする。<br>参考：[Google HTML/CSS Style Guide まとめ](https://qiita.com/Sugima/items/785644372397595644ba)
-- DOCTYPE宣言や <head> の変更
-  - DOCTYPE宣言やメタタグの変更
+- XHTMLからHTMLへスタイルルールの変更
+  - DOCTYPE宣言や `<head>` のメタタグの変更
   - CSSファイルの表記にあるtypeとmediaの部分を削除<br>`<link rel="stylesheet" href="..." type="text/css" media="all" />` ⇒ `<link rel="stylesheet" href="..."  />`
   - JavaScriptファイルの表記にあるtypeの部分を削除<br>`<script type="text/javascript" src="...">` ⇒ `<script src="...">`
   - 空要素が /で綴じられている部分を削除<br>例：`<br />` ⇒ `<br>`
@@ -198,7 +198,7 @@ freoのデフォルトのテンプレートは、XHTML1.0で書かれている�
 - テーブル（表）関連の変更
   - `<table>` の summary 属性が廃止になったので削除
   - HTML5.1から `<tfoot>` を `<tbody>` の前から `</table>` の直前に配置することになったので移動
-- インプットのカスタマイズ
+- フォームのインプット周りのカスタマイズ
   - フォームの項目と入力コントロールをそれぞれ紐付けるため、各項目名に `<label>`、各コントロールまたは `<dd>` に `id` を追加
   - `input type="text"` から各入力欄に合わせたタイプに変更
     - メールアドレス関連：`input type="text"` ⇒ `input type="email"`
