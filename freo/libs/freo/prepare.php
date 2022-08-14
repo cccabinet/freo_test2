@@ -2,7 +2,7 @@
 
 /*********************************************************************
 
- freo | 設定編集 (2022/01/10)
+ freo | 設定編集 (2022/08/14)
 
  Copyright(C) 2009-2022 freo.jp
  customized：cccabinet（https://cccabinet.jpn.org/)
